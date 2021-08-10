@@ -1,0 +1,45 @@
+foraging behavior	
+ground forager	
+aerial	
+bark	
+aquatic	
+surface generalists	
+gleaner	
+excavator	
+hawker	
+scavenger	
+hunter	
+browser	
+grazer	
+	
+nesting	
+cavity	
+ground	
+cliff	
+tree canopy	"divide by low (1-6m), medium(7-16m), high(>16m)?"
+shrub	
+	
+	
+food	
+insects	
+fruit	
+seeds	
+aquatic vertebrates	
+terrestrial vertebrates	
+	
+main_trophic	
+insectivore	
+frugivore	
+granivore	
+carnivore	
+scavenger	
+omnivore	
+herbivore	
+	
+foraging substrates	
+ground	
+arboreal	
+foliage gleaner	
+freshwater	
+air	
+fossorial	
