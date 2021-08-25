@@ -1,4 +1,4 @@
-foraging behavior	
+# foraging behavior	
 ground forager	
 aerial	
 bark	
@@ -9,25 +9,25 @@ excavator
 hawker	
 scavenger	
 hunter	
-browser	
-grazer	
+browser	folivory - feeds on leaves, soft shoots, or fruits of shrubs
+grazer	feed on grass or other lower vegetations
 	
-nesting	
+# nesting	
 cavity	
 ground	
 cliff	
-tree canopy	"divide by low (1-6m), medium(7-16m), high(>16m)?"
+tree canopy	divide by low (1-6m), medium(7-16m), high(>16m)?
 shrub	
 	
 	
-food	
+# food	
 insects	
 fruit	
 seeds	
 aquatic vertebrates	
 terrestrial vertebrates	
 	
-main_trophic	
+# main_trophic	
 insectivore	
 frugivore	
 granivore	
@@ -36,10 +36,11 @@ scavenger
 omnivore	
 herbivore	
 	
-foraging substrates	
+# foraging substrates	
 ground	
 arboreal	
 foliage gleaner	
 freshwater	
 air	
 fossorial	
+
