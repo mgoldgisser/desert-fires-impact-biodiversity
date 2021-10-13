@@ -1,4 +1,5 @@
 #stats brainstorm
+library(tidyverse)
 
 sites <- read_csv("data/bronze.csv") %>% 
   select(c("fireID", "firename", "firemonth", "firesize", "n_observations"))
@@ -32,10 +33,6 @@ datafire <- mutate(datafire, postingvalue = obsYear - fireyear,
                                            postingvalue == 0 ~ "SY"), 
                    n_years = abs(postingvalue))
 
-mutate(offset = obsYear - fireyear,
-       posting = case_when(offset > 0 ~ "after", offset < 0 ~ "before", offset == 0 ~ "SY"), n_years = abs(offset)) %>% 
-  na.exclude() %>% 
-  distinct(fireyear, .keep_all= TRUE)
 
 #find pre- post- for observations in the same year and replace SY in datafire with pre or post
 SY <- filter(datafire, postingvalue == 0) %>% 
@@ -46,4 +43,52 @@ SY <- filter(datafire, postingvalue == 0) %>%
 
 datafire$pre_or_post <- ifelse(datafire$pre_or_post == "SY", SY$pre_or_post, datafire$pre_or_post)
 
-datafire$posting
+datafire$pre_or_post
+
+#do the same for buffered area
+databuff <- mutate(databuff, postingvalue = obsYear - fireyear, 
+                   pre_or_post = case_when(postingvalue > 0 ~ "post", 
+                                           postingvalue < 0 ~ "pre", 
+                                           postingvalue == 0 ~ "SY"), 
+                   n_years = abs(postingvalue))
+  
+
+#find pre- post- for observations in the same year and replace SY in datafire with pre or post
+
+id <- rownames(databuff) 
+databuff <- cbind(id=id, databuff) %>% 
+  na.exclude
+
+SY <- filter(databuff, postingvalue == 0) %>% 
+  mutate(postingmonth = month - firemonth,
+         pre_or_post = case_when(postingmonth >0 ~ "post",
+                                 postingmonth < 0 ~ "pre",
+                                 postingmonth == 0 ~ "SM")) %>% 
+  na.exclude()
+
+
+#retired code - databuff$pre_or_post <- ifelse(databuff$pre_or_post == "SY", SY$pre_or_post, databuff$pre_or_post)
+
+databuff$pre_or_post[match(databuff$id, SY$id)] <- SY$pre_or_post
+
+#some data had observations within the same month of the fire, I manually added pre/post to those
+#code below to prepare the csv and get the data rejoined
+
+SM <- filter(SY, pre_or_post == "SM") %>% 
+  na.exclude()
+
+test <- databuff %>% 
+  select(c("id", "obsID", "species", "fireID", "obsYear", "fireyear", "month", "day")) %>% 
+  filter(obsID %in% SM$obsID) %>% 
+  na.exclude()
+
+write_csv(test, "data/temp.csv")
+##edit csv file manually here
+
+test <- read_csv("data/temp.csv")
+
+SM$pre_or_post <- ifelse(SM$pre_or_post == "SM", test$pre_or_post, NA)
+
+#make some data viz to explore
+
+ggplot(datafire, aes(po))
