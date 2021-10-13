@@ -3,9 +3,8 @@ ground forager
 aerial	
 bark	
 aquatic	
-surface generalists	
-gleaner	
 excavator	
+gleaner
 hawker	
 scavenger	
 hunter	
@@ -13,11 +12,15 @@ browser	folivory - feeds on leaves, soft shoots, or fruits of shrubs
 grazer	feed on grass or other lower vegetations
 	
 # nesting	
-cavity	
-ground	
+cavity
+den	
+ground
+burrow
+water	
 cliff	
-tree canopy	divide by low (1-6m), medium(7-16m), high(>16m)?
-shrub	
+tree canopy
+shrub
+open	
 	
 	
 # food	
@@ -26,6 +29,10 @@ fruit
 seeds	
 aquatic vertebrates	
 terrestrial vertebrates	
+forbs
+grasses
+carrion
+ungulates
 	
 # main_trophic	
 insectivore	
@@ -34,7 +41,8 @@ granivore
 carnivore	
 scavenger	
 omnivore	
-herbivore	
+herbivore
+nectivore	
 	
 # foraging substrates	
 ground	
