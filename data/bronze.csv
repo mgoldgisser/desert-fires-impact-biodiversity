@@ -1,4 +1,4 @@
-fireID,firename,fireyear,fireendmonth,fire_month,start_date,end_date,firesize,n_observations,dates need confirmation,,Unique ID,Date Current,other unique id,possible federal,other name,more info
+fireID,firename,fireyear,fireendmonth,firemonth,start_date,end_date,firesize,n_observations,dates need confirmation,,Unique ID,Date Current,other unique id,possible federal,other name,more info
 926,BECK,2000,,,,,396.3609,2,,San Luis Obisco,SLU-3047,,,,,
 873,ROMERO,2000,August,8,8/9/2000,9/9/2000,1706.85,52,,,,,,,,
 264,PALM#1,2002,,,,,94.97114,1,,San Diego,MVU-2642,20020415,,,San Ysidro Mountain,
@@ -28,11 +28,11 @@ fireID,firename,fireyear,fireendmonth,fire_month,start_date,end_date,firesize,n_
 941,AVENAL,2008,August,8,8/19/2008,8/20/2008,945.3325,11,,,,,,,,
 935,BROWN,2008,June,6,6/21/2008,6/24/2008,3786.915,3,,,,,,,,
 946,PARKWAY,2009,June,6,6/22/2009,6/22/2009,689.9021,1,,,,,,,,
-296,NARROWS,2010,June,6,6/16/2010,20100617,49.86191,3,,San Diego,MVU-6536,20100617,,,,
+296,NARROWS,2010,June,6,6/16/2010,6/17/2010,49.86191,3,,San Diego,MVU-6536,20100617,,,,
 291,TECOPA,2010,August,8,8/28/2010,8/30/2010,105.7345,17,,,BDU-12889,20100830,,,,
 1087,WASH,2010,May,5,5/15/2010,5/16/2010,947.4305,1,,,BBD-1133,,CND?,FEDERAL,Carrizo National Monument,
 1092,COTTON,2010,May,5,5/15/2010,5/17/2010,2037.958,1,,,,,,,,
-356,HAUGHTELIN,2010,May,5,,5/7/2010,2319.5,1,,,,,,Fort Yuma Indian Reservation,,
+356,HAUGHTELIN,2010,May,5,5/7/2010,5/7/2010,2319.5,1,,,,,,Fort Yuma Indian Reservation,,
 311,RANGE,2011,,,,,241.0146,1,,Los Angeles,LAC-120055,20110528,,,,
 971,ROMERO,2011,July,7,7/23/2011,7/23/2011,451.0401,1,,,,,,,,
 410,WINDY POINT,2011,September,9,9/25/2011,9/26/2011,541.494,1,,,,,,,,
@@ -66,4 +66,4 @@ fireID,firename,fireyear,fireendmonth,fire_month,start_date,end_date,firesize,n_
 1108,LAKE,2020,September,9,8/12/2020,9/28/2020,30999.28856,1,,,,,,,,
 1109,DOME,2020,September,9,8/16/2020,9/14/2020,44211.08459,125,,,,,,,,
 1110,BOBCAT,2020,December,12,9/6/2020,12/18/2020,115997.5701,9,,,,,,,,
-1112,DEL PUERTO,2020,October,10,8/16/2020,10/1/2020,390647.2556,15,,,,,,,,
+1112,DEL PUERTO,2020,October,10,8/16/2020,10/1/2020,390647.2556,15,,,,,,,SCU Lightning Complex,
