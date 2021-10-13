@@ -80,17 +80,19 @@ gbif <- subset(gbifdata, select = c("verbatimScientificName","class", "order", "
 #transform to shapefile and add projection
 gbif_sf <- st_as_sf(gbif, coords = c("decimalLongitude", "decimalLatitude"), crs = 4326, remove = FALSE)
 
+#add obs ID
+id <- rownames(gbif_sf) 
+gbif_sf <- cbind(obsID=id, gbif_sf)
+
 #save gbif observations as shapefile for later use
 st_write(gbif_sf, here("endangered", "data", "endangeredanimals"), driver = "ESRI Shapefile", delete_layer = TRUE)
 
 # add gbif shapefile; this is needed if already converted the gbif csv to shapefile
 gbif_sf <- st_read(here("endangered", "data", "endangeredanimals")) 
 
-id <- rownames(gbif_sf) 
-gbif_sf <- cbind(obsID=id, gbif_sf)
 
 #add fire shapefile
-fire_sf <- st_read(here("data", "fireshapefile")) %>% 
+fire_sf <- st_read("./shapefiles/fireshapefile") %>% 
   st_make_valid(fire_sf)
 
 #not needed, but this transforms the projections so that they are the same
