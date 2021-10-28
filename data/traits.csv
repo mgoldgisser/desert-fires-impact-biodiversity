@@ -1,20 +1,20 @@
-species,common_name,taxongroup,state_status,fed_status,habita_primary,habitat_secondary_description,main_trophic,food_primary,food_secondary1,food_secondary2,nesting,foraging_substrate,foraging_behavior,activity period,Information source
+species,commonName,taxonGroup,stateStatus,fedStatus,habitatPrimary,habitatSecondaryDescription,mainTrophic,foodPrimary,foodSecondary1,foodSecondary2,nesting,foragingSubstrate,foragingBehavior,activityPeriod,informationSource
 Gopherus agassizii,Agassiz's desert tortoise,reptile,SCE,FT,shrubland,rocky flatlands,herbivore,forbs,grasses,cacti,ground,ground,grazer,morning,"Jennings, WB (1993) Foraging ecology of desert tortoise"
-Ovis canadensis nelsoni,desert bighorn sheep,mammal,ST,FE,shrubland,rocky canyons,herbivore,grasses,forbs,shrubs,open,ground,grazer,diurnal,
-Puma concolor,puma,mammal,SC,NA,variety,,carnivore,ungulates,rabbits,,den,ground,hunter,nocturnal,
-Colaptes chrysoides,gilded flicker,bird,SE,NA,desert,giant cactus forest,insectivore,insects,fruit,seeds,cavity,ground,gleaner,,
+Ovis canadensis nelsoni,Peninsular bighorn sheep,mammal,ST,FE,shrubland,rocky canyons,herbivore,grasses,forbs,shrubs,open,ground,grazer,diurnal,
+Puma concolor,Mountain lion,mammal,SC,NA,variety,,carnivore,ungulates,rabbits,,den,ground,hunter,nocturnal,
+Colaptes chrysoides,Gilded northern flicker,bird,SE,NA,desert,giant cactus forest,insectivore,insects,fruit,seeds,cavity,ground,gleaner,,
 Ammospermophilus nelsoni,Nelson's antelope squirrel,mammal,ST,NA,shrubland,,insectivore,insects,shrubs,grasses,burrow,ground,gleaner,crepuscular,https://wwjournal.org/wp-content/uploads/sites/9/2021/05/Harris_WW_2019.pdf
-Cyprinodon macularius,Desert pupfish,fish,SE,FE,aquatic,shallow shore pools,omnivore,aquatic insects,algae,aquatic invertebrates,water,aquatic,gleaner,crepuscular,https://www-jstor-org.ezproxy.library.yorku.ca/stable/pdf/3671312.pdf?refreqid=excelsior%3A0c87743dc6752abc0c44d006b7e5e28f; https://www-jstor-org.ezproxy.library.yorku.ca/stable/pdf/2422959.pdf?refreqid=excelsior%3Ab46b0333289f421b2a892319aa1748dd
-Haliaeetus leucocephalus,bald eagle,bird,SE,FDR,forests,near large water bodies,carnivore,aquatic vertebrates,terrestrial vertebrates,carrion,tree canopy,aquatic,hawker,,
-Agelaius tricolor,tricolored blackbird,bird,ST,NA,wetlands,agricultural fields,insectivore,insects,seeds,NA,shrub,ground,gleaner,,
-Empidonax traillii,willow flycatcher,bird,SE,NA,wetlands,shrubland near water,insectivore,insects,fruit,NA,shrub,aerial,hawker,,
-Buteo swainsoni,Swainson's hawk,bird,ST,NA,grasslands,agricultural fields,carnivore,terrestrial vertebrates,insects,NA,tree canopy,ground,hawker,,
+Cyprinodon macularius,Desert pupfish,fish,SE,FE,aquatic,shallow shore pools,omnivore,aquatic insects,algae,aquatic invertebrates,water,aquatic,gleaner,crepuscular,https://www.jstor.org/stable/3671312?refreqid=excelsior%3A0c87743dc6752abc0c44d006b7e5e28f;%20https://www-jstor-org.ezproxy.library.yorku.ca/stable/pdf/2422959.pdf?refreqid=excelsior%3Ab46b0333289f421b2a892319aa1748dd
+Haliaeetus leucocephalus,Bald eagle,bird,SE,FDR,forests,near large water bodies,carnivore,aquatic vertebrates,terrestrial vertebrates,carrion,tree canopy,aquatic,hawker,,
+Agelaius tricolor,Tricolored blackbird,bird,ST,NA,wetlands,agricultural fields,insectivore,insects,seeds,,shrub,ground,gleaner,,
+Empidonax traillii,Willow flycatcher,bird,SE,NA,wetlands,shrubland near water,insectivore,insects,fruit,,shrub,aerial,hawker,,
+Buteo swainsoni,Swainson's hawk,bird,ST,NA,grasslands,agricultural fields,carnivore,terrestrial vertebrates,insects,,tree canopy,ground,hawker,,
 Uma inornata,Coachella Valley fringe-toed lizard,reptile,SE,FT,desert,sand dunes,omnivore,flowers,insects,,ground,foliage,gleaner,crepuscular,
-Gymnogyps californianus,California condor,bird,SE,FE,shrubland,grassland,scavenger,carrion,NA,NA,cliff,ground,scavenger,,
+Gymnogyps californianus,California condor,bird,SE,FE,shrubland,grassland,scavenger,carrion,,,cliff,ground,scavenger,,
 Melanerpes uropygialis,Gila woodpecker,bird,SE,NA,desert,giant cactus forest or trees,insectivore,insects,fruit,small vertebrates,cavity,bark,prober,,
-Riparia riparia,bank swallow,bird,ST,NA,riparian,,insectivore,insects,,,burrow,aerial,hawker,,
+Riparia riparia,Bank swallow,bird,ST,NA,riparian,,insectivore,insects,,,burrow,aerial,hawker,,
 Bombus crotchii,Crotch bumble bee,insect,SC,NA,grasslands,meadows and open areas,nectivore,nectar,,,burrow,foliage,prober,,
-Anaxyrus californicus,arroyo toad,amphibian,NA,FE,riparian,,insectivore,insects,,,water,ground,gleaner,,https://www.fws.gov/ventura/docs/species/at/Arroyo%20Toad%20Final%20Species%20Report.pdf
+Anaxyrus californicus,Arroyo toad,amphibian,NA,FE,riparian,,insectivore,insects,,,water,ground,gleaner,,https://www.fws.gov/ventura/docs/species/at/Arroyo%20Toad%20Final%20Species%20Report.pdf
 Rallus obsoletus yumanensis,Yuma Ridgway's rail,bird,ST,FE,wetlands,,omnivore,aquatic invertebrates,,,shrub,ground,prober,,
-Canis lupus,gray wolf,mammal,SE,FDR,variety,,carnivore,ungulates,small vertebrates,,open,ground,hunter,nocturnal,
-Danaus plexippus,monarch butterfly,insect,NA,FC,schrubland,meadows and open areas,nectivore,nectar,,,tree canopy,foliage,prober,,
+Canis lupus,Gray wolf,mammal,SE,FDR,variety,,carnivore,ungulates,small vertebrates,,open,ground,hunter,nocturnal,
+Danaus plexippus,Monarch butterfly,insect,NA,FC,shrubland,meadows and open areas,nectivore,nectar,,,tree canopy,foliage,prober,,

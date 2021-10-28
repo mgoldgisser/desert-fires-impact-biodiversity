@@ -1,4 +1,4 @@
-﻿TaxaGroup,TaxaSubgroup,TaxonName,CommonName,state_status,state_listdate,federal_status,fed_listdate
+﻿taxaGroup,taxaSubgroup,species,commonName,stateStatus,stateListDate,fedStatus,fedListDate
 Invertebrates,Gastropoda,Haliotis cracherodii,Black abalone,,,FE,20110413
 Invertebrates,Gastropoda,Haliotis sorenseni,White abalone,,,FE,20051116
 Invertebrates,Gastropoda,Helminthoglypta walkeriana,Morro shoulderband snail,,,FE,19950117
@@ -20,7 +20,7 @@ Invertebrates,Insecta - Coleoptera,Polyphylla barbata,Mount Hermon June beetle,,
 Invertebrates,Insecta - Diptera,Rhaphiomidas terminatus abdominalis,Delhi Sands flower-loving fly,,,FE,19930923
 Invertebrates,Insecta - Lepidoptera,Apodemia mormo langei,Lange’s metalmark butterfly,,,FE,19760608
 Invertebrates,Insecta - Lepidoptera,Callophrys mossii bayensis,San Bruno elfin butterfly,,,FE,19760608
-Invertebrates,Insecta - Lepidoptera,Danaus plexippus,Monarch,,,FC,20201217
+Invertebrates,Insecta - Lepidoptera,Danaus plexippus,Monarch butterfly,,,FC,20201217
 Invertebrates,Insecta - Lepidoptera,Euphilotes battoides allyni,El Segundo blue butterfly,,,FE,19760608
 Invertebrates,Insecta - Lepidoptera,Euphilotes enoptes smithi,Smith’s blue butterfly,,,FE,19760608
 Invertebrates,Insecta - Lepidoptera,Euphydryas editha bayensis,Bay checkerspot butterfly,,,FT,19871019
