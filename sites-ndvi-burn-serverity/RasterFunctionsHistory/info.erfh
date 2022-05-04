@@ -1,0 +1,68 @@
+{
+  "version" : 1,
+  "name" : "Raster Functions History",
+  "historyItems" : [
+    {
+      "id" : "{740E9FA2-87CC-436D-9E3B-77E327540116}",
+      "type" : 1,
+      "status" : 2,
+      "name" : "Apparent Reflectance",
+      "description" : "Converts raw imagery into Top of Atmosphere values by taking into account sensor characteristics, the position of the sun, and the acquisition time.",
+      "rftPath" : "Apparent Reflectance_{740E9FA2-87CC-436D-9E3B-77E327540116}.rft.xml",
+      "startTime" : "637743401970000000",
+      "endTime" : "637743401970000000",
+      "remoteJobStateInfo" : {
+        "ID" : "_lcljob",
+        "Status" : 5,
+        "ReturnValue" : "",
+        "Messages" : [
+          {
+            "Text" : "Submitted.",
+            "Type" : 0
+          },
+          {
+            "Text" : "Executing...",
+            "Type" : 0
+          },
+          {
+            "Text" : "Succeeded.",
+            "Type" : 0
+          }
+        ]
+      }
+    },
+    {
+      "id" : "{A2E80AAA-69F2-44D4-8309-503E33AE281D}",
+      "type" : 1,
+      "status" : 4,
+      "name" : "Apparent Reflectance",
+      "description" : "Converts raw imagery into Top of Atmosphere values by taking into account sensor characteristics, the position of the sun, and the acquisition time.",
+      "rftPath" : "Apparent Reflectance_{A2E80AAA-69F2-44D4-8309-503E33AE281D}.rft.xml",
+      "startTime" : "637743402690000000",
+      "endTime" : "637743402690000000",
+      "remoteJobStateInfo" : {
+        "ID" : "_lcljob",
+        "Status" : 5,
+        "ReturnValue" : "",
+        "Messages" : [
+          {
+            "Text" : "Submitted.",
+            "Type" : 0
+          },
+          {
+            "Text" : "Executing...",
+            "Type" : 0
+          },
+          {
+            "Text" : "The input dataset is missing acquisition date.",
+            "Type" : 100
+          },
+          {
+            "Text" : "Failed.",
+            "Type" : 100
+          }
+        ]
+      }
+    }
+  ]
+}
