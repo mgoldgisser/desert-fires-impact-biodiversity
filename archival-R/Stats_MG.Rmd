@@ -1,0 +1,159 @@
+---
+title: "Untitled"
+author: "Marina"
+date: "10/7/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE)
+
+setwd("~/GitHub/desert-fires-impact-biodiversity")
+
+```
+
+### Load libraries and data
+
+```{r}
+library(tidyverse)
+library(skimr)
+
+sites <- read_csv("data/sites.csv") %>% 
+  filter(fireYear <= 2017)
+observations <- read_csv("data/observations.csv")
+
+data <- left_join(observations, sites, by = "fireID") %>% 
+  filter(obsYear <=2020, obsYear >= 1995) %>% 
+  filter(fireYear <= 2017)
+
+
+data$fireID <- as.character(data$fireID)
+
+
+head(data)
+
+```
+
+## Pre-/Post- value
+
+To compare observation before a fire and after a fire, create a pre-/post- column that identifies the observation as occurring either before a fire or after a fire. 
+
+"postingvalue" = obsYear - fireYear
+"pre_or_post" = if postingvalue is negative = pre; positive = post; 0 = SY\
+those in the same year will be further catergorized by comparing the month of the observation.
+"n_years" = absolute value of years between observation and fire
+
+
+
+```{r}
+data <- data %>% 
+  mutate(postingvalue = obsYear - fireYear, 
+         pre_or_post = case_when(postingvalue > 0 ~ "post-fire",
+                                 postingvalue < 0 ~ "pre-fire",
+                                 postingvalue == 0 ~ "SY"),
+         n_years = abs(postingvalue))
+  
+#find pre- post- for observations in the same year and replace SY in datafire with pre or post
+SY <- filter(data, postingvalue == 0) %>% 
+  mutate(postingmonth = month - fireMonth,
+    pre_or_post = case_when(postingmonth >0 ~ "post-fire",
+                            postingmonth < 0 ~ "pre-fire",
+                            postingvalue == 0 ~ "SM"))
+
+data$pre_or_post <- ifelse(data$pre_or_post == "SY", SY$pre_or_post, data$pre_or_post)
+
+unique(data$pre_or_post) #check if any SM (same month); would need to further categorize
+
+# need atleast 1 observation pre and 1 observation post
+# one_each <- group_by(data, fireID, pre_or_post) %>% 
+#   summarize(total = n())
+# 
+# one_each <- one_each %>% 
+#   spread(pre_or_post, total) %>%
+#   mutate(post = ifelse(is.na(post), 0, post), pre = ifelse(is.na(pre), 0, pre)) %>% 
+#   filter(post > 0 & pre > 0)
+
+test <- one_each$fireID
+
+#filter only that that have observations before and after a fire
+data <- data %>%
+  filter(fireID %in% test)
+
+ 
+
+```
+
+```{r}
+skim(data)
+```
+
+Compare pre to post
+
+```{r}
+ggplot(data, aes(reorder(pre_or_post, totalObs), totalObs)) +
+  geom_violin(fill = "grey75") +
+  geom_boxplot(alpha = 0.5, width = 0.1) + 
+  stat_summary(fun.y=mean, geom="point", shape=18, size=5, color="red", fill="red") +
+  xlab("") +
+  ylab("Total Occurrences") +
+  theme_bw(base_size = 20)
+
+stats <- data %>% group_by(pre_or_post) %>% 
+  summarize(mean = mean(totalObs), min = min(totalObs),
+            max = max(totalObs))
+stats
+
+
+```
+
+observations over the years
+
+```{r}
+
+posting <- data %>% 
+  group_by(fireID, postingvalue, pre_or_post, n_years, desert, class) %>% 
+  filter(postingvalue >-6, postingvalue <6) %>% 
+  summarize(total = n())
+
+mean(posting$total)
+var(posting$total)
+
+
+model1 <- glm(total ~ postingvalue, family = "quasipoisson", posting)
+model2 <- glm(total ~ postingvalue + desert, family = "quasipoisson", posting)
+model3 <- glm(total ~ postingvalue + desert + class, family = "quasipoisson", posting)
+
+summary(model1)
+summary(model2)
+summary(model3)
+
+ggplot(posting, aes(postingvalue, total, color = pre_or_post)) + 
+  geom_point() + 
+  geom_smooth(method = "glm", method.args = list(family = "quasipoisson")) +
+  ylab("Total occurrences") +
+  xlab("Posting value") +
+  scale_color_manual(values = c("red3", "blue4")) +
+  theme_bw(base_size = 20) + theme(legend.title = element_blank())
+
+```
+
+Total observations per site before and after a fire
+
+```{r}
+data_by_fire <- data %>% 
+  group_by(fireID, pre_or_post) %>% 
+  summarize(total = n())
+
+
+ggplot(data_by_fire, aes(pre_or_post, total)) +
+  geom_violin(fill = "olivedrab") +
+  geom_boxplot(alpha = 0.5, width = 0.1) + 
+  stat_summary(fun.y=mean, geom="point", shape=18, size=5, color="red", fill="red") +
+  labs(y = "observations") +
+  scale_x_discrete(limits = c("pre", "post"))
+
+```
+
+
+
+

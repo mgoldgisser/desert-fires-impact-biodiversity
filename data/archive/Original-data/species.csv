@@ -1,0 +1,182 @@
+﻿taxaGroup,taxaSubgroup,species,commonName,stateStatus,stateListDate,fedStatus,fedListDate
+Invertebrates,Gastropoda,Haliotis cracherodii,Black abalone,,,FE,20110413
+Invertebrates,Gastropoda,Haliotis sorenseni,White abalone,,,FE,20051116
+Invertebrates,Gastropoda,Helminthoglypta walkeriana,Morro shoulderband snail,,,FE,19950117
+Invertebrates,Gastropoda,Monadenia infumata setosa,Trinity bristle snail,ST,19801002,,
+Invertebrates,Crustacea - Anostraca,Branchinecta conservatio,Conservancy fairy shrimp,,,FE,19940919
+Invertebrates,Crustacea - Anostraca,Branchinecta longiantenna,Longhorn fairy shrimp,,,FE,19940919
+Invertebrates,Crustacea - Anostraca,Branchinecta lynchi,Vernal pool fairy shrimp,,,FT,19940919
+Invertebrates,Crustacea - Anostraca,Branchinecta sandiegonensis,San Diego fairy shrimp,,,FE,19970203
+Invertebrates,Crustacea - Anostraca,Streptocephalus woottoni,Riverside fairy shrimp,,,FE,19930803
+Invertebrates,Crustacea - Notostraca,Lepidurus packardi,Vernal pool tadpole shrimp,,,FE,19940919
+Invertebrates,Crustacea - Decapoda,Pacifastacus fortis,Shasta crayfish,SE,19880226,FE,19880930
+Invertebrates,Crustacea - Decapoda,Syncaris pacifica,California freshwater shrimp,SE,19801002,FE,19881031
+Invertebrates,Insecta - Orthoptera,Trimerotropis infantilis,Zayante band-winged grasshopper,,,FE,19970224
+Invertebrates,Insecta - Coleoptera,Cicindela ohlone,Ohlone tiger beetle,,,FE,20011003
+Invertebrates,Insecta - Coleoptera,Desmocerus californicus dimorphus,Valley elderberry longhorn beetle,,,FT,19800915
+Invertebrates,Insecta - Coleoptera,Dinacoma caseyi,Casey’s June beetle,,,FE,20111024
+Invertebrates,Insecta - Coleoptera,Elaphrus viridis,Delta green ground beetle,,,FT,19800915
+Invertebrates,Insecta - Coleoptera,Polyphylla barbata,Mount Hermon June beetle,,,FE,19970224
+Invertebrates,Insecta - Diptera,Rhaphiomidas terminatus abdominalis,Delhi Sands flower-loving fly,,,FE,19930923
+Invertebrates,Insecta - Lepidoptera,Apodemia mormo langei,Lange’s metalmark butterfly,,,FE,19760608
+Invertebrates,Insecta - Lepidoptera,Callophrys mossii bayensis,San Bruno elfin butterfly,,,FE,19760608
+Invertebrates,Insecta - Lepidoptera,Danaus plexippus,Monarch butterfly,,,FC,20201217
+Invertebrates,Insecta - Lepidoptera,Euphilotes battoides allyni,El Segundo blue butterfly,,,FE,19760608
+Invertebrates,Insecta - Lepidoptera,Euphilotes enoptes smithi,Smith’s blue butterfly,,,FE,19760608
+Invertebrates,Insecta - Lepidoptera,Euphydryas editha bayensis,Bay checkerspot butterfly,,,FT,19871019
+Invertebrates,Insecta - Lepidoptera,Euphydryas editha quino,Quino checkerspot butterfly,,,FE,19970116
+Invertebrates,Insecta - Lepidoptera,Euproserpinus euterpe,Kern primrose sphinx moth,,,FT,19800509
+Invertebrates,Insecta - Lepidoptera,Glaucopsyche lygdamus palosverdesensis,Palos Verdes blue butterfly,,,FE,19800801
+Invertebrates,Insecta - Lepidoptera,Lycaena hermes,Hermes copper butterfly,,,FPT,20200108
+Invertebrates,Insecta - Lepidoptera,Plebejus icarioides missionensis,Mission blue butterfly,,,FE,19760608
+Invertebrates,Insecta - Lepidoptera,Plebejus idas lotis,Lotis blue butterfly,,,FE,19760608
+Invertebrates,Insecta - Lepidoptera,Pseudocopaeodes eunus obscurus,Carson wandering skipper,,,FE,20020807
+Invertebrates,Insecta - Lepidoptera,Pyrgus ruralis lagunae,Laguna Mountains skipper,,,FE,19970116
+Invertebrates,Insecta - Lepidoptera,Speyeria callippe callippe,Callippe silverspot butterfly,,,FE,19971205
+Invertebrates,Insecta - Lepidoptera,Speyeria zerene behrensii,Behren’s silverspot butterfly,,,FE,19971205
+Invertebrates,Insecta - Lepidoptera,Speyeria zerene hippolyta,Oregon silverspot butterfly,,,FT,19801015
+Invertebrates,Insecta - Lepidoptera,Speyeria zerene myrtleae,Myrtle’s silverspot butterfly,,,FE,19920622
+Invertebrates,Insecta - Hymenoptera,Bombus crotchii,Crotch bumble bee,SC,20190618,,
+Invertebrates,Insecta - Hymenoptera,Bombus franklini,Franklin's bumble bee,SC,20190618,FPE,20190813
+Invertebrates,Insecta - Hymenoptera,Bombus occidentalis,western bumble bee,SC,20190618,,
+Invertebrates,Insecta - Hymenoptera,Bombus suckleyi,Suckley's cuckoo bumble bee,SC,20190618,,
+Fishes,Acipenseridae,Acipenser medirostris,Green sturgeon,,,FT,20060606
+Fishes,Cyprinidae,Gila crassicauda,Thicktail chub,SDE,19801002,,
+Fishes,Cyprinidae,Gila elegans,Bonytail,SE,19740110,FE,19800523
+Fishes,Cyprinidae,Lavinia exilicauda chi,Clear Lake hitch,ST,20140806,,
+Fishes,Cyprinidae,Ptychocheilus lucius,Colorado pikeminnow,SE,19710627,FE,19670311
+Fishes,Cyprinidae,Siphateles bicolor mohavensis,Mohave tui chub,SE,19710627,FE,19701013
+Fishes,Cyprinidae,Siphateles bicolor snyderi,Owens tui chub,SE,19740110,FE,19850904
+Fishes,Catostomidae,Catostomus microps,Modoc sucker,SE,19801002,FDR,20160107
+Fishes,Catostomidae,Catostomus santaanae,Santa Ana sucker,,,FT,20000512
+Fishes,Catostomidae,Chasmistes brevirostris,Shortnose sucker,SE,19740110,FE,19880817
+Fishes,Catostomidae,Deltistes luxatus,Lost River sucker,SE,19740110,FE,19880817
+Fishes,Catostomidae,Xyrauchen texanus,Razorback sucker,SE,19740110,FE,19911122
+Fishes,Osmeridae,Hypomesus transpacificus,Delta smelt,SE,20100120,FT,19930305
+Fishes,Osmeridae,Spirinchus thaleichthys,Longfin smelt,ST,20090405,FC,20120402
+Fishes,Osmeridae,Thaleichthys pacificus,Pacific eulachon,,,FT,20110413
+Fishes,Salmonidae,Oncorhynchus clarkii henshawi,Lahontan cutthroat trout,,,FT,19750716
+Fishes,Salmonidae,Oncorhynchus clarkii seleniris,Paiute cutthroat trout,,,FT,19750716
+Fishes,Salmonidae,Oncorhynchus kisutch,Coho salmon,SE,20050330,FE,20050829
+Fishes,Salmonidae,Oncorhynchus mykiss irideus,Steelhead,,,FE,19971017
+Fishes,Salmonidae,Oncorhynchus mykiss whitei,Little Kern golden trout,,,FT,19780515
+Fishes,Salmonidae,Oncorhynchus tshawytscha,Chinook salmon,SC,20190212,FC,20180227
+Fishes,Salmonidae,Salvelinus confluentus,Bull trout,SE,19801002,FT,19991201
+Fishes,Cyprinodontidae,Cyprinodon macularius,Desert pupfish,SE,19801002,FE,19860430
+Fishes,Cyprinodontidae,Cyprinodon nevadensis calidae,Tecopa pupfish,SDE,19870609,FDE,19820216
+Fishes,Cyprinodontidae,Cyprinodon radiosus,Owens pupfish,SE,19710627,FE,19670311
+Fishes,Cyprinodontidae,Cyprinodon salinus milleri,Cottonball Marsh pupfish,ST,19740110,,
+Fishes,Gasterosteidae,Gasterosteus aculeatus williamsoni,Unarmored threespine stickleback,SE,19710627,FE,19701013
+Fishes,Cottidae,Cottus asperrimus,Rough sculpin,ST,19740110,,
+Fishes,Gobiidae,Eucyclogobius newberryi,Tidewater goby,,,FE,19940307
+Amphibians,Ambystomatidae,Ambystoma californiense,California tiger salamander,ST,20100819,FE,20030319
+Amphibians,Ambystomatidae,Ambystoma macrodactylum croceum,Santa Cruz long-toed salamander,SE,19710627,FE,19670311
+Amphibians,Plethodontidae,Batrachoseps major aridus,Desert slender salamander,SE,19710627,FE,19730604
+Amphibians,Plethodontidae,Batrachoseps simatus simatus,Kern Canyon slender salamander,ST,19710627,,
+Amphibians,Plethodontidae,Batrachoseps stebbinsi,Tehachapi slender salamander,ST,19710627,,
+Amphibians,Plethodontidae,Hydromantes shastae,Shasta salamander,ST,19710627,,
+Amphibians,Plethodontidae,Hydromantes brunus,Limestone salamander,ST,19710627,,
+Amphibians,Plethodontidae,Plethodon asupak,Scott Bar salamander,ST,19710627,,
+Amphibians,Plethodontidae,Plethodon stormi,Siskiyou Mountains salamander,ST,19710627,,
+Amphibians,Bufonidae,Anaxyrus californicus,Arroyo toad,,,FE,19950117
+Amphibians,Bufonidae,Anaxyrus canorus,Yosemite toad,,,FT,20140630
+Amphibians,Bufonidae,Anaxyrus exsul,Black toad,ST,19710627,,
+Amphibians,Ranidae,Rana boylii,Foothill yellow-legged frog,SE,20200320,,
+Amphibians,Ranidae,Rana cascadae,Cascades frog,SC,20171017,,
+Amphibians,Ranidae,Rana draytonii,"California red-legged
+frog",,,FT,19960624
+Amphibians,Ranidae,Rana muscosa,Southern mountain yellow-legged frog,SE,20130401,(FE),
+Amphibians,Ranidae,Rana pretiosa,Oregon spotted frog,,,FT,20140929
+Amphibians,Ranidae,Rana sierrae,Sierra Nevada yellow-legged frog,ST,20130401,FE,20140630
+Reptiles,Cheloniidae,Caretta caretta,Loggerhead sea turtle,,,FE,20111024
+Reptiles,Cheloniidae,Chelonia mydas,Green turtle,,,FT,20160506
+Reptiles,Cheloniidae,Lepidochelys olivacea,Olive ridley sea turtle,,,FT,19780728
+Reptiles,Dermochelyidae,Dermochelys coriacea,Leatherback sea turtle,SCE,20200825,FE,19700602
+Reptiles,Testudinidae,Gopherus agassizii,Desert tortoise,SCE,20201019,FT,19900402
+Reptiles,Gekkonidae,Coleonyx switaki,Barefoot gecko,ST,19801002,,
+Reptiles,Crotaphytidae,Gambelia sila,Blunt-nosed leopard lizard,SE,19710627,FE,19670311
+Reptiles,Phrynosomatidae,Uma inornata,Coachella Valley fringe-toed lizard,SE,19801002,FT,19801027
+Reptiles,Xantusiidae,Xantusia riversiana,Island night lizard,,,FDR,20140501
+Reptiles,Boidae,Charina umbratica,Southern rubber boa,ST,19710627,,
+Reptiles,Colubridae,Masticophis lateralis euryxanthus,Alameda whipsnake,ST,19710627,FT,19971205
+Reptiles,Natricidae,Thamnophis gigas,Giant garter snake,ST,19710627,FT,19931119
+Reptiles,Natricidae,Thamnophis sirtalis tetrataenia,San Francisco garter snake,SE,19710627,FE,19670311
+Birds,Anatidae,Branta hutchinsii leucopareia,Cackling goose,,,FDR,20010320
+Birds,Diomedeidae,Phoebastria albatrus,Short-tailed albatross,,,FE,20000830
+Birds,Pelecaniidae,Pelecanus occidentalis californicus,California brown pelican,SDR,20090603,FDR,20091217
+Birds,Cathartidae,Gymnogyps californianus,California condor,SE,19710627,FE,19670311
+Birds,Accipitridae,Buteo swainsoni,Swainson’s hawk,ST,19830417,,
+Birds,Accipitridae,Haliaeetus leucocephalus,Bald eagle,SE,19801002,FDR,20070808
+Birds,Falconidae,Falco peregrinus anatum,American peregrine falcon,SDR,20091104,FDR,19990825
+Birds,Falconidae,Falco peregrinus tundrius,Arctic peregrine falcon,,,FDR,19941005
+Birds,Rallidae,Laterallus jamaicensis coturniculus,California black rail,ST,19710627,,
+Birds,Rallidae,Rallus obsoletus levipes,Light-footed Ridgway's rail,SE,19710627,FE,19701013
+Birds,Rallidae,Rallus obsoletus obsoletus,California Ridgway's rail,SE,19710627,FE,19701013
+Birds,Rallidae,Rallus obsoletus yumanensis,Yuma Ridgway's rail,ST,19780222,FE,19670311
+Birds,Gruidae,Grus canadensis tabida,Greater sandhill crane,ST,19830417,,
+Birds,Charadriidae,Charadrius nivosus nivosus,Western snowy plover,,,FT,19930405
+Birds,Laridae,Sternula antillarum browni,California least tern,SE,19710627,FE,19700602
+Birds,Alcidae,Brachyramphus marmoratus,Marbled murrelet,SE,19920312,FT,19920928
+Birds,Alcidae,Synthliboramphus scrippsi,Scripps’s murrelet,ST,20041222,,
+Birds,Alcidae,Synthliboramphus hypoleucus,Guadalupe murrelet,ST,20041222,,
+Birds,Cuculidae,Coccyzus americanus occidentalis,Western yellow-billed cuckoo,SE,19880326,FT,20141103
+Birds,Strigidae,Micrathene whitneyi,Elf owl,SE,19801002,,
+Birds,Strigidae,Strix nebulosa,Great gray owl,SE,19801002,,
+Birds,Strigidae,Strix occidentalis caurina,Northern spotted owl,ST,20190318,FT,19900723
+Birds,Picidae,Colaptes chrysoides,Gilded northern flicker,SE,19880317,,
+Birds,Picidae,Melanerpes uropygialis,Gila woodpecker,SE,19880317,,
+Birds,Tyrannidae,Empidonax traillii,Willow flycatcher,SE,19910102,,
+Birds,Tyrannidae,Empidonax traillii extimus,Southwestern willow flycatcher,(SE),,FE,19950329
+Birds,Laniidae,Lanius ludovicianus mearnsi,San Clemente loggerhead shrike,,,FE,19770912
+Birds,Vireonidae,Vireo bellii arizonae,Arizona Bell’s vireo,SE,19880317,,
+Birds,Vireonidae,Vireo bellii pusillus,Least Bell’s vireo,SE,19801002,FE,19860602
+Birds,Hirundinidae,Riparia riparia,Bank swallow,ST,19890611,,
+Birds,Polioptilidae,Polioptila californica californica,Coastal California gnatcatcher,,,FT,19930330
+Birds,Emberizidae,Artemisiospiza belli clementeae,San Clemente sage sparrow,,,FT,19770912
+Birds,Emberizidae,Melospiza melodia graminea,Santa Barbara song sparrow,,,FDE,19831012
+Birds,Emberizidae,Melozone crissalis eremophilus,Inyo California towhee,SE,19801002,FPD,20131104
+Birds,Emberizidae,Passerculus sandwichensis beldingi,Belding’s savannah sparrow,SE,19740110,,
+Birds,Icteridae,Agelaius tricolor,Tricolored blackbird,ST,20190318,,
+Mammals,Soricidae,Sorex ornatus relictus ,Buena Vista Lake ornate shrew,,,FE,20020405
+Mammals,Phyllostomidae,Leptonycteris yerbabuenae,Lesser long-nosed bat,,,FDR,20180518
+Mammals,Leporidae,Sylvilagus bachmani riparius,Riparian brush rabbit,SE,19940529,FE,20000324
+Mammals,Aplodontidae,Aplodontia rufa nigra,Point Arena mountain beaver,,,FE,19911212
+Mammals,Sciuridae,Ammospermophilus nelsoni,"Nelson’s antelope
+squirrel",ST,19801002,,
+Mammals,Sciuridae,Xerospermophilus mohavensis,Mohave ground squirrel,ST,19710627,,
+Mammals,Heteromyidae,Dipodomys heermanni morroensis,Morro Bay kangaroo rat,SE,19710627,FE,19701013
+Mammals,Heteromyidae,Dipodomys ingens,Giant kangaroo rat,SE,19801002,FE,19870105
+Mammals,Heteromyidae,Dipodomys merriami parvus,San Bernardino kangaroo rat,SC,20190813,FE,19980924
+Mammals,Heteromyidae,Dipodomys nitratoides exilis,Fresno kangaroo rat,SE,19801002,FE,19850301
+Mammals,Heteromyidae,Dipodomys nitratoides nitratoides,Tipton kangaroo rat,SE,19890611,FE,19880808
+Mammals,Heteromyidae,Dipodomys stephensi,Stephens’ kangaroo rat,ST,19710627,FE,19881031
+Mammals,Heteromyidae,Perognathus longimembris pacificus,Pacific pocket mouse,,,FE,19940926
+Mammals,Cricetidae,Microtus californicus scirpensis,Amargosa vole,SE,19801002,FE,19841217
+Mammals,Cricetidae,Neotoma fuscipes riparia,Riparian woodrat,,,FE,20000324
+Mammals,Cricetidae,Reithrodontomys raviventris,Salt-marsh harvest mouse,SE,19710627,FE,19701013
+Mammals,Canidae,Canis lupus,Gray wolf,SE,20170101,FDR,20201103
+Mammals,Canidae,Urocyon littoralis,Island fox,ST,19710627,(FT),
+Mammals,Canidae,Urocyon littoralis catalinae,Santa Catalina Island fox,(ST),,FT,20160912
+Mammals,Canidae,Urocyon littoralis littoralis,San Miguel Island fox,(ST),,FDR,20160912
+Mammals,Canidae,Urocyon littoralis santacruzae,Santa Cruz Island fox,(ST),,FDR,20160216
+Mammals,Canidae,Urocyon littoralis santarosae,Santa Rosa Island fox,(ST),,FDR,20160216
+Mammals,Canidae,Vulpes macrotis mutica,San Joaquin kit fox,ST,19710627,FE,19670311
+Mammals,Canidae,Vulpes vulpes necator,Sierra Nevada red fox,ST,19801002,FPE,20200108
+Mammals,Mustelidae,Enhydra lutris nereis,Southern sea otter,,,FT,19770114
+Mammals,Mustelidae,Gulo gulo,North American wolverine,ST,19710627,,
+Mammals,Mustelidae,Martes caurina humboldtensis,Humboldt marten,SE,20190318,FT,20201008
+Mammals,Mustelidae,Pekania pennanti,Pacific fisher,ST,20190318,FE,20200615
+Mammals,Felidae,Puma concolor,Mountain lion,SC,20200421,,
+Mammals,Otariidae,Arctocephalus townsendi,Guadalupe fur seal,ST,19710627,FT,19860115
+Mammals,Otariidae,Eumetopias jubatus,Steller sea lion,,,FDR,20131204
+Mammals,Bovidae,Ovis canadensis nelsoni,Peninsular bighorn sheep,ST,19710627,FE,19980318
+Mammals,Bovidae,Ovis canadensis sierrae,"Sierra Nevada bighorn
+sheep",SE,19990827,FE,20000103
+Mammals,Cetacea,Balaenoptera borealis,Sei whale,,,FE,19700602
+Mammals,Cetacea,Balaenoptera musculus,Blue whale,,,FE,19700602
+Mammals,Cetacea,Balaenoptera physalus,Fin whale,,,FE,19700602
+Mammals,Cetacea,Eubalaena japonica,North Pacific right whale,,,FE,20080407
+Mammals,Cetacea,Eschrichtius robustus,Gray whale,,,FDR,19940616
+Mammals,Cetacea,Megaptera novaeangliae,Humpback whale,,,FE,20161011
+Mammals,Cetacea,Orcinus orca,Killer whale,,,FE,20070404
+Mammals,Cetacea,Physeter macrocephalus,Sperm whale,,,FE,19700602
