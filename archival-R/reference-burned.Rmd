@@ -1,0 +1,219 @@
+---
+title: "BACI-animals"
+author: "Marina"
+date: "3/7/2022"
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE)
+
+setwd("~/GitHub/desert-fires-impact-biodiversity")
+
+```
+
+### Load libraries and data
+
+```{r}
+library(tidyverse)
+library(mgcv)
+library(tidymv)
+
+sites <- read_csv("data/sitesv2-2022.csv") %>%
+  filter(fireYear <= 2017)
+burned <- read_csv("data/observations-2022.csv") %>% 
+  rename(obsYear = year, obsMonth = month) %>% 
+  filter(obsYear < 2021)
+
+unburned <- read_csv("data/animals-baseline-2022.csv") %>% 
+  select(-c(basisOfRecord, institutionCode)) %>% 
+  filter(obsYear > 1995, obsYear < 2021)
+
+#remove duplicates based on coordinates and individual count and species
+burned <- burned[!duplicated(burned[,c(9:16)]),]
+unburned <- unburned[!duplicated(unburned[,c(10:18)]),]
+
+#add field for burned and unburned
+burned$refType <- "burned"
+unburned$refType <- "unburned"
+
+burned <- burned %>% select(c(obsID, class, species, obsMonth, obsYear, eventDate, decimalLatitude, decimalLongitude, fireYear, fireSize, fireID, desert, refType))
+
+unburned <- unburned %>% select(c(obsID, class, species, obsMonth, obsYear, eventDate, decimalLatitude, decimalLongitude, desert, refType)) %>% 
+  mutate(fireYear = NA, fireSize = NA, fireID = NA)
+
+data <- rbind(burned, unburned) %>% 
+  subset(species != "Canis familiaris") %>% #remove Canis familiaris (domestic dog) erroneously include by GBIF when search for Canis lupis
+  filter(obsYear > 1995, obsYear < 2021)
+
+acres_burned <- group_by(sites, fireYear) %>%
+  summarize(totalFireSize = sum(fireSize))
+
+```
+
+summary of acres burned
+```{r}
+summary(acres_burned)
+
+big_fire_year <- filter(acres_burned, totalFireSize > 61037)
+
+print(big_fire_year)
+
+```
+
+
+Control-Impact Relative Difference
+```{r}
+#group data by desert and ref type
+
+#control-impact relative change in observations
+ci_data <- data %>% 
+  group_by(obsYear, refType) %>% 
+  summarise(totalObs = n())
+
+burn <- ci_data %>% filter(refType == "burned") %>% 
+  ungroup() %>% 
+  arrange(obsYear) %>% 
+  mutate(relativeChange = (totalObs - lag(totalObs))/(lag(totalObs)))
+
+ggplot(burn, aes(x = obsYear, y = relativeChange)) +
+  geom_col()
+
+unburn <- ci_data %>% filter(refType == "unburned") %>% 
+  ungroup() %>% 
+  arrange(obsYear) %>% 
+  mutate(relativeChange = (totalObs - lag(totalObs))/(lag(totalObs)))
+
+ggplot(unburn, aes(x = obsYear, y = relativeChange)) +
+  geom_col() +
+  geom_line(aes(y = 0))
+
+ci_graph <- rbind(burn, unburn) %>% 
+  mutate(fireYear = obsYear %in% big_fire_year$fireYear) #add years that exp big fires
+
+ci_bigfireyears <- ci_graph %>% filter(fireYear == TRUE)
+
+ggplot(ci_graph, aes(x = obsYear, y = relativeChange, fill = refType)) +
+  geom_col() +
+  geom_line(aes(y = 0)) +
+  geom_col(data = ci_bigfireyears, aes(x = obsYear, y = relativeChange, fill = refType), color = "darkred", show.legend=FALSE) + 
+  scale_fill_manual(values=c("#CD853F", "#696969"), 
+                    name="Site\nCondition",
+                    labels=c("Burned", "Never-burned")) +
+  labs(x = 'Year', y = "Relative change in reported occurrence") +
+  theme_bw()
+
+#ANOVA to see the effect of fire on relative change
+rel.change.anova <- aov(relativeChange ~ refType, data = ci_graph)
+
+summary(rel.change.anova)  
+
+#Chi-square to compare burned and unburned
+chisq_df <- ci_graph %>% mutate(pos_change = as.factor(relativeChange > 0 ))
+
+chisq_table <- table(chisq_df$refType, chisq_df$pos_change)
+
+chisq_table
+
+chisq_test <- chisq.test(chisq_df$refType, chisq_df$pos_change)
+chisq_test
+
+```
+
+Control-Regression
+```{r}
+data1 <- data %>% 
+  group_by(obsYear, desert, refType) %>% 
+  summarise(totalObs = n()) %>% ungroup()
+
+data1$desert <- as.factor(data1$desert)
+data1$refType <- as.factor(data1$refType)
+
+data_burned <- data1 %>% filter(refType == "burned")
+data_unburned <- data1 %>% filter(refType == "unburned")
+
+ggplot(data_unburned, aes(x = obsYear, y = totalObs, color = desert)) +
+  geom_point() +
+  geom_smooth(method = "gam", se = TRUE, show.legend = FALSE, aes(fill = desert)) +
+  ylim(0, 1500) +
+  xlim(1996, 2020) +
+  scale_color_manual(values = c("#66c2a5", "#fc8d62", "#8da0cb")) +
+  scale_fill_manual(values = c('#66c2a5', "#fc8d62", "#8da0cb")) +
+  theme_bw() +
+  theme(axis.title.x = element_blank()) +
+  ylab("Total endangered animal specis \noccurrences reported")
+
+
+ggplot(data_burned, aes(x = obsYear, y = totalObs, color = desert)) +
+  geom_point() +
+  geom_smooth(method = "gam", se = TRUE, show.legend = FALSE, aes(fill = desert), formula = y ~ s(x, bs = "tp")) +
+  ylim(0, 30) +
+  xlim(1996, 2020) +
+  scale_color_manual(values = c("#1b9e77", "#d95f02", "#7570b3")) +
+  scale_fill_manual(values = c('#1b9e77', "#d95f02", "#7570b3")) +
+  theme_bw() +
+  theme(axis.title.x = element_blank()) +
+  ylab("Total endangered animal specis \noccurrences reported")
+  
+
+data1 <- data1 %>% mutate(fireYear = as.factor(obsYear %in% sites$fireYear))
+
+
+gam_model1 <- gam(totalObs ~ s(obsYear, by = refType), 
+                  data = data1, 
+                  method = "REML",
+                  family = "poisson",
+                  link = "log")
+
+gam_mod2 <- gam(totalObs ~ s(obsYear, by = desert) + desert, data = data_burned, 
+                  method = "REML")
+
+gam_mod3 <- gam(totalObs ~ s(obsYear, by = desert) + desert, data = data_unburned, 
+                  method = "REML")
+
+gam_mod4 <- gam(totalObs ~ s(obsYear), data = data_unburned, 
+                  method = "REML")
+
+
+ggplot(data_unburned, aes(x = totalObs)) +
+  geom_histogram()
+
+#run this considering desert and burned vs unburned make sure to change categories to factors first
+
+#compare model that takes burns into consideration to those that don't 
+
+#consider binary of fire year 1 = yes, 0 = n fireyears?
+#or fire within last 4 years?  
+
+summary(gam_model1)
+plot(gam_model1, pages = 1, all.terms = TRUE, residuals = TRUE, pch = 1, shift = coef(gam_model1)[1])
+gam.check(gam_model1)
+
+summary(gam_mod2)
+plot(gam_mod2, pages = 1, residuals = TRUE, pch = 1, shift = coef(gam_mod2)[1], shade = TRUE, shade.col = c("#1b9e77", "#d95f02", "#7570b3"))
+gam.check(gam_mod2)
+
+summary(gam_mod3)
+plot(gam_mod3, pages = 1, residuals = TRUE, pch = 1, shift = coef(gam_mod3)[1])
+gam.check(gam_mod3)
+
+
+summary(gam_mod4)
+plot(gam_mod4, pages = 1, residuals = TRUE, pch = 1, shift = coef(gam_mod4)[1])
+gam.check(gam_mod4)
+
+
+plot_smooths(model = gam_mod2, series = obsYear, comparison = desert) +
+  geom_point(data = data_burned, aes(x = obsYear, y = totalObs, color = desert)) +
+  ylim(0, 30) +
+  xlim(1996, 2020) +
+  scale_color_manual(values = c("#1b9e77", "#d95f02", "#7570b3")) +
+  scale_fill_manual(values = c('#1b9e77', "#d95f02", "#7570b3")) +
+  scale_linetype_manual(values = c("solid", "solid", "solid")) +
+  theme_bw() +
+  theme(axis.title.x = element_blank()) +
+  ylab("Total endangered animal specis \noccurrences reported")
+
+```
+

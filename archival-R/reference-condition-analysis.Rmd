@@ -1,0 +1,220 @@
+---
+title: "Controls"
+author: "Marina"
+date: "11/16/2021"
+output: html_document
+---
+
+```{r}
+library(tidyverse)
+library(mgcv)
+library(sf)
+library(lwgeom)
+
+setwd("~/GitHub/desert-fires-impact-biodiversity")
+
+animals <- st_read("shapefiles/animals_v3/animals_v3.shp") %>% 
+  st_drop_geometry() %>% 
+  rename(obsID = TARGET_FID, order = order_, individualCount = individual, obsDay = day, obsMonth = month, obsYear = year, institutionalCode = institutio, treatmentGroup = treatmentG, fireName = INCIDENT, fireYear = FIRE_YEARn, fireSize = GISAcres) %>% 
+  select(-c("verbatimSc", "issue", "coordinate", 'nearRd_FID', "nearUA_FID")) %>% 
+  filter(obsYear > 1999, obsYear < 2021 )
+  
+
+ndvi_burned <- read_csv("data/mean_ndvi_burned.csv") %>% 
+  mutate(treatmentGroup = "burned")
+ndvi_nb <- read_csv("data/mean_ndvi.csv") %>% 
+  mutate(treatmentGroup = "never burned")
+
+ndvi <- rbind(ndvi_burned, ndvi_nb) %>% 
+  rename(obsYear = year)
+
+```
+
+Summarize how many animal observations in each treatment group and add ndvi
+Plot the average ndvi for the the three deserts
+Get area of burned area and never-burned area
+
+```{r}
+data <- animals %>%
+  group_by(obsYear, treatmentGroup, desert) %>% 
+  summarize(totalObs = n()) %>% 
+  filter(treatmentGroup != "burned prior 2000")
+
+data <- left_join(data, ndvi, by = c("desert", "obsYear", "treatmentGroup"))
+
+head(data)
+
+avg_ndvi <- data %>% group_by(treatmentGroup, desert) %>% summarize(avg_ndvi = mean(ndvi))
+
+ggplot(avg_ndvi, aes(x = desert, y = avg_ndvi, shape = treatmentGroup)) +
+  geom_point()
+
+```
+
+Get areas to standardize observations
+```{r}
+fireid <- unique(animals$fireID)
+
+fire_area <- st_read("shapefiles/fires/fires2000.shp") %>% #polygons for never-burned desert sites
+        st_transform(crs = 4326) %>% #transform data to wgs84 to match raster
+        filter(fireID %in% fireid)
+
+fire_area_sj <- fire_area %>% 
+  filter(desert == "San Joaquin")
+fire_area_moj <- fire_area %>% 
+  filter(desert == "Mojave")
+fire_area_son <- fire_area %>% 
+  filter(desert == "Sonoran")
+
+fire_area_moj$area_km2 <- st_geod_area(fire_area_moj) / 1000000
+as.numeric(sum(fire_area_moj$area_km2))
+fire_area_sj$area_km2 <- st_geod_area(fire_area_sj) / 1000000
+as.numeric(sum(fire_area_sj$area_km2))
+fire_area_son$area_km2 <- st_geod_area(fire_area_son) / 1000000
+as.numeric(sum(fire_area_son$area_km2))
+
+desert <- c("San Joaquin", "Mojave", "Sonoran")
+area_km2 <- c(as.numeric(sum(fire_area_sj$area_km2)),
+              as.numeric(sum(fire_area_moj$area_km2)),
+              as.numeric(sum(fire_area_son$area_km2)))
+
+areas <- data.frame(desert, area_km2) %>% 
+  mutate(treatmentGroup = "burned")
+
+head(areas)
+
+nb_area <- st_read("shapefiles/deserts/minus-fires/deserts-minus-fires.shp") %>% #polygons for never-burned desert sites
+        st_transform(crs = 4326) #transform data to wgs84 to match raster
+
+nb_area_sj <- nb_area %>% 
+  filter(desert == "San Joaquin")
+nb_area_moj <- nb_area %>% 
+  filter(desert == "Mojave")
+nb_area_son <- nb_area %>% 
+  filter(desert == "Sonoran")
+
+nb_area_moj$area_km2 <- st_geod_area(nb_area_moj) / 1000000
+as.numeric(sum(nb_area_moj$area_km2))
+nb_area_sj$area_km2 <- st_geod_area(nb_area_sj) / 1000000
+as.numeric(sum(nb_area_sj$area_km2))
+nb_area_son$area_km2 <- st_geod_area(nb_area_son) / 1000000
+as.numeric(sum(nb_area_son$area_km2))
+
+area_km2 <- c(as.numeric(sum(nb_area_sj$area_km2)),
+              as.numeric(sum(nb_area_moj$area_km2)),
+              as.numeric(sum(nb_area_son$area_km2)))
+areas_nb <- data.frame(desert, area_km2) %>% 
+  mutate(treatmentGroup = "never burned")
+areas <- rbind(areas, areas_nb)
+
+head(areas)
+
+data <- left_join(data, areas, by = c("desert", "treatmentGroup"))
+
+data <- data %>% mutate(st_totalObs = (totalObs * 1000)/area_km2)
+
+head(data)
+
+write.csv(data, "data/animal_observations_2022.csv")
+
+```
+
+
+quick viz
+
+```{r}
+ggplot(data, aes(x = obsYear, y = st_totalObs, color = treatmentGroup, shape = desert)) +
+  geom_point() +
+  geom_smooth(aes(weight = ndvi), method = gam) +
+  ylim(0, 15) +
+  xlim(2000, 2020) +
+  facet_grid(vars(desert)) +
+  ylab("total observations per 1000km^2")
+
+ggplot(data, aes(x = obsYear, y = ndvi, color = treatmentGroup, shape = desert)) +
+  geom_point() +
+  ylim(-1, 1) +
+  xlim(2000, 2020) +
+  facet_grid(vars(desert))
+
+
+
+model <- bam(st_totalObs ~ obsYear, data = data)
+acf(model$residuals, type = "correlation")
+
+summary(model)
+
+plot(model)
+
+```
+
+finding change over the course of the years from 1990 - 2021
+```{r}
+#make sure there is data for all years 1990-2021
+unique(data$obsYear)
+
+data <- data %>% 
+  group_by(desert) %>% 
+  arrange(year, .by_group = TRUE) %>% 
+  mutate(pct_change = ((totalObs - lag(totalObs))/lag(totalObs))*100)
+
+#2021 was pulled earlier in the year so need to filter out
+data <- data %>% 
+  filter(year != 2021)
+
+#avg change among desert
+change <- data %>% 
+  group_by(year) %>% 
+  summarize(avg_pct_change = mean(pct_change))
+
+```
+
+quick viz of change for all three desert as one
+
+```{r}
+#to make bars different colors
+change <- change %>% 
+  mutate(pos = avg_pct_change >= 0)
+
+
+ggplot(change, aes(year, avg_pct_change, fill = pos)) +
+  geom_col()+
+  theme(legend.position = "None")
+```
+
+quick viz for three desert individually
+
+```{r}
+#to make bars different colors
+
+data <- data %>% 
+  mutate(pos = pct_change >= 0)
+
+ggplot(data, aes(year, pct_change, fill = pos)) +
+  geom_col()+
+  theme(legend.position = "None") +
+  facet_grid(rows = vars(desert))
+```
+
+Compare to burned sites
+
+```{r}
+burn_data <- read_csv("data/observations.csv")
+```
+restructure data
+
+```{r}
+burn_data <- burn_data %>%
+  group_by(obsYear) %>% 
+  summarize(totalObs = n()) %>% 
+  filter(obsYear >= 1990) %>% 
+  filter(obsYear != 2021) %>% 
+  arrange(obsYear) %>% 
+  mutate(pct_change = ((totalObs - lag(totalObs))/lag(totalObs))*100) %>% 
+  mutate(pos = pct_change >= 0)
+  
+ggplot(burn_data, aes(obsYear, pct_change, fill = pos)) +
+  geom_col()+
+  theme(legend.position = "None")
+  
+```

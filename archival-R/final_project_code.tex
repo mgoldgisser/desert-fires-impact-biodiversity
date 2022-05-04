@@ -1,0 +1,1154 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\title{Final Project}
+\author{Marina}
+\date{12/8/2021}
+
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Final Project},
+  pdfauthor={Marina},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\begin{document}
+\maketitle
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{setwd}\NormalTok{(}\StringTok{"\textasciitilde{}/GitHub/desert{-}fires{-}impact{-}biodiversity"}\NormalTok{)}
+\FunctionTok{library}\NormalTok{(tidyverse)}
+\FunctionTok{library}\NormalTok{(vegan)}
+\FunctionTok{library}\NormalTok{(ggfortify)}
+\FunctionTok{library}\NormalTok{(skimr)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{baseline-data}{%
+\section{Baseline data}\label{baseline-data}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#endangered animal species data for never{-}burned area}
+\NormalTok{MOJ }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{"data/animals{-}no{-}burn\_MOJ.csv"}\NormalTok{)}
+\NormalTok{SJ }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{"data/animals{-}no{-}burn\_SJ.csv"}\NormalTok{)}
+\NormalTok{SON }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{"data/animals{-}no{-}burn\_SON.csv"}\NormalTok{)}
+
+\CommentTok{\#add column for desert}
+\NormalTok{MOJ}\SpecialCharTok{$}\NormalTok{desert }\OtherTok{\textless{}{-}} \FunctionTok{ifelse}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(MOJ}\SpecialCharTok{$}\NormalTok{desert), }\StringTok{"Mojave"}\NormalTok{, MOJ}\SpecialCharTok{$}\NormalTok{desert)}
+\NormalTok{SJ}\SpecialCharTok{$}\NormalTok{desert }\OtherTok{\textless{}{-}} \FunctionTok{ifelse}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(SJ}\SpecialCharTok{$}\NormalTok{desert), }\StringTok{"San Joaquin"}\NormalTok{, SJ}\SpecialCharTok{$}\NormalTok{desert)}
+\NormalTok{SON}\SpecialCharTok{$}\NormalTok{desert }\OtherTok{\textless{}{-}} \FunctionTok{ifelse}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(SON}\SpecialCharTok{$}\NormalTok{desert), }\StringTok{"Sonoran"}\NormalTok{, SON}\SpecialCharTok{$}\NormalTok{desert)}
+
+\CommentTok{\#add column for kingdom taxa for modeling}
+\NormalTok{raw\_an }\OtherTok{\textless{}{-}} \FunctionTok{bind\_rows}\NormalTok{(MOJ, SJ, SON) }\SpecialCharTok{\%\textgreater{}\%} 
+\NormalTok{  dplyr}\SpecialCharTok{::}\FunctionTok{select}\NormalTok{(}\SpecialCharTok{{-}}\NormalTok{FID) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{kingdom =} \StringTok{"animalia"}\NormalTok{)}
+
+\CommentTok{\#plant data in never{-}burned area}
+\NormalTok{MOJ\_pl }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{"data/plants{-}noburn{-}MOJ.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: Missing column names filled in: 'X14' [14], 'X26' [26]
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: 4 parsing failures.
+##   row                 col           expected      actual                         file
+## 23494 coordinatePrecision 1/0/T/F/TRUE/FALSE 2.777778E-4 'data/plants-noburn-MOJ.csv'
+## 23495 coordinatePrecision 1/0/T/F/TRUE/FALSE 2.77778E-5  'data/plants-noburn-MOJ.csv'
+## 23496 coordinatePrecision 1/0/T/F/TRUE/FALSE 2.77778E-5  'data/plants-noburn-MOJ.csv'
+## 23497 coordinatePrecision 1/0/T/F/TRUE/FALSE 2.777778E-4 'data/plants-noburn-MOJ.csv'
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{SJ\_pl }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{"data/plants{-}noburn{-}SJ.csv"}\NormalTok{)}
+\NormalTok{SON\_pl }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{"data/plants{-}noburn{-}SON.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: 40 parsing failures.
+##   row             col           expected actual                         file
+## 23474 individualCount 1/0/T/F/TRUE/FALSE      2 'data/plants-noburn-SON.csv'
+## 30531 individualCount 1/0/T/F/TRUE/FALSE      4 'data/plants-noburn-SON.csv'
+## 30532 individualCount 1/0/T/F/TRUE/FALSE      4 'data/plants-noburn-SON.csv'
+## 30533 individualCount 1/0/T/F/TRUE/FALSE      4 'data/plants-noburn-SON.csv'
+## 30536 individualCount 1/0/T/F/TRUE/FALSE      4 'data/plants-noburn-SON.csv'
+## ..... ............... .................. ...... ............................
+## See problems(...) for more details.
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#tidyupd data}
+\NormalTok{raw\_pl }\OtherTok{\textless{}{-}} \FunctionTok{bind\_rows}\NormalTok{(MOJ\_pl, SJ\_pl, SON\_pl) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{rename}\NormalTok{(}\AttributeTok{obsID =}\NormalTok{ OBJECTID, }\AttributeTok{dcmlLng =}\NormalTok{ decimalLongitude, }\AttributeTok{dcmlLtt =}\NormalTok{ decimalLatitude, }\AttributeTok{bssOfRc =}\NormalTok{ basisOfRecord, }\AttributeTok{indvdlC =}\NormalTok{ individualCount, }\AttributeTok{order =}\NormalTok{ order\_) }\SpecialCharTok{\%\textgreater{}\%} 
+\NormalTok{  dplyr}\SpecialCharTok{::}\FunctionTok{select}\NormalTok{(}\FunctionTok{c}\NormalTok{(obsID, species, kingdom, class, order, year, month, day, dcmlLng, dcmlLtt, indvdlC, bssOfRc, desert))}
+
+\NormalTok{raw\_pl}\SpecialCharTok{$}\NormalTok{indvdlC }\OtherTok{\textless{}{-}} \FunctionTok{ifelse}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(raw\_pl}\SpecialCharTok{$}\NormalTok{indvdlC), }\DecValTok{0}\NormalTok{, raw\_pl}\SpecialCharTok{$}\NormalTok{indvdlC)}
+
+\CommentTok{\#join plant and animal data}
+\NormalTok{raw }\OtherTok{\textless{}{-}} \FunctionTok{union}\NormalTok{(raw\_an, raw\_pl)}
+
+\CommentTok{\#summarize total animal occurrences between 1995 and 2021}
+\NormalTok{data }\OtherTok{\textless{}{-}}\NormalTok{ raw\_an }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{group\_by}\NormalTok{(year, desert) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarize}\NormalTok{(}\AttributeTok{totalObs =} \FunctionTok{n}\NormalTok{()) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{filter}\NormalTok{(year }\SpecialCharTok{\textgreater{}}\DecValTok{1994}\NormalTok{, year }\SpecialCharTok{\textless{}}\DecValTok{2021}\NormalTok{)}
+
+\CommentTok{\#plot showing the change in total occurrences per year over the 15 year period}
+\FunctionTok{ggplot}\NormalTok{(data, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ year, }\AttributeTok{y =}\NormalTok{ totalObs, }\AttributeTok{col =}\NormalTok{ desert, }\AttributeTok{shape =}\NormalTok{ desert)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{method =} \StringTok{"glm"}\NormalTok{, }\AttributeTok{method.args =} \FunctionTok{list}\NormalTok{(}\AttributeTok{family =} \StringTok{"poisson"}\NormalTok{), }\FunctionTok{aes}\NormalTok{(}\AttributeTok{fill =}\NormalTok{ desert)) }\SpecialCharTok{+}
+  \FunctionTok{ylim}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{1750}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{xlim}\NormalTok{(}\DecValTok{1995}\NormalTok{, }\DecValTok{2020}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{ylab}\NormalTok{(}\StringTok{"Total endangered animal species }\SpecialCharTok{\textbackslash{}n}\StringTok{ occurrences"}\NormalTok{)}\SpecialCharTok{+}
+  \FunctionTok{theme\_bw}\NormalTok{(}\AttributeTok{base\_size =} \DecValTok{15}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_color\_manual}\NormalTok{(}\AttributeTok{values =} \FunctionTok{c}\NormalTok{(}\StringTok{"darkgoldenrod4"}\NormalTok{, }\StringTok{"darkblue"}\NormalTok{, }\StringTok{"green4"}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{scale\_fill\_manual}\NormalTok{(}\AttributeTok{values =} \FunctionTok{c}\NormalTok{(}\StringTok{"darkgoldenrod4"}\NormalTok{, }\StringTok{"darkblue"}\NormalTok{, }\StringTok{"green4"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: Removed 1 rows containing missing values (geom_smooth).
+\end{verbatim}
+
+\includegraphics{final_project_code_files/figure-latex/unnamed-chunk-1-1.pdf}
+
+generalized linear model using Poisson regression
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#check for data distribution}
+\FunctionTok{ggplot}\NormalTok{(data, }\FunctionTok{aes}\NormalTok{(totalObs)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_histogram}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{final_project_code_files/figure-latex/unnamed-chunk-2-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#check if mean = variance}
+\FunctionTok{mean}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{totalObs)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 480.8974
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{var}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{totalObs)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 196501.4
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model1 }\OtherTok{\textless{}{-}} \FunctionTok{glm}\NormalTok{(totalObs }\SpecialCharTok{\textasciitilde{}}\NormalTok{ year, }\AttributeTok{family =} \StringTok{"quasipoisson"}\NormalTok{, data)}
+\NormalTok{model2 }\OtherTok{\textless{}{-}} \FunctionTok{glm}\NormalTok{(totalObs }\SpecialCharTok{\textasciitilde{}}\NormalTok{ year, }\AttributeTok{family =} \StringTok{"poisson"}\NormalTok{, data)}
+
+\FunctionTok{summary}\NormalTok{(model1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## glm(formula = totalObs ~ year, family = "quasipoisson", data = data)
+## 
+## Deviance Residuals: 
+##     Min       1Q   Median       3Q      Max  
+## -14.907   -7.093   -1.750    2.884   28.903  
+## 
+## Coefficients:
+##               Estimate Std. Error t value Pr(>|t|)    
+## (Intercept) -2.421e+02  1.654e+01  -14.64   <2e-16 ***
+## year         1.235e-01  8.214e-03   15.04   <2e-16 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## (Dispersion parameter for quasipoisson family taken to be 90.82591)
+## 
+##     Null deviance: 31229.6  on 77  degrees of freedom
+## Residual deviance:  5574.6  on 76  degrees of freedom
+## AIC: NA
+## 
+## Number of Fisher Scoring iterations: 5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(model2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## glm(formula = totalObs ~ year, family = "poisson", data = data)
+## 
+## Deviance Residuals: 
+##     Min       1Q   Median       3Q      Max  
+## -14.907   -7.093   -1.750    2.884   28.903  
+## 
+## Coefficients:
+##               Estimate Std. Error z value Pr(>|z|)    
+## (Intercept) -2.421e+02  1.735e+00  -139.5   <2e-16 ***
+## year         1.235e-01  8.619e-04   143.3   <2e-16 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## (Dispersion parameter for poisson family taken to be 1)
+## 
+##     Null deviance: 31229.6  on 77  degrees of freedom
+## Residual deviance:  5574.6  on 76  degrees of freedom
+## AIC: 6160.5
+## 
+## Number of Fisher Scoring iterations: 5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{pchisq}\NormalTok{(model1}\SpecialCharTok{$}\NormalTok{deviance, model1}\SpecialCharTok{$}\NormalTok{df.residual, }\AttributeTok{lower.tail=}\NormalTok{F)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{pchisq}\NormalTok{(model2}\SpecialCharTok{$}\NormalTok{deviance, model1}\SpecialCharTok{$}\NormalTok{df.residual, }\AttributeTok{lower.tail=}\NormalTok{F)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0
+\end{verbatim}
+
+Average percent change in occurrence records year-to-year
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{data }\OtherTok{\textless{}{-}}\NormalTok{ data }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{filter}\NormalTok{(year }\SpecialCharTok{\textgreater{}=} \DecValTok{1990}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(desert) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{arrange}\NormalTok{(year, }\AttributeTok{.by\_group =} \ConstantTok{TRUE}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{pct\_change =}\NormalTok{ ((totalObs }\SpecialCharTok{{-}} \FunctionTok{lag}\NormalTok{(totalObs))}\SpecialCharTok{/}\FunctionTok{lag}\NormalTok{(totalObs))}\SpecialCharTok{*}\DecValTok{100}\NormalTok{)}
+
+\CommentTok{\#2021 was pulled earlier in the year so need to filter out}
+\NormalTok{data }\OtherTok{\textless{}{-}}\NormalTok{ data }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{filter}\NormalTok{(year }\SpecialCharTok{!=} \DecValTok{2021}\NormalTok{)}
+
+\CommentTok{\#avg change among desert}
+\NormalTok{change }\OtherTok{\textless{}{-}}\NormalTok{ data }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(year) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarize}\NormalTok{(}\AttributeTok{avg\_pct\_change =} \FunctionTok{mean}\NormalTok{(pct\_change))}
+
+\CommentTok{\#viz of avg percent change}
+\NormalTok{change }\OtherTok{\textless{}{-}}\NormalTok{ change }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{pos =}\NormalTok{ avg\_pct\_change }\SpecialCharTok{\textgreater{}=} \DecValTok{0}\NormalTok{)}
+
+\FunctionTok{sum}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{totalObs)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 37510
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{totalObs)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##    35.0   102.0   309.0   480.9   786.0  1557.0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(change, }\FunctionTok{aes}\NormalTok{(year, avg\_pct\_change, }\AttributeTok{fill =}\NormalTok{ pos)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_col}\NormalTok{()}\SpecialCharTok{+}
+  \FunctionTok{theme\_bw}\NormalTok{(}\AttributeTok{base\_size =} \DecValTok{22}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{legend.position =} \StringTok{"None"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{ylab}\NormalTok{(}\StringTok{"Average }\SpecialCharTok{\textbackslash{}n}\StringTok{ percent change"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_fill\_manual}\NormalTok{(}\AttributeTok{values =} \FunctionTok{c}\NormalTok{(}\StringTok{"red3"}\NormalTok{, }\StringTok{"blue4"}\NormalTok{)) }\SpecialCharTok{+} \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"Figure 2a"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: Removed 1 rows containing missing values (position_stack).
+\end{verbatim}
+
+\includegraphics{final_project_code_files/figure-latex/unnamed-chunk-3-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#viz avg percent change in burned area}
+\NormalTok{burn\_data }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{"data/observations.csv"}\NormalTok{)}
+\NormalTok{burn\_data }\OtherTok{\textless{}{-}}\NormalTok{ burn\_data }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{group\_by}\NormalTok{(obsYear) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarize}\NormalTok{(}\AttributeTok{totalObs =} \FunctionTok{n}\NormalTok{()) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{filter}\NormalTok{(obsYear }\SpecialCharTok{\textgreater{}=} \DecValTok{1990}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{filter}\NormalTok{(obsYear }\SpecialCharTok{!=} \DecValTok{2021}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{arrange}\NormalTok{(obsYear) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{pct\_change =}\NormalTok{ ((totalObs }\SpecialCharTok{{-}} \FunctionTok{lag}\NormalTok{(totalObs))}\SpecialCharTok{/}\FunctionTok{lag}\NormalTok{(totalObs))}\SpecialCharTok{*}\DecValTok{100}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{pos =}\NormalTok{ pct\_change }\SpecialCharTok{\textgreater{}=} \DecValTok{0}\NormalTok{)}
+  
+\FunctionTok{ggplot}\NormalTok{(burn\_data, }\FunctionTok{aes}\NormalTok{(obsYear, pct\_change, }\AttributeTok{fill =}\NormalTok{ pos)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_col}\NormalTok{()}\SpecialCharTok{+} \FunctionTok{theme\_bw}\NormalTok{(}\AttributeTok{base\_size =} \DecValTok{22}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{legend.position =} \StringTok{"None"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{ylab}\NormalTok{(}\StringTok{"Average }\SpecialCharTok{\textbackslash{}n}\StringTok{ percent change"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{xlab}\NormalTok{(}\StringTok{"year"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_fill\_manual}\NormalTok{(}\AttributeTok{values =} \FunctionTok{c}\NormalTok{(}\StringTok{"red3"}\NormalTok{, }\StringTok{"blue4"}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{legend.position =} \StringTok{"None"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"Figure 2b"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: Removed 1 rows containing missing values (position_stack).
+\end{verbatim}
+
+\includegraphics{final_project_code_files/figure-latex/unnamed-chunk-3-2.pdf}
+
+\hypertarget{pca-for-plant-species}{%
+\section{PCA for plant species}\label{pca-for-plant-species}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#load data}
+\NormalTok{sites }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{"data/sites.csv"}\NormalTok{)  }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{select}\NormalTok{(}\FunctionTok{c}\NormalTok{(fireID, fireMonth, desert))}
+\NormalTok{plants }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{"data/plants{-}at{-}fire{-}sites.csv"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{left\_join}\NormalTok{(sites, }\AttributeTok{by =} \StringTok{"fireID"}\NormalTok{)}
+
+\CommentTok{\#list of unique plant species}
+\NormalTok{species }\OtherTok{\textless{}{-}}\NormalTok{ plants }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{select}\NormalTok{(}\FunctionTok{c}\NormalTok{(genus, species)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{unique}\NormalTok{()}
+
+\CommentTok{\#filter plants for key native genus and key invasive species}
+\NormalTok{native\_genus }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"Ephedra"}\NormalTok{, }\StringTok{"Yucca"}\NormalTok{, }\StringTok{"Opuntia"}\NormalTok{, }\StringTok{"Ambrosia"}\NormalTok{, }\StringTok{"Atriplex"}\NormalTok{, }\StringTok{"Olneya"}\NormalTok{, }\StringTok{"Carnegiea"}\NormalTok{, }\StringTok{"Larrea"}\NormalTok{)}
+\NormalTok{inv\_genus }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"Bromus"}\NormalTok{, }\StringTok{"Schismus"}\NormalTok{, }\StringTok{"Pennisetum"}\NormalTok{)}
+
+\NormalTok{native\_spe }\OtherTok{\textless{}{-}}\NormalTok{ species }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{filter}\NormalTok{(genus }\SpecialCharTok{\%in\%}\NormalTok{ native\_genus)}
+
+\NormalTok{inv\_spe }\OtherTok{\textless{}{-}}\NormalTok{ species }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{filter}\NormalTok{(genus }\SpecialCharTok{\%in\%}\NormalTok{ inv\_genus)}
+
+\NormalTok{plants\_native }\OtherTok{\textless{}{-}}\NormalTok{ plants }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{filter}\NormalTok{(genus }\SpecialCharTok{\%in\%}\NormalTok{ native\_genus)}
+
+\NormalTok{plants\_invasive }\OtherTok{\textless{}{-}}\NormalTok{ plants }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{filter}\NormalTok{(genus }\SpecialCharTok{\%in\%}\NormalTok{ inv\_genus)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#native species}
+\NormalTok{plants\_native }\OtherTok{\textless{}{-}}\NormalTok{ plants\_native }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{postingvalue =}\NormalTok{ obsYear }\SpecialCharTok{{-}}\NormalTok{ fireYear, }
+         \AttributeTok{pre\_or\_post =} \FunctionTok{case\_when}\NormalTok{(postingvalue }\SpecialCharTok{\textgreater{}} \DecValTok{0} \SpecialCharTok{\textasciitilde{}} \StringTok{"post"}\NormalTok{,}
+\NormalTok{                                 postingvalue }\SpecialCharTok{\textless{}} \DecValTok{0} \SpecialCharTok{\textasciitilde{}} \StringTok{"pre"}\NormalTok{,}
+\NormalTok{                                 postingvalue }\SpecialCharTok{==} \DecValTok{0} \SpecialCharTok{\textasciitilde{}} \StringTok{"SY"}\NormalTok{),}
+         \AttributeTok{n\_years =} \FunctionTok{abs}\NormalTok{(postingvalue))}
+
+\CommentTok{\#find pre{-} post{-} for observations in the same year and replace SY in datafire with pre or post}
+\NormalTok{SY }\OtherTok{\textless{}{-}} \FunctionTok{filter}\NormalTok{(plants\_native, postingvalue }\SpecialCharTok{==} \DecValTok{0}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{postingmonth =}\NormalTok{ month }\SpecialCharTok{{-}}\NormalTok{ fireMonth,}
+    \AttributeTok{pre\_or\_post =} \FunctionTok{case\_when}\NormalTok{(postingmonth }\SpecialCharTok{\textgreater{}}\DecValTok{0} \SpecialCharTok{\textasciitilde{}} \StringTok{"post"}\NormalTok{,}
+\NormalTok{                            postingmonth }\SpecialCharTok{\textless{}} \DecValTok{0} \SpecialCharTok{\textasciitilde{}} \StringTok{"pre"}\NormalTok{,}
+\NormalTok{                            postingvalue }\SpecialCharTok{==} \DecValTok{0} \SpecialCharTok{\textasciitilde{}} \StringTok{"SM"}\NormalTok{))}
+
+\NormalTok{plants\_native}\SpecialCharTok{$}\NormalTok{pre\_or\_post }\OtherTok{\textless{}{-}} \FunctionTok{ifelse}\NormalTok{(plants\_native}\SpecialCharTok{$}\NormalTok{pre\_or\_post }\SpecialCharTok{==} \StringTok{"SY"}\NormalTok{, SY}\SpecialCharTok{$}\NormalTok{pre\_or\_post, plants\_native}\SpecialCharTok{$}\NormalTok{pre\_or\_post)}
+
+\FunctionTok{unique}\NormalTok{(plants\_native}\SpecialCharTok{$}\NormalTok{pre\_or\_post) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "post" "pre"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#check if any SM (same month); would need to further categorize}
+
+\NormalTok{plants\_group\_nat }\OtherTok{\textless{}{-}}\NormalTok{  plants\_native }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(fireID, pre\_or\_post) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarize}\NormalTok{(}\AttributeTok{total =} \FunctionTok{n}\NormalTok{())}
+
+\FunctionTok{view}\NormalTok{(plants\_group\_nat)}
+
+\CommentTok{\#invasive species }
+\NormalTok{plants\_invasive }\OtherTok{\textless{}{-}}\NormalTok{ plants\_invasive }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{postingvalue =}\NormalTok{ obsYear }\SpecialCharTok{{-}}\NormalTok{ fireYear, }
+         \AttributeTok{pre\_or\_post =} \FunctionTok{case\_when}\NormalTok{(postingvalue }\SpecialCharTok{\textgreater{}} \DecValTok{0} \SpecialCharTok{\textasciitilde{}} \StringTok{"post"}\NormalTok{,}
+\NormalTok{                                 postingvalue }\SpecialCharTok{\textless{}} \DecValTok{0} \SpecialCharTok{\textasciitilde{}} \StringTok{"pre"}\NormalTok{,}
+\NormalTok{                                 postingvalue }\SpecialCharTok{==} \DecValTok{0} \SpecialCharTok{\textasciitilde{}} \StringTok{"SY"}\NormalTok{),}
+         \AttributeTok{n\_years =} \FunctionTok{abs}\NormalTok{(postingvalue))}
+
+\CommentTok{\#find pre{-} post{-} for observations in the same year and replace SY in datafire with pre or post}
+\NormalTok{SY }\OtherTok{\textless{}{-}} \FunctionTok{filter}\NormalTok{(plants\_invasive, postingvalue }\SpecialCharTok{==} \DecValTok{0}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{postingmonth =}\NormalTok{ month }\SpecialCharTok{{-}}\NormalTok{ fireMonth,}
+    \AttributeTok{pre\_or\_post =} \FunctionTok{case\_when}\NormalTok{(postingmonth }\SpecialCharTok{\textgreater{}}\DecValTok{0} \SpecialCharTok{\textasciitilde{}} \StringTok{"post"}\NormalTok{,}
+\NormalTok{                            postingmonth }\SpecialCharTok{\textless{}} \DecValTok{0} \SpecialCharTok{\textasciitilde{}} \StringTok{"pre"}\NormalTok{,}
+\NormalTok{                            postingvalue }\SpecialCharTok{==} \DecValTok{0} \SpecialCharTok{\textasciitilde{}} \StringTok{"SM"}\NormalTok{))}
+
+\NormalTok{plants\_invasive}\SpecialCharTok{$}\NormalTok{pre\_or\_post }\OtherTok{\textless{}{-}} \FunctionTok{ifelse}\NormalTok{(plants\_invasive}\SpecialCharTok{$}\NormalTok{pre\_or\_post }\SpecialCharTok{==} \StringTok{"SY"}\NormalTok{, SY}\SpecialCharTok{$}\NormalTok{pre\_or\_post, plants\_invasive}\SpecialCharTok{$}\NormalTok{pre\_or\_post)}
+
+\FunctionTok{unique}\NormalTok{(plants\_invasive}\SpecialCharTok{$}\NormalTok{pre\_or\_post) }\CommentTok{\#check if any SM (same month); would need to further categorize}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "pre"  "post"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{plants\_group\_inv }\OtherTok{\textless{}{-}}\NormalTok{  plants\_invasive }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(fireID, pre\_or\_post) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarize}\NormalTok{(}\AttributeTok{total =} \FunctionTok{n}\NormalTok{())}
+
+\FunctionTok{view}\NormalTok{(plants\_group\_inv)}
+\end{Highlighting}
+\end{Shaded}
+
+create species matrix for PCA
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{plants }\OtherTok{\textless{}{-}} \FunctionTok{union}\NormalTok{(plants\_native, plants\_invasive)}
+
+\NormalTok{matrix }\OtherTok{\textless{}{-}}\NormalTok{ plants }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{filter}\NormalTok{(n\_years }\SpecialCharTok{\textgreater{}} \SpecialCharTok{{-}}\DecValTok{5}\NormalTok{, n\_years }\SpecialCharTok{\textless{}} \DecValTok{5}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{select}\NormalTok{(}\FunctionTok{c}\NormalTok{(fireID, genus, pre\_or\_post)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{rename}\NormalTok{(}\AttributeTok{sites =}\NormalTok{ fireID) }\SpecialCharTok{\%\textgreater{}\%}  
+  \FunctionTok{group\_by}\NormalTok{(sites, genus, pre\_or\_post) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarize}\NormalTok{(}\AttributeTok{abundance =} \FunctionTok{n}\NormalTok{()) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{spread}\NormalTok{(genus, abundance)}
+  
+\CommentTok{\#view(matrix)}
+
+\CommentTok{\#replace NA with 0}
+\NormalTok{matrix[}\FunctionTok{is.na}\NormalTok{(matrix)] }\OtherTok{\textless{}{-}} \DecValTok{0}
+
+\NormalTok{plants.pca }\OtherTok{\textless{}{-}} \FunctionTok{rda}\NormalTok{(matrix[,}\SpecialCharTok{{-}}\DecValTok{1}\SpecialCharTok{:{-}}\DecValTok{2}\NormalTok{])}
+
+\CommentTok{\#remove atriplex (native plant species; already have more native species than invasives)}
+
+\CommentTok{\#}
+\FunctionTok{summary}\NormalTok{(plants.pca)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## rda(X = matrix[, -1:-2]) 
+## 
+## Partitioning of variance:
+##               Inertia Proportion
+## Total           7.333          1
+## Unconstrained   7.333          1
+## 
+## Eigenvalues, and their contribution to the variance 
+## 
+## Importance of components:
+##                          PC1    PC2    PC3     PC4     PC5      PC6
+## Eigenvalue            4.2135 1.4878 0.8843 0.61875 0.09899 0.030014
+## Proportion Explained  0.5746 0.2029 0.1206 0.08438 0.01350 0.004093
+## Cumulative Proportion 0.5746 0.7775 0.8980 0.98241 0.99591 1.000000
+## 
+## Scaling 2 for species and site scores
+## * Species are scaled proportional to eigenvalues
+## * Sites are unscaled: weighted dispersion equal on all dimensions
+## * General scaling constant of scores:  2.57551 
+## 
+## 
+## Species scores
+## 
+##               PC1      PC2      PC3      PC4      PC5       PC6
+## Ambrosia  0.09831  0.13477 -0.01164 -0.38913  0.18929  0.012063
+## Atriplex -0.40605 -0.47474 -0.30164 -0.10843 -0.14409 -0.055857
+## Bromus   -1.52146 -0.41267  0.37020  0.03776  0.04387  0.043813
+## Ephedra   0.21905 -0.05041  0.33480 -0.58313 -0.11889  0.009061
+## Opuntia   1.04279 -0.91000  0.11144  0.08137  0.05071  0.034277
+## Schismus -0.41726 -0.31476 -0.48068 -0.20599  0.10464 -0.048324
+## Yucca    -0.11140  0.04704 -0.46487 -0.07730 -0.05798  0.135541
+## 
+## 
+## Site scores (weighted sums of species scores)
+## 
+##           PC1     PC2     PC3     PC4     PC5      PC6
+## sit1 -1.34671 -1.5745 -1.0004 -0.3596 -0.4779 -0.18526
+## sit2  1.53217 -1.2382  0.1036  1.0683  0.7899 -0.17046
+## sit3  0.68212  0.8254 -0.8956  0.4941 -1.5566  1.03436
+## sit4  0.72650 -0.1672  1.1104 -1.9340 -0.3943  0.03005
+## sit5 -0.36065  0.8533  0.4720  0.6217 -0.4955 -1.99315
+## sit6 -0.07437  1.0612 -1.1876 -0.6472  1.6499  0.04997
+## sit7 -1.15905  0.2400  1.3976  0.7567  0.4845  1.23448
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{plants.pca }\OtherTok{\textless{}{-}} \FunctionTok{prcomp}\NormalTok{(matrix[}\DecValTok{3}\SpecialCharTok{:}\DecValTok{8}\NormalTok{], }\AttributeTok{scale =} \ConstantTok{FALSE}\NormalTok{)}
+
+\FunctionTok{autoplot}\NormalTok{(plants.pca, }\AttributeTok{data=}\NormalTok{matrix, }\AttributeTok{colour =} \StringTok{"pre\_or\_post"}\NormalTok{, }\AttributeTok{loadings =} \ConstantTok{TRUE}\NormalTok{, }
+         \AttributeTok{loadings.label =} \ConstantTok{TRUE}\NormalTok{, }\AttributeTok{loadings.label.size =} \DecValTok{3}\NormalTok{,}\AttributeTok{loadings.label.vjust =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\FloatTok{1.2}\NormalTok{, }\DecValTok{1}\NormalTok{, }\FloatTok{1.3}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{), }\AttributeTok{loadings.label.hjust =} \FunctionTok{c}\NormalTok{(}\SpecialCharTok{{-}}\FloatTok{0.1}\NormalTok{, }\DecValTok{0}\NormalTok{, }\SpecialCharTok{{-}}\FloatTok{0.2}\NormalTok{, }\DecValTok{0}\NormalTok{, }\SpecialCharTok{{-}}\FloatTok{0.2}\NormalTok{, }\FloatTok{0.6}\NormalTok{), }\AttributeTok{legend.title =} \StringTok{"none"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{size =} \DecValTok{3}\NormalTok{, }\AttributeTok{colour =} \FunctionTok{c}\NormalTok{(}\StringTok{"red3"}\NormalTok{, }\StringTok{"darkslateblue"}\NormalTok{,  }\StringTok{"red3"}\NormalTok{, }\StringTok{"darkslateblue"}\NormalTok{,  }\StringTok{"red3"}\NormalTok{, }\StringTok{"red3"}\NormalTok{, }\StringTok{"darkslateblue"}\NormalTok{)) }\SpecialCharTok{+} \FunctionTok{theme\_bw}\NormalTok{() }\SpecialCharTok{+} \FunctionTok{theme}\NormalTok{(}\AttributeTok{legend.title =} \FunctionTok{element\_blank}\NormalTok{()) }\SpecialCharTok{+}
+  \FunctionTok{scale\_colour\_manual}\NormalTok{(}\AttributeTok{values =} \FunctionTok{c}\NormalTok{(}\StringTok{"red3"}\NormalTok{, }\StringTok{"darkslateblue"}\NormalTok{), }\AttributeTok{labels =} \FunctionTok{c}\NormalTok{(}\StringTok{"post{-}fire"}\NormalTok{, }\StringTok{"pre{-}fire"}\NormalTok{)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_hline}\NormalTok{(}\AttributeTok{yintercept=}\DecValTok{0}\NormalTok{, }\AttributeTok{linetype=}\StringTok{"dashed"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_vline}\NormalTok{(}\AttributeTok{xintercept=}\DecValTok{0}\NormalTok{, }\AttributeTok{linetype=}\StringTok{"dashed"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_text}\NormalTok{(}\AttributeTok{vjust=}\SpecialCharTok{{-}}\NormalTok{.}\DecValTok{5}\NormalTok{, }\AttributeTok{label=}\NormalTok{(matrix}\SpecialCharTok{$}\NormalTok{sites)) }\SpecialCharTok{+}
+  \FunctionTok{guides}\NormalTok{(}\AttributeTok{color =} \FunctionTok{guide\_legend}\NormalTok{(}\AttributeTok{override.aes =} \FunctionTok{list}\NormalTok{(}\AttributeTok{size =} \DecValTok{3}\NormalTok{))) }\SpecialCharTok{+} \FunctionTok{theme}\NormalTok{(}\AttributeTok{legend.text=}\FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size=}\DecValTok{12}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{final_project_code_files/figure-latex/make sites x species matrix for pre and post fire data-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#screeplot with broomstick model }
+\FunctionTok{screeplot}\NormalTok{(plants.pca, }\AttributeTok{bstick =} \ConstantTok{TRUE}\NormalTok{, }\AttributeTok{type =} \StringTok{"lines"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{final_project_code_files/figure-latex/make sites x species matrix for pre and post fire data-2.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#check for multicollinearity}
+\FunctionTok{cor}\NormalTok{(matrix[,}\SpecialCharTok{{-}}\DecValTok{1}\SpecialCharTok{:{-}}\DecValTok{2}\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##             Ambrosia    Atriplex      Bromus    Ephedra     Opuntia    Schismus
+## Ambrosia  1.00000000 -0.25819889 -0.28629917  0.6454972 -0.06666667  0.06201737
+## Atriplex -0.25819889  1.00000000  0.59137702 -0.1666667 -0.04303315  0.88070485
+## Bromus   -0.28629917  0.59137702  1.00000000 -0.1848053 -0.51533850  0.47939906
+## Ephedra   0.64549722 -0.16666667 -0.18480532  1.0000000  0.25819889 -0.24019223
+## Opuntia  -0.06666667 -0.04303315 -0.51533850  0.2581989  1.00000000 -0.20672456
+## Schismus  0.06201737  0.88070485  0.47939906 -0.2401922 -0.20672456  1.00000000
+## Yucca     0.09128709  0.47140452 -0.02613542 -0.3535534 -0.30429031  0.67936622
+##                Yucca
+## Ambrosia  0.09128709
+## Atriplex  0.47140452
+## Bromus   -0.02613542
+## Ephedra  -0.35355339
+## Opuntia  -0.30429031
+## Schismus  0.67936622
+## Yucca     1.00000000
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#high correlation between Atriplex and Schismus. run again remove atriplex}
+\NormalTok{plants\_no\_atri }\OtherTok{\textless{}{-}}\NormalTok{ plants\_native }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{filter}\NormalTok{(genus }\SpecialCharTok{!=} \StringTok{"Atriplex"}\NormalTok{)}
+\NormalTok{plants\_no\_atri }\OtherTok{\textless{}{-}} \FunctionTok{union}\NormalTok{(plants\_no\_atri, plants\_invasive)}
+
+\NormalTok{matrix.na }\OtherTok{\textless{}{-}}\NormalTok{ plants\_no\_atri }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{filter}\NormalTok{(n\_years }\SpecialCharTok{\textgreater{}} \SpecialCharTok{{-}}\DecValTok{5}\NormalTok{, n\_years }\SpecialCharTok{\textless{}} \DecValTok{5}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{select}\NormalTok{(}\FunctionTok{c}\NormalTok{(fireID, genus, pre\_or\_post)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{rename}\NormalTok{(}\AttributeTok{sites =}\NormalTok{ fireID) }\SpecialCharTok{\%\textgreater{}\%}  
+  \FunctionTok{group\_by}\NormalTok{(sites, genus, pre\_or\_post) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarize}\NormalTok{(}\AttributeTok{abundance =} \FunctionTok{n}\NormalTok{()) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{spread}\NormalTok{(genus, abundance)}
+  
+\CommentTok{\#view(matrix)}
+
+\CommentTok{\#replace NA with 0}
+\NormalTok{matrix.na[}\FunctionTok{is.na}\NormalTok{(matrix.na)] }\OtherTok{\textless{}{-}} \DecValTok{0}
+
+\NormalTok{noatri.pca }\OtherTok{\textless{}{-}} \FunctionTok{rda}\NormalTok{(matrix.na[,}\SpecialCharTok{{-}}\DecValTok{1}\SpecialCharTok{:{-}}\DecValTok{2}\NormalTok{])}
+
+\CommentTok{\#remove atriplex (native plant species; already have more native species than invasives)}
+
+\CommentTok{\#}
+\FunctionTok{summary}\NormalTok{(noatri.pca)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## rda(X = matrix.na[, -1:-2]) 
+## 
+## Partitioning of variance:
+##               Inertia Proportion
+## Total           6.762          1
+## Unconstrained   6.762          1
+## 
+## Eigenvalues, and their contribution to the variance 
+## 
+## Importance of components:
+##                          PC1    PC2    PC3     PC4      PC5      PC6
+## Eigenvalue            4.0535 1.2853 0.7499 0.58546 0.067379 0.020344
+## Proportion Explained  0.5995 0.1901 0.1109 0.08658 0.009964 0.003009
+## Cumulative Proportion 0.5995 0.7895 0.9004 0.98703 0.996991 1.000000
+## 
+## Scaling 2 for species and site scores
+## * Species are scaled proportional to eigenvalues
+## * Sites are unscaled: weighted dispersion equal on all dimensions
+## * General scaling constant of scores:  2.523801 
+## 
+## 
+## Species scores
+## 
+##               PC1      PC2     PC3        PC4       PC5      PC6
+## Ambrosia  0.09252  0.15592 -0.1437  0.3693433  0.173046  0.06629
+## Bromus   -1.53203 -0.60633 -0.1405 -0.0270604 -0.001755  0.03166
+## Ephedra   0.22278 -0.09516 -0.5130  0.4501338 -0.114547 -0.02506
+## Opuntia   1.12164 -0.86327  0.1205  0.0008927  0.007408  0.02536
+## Schismus -0.38129 -0.16955  0.4833  0.4106145  0.039147 -0.07295
+## Yucca    -0.09797  0.18893  0.3934  0.2076425 -0.137160  0.08470
+## 
+## 
+## Site scores (weighted sums of species scores)
+## 
+##          PC1     PC2     PC3     PC4     PC5      PC6
+## sit1 -1.1542 -1.1881  1.1798  0.8482 -0.6088 -0.48335
+## sit2  1.5573 -1.1999  0.5620 -0.8163  0.7794  0.07092
+## sit3  0.6504  1.0953  0.6073 -0.4446 -1.7318  0.52083
+## sit4  0.7095 -0.3031 -1.6340  1.4336 -0.3648 -0.07981
+## sit5 -0.4202  0.6506 -0.5179 -0.9209  0.2572 -1.91765
+## sit6 -0.1202  1.2962  0.7185  0.9190  1.4670  0.50202
+## sit7 -1.2226 -0.3510 -0.9158 -1.0190  0.2019  1.38704
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{noatri.pca }\OtherTok{\textless{}{-}} \FunctionTok{prcomp}\NormalTok{(matrix.na[}\DecValTok{3}\SpecialCharTok{:}\DecValTok{8}\NormalTok{], }\AttributeTok{scale =} \ConstantTok{FALSE}\NormalTok{)}
+
+\FunctionTok{autoplot}\NormalTok{(noatri.pca, }\AttributeTok{data=}\NormalTok{matrix.na, }\AttributeTok{colour =} \StringTok{"pre\_or\_post"}\NormalTok{, }\AttributeTok{loadings =} \ConstantTok{TRUE}\NormalTok{, }
+         \AttributeTok{loadings.label =} \ConstantTok{TRUE}\NormalTok{, }\AttributeTok{loadings.label.size =} \DecValTok{3}\NormalTok{,}\AttributeTok{loadings.label.vjust =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\FloatTok{1.2}\NormalTok{, }\DecValTok{1}\NormalTok{, }\FloatTok{1.3}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{), }\AttributeTok{loadings.label.hjust =} \FunctionTok{c}\NormalTok{(}\SpecialCharTok{{-}}\FloatTok{0.1}\NormalTok{, }\DecValTok{0}\NormalTok{, }\SpecialCharTok{{-}}\FloatTok{0.2}\NormalTok{, }\DecValTok{0}\NormalTok{, }\SpecialCharTok{{-}}\FloatTok{0.2}\NormalTok{, }\FloatTok{0.6}\NormalTok{), }\AttributeTok{legend.title =} \StringTok{"none"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{size =} \DecValTok{3}\NormalTok{, }\AttributeTok{colour =} \FunctionTok{c}\NormalTok{(}\StringTok{"red3"}\NormalTok{, }\StringTok{"darkslateblue"}\NormalTok{,  }\StringTok{"red3"}\NormalTok{, }\StringTok{"darkslateblue"}\NormalTok{,  }\StringTok{"red3"}\NormalTok{, }\StringTok{"red3"}\NormalTok{, }\StringTok{"darkslateblue"}\NormalTok{)) }\SpecialCharTok{+} \FunctionTok{theme\_bw}\NormalTok{() }\SpecialCharTok{+} \FunctionTok{theme}\NormalTok{(}\AttributeTok{legend.title =} \FunctionTok{element\_blank}\NormalTok{()) }\SpecialCharTok{+}
+  \FunctionTok{scale\_colour\_manual}\NormalTok{(}\AttributeTok{values =} \FunctionTok{c}\NormalTok{(}\StringTok{"red3"}\NormalTok{, }\StringTok{"darkslateblue"}\NormalTok{), }\AttributeTok{labels =} \FunctionTok{c}\NormalTok{(}\StringTok{"post{-}fire"}\NormalTok{, }\StringTok{"pre{-}fire"}\NormalTok{)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_hline}\NormalTok{(}\AttributeTok{yintercept=}\DecValTok{0}\NormalTok{, }\AttributeTok{linetype=}\StringTok{"dashed"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_vline}\NormalTok{(}\AttributeTok{xintercept=}\DecValTok{0}\NormalTok{, }\AttributeTok{linetype=}\StringTok{"dashed"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_text}\NormalTok{(}\AttributeTok{vjust=}\SpecialCharTok{{-}}\NormalTok{.}\DecValTok{5}\NormalTok{, }\AttributeTok{label=}\NormalTok{(matrix.na}\SpecialCharTok{$}\NormalTok{sites)) }\SpecialCharTok{+}
+  \FunctionTok{guides}\NormalTok{(}\AttributeTok{color =} \FunctionTok{guide\_legend}\NormalTok{(}\AttributeTok{override.aes =} \FunctionTok{list}\NormalTok{(}\AttributeTok{size =} \DecValTok{3}\NormalTok{))) }\SpecialCharTok{+} \FunctionTok{theme}\NormalTok{(}\AttributeTok{legend.text=}\FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size=}\DecValTok{12}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{final_project_code_files/figure-latex/make sites x species matrix for pre and post fire data-3.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{screeplot}\NormalTok{(noatri.pca, }\AttributeTok{bstick =} \ConstantTok{TRUE}\NormalTok{, }\AttributeTok{type =} \StringTok{"lines"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{final_project_code_files/figure-latex/make sites x species matrix for pre and post fire data-4.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{sites }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{"data/sites.csv"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{filter}\NormalTok{(fireYear }\SpecialCharTok{\textless{}=} \DecValTok{2017}\NormalTok{)}
+\NormalTok{observations }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{"data/observations.csv"}\NormalTok{)}
+
+\NormalTok{data1 }\OtherTok{\textless{}{-}} \FunctionTok{left\_join}\NormalTok{(observations, sites, }\AttributeTok{by =} \StringTok{"fireID"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{filter}\NormalTok{(obsYear }\SpecialCharTok{\textless{}=}\DecValTok{2020}\NormalTok{, obsYear }\SpecialCharTok{\textgreater{}=} \DecValTok{1995}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{filter}\NormalTok{(fireYear }\SpecialCharTok{\textless{}=} \DecValTok{2017}\NormalTok{)}
+
+
+\NormalTok{data1}\SpecialCharTok{$}\NormalTok{fireID }\OtherTok{\textless{}{-}} \FunctionTok{as.character}\NormalTok{(data1}\SpecialCharTok{$}\NormalTok{fireID)}
+
+
+\FunctionTok{head}\NormalTok{(data1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 6 x 19
+##   obsID obsYear month   day species class order indvdlC fireID fireName fireYear
+##   <dbl>   <dbl> <dbl> <dbl> <chr>   <chr> <chr>   <dbl> <chr>  <chr>       <dbl>
+## 1    45    2009     5    15 Gopher~ Rept~ Test~       1 565    HACKBER~     2005
+## 2  1067    2020     9     5 Ovis c~ Mamm~ Arti~       1 314    EAGLE        2011
+## 3  3439    2019    11     5 Puma c~ Mamm~ Carn~       1 417    STEWART      2012
+## 4  3954    2006    12    30 Ovis c~ Mamm~ Arti~       1 314    EAGLE        2011
+## 5  4077    2018     6    29 Cyprin~ Acti~ Cypr~       1 314    EAGLE        2011
+## 6  5500    2010     4    22 Agelai~ Aves  Pass~       2 941    AVENAL       2008
+## # ... with 8 more variables: fireMonth <dbl>, startDate <dbl>, endDate <chr>,
+## #   fireSize <dbl>, lat <dbl>, long <dbl>, totalObs <dbl>, desert <chr>
+\end{verbatim}
+
+\hypertarget{pre-post--value}{%
+\subsection{Pre-/Post- value}\label{pre-post--value}}
+
+To compare observation before a fire and after a fire, create a
+pre-/post- column that identifies the observation as occurring either
+before a fire or after a fire.
+
+``postingvalue'' = obsYear - fireYear ``pre\_or\_post'' = if
+postingvalue is negative = pre; positive = post; 0 = SY\\
+those in the same year will be further catergorized by comparing the
+month of the observation. ``n\_years'' = absolute value of years between
+observation and fire
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{data1 }\OtherTok{\textless{}{-}}\NormalTok{ data1 }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{postingvalue =}\NormalTok{ obsYear }\SpecialCharTok{{-}}\NormalTok{ fireYear, }
+         \AttributeTok{pre\_or\_post =} \FunctionTok{case\_when}\NormalTok{(postingvalue }\SpecialCharTok{\textgreater{}} \DecValTok{0} \SpecialCharTok{\textasciitilde{}} \StringTok{"post"}\NormalTok{,}
+\NormalTok{                                 postingvalue }\SpecialCharTok{\textless{}} \DecValTok{0} \SpecialCharTok{\textasciitilde{}} \StringTok{"pre"}\NormalTok{,}
+\NormalTok{                                 postingvalue }\SpecialCharTok{==} \DecValTok{0} \SpecialCharTok{\textasciitilde{}} \StringTok{"SY"}\NormalTok{),}
+         \AttributeTok{n\_years =} \FunctionTok{abs}\NormalTok{(postingvalue))}
+  
+\CommentTok{\#find pre{-} post{-} for observations in the same year and replace SY in datafire with pre or post}
+\NormalTok{SY }\OtherTok{\textless{}{-}} \FunctionTok{filter}\NormalTok{(data1, postingvalue }\SpecialCharTok{==} \DecValTok{0}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{postingmonth =}\NormalTok{ month }\SpecialCharTok{{-}}\NormalTok{ fireMonth,}
+    \AttributeTok{pre\_or\_post =} \FunctionTok{case\_when}\NormalTok{(postingmonth }\SpecialCharTok{\textgreater{}}\DecValTok{0} \SpecialCharTok{\textasciitilde{}} \StringTok{"post"}\NormalTok{,}
+\NormalTok{                            postingmonth }\SpecialCharTok{\textless{}} \DecValTok{0} \SpecialCharTok{\textasciitilde{}} \StringTok{"pre"}\NormalTok{,}
+\NormalTok{                            postingvalue }\SpecialCharTok{==} \DecValTok{0} \SpecialCharTok{\textasciitilde{}} \StringTok{"SM"}\NormalTok{))}
+
+\NormalTok{data1}\SpecialCharTok{$}\NormalTok{pre\_or\_post }\OtherTok{\textless{}{-}} \FunctionTok{ifelse}\NormalTok{(data1}\SpecialCharTok{$}\NormalTok{pre\_or\_post }\SpecialCharTok{==} \StringTok{"SY"}\NormalTok{, SY}\SpecialCharTok{$}\NormalTok{pre\_or\_post, data1}\SpecialCharTok{$}\NormalTok{pre\_or\_post)}
+
+\FunctionTok{unique}\NormalTok{(data1}\SpecialCharTok{$}\NormalTok{pre\_or\_post) }\CommentTok{\#check if any SM (same month); would need to further categorize}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "post" "pre"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# need atleast 1 observation pre and 1 observation post}
+\NormalTok{ one\_each }\OtherTok{\textless{}{-}} \FunctionTok{group\_by}\NormalTok{(data1, fireID, pre\_or\_post) }\SpecialCharTok{\%\textgreater{}\%}
+   \FunctionTok{summarize}\NormalTok{(}\AttributeTok{total =} \FunctionTok{n}\NormalTok{())}
+
+\NormalTok{ one\_each }\OtherTok{\textless{}{-}}\NormalTok{ one\_each }\SpecialCharTok{\%\textgreater{}\%}
+   \FunctionTok{spread}\NormalTok{(pre\_or\_post, total) }\SpecialCharTok{\%\textgreater{}\%}
+   \FunctionTok{mutate}\NormalTok{(}\AttributeTok{post =} \FunctionTok{ifelse}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(post), }\DecValTok{0}\NormalTok{, post), }\AttributeTok{pre =} \FunctionTok{ifelse}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(pre), }\DecValTok{0}\NormalTok{, pre)) }\SpecialCharTok{\%\textgreater{}\%}
+   \FunctionTok{filter}\NormalTok{(post }\SpecialCharTok{\textgreater{}} \DecValTok{0} \SpecialCharTok{\&}\NormalTok{ pre }\SpecialCharTok{\textgreater{}} \DecValTok{0}\NormalTok{)}
+
+\NormalTok{test }\OtherTok{\textless{}{-}}\NormalTok{ one\_each}\SpecialCharTok{$}\NormalTok{fireID}
+
+\CommentTok{\#filter only that that have observations before and after a fire}
+\NormalTok{data1 }\OtherTok{\textless{}{-}}\NormalTok{ data1 }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{filter}\NormalTok{(fireID }\SpecialCharTok{\%in\%}\NormalTok{ test)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{skim}\NormalTok{(data1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{longtable}[]{@{}ll@{}}
+\caption{Data summary}\tabularnewline
+\toprule
+\endhead
+Name & data1 \\
+Number of rows & 116 \\
+Number of columns & 22 \\
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ & \\
+Column type frequency: & \\
+character & 8 \\
+numeric & 14 \\
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ & \\
+Group variables & None \\
+\bottomrule
+\end{longtable}
+
+\textbf{Variable type: character}
+
+\begin{longtable}[]{@{}lrrrrrrr@{}}
+\toprule
+skim\_variable & n\_missing & complete\_rate & min & max & empty &
+n\_unique & whitespace \\
+\midrule
+\endhead
+species & 0 & 1 & 13 & 24 & 0 & 13 & 0 \\
+class & 0 & 1 & 4 & 14 & 0 & 5 & 0 \\
+order & 0 & 1 & 8 & 18 & 0 & 9 & 0 \\
+fireID & 0 & 1 & 3 & 4 & 0 & 11 & 0 \\
+fireName & 0 & 1 & 4 & 19 & 0 & 10 & 0 \\
+endDate & 0 & 1 & 8 & 8 & 0 & 11 & 0 \\
+desert & 0 & 1 & 6 & 11 & 0 & 3 & 0 \\
+pre\_or\_post & 0 & 1 & 3 & 4 & 0 & 2 & 0 \\
+\bottomrule
+\end{longtable}
+
+\textbf{Variable type: numeric}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.09}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.06}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.09}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.08}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.06}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.08}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.08}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.08}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.08}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.08}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.26}}@{}}
+\toprule
+\begin{minipage}[b]{\linewidth}\raggedright
+skim\_variable
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+n\_missing
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+complete\_rate
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+mean
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+sd
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+p0
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+p25
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+p50
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+p75
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+p100
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+hist
+\end{minipage} \\
+\midrule
+\endhead
+obsID & 0 & 1 & 140216.07 & 80292.64 & 45.00 & 76087.25 & 133608.00 &
+200078.50 & 280223.00 & ▅▇▇▅▆ \\
+obsYear & 0 & 1 & 2013.24 & 5.94 & 1996.00 & 2010.00 & 2015.00 & 2018.00
+& 2020.00 & ▁▁▃▃▇ \\
+month & 0 & 1 & 5.78 & 2.61 & 1.00 & 4.00 & 5.00 & 7.00 & 12.00 &
+▂▇▃▁▂ \\
+day & 0 & 1 & 15.30 & 8.82 & 2.00 & 8.00 & 15.00 & 23.25 & 31.00 &
+▇▇▆▅▆ \\
+indvdlC & 0 & 1 & 1.78 & 2.20 & 1.00 & 1.00 & 1.00 & 1.00 & 13.00 &
+▇▁▁▁▁ \\
+fireYear & 0 & 1 & 2008.97 & 3.70 & 2002.00 & 2005.00 & 2010.00 &
+2012.00 & 2016.00 & ▁▇▆▆▃ \\
+fireMonth & 0 & 1 & 6.90 & 1.06 & 4.00 & 6.00 & 7.00 & 8.00 & 8.00 &
+▁▁▇▃▇ \\
+startDate & 0 & 1 & 20102089.51 & 52629.22 & 20020616.00 & 20050622.00 &
+20100828.00 & 20140430.00 & 20200721.00 & ▇▂▆▃▃ \\
+fireSize & 0 & 1 & 19470.82 & 25008.34 & 105.73 & 945.33 & 10630.18 &
+36266.55 & 63771.30 & ▇▂▁▁▃ \\
+lat & 0 & 1 & 34.69 & 1.09 & 33.14 & 33.32 & 35.11 & 35.84 & 37.16 &
+▇▅▇▆▁ \\
+long & 0 & 1 & -116.96 & 1.64 & -121.14 & -116.56 & -116.48 & -116.23 &
+-115.42 & ▁▁▁▁▇ \\
+totalObs & 0 & 1 & 18.51 & 8.80 & 2.00 & 16.00 & 17.00 & 23.00 & 31.00 &
+▃▂▇▂▅ \\
+postingvalue & 0 & 1 & 4.27 & 6.22 & -15.00 & -0.25 & 6.00 & 8.00 &
+15.00 & ▁▁▃▇▂ \\
+n\_years & 0 & 1 & 6.44 & 3.91 & 0.00 & 4.00 & 6.00 & 9.00 & 15.00 &
+▆▇▇▂▃ \\
+\bottomrule
+\end{longtable}
+
+Compare pre to post
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(data1, }\FunctionTok{aes}\NormalTok{(}\FunctionTok{reorder}\NormalTok{(pre\_or\_post, totalObs), totalObs)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_violin}\NormalTok{(}\AttributeTok{fill =} \StringTok{"grey75"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_boxplot}\NormalTok{(}\AttributeTok{alpha =} \FloatTok{0.5}\NormalTok{, }\AttributeTok{width =} \FloatTok{0.1}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{stat\_summary}\NormalTok{(}\AttributeTok{fun.y=}\NormalTok{mean, }\AttributeTok{geom=}\StringTok{"point"}\NormalTok{, }\AttributeTok{shape=}\DecValTok{18}\NormalTok{, }\AttributeTok{size=}\DecValTok{5}\NormalTok{, }\AttributeTok{color=}\StringTok{"red"}\NormalTok{, }\AttributeTok{fill=}\StringTok{"red"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{xlab}\NormalTok{(}\StringTok{""}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{ylab}\NormalTok{(}\StringTok{"Total Occurrences"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme\_bw}\NormalTok{(}\AttributeTok{base\_size =} \DecValTok{20}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: `fun.y` is deprecated. Use `fun` instead.
+\end{verbatim}
+
+\includegraphics{final_project_code_files/figure-latex/unnamed-chunk-8-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{stats }\OtherTok{\textless{}{-}}\NormalTok{ data1 }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{group\_by}\NormalTok{(pre\_or\_post) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarize}\NormalTok{(}\AttributeTok{mean =} \FunctionTok{mean}\NormalTok{(totalObs), }\AttributeTok{min =} \FunctionTok{min}\NormalTok{(totalObs),}
+            \AttributeTok{max =} \FunctionTok{max}\NormalTok{(totalObs))}
+\NormalTok{stats}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 2 x 4
+##   pre_or_post  mean   min   max
+##   <chr>       <dbl> <dbl> <dbl>
+## 1 post         20.1     2    31
+## 2 pre          13.9     2    31
+\end{verbatim}
+
+observations over the years
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{posting }\OtherTok{\textless{}{-}}\NormalTok{ data1 }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(fireID, postingvalue, pre\_or\_post, n\_years, desert, class) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{filter}\NormalTok{(postingvalue }\SpecialCharTok{\textgreater{}{-}}\DecValTok{6}\NormalTok{, postingvalue }\SpecialCharTok{\textless{}}\DecValTok{6}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarize}\NormalTok{(}\AttributeTok{total =} \FunctionTok{n}\NormalTok{())}
+
+\FunctionTok{mean}\NormalTok{(posting}\SpecialCharTok{$}\NormalTok{total)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1.53125
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{var}\NormalTok{(posting}\SpecialCharTok{$}\NormalTok{total)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.6441532
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model1 }\OtherTok{\textless{}{-}} \FunctionTok{glm}\NormalTok{(total }\SpecialCharTok{\textasciitilde{}}\NormalTok{ postingvalue, }\AttributeTok{family =} \StringTok{"quasipoisson"}\NormalTok{, posting)}
+\NormalTok{model2 }\OtherTok{\textless{}{-}} \FunctionTok{glm}\NormalTok{(total }\SpecialCharTok{\textasciitilde{}}\NormalTok{ postingvalue }\SpecialCharTok{+}\NormalTok{ desert, }\AttributeTok{family =} \StringTok{"quasipoisson"}\NormalTok{, posting)}
+\NormalTok{model3 }\OtherTok{\textless{}{-}} \FunctionTok{glm}\NormalTok{(total }\SpecialCharTok{\textasciitilde{}}\NormalTok{ postingvalue }\SpecialCharTok{+}\NormalTok{ desert }\SpecialCharTok{+}\NormalTok{ class, }\AttributeTok{family =} \StringTok{"quasipoisson"}\NormalTok{, posting)}
+
+\FunctionTok{summary}\NormalTok{(model1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## glm(formula = total ~ postingvalue, family = "quasipoisson", 
+##     data = posting)
+## 
+## Deviance Residuals: 
+##     Min       1Q   Median       3Q      Max  
+## -0.6241  -0.4605  -0.3715   0.3903   1.5551  
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)   0.44563    0.09397   4.742 4.82e-05 ***
+## postingvalue -0.02395    0.02865  -0.836     0.41    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## (Dispersion parameter for quasipoisson family taken to be 0.413331)
+## 
+##     Null deviance: 11.290  on 31  degrees of freedom
+## Residual deviance: 11.003  on 30  degrees of freedom
+## AIC: NA
+## 
+## Number of Fisher Scoring iterations: 4
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(model2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## glm(formula = total ~ postingvalue + desert, family = "quasipoisson", 
+##     data = posting)
+## 
+## Deviance Residuals: 
+##     Min       1Q   Median       3Q      Max  
+## -0.6188  -0.4803  -0.3608   0.3677   1.5642  
+## 
+## Coefficients:
+##                   Estimate Std. Error t value Pr(>|t|)   
+## (Intercept)        0.43846    0.13923   3.149  0.00387 **
+## postingvalue      -0.02452    0.03007  -0.816  0.42167   
+## desertSan Joaquin  0.02907    0.21509   0.135  0.89347   
+## desertSonoran     -0.01302    0.26217  -0.050  0.96074   
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## (Dispersion parameter for quasipoisson family taken to be 0.4440086)
+## 
+##     Null deviance: 11.29  on 31  degrees of freedom
+## Residual deviance: 10.99  on 28  degrees of freedom
+## AIC: NA
+## 
+## Number of Fisher Scoring iterations: 4
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(model3)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## glm(formula = total ~ postingvalue + desert + class, family = "quasipoisson", 
+##     data = posting)
+## 
+## Deviance Residuals: 
+##     Min       1Q   Median       3Q      Max  
+## -0.8366  -0.4865  -0.2177   0.3139   1.5252  
+## 
+## Coefficients:
+##                    Estimate Std. Error t value Pr(>|t|)   
+## (Intercept)        0.480183   0.154429   3.109  0.00464 **
+## postingvalue      -0.016492   0.033866  -0.487  0.63051   
+## desertSan Joaquin  0.011289   0.230600   0.049  0.96135   
+## desertSonoran      0.221346   0.316178   0.700  0.49035   
+## classInsecta      -0.397721   0.704678  -0.564  0.57751   
+## classMammalia     -0.458881   0.328088  -1.399  0.17420   
+## classReptilia     -0.000536   0.447218  -0.001  0.99905   
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## (Dispersion parameter for quasipoisson family taken to be 0.4352906)
+## 
+##     Null deviance: 11.2898  on 31  degrees of freedom
+## Residual deviance:  9.9646  on 25  degrees of freedom
+## AIC: NA
+## 
+## Number of Fisher Scoring iterations: 4
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(posting, }\FunctionTok{aes}\NormalTok{(postingvalue, total, }\AttributeTok{color =}\NormalTok{ pre\_or\_post)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+} 
+  \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{method =} \StringTok{"glm"}\NormalTok{, }\AttributeTok{method.args =} \FunctionTok{list}\NormalTok{(}\AttributeTok{family =} \StringTok{"quasipoisson"}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{ylab}\NormalTok{(}\StringTok{"Total occurrences"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{xlab}\NormalTok{(}\StringTok{"Posting value"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_color\_manual}\NormalTok{(}\AttributeTok{values =} \FunctionTok{c}\NormalTok{(}\StringTok{"red3"}\NormalTok{, }\StringTok{"blue4"}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{theme\_bw}\NormalTok{(}\AttributeTok{base\_size =} \DecValTok{20}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{theme}\NormalTok{(}\AttributeTok{legend.title =} \FunctionTok{element\_blank}\NormalTok{())}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{final_project_code_files/figure-latex/unnamed-chunk-9-1.pdf}
+
+\end{document}

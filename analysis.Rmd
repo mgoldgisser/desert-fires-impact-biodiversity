@@ -1,0 +1,181 @@
+---
+title: "Controls"
+author: "Marina"
+date: "11/16/2021"
+output: html_document
+---
+
+```{r, message=FALSE}
+library(tidyverse)
+library(mgcv)
+library(sf)
+library(lwgeom)
+library(lme4)
+
+
+setwd("~/GitHub/desert-fires-impact-biodiversity")
+
+animals <- st_read("shapefiles/animals_v3/animals_v3.shp") %>% 
+  st_drop_geometry() %>% 
+  rename(obsID = TARGET_FID, order = order_, individualCount = individual, obsDay = day, obsMonth = month, obsYear = year, institutionalCode = institutio, treatmentGroup = treatmentG, fireName = INCIDENT, fireYear = FIRE_YEARn, fireSize = GISAcres) %>% 
+  select(-c("verbatimSc", "issue", "coordinate", 'nearRd_FID', "nearUA_FID")) %>% 
+  filter(obsYear > 1999, obsYear < 2021 )
+  
+
+ndvi_burned <- read_csv("data/mean_ndvi_burned.csv") %>% 
+  mutate(treatmentGroup = "burned")
+ndvi_nb <- read_csv("data/mean_ndvi.csv") %>% 
+  mutate(treatmentGroup = "never burned")
+
+ndvi <- rbind(ndvi_burned, ndvi_nb) %>% 
+  rename(obsYear = year)
+
+```
+
+Summarize how many animal observations in each treatment group and add ndvi
+Plot the average ndvi for the the three deserts
+Get area of burned area and never-burned area
+
+```{r}
+data <- animals %>%
+  group_by(obsYear, treatmentGroup, desert) %>% 
+  summarize(totalObs = n()) %>% 
+  filter(treatmentGroup != "burned prior 2000")
+
+data <- left_join(data, ndvi, by = c("desert", "obsYear", "treatmentGroup"))
+
+head(data)
+
+avg_ndvi <- data %>% group_by(treatmentGroup, desert) %>% summarize(avg_ndvi = mean(ndvi))
+
+ggplot(avg_ndvi, aes(x = desert, y = avg_ndvi, shape = treatmentGroup)) +
+  geom_point()
+
+```
+
+Get areas to standardize observations
+```{r, include=FALSE}
+fireid <- unique(animals$fireID)
+
+fire_area <- st_read("shapefiles/fires/fires2000.shp") %>% #polygons for never-burned desert sites
+        st_transform(crs = 4326) %>% #transform data to wgs84 to match raster
+        filter(fireID %in% fireid)
+
+fire_area_sj <- fire_area %>% 
+  filter(desert == "San Joaquin")
+fire_area_moj <- fire_area %>% 
+  filter(desert == "Mojave")
+fire_area_son <- fire_area %>% 
+  filter(desert == "Sonoran")
+
+fire_area_moj$area_km2 <- st_geod_area(fire_area_moj) / 1000000
+as.numeric(sum(fire_area_moj$area_km2))
+fire_area_sj$area_km2 <- st_geod_area(fire_area_sj) / 1000000
+as.numeric(sum(fire_area_sj$area_km2))
+fire_area_son$area_km2 <- st_geod_area(fire_area_son) / 1000000
+as.numeric(sum(fire_area_son$area_km2))
+
+desert <- c("San Joaquin", "Mojave", "Sonoran")
+area_km2 <- c(as.numeric(sum(fire_area_sj$area_km2)),
+              as.numeric(sum(fire_area_moj$area_km2)),
+              as.numeric(sum(fire_area_son$area_km2)))
+
+areas <- data.frame(desert, area_km2) %>% 
+  mutate(treatmentGroup = "burned")
+
+head(areas)
+
+nb_area <- st_read("shapefiles/deserts/minus-fires/deserts-minus-fires.shp") %>% #polygons for never-burned desert sites
+        st_transform(crs = 4326) #transform data to wgs84 to match raster
+
+nb_area_sj <- nb_area %>% 
+  filter(desert == "San Joaquin")
+nb_area_moj <- nb_area %>% 
+  filter(desert == "Mojave")
+nb_area_son <- nb_area %>% 
+  filter(desert == "Sonoran")
+
+nb_area_moj$area_km2 <- st_geod_area(nb_area_moj) / 1000000
+as.numeric(sum(nb_area_moj$area_km2))
+nb_area_sj$area_km2 <- st_geod_area(nb_area_sj) / 1000000
+as.numeric(sum(nb_area_sj$area_km2))
+nb_area_son$area_km2 <- st_geod_area(nb_area_son) / 1000000
+as.numeric(sum(nb_area_son$area_km2))
+
+area_km2 <- c(as.numeric(sum(nb_area_sj$area_km2)),
+              as.numeric(sum(nb_area_moj$area_km2)),
+              as.numeric(sum(nb_area_son$area_km2)))
+areas_nb <- data.frame(desert, area_km2) %>% 
+  mutate(treatmentGroup = "never burned")
+areas <- rbind(areas, areas_nb)
+
+head(areas)
+
+data <- left_join(data, areas, by = c("desert", "treatmentGroup"))
+
+data <- data %>% mutate(st_totalObs = (totalObs * 1000)/area_km2)
+
+data$desert <- as.factor(data$desert)
+data$treatmentGroup <- as.factor(data$treatmentGroup)
+
+#write.csv(data, "data/animal_observations_2022.csv")
+
+```
+
+
+quick viz
+
+```{r}
+head(data)
+
+#weighted
+ggplot(data, aes(x = obsYear, y = st_totalObs, color = treatmentGroup, shape = desert)) +
+  geom_point() +
+  geom_smooth(method = "gam") +
+  ylim(0, 70) +
+  xlim(2000, 2020) +
+  facet_grid(vars(desert)) +
+  ylab("total observations per 1000km^2") +
+  scale_color_manual(values = c("firebrick4", "skyblue4"))
+
+#unweighted by ndvi
+ggplot(data, aes(x = obsYear, y = st_totalObs, color = treatmentGroup, shape = desert)) +
+  geom_point() +
+  geom_smooth(aes(weight = ndvi), method = "gam") +
+  ylim(0, 70) +
+  xlim(2000, 2020) +
+  facet_grid(vars(desert)) +
+  ylab("total observations per 1000km^2") +
+  scale_color_manual(values = c("firebrick4", "skyblue4"))
+
+summary(data)
+
+ggplot(data, aes(x = obsYear, y = ndvi, color = treatmentGroup, shape = desert)) +
+  geom_point() +
+  ylim(0, 1) +
+  xlim(2000, 2020) +
+  facet_grid(vars(treatmentGroup)) +
+  ylab("ndvi") +
+  scale_color_manual(values = c("firebrick4", "skyblue4"))
+
+```
+
+
+Model building
+
+```{r}
+model_lm <- lm(st_totalObs ~ obsYear + ndvi + desert + treatmentGroup, data = data)
+summary(model_lm)
+
+
+model_gam1 <- gam(st_totalObs ~ s(obsYear, by = desert) + s(ndvi, by = desert) + desert + treatmentGroup, data = data)
+summary(model_gam1)
+
+model_gam2 <- gam(st_totalObs ~ s(obsYear, by = treatmentGroup) + s(ndvi, by = treatmentGroup) + desert + treatmentGroup, data = data)
+summary(model_gam2)
+
+gam.check(model_gam1)
+gam.check(model_gam2)
+```
+
+

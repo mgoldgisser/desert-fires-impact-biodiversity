@@ -1,0 +1,120 @@
+---
+title: "Controls"
+author: "Marina"
+date: "11/16/2021"
+output: html_document
+---
+
+```{r}
+library(tidyverse)
+
+MOJ <- read_csv("C:/Users/marin/OneDrive/Documents/GitHub/desert-fires-impact-biodiversity/data/archive/data/animals-noburn_MOJ.csv") %>% 
+  filter(year > 1994, year < 2021)
+SJ <- read_csv("C:/Users/marin/OneDrive/Documents/GitHub/desert-fires-impact-biodiversity/data/archive/data/animals-noburn_SJ.csv") %>% 
+  filter(year > 1994, year < 2021)
+SON <- read_csv("C:/Users/marin/OneDrive/Documents/GitHub/desert-fires-impact-biodiversity/data/archive/data/animals-noburn_SON.csv") %>% 
+  filter(year > 1994, year < 2021)
+
+raw <- bind_rows(read_csv("C:/Users/marin/OneDrive/Documents/GitHub/desert-fires-impact-biodiversity/data/archive/data/animals-noburn_MOJ.csv"),
+                 read_csv("C:/Users/marin/OneDrive/Documents/GitHub/desert-fires-impact-biodiversity/data/archive/data/animals-noburn_SJ.csv"),
+                 read_csv("C:/Users/marin/OneDrive/Documents/GitHub/desert-fires-impact-biodiversity/data/archive/data/animals-noburn_SON.csv")) %>%
+  filter(year > 1994) %>% 
+  select(-FID)
+
+```
+
+Summarize how many observations in any given year for non-burned sites
+
+```{r}
+raw <- raw[!duplicated(raw[,c(2:10)]),]
+
+
+data <- raw %>%
+  group_by(year, desert) %>% 
+  summarize(totalObs = n())
+
+
+```
+
+quick viz
+
+```{r}
+ggplot(data, aes(x = year, y = totalObs, color = desert)) +
+  geom_point() +
+  geom_smooth() +
+  ylim(0, 2000) +
+  xlim(1995, 2021)
+
+```
+
+finding change over the course of the years from 1990 - 2021
+```{r}
+#make sure there is data for all years 1990-2021
+unique(data$year)
+
+data <- data %>% 
+  filter(year >= 1990) %>% 
+  group_by(desert) %>% 
+  arrange(year, .by_group = TRUE) %>% 
+  mutate(pct_change = ((totalObs - lag(totalObs))/lag(totalObs))*100)
+
+#2021 was pulled earlier in the year so need to filter out
+data <- data %>% 
+  filter(year != 2021)
+
+#avg change among desert
+change <- data %>% 
+  group_by(year) %>% 
+  summarize(avg_pct_change = mean(pct_change))
+
+```
+
+quick viz of change for all three desert as one
+
+```{r}
+#to make bars different colors
+change <- change %>% 
+  mutate(pos = avg_pct_change >= 0)
+
+
+ggplot(change, aes(year, avg_pct_change, fill = pos)) +
+  geom_col()+
+  theme(legend.position = "None")
+```
+
+quick viz for three desert individually
+
+```{r}
+#to make bars different colors
+
+data <- data %>% 
+  mutate(pos = pct_change >= 0)
+
+ggplot(data, aes(year, pct_change, fill = pos)) +
+  geom_col()+
+  theme(legend.position = "None") +
+  facet_grid(rows = vars(desert))
+```
+
+Compare to burned sites
+
+```{r}
+burn_data <- read_csv("data/observations.csv")
+```
+restructure data
+
+```{r}
+burn_data <- burn_data %>%
+  group_by(obsYear) %>% 
+  summarize(totalObs = n()) %>% 
+  filter(obsYear >= 1990) %>% 
+  filter(obsYear != 2021) %>% 
+  arrange(obsYear) %>% 
+  mutate(pct_change = ((totalObs - lag(totalObs))/lag(totalObs))*100) %>% 
+  mutate(pos = pct_change >= 0)
+  
+ggplot(burn_data, aes(obsYear, pct_change, fill = pos)) +
+  geom_col()+
+  theme(legend.position = "None")
+  
+```
