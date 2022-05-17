@@ -96,6 +96,9 @@ for (rep in reps) {
 }
 
 
+######################################################################################################################
+
+
 ###EXTRACT NDVI VALUES TO Polygons###
 
 ##Extract never-burned NDVI
@@ -190,12 +193,69 @@ df$ndvi <- as.numeric(df$ndvi)
 write_csv(df, "data/mean_ndvi_burned.csv")
 
 
+##############################################################################################
+
+
+###Extract burned NDVI but identify as pre- or post- burn
+#obtain fireids from observations in order to filter fire shapefiles
+obs_data <- animals <- st_read("shapefiles/animals/animals_51022.shp") %>% 
+  st_drop_geometry() %>% 
+  rename(obsID = TARGET_FID, order = order_, individualCount = individual, obsDay = day, obsMonth = month, obsYear = year, institutionalCode = institutio, treatmentGroup = treatmentG, fireName = INCIDENT, fireYear = FIRE_YEARn, fireSize = GISAcres) %>% 
+  select(-c("verbatimSc", "issue", "coordinate", 'nearRd_FID', "nearUA_FID")) %>% 
+  filter(obsYear > 1999, obsYear < 2021, species != "Canis lupus", species != "Balaenoptera musculus", species != "Grus canadensis") 
+fireid <- unique(obs_data$fireID) 
+fireid <- fireid[2:length(fireid)]
+
+data <- st_read("shapefiles/fires/fires2000.shp") %>% #polygons for never-burned desert sites
+  st_transform(crs = 4326) %>% #transform data to wgs84 to match raster
+  filter(fireID %in% fireid)
+
+rasterlist <- list.files("raster/MODIS_ndvi/ndvi_yrly_avg/", pattern = "*.tif", full.name = TRUE)
+data_lst <- list()
+df <- data.frame() %>% 
+  mutate(year= as.numeric(), desert = as.character(), ndvi = as.numeric())
+
+#subset data by desert and store in list
+data_lst[[1]] <- data %>% filter(desert == "San Joaquin")
+data_lst[[2]] <- data %>% filter(desert == "Mojave")
+data_lst[[3]] <- data %>% filter(desert == "Sonoran")
+
+
+for (i in 1:length(rasterlist)) {
+  
+  #select year
+  year <- sub("raster/MODIS_ndvi/ndvi_yrly_avg/ndvi_", "", rasterlist[i]) 
+  year <- as.numeric(strsplit(year, ".tif")[[1]][1])
+  
+  
+  #load raster
+  raster <- raster(rasterlist[i])
+  
+  #create data frame (year, desert, ndvi) by extracting raster values using FUNCTION = mean to desert polygon
+  for (j in 1:length(data_lst)) {
+    desert <- data_lst[[j]]$desert
+    ndvi <- raster::extract(raster, data_lst[[j]], fun = mean, na.rm = TRUE) 
+    df[nrow(df) + 1,] = c(year, desert[1], mean(ndvi))
+    
+  }
+  
+}
+
+df$year <- as.numeric(df$year)
+df$ndvi <- as.numeric(df$ndvi)
+
+#save :]
+
+write_csv(df, "data/mean_ndvi_burned.csv")
 
 
 
-###EXTRACT NDVI VALUES TO POINTS###
+####################################################################################
 
-data <- st_read("shapefiles/animals_v3/animals_v3.shp") 
+
+### EXTRACT NDVI VALUES TO POINTS###
+
+data <- st_read("shapefiles/animals/animals_51022.shp") 
 rasterlist <- list.files("raster/MODIS_ndvi/ndvi_yrly_avg/", pattern = "*.tif", full.name = TRUE)
 head(data)
 lst <- list()
@@ -228,3 +288,6 @@ data_ndvi <- do.call(rbind, lst)
 #save :]
 dir.create("shapefiles/animals_v4")
 st_write(data_ndvi, "shapefiles/animals_v4/animals_v4.shp")
+
+
+
