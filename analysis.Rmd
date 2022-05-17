@@ -11,26 +11,151 @@ library(mgcv)
 library(sf)
 library(lwgeom)
 library(lme4)
+library(ggsci)
 
 
 setwd("~/GitHub/desert-fires-impact-biodiversity")
 
-animals <- st_read("shapefiles/animals_v3/animals_v3.shp") %>% 
+animals <- st_read("shapefiles/animals/animals_51022.shp") %>% 
   st_drop_geometry() %>% 
   rename(obsID = TARGET_FID, order = order_, individualCount = individual, obsDay = day, obsMonth = month, obsYear = year, institutionalCode = institutio, treatmentGroup = treatmentG, fireName = INCIDENT, fireYear = FIRE_YEARn, fireSize = GISAcres) %>% 
   select(-c("verbatimSc", "issue", "coordinate", 'nearRd_FID', "nearUA_FID")) %>% 
-  filter(obsYear > 1999, obsYear < 2021 )
+  filter(obsYear > 1999, obsYear < 2021, species != "Canis lupus", species != "Balaenoptera musculus", species != "Grus canadensis")
   
 
 ndvi_burned <- read_csv("data/mean_ndvi_burned.csv") %>% 
   mutate(treatmentGroup = "burned")
-ndvi_nb <- read_csv("data/mean_ndvi.csv") %>% 
+ndvi_nb <- read_csv("data/mean_ndvi_never_burned.csv") %>% 
   mutate(treatmentGroup = "never burned")
 
 ndvi <- rbind(ndvi_burned, ndvi_nb) %>% 
   rename(obsYear = year)
 
+
 ```
+
+Who did the science?
+
+```{r}
+
+inst <- unique(animals$institutionalCode)
+inst <- inst[-5] #remove NA
+
+filter(animals, !institutionalCode %in% inst)
+
+animals <- animals %>% 
+  mutate(institutionalCode = ifelse(is.na(institutionalCode) & collection == "Observations", "Observation.org", institutionalCode)) %>% 
+  mutate(institutionalCode = ifelse(is.na(institutionalCode) & collection == "Bird sounds", "Xeno-canto", institutionalCode)) %>% 
+  mutate(institutionalCode = ifelse(institutionalCode == "CLO" & collection == "GBBC", "Great Backyard Bird Count", institutionalCode)) %>% 
+  mutate(institutionalCode = ifelse(institutionalCode == "CLO" & collection == "ML", "CLO Macaulay Library", institutionalCode))
+
+animals$institutionalCode[animals$institutionalCode == "CLO"] <- "eBird"
+  
+unique(filter(animals, institutionalCode == "eBird")$collection) 
+
+
+cit_sci <- animals %>% group_by(institutionalCode) %>%
+  filter(treatmentGroup != "burned prior 2000") %>% 
+  summarize(total_rec = n(), percent = n()/sum(cit_sci$total_rec))
+
+cit_sci
+view(cit_sci)
+
+animals %>% filter(is.na(institutionalCode))
+
+sum(cit_sci$total_rec)
+
+species_dist <- animals %>% group_by(class) %>% 
+  summarize(total_rec = n(), percent = (total_rec/sum(species_dist$total_rec))) %>% 
+  arrange(desc(-total_rec)) %>% 
+  mutate(label = (paste0(class, "\n", total_rec)))
+  
+
+view(species_dist)
+
+sum(species_dist$total_rec) - 22695
+
+category <- c("Aves", "Other")
+occurrences <- c(22695, 1785)
+
+sp_chart <- data.frame(category, occurrences) %>% 
+  mutate(percent = occurrences/sum(occurrences))
+
+# make chart of species distribution
+sp_chart$ymax <- cumsum(sp_chart$percent)
+sp_chart$ymin <- c(0, head(sp_chart$ymax, n = -1))
+
+#labels
+sp_chart$labelPosition <- (sp_chart$ymax + sp_chart$ymin) / 2
+sp_chart$label <- paste0(sp_chart$category, "\n", sp_chart$occurrences)
+
+#donut chart
+ggplot(sp_chart, aes(ymax=ymax, ymin=ymin, xmax=4, xmin=3, fill=category)) +
+  geom_rect() +
+  geom_label(x=3.5, aes(y=labelPosition, label=label), size=4) +
+  coord_polar(theta="y") + # Try to remove that to understand how the chart is built initially
+  xlim(c(2, 4)) + # Try to remove that to see how to make a pie chart
+  theme_void() +
+  theme(legend.position = "none") +
+  scale_fill_manual(values = c("grey","#69b3a2")) +
+  labs(fill = "Taxa")
+     
+
+# bar chart for other category
+
+color <- c("#172d28", "#2b544b", "#3f7b6d", "#7aa299", "#76baaa", "#c4e1db") 
+
+
+species_dist %>% 
+  filter(class != "Aves") %>% 
+  arrange(desc(-total_rec)) %>% 
+  mutate(taxa = "taxon", 
+         percent = (total_rec/sum(species_dist$total_rec)), 
+         ymax = cumsum(percent),
+         ymin = c(0, head(ymax, n = -1)),
+         labelPosition = (ymax + ymin) / 2) %>% 
+  ggplot(aes(ymax=ymax, ymin=ymin, xmax=4, xmin=3, fill=class)) +
+  geom_rect() +
+  geom_label(x=c(4.2,4.2,4.2, 3.5,3.5, 3.5), aes(y=labelPosition, label=label), size=4) +
+  coord_polar(theta="y") + # Try to remove that to understand how the chart is built initially
+  xlim(c(2, 4)) + # Try to remove that to see how to make a pie chart
+  theme_void() +
+  theme(legend.position = "none") +
+  scale_fill_manual(values = color) +
+  labs(fill = "Taxa")
+  
+
+
+# all as a bar chart
+species_dist %>%
+  arrange(desc(-total_rec)) %>%
+  mutate(class=factor(class, class)) %>%
+  ggplot( aes(x=class, y=total_rec) ) +
+    geom_segment( aes(x=class ,xend=class, y=0, yend=total_rec), color="grey") +
+    geom_point(size=3, color="#69b3a2") +
+    coord_flip() +
+    geom_text(aes(label = total_rec), nudge_x = 0.25) +
+    theme_classic() +
+    theme(panel.grid.minor.y = element_blank(),
+          panel.grid.major.y = element_blank(),
+          legend.position="none",
+          axis.text = element_text(size = 12)) +
+    xlab("") +
+    ylab("Occurrences")
+
+```
+
+iNaturalist - CS
+eBird - CS
+Naturgucker - CS - German
+PRBO - non-CS Point Reyes Bird Observatory (formerly) now known as Point Blue Conservation Science--bird survey datasets are collected following a standard survey protocol to be used for monitoring, research or decision-making purposes published by Avian Knowledge Network
+LEPSOC - CS
+
+collection 
+Bird sounds - CS Xeno-canto
+observation - Observation.org CS - Netherlands
+
+
 
 Summarize how many animal observations in each treatment group and add ndvi
 Plot the average ndvi for the the three deserts
@@ -46,12 +171,31 @@ data <- left_join(data, ndvi, by = c("desert", "obsYear", "treatmentGroup"))
 
 head(data)
 
-avg_ndvi <- data %>% group_by(treatmentGroup, desert) %>% summarize(avg_ndvi = mean(ndvi))
+avg_ndvi <- data %>% group_by(treatmentGroup, desert) %>% summarize(avg_ndvi = mean(ndvi), totalObs = sum(stzd_totalObs))
+
+head(avg_ndvi)
 
 ggplot(avg_ndvi, aes(x = desert, y = avg_ndvi, shape = treatmentGroup)) +
-  geom_point()
+  geom_point() +
+  ggtitle("Average NDVI between 2000 and 2020") +
+  ylab("Average NVDI") +
+  xlab("Desert")
+  
+ggplot(data, aes(x = treatmentGroup, y = ndvi, color = desert)) +
+  geom_boxplot(outlier.shape = 18)  +
+  ylab("Yearly average NDVI") +
+  xlab("") +
+  scale_color_uchicago("dark") +
+  theme_classic() + 
+  theme(axis.text.y = element_text(size = 12), 
+        axis.text.x = element_text(size = 12),
+        axis.title.x = element_text(size = 12),
+        axis.title.y = element_text(size = 12)) +
+  scale_x_discrete(labels=c("Burned area", "Control"))
+
 
 ```
+
 
 Get areas to standardize observations
 ```{r, include=FALSE}
@@ -68,12 +212,6 @@ fire_area_moj <- fire_area %>%
 fire_area_son <- fire_area %>% 
   filter(desert == "Sonoran")
 
-fire_area_moj$area_km2 <- st_geod_area(fire_area_moj) / 1000000
-as.numeric(sum(fire_area_moj$area_km2))
-fire_area_sj$area_km2 <- st_geod_area(fire_area_sj) / 1000000
-as.numeric(sum(fire_area_sj$area_km2))
-fire_area_son$area_km2 <- st_geod_area(fire_area_son) / 1000000
-as.numeric(sum(fire_area_son$area_km2))
 
 desert <- c("San Joaquin", "Mojave", "Sonoran")
 area_km2 <- c(as.numeric(sum(fire_area_sj$area_km2)),
@@ -111,12 +249,13 @@ areas <- rbind(areas, areas_nb)
 
 head(areas)
 
-data <- left_join(data, areas, by = c("desert", "treatmentGroup"))
-
-data <- data %>% mutate(st_totalObs = (totalObs * 1000)/area_km2)
+data <- left_join(data, areas, by = c("desert", "treatmentGroup")) %>% 
+  mutate(stzd_totalObs = (totalObs * 1000)/area_km2) #total observation per 1000 km2
 
 data$desert <- as.factor(data$desert)
 data$treatmentGroup <- as.factor(data$treatmentGroup)
+
+head(data)
 
 #write.csv(data, "data/animal_observations_2022.csv")
 
@@ -164,8 +303,11 @@ ggplot(data, aes(x = obsYear, y = ndvi, color = treatmentGroup, shape = desert))
 Model building
 
 ```{r}
-model_lm <- lm(st_totalObs ~ obsYear + ndvi + desert + treatmentGroup, data = data)
-summary(model_lm)
+model_lm1 <- lm(st_totalObs ~ obsYear + ndvi + desert + treatmentGroup, data = data)
+summary(model_lm1)
+
+model_lm2 <- lm(st_totalObs ~ obsYear + ndvi + treatmentGroup, data = data)
+summary(model_lm2)
 
 
 model_gam1 <- gam(st_totalObs ~ s(obsYear, by = desert) + s(ndvi, by = desert) + desert + treatmentGroup, data = data)
