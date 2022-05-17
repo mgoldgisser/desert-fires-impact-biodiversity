@@ -12,6 +12,7 @@ library(sf)
 library(lwgeom)
 library(lme4)
 library(ggsci)
+library(ggrepel)
 
 
 setwd("~/GitHub/desert-fires-impact-biodiversity")
@@ -31,6 +32,10 @@ ndvi_nb <- read_csv("data/mean_ndvi_never_burned.csv") %>%
 ndvi <- rbind(ndvi_burned, ndvi_nb) %>% 
   rename(obsYear = year)
 
+data <- animals %>%
+  group_by(obsYear, treatmentGroup, desert) %>% 
+  summarize(totalObs = n()) %>% 
+  filter(treatmentGroup != "burned prior 2000")
 
 ```
 
@@ -47,18 +52,18 @@ animals <- animals %>%
   mutate(institutionalCode = ifelse(is.na(institutionalCode) & collection == "Observations", "Observation.org", institutionalCode)) %>% 
   mutate(institutionalCode = ifelse(is.na(institutionalCode) & collection == "Bird sounds", "Xeno-canto", institutionalCode)) %>% 
   mutate(institutionalCode = ifelse(institutionalCode == "CLO" & collection == "GBBC", "Great Backyard Bird Count", institutionalCode)) %>% 
-  mutate(institutionalCode = ifelse(institutionalCode == "CLO" & collection == "ML", "CLO Macaulay Library", institutionalCode))
+  mutate(institutionalCode = ifelse(institutionalCode == "CLO" & collection == "ML", "CLO Macaulay Library", institutionalCode)) %>% 
+  mutate(institutionalCode = ifelse(is.na(institutionalCode) & order == "Lepidoptera", "eButterfly", institutionalCode)) %>% 
+  mutate(institutionalCode = ifelse(is.na(institutionalCode), "BOLD", institutionalCode))
+	
 
 animals$institutionalCode[animals$institutionalCode == "CLO"] <- "eBird"
-  
-unique(filter(animals, institutionalCode == "eBird")$collection) 
-
 
 cit_sci <- animals %>% group_by(institutionalCode) %>%
   filter(treatmentGroup != "burned prior 2000") %>% 
-  summarize(total_rec = n(), percent = n()/sum(cit_sci$total_rec))
+  summarize(total_rec = n()) %>% 
+  mutate(percent = total_rec/sum(total_rec) * 100)
 
-cit_sci
 view(cit_sci)
 
 animals %>% filter(is.na(institutionalCode))
@@ -66,44 +71,46 @@ animals %>% filter(is.na(institutionalCode))
 sum(cit_sci$total_rec)
 
 species_dist <- animals %>% group_by(class) %>% 
-  summarize(total_rec = n(), percent = (total_rec/sum(species_dist$total_rec))) %>% 
+  filter(treatmentGroup != "burned prior 2000") %>% 
+  summarize(total_rec = n()) %>% 
   arrange(desc(-total_rec)) %>% 
-  mutate(label = (paste0(class, "\n", total_rec)))
+  mutate(percent = (total_rec/sum(total_rec)),label = (paste0(class, "\n", total_rec)))
   
 
 view(species_dist)
 
-sum(species_dist$total_rec) - 22695
+# make charts of species distribution
+
+sum(species_dist$total_rec) - species_dist$total_rec[species_dist$class == "Aves"]
 
 category <- c("Aves", "Other")
-occurrences <- c(22695, 1785)
+occurrences <- c(species_dist$total_rec[species_dist$class == "Aves"], sum(species_dist$total_rec) - species_dist$total_rec[species_dist$class == "Aves"])
+
 
 sp_chart <- data.frame(category, occurrences) %>% 
-  mutate(percent = occurrences/sum(occurrences))
-
-# make chart of species distribution
-sp_chart$ymax <- cumsum(sp_chart$percent)
-sp_chart$ymin <- c(0, head(sp_chart$ymax, n = -1))
-
-#labels
-sp_chart$labelPosition <- (sp_chart$ymax + sp_chart$ymin) / 2
-sp_chart$label <- paste0(sp_chart$category, "\n", sp_chart$occurrences)
+  mutate(percent = occurrences/sum(occurrences),
+         ymax = cumsum(sp_chart$percent),
+         ymin = c(0, head(sp_chart$ymax, n = -1)),
+         labelPosition = (ymax + ymin) / 2,
+         label = paste0(category, "\n", occurrences))
 
 #donut chart
+
 ggplot(sp_chart, aes(ymax=ymax, ymin=ymin, xmax=4, xmin=3, fill=category)) +
   geom_rect() +
-  geom_label(x=3.5, aes(y=labelPosition, label=label), size=4) +
-  coord_polar(theta="y") + # Try to remove that to understand how the chart is built initially
+  geom_text(x=3.5, aes(y=labelPosition, label=label), size=4, color = "white", fontface = "bold") +
+  coord_polar(theta="y", start = pi/2) + # Try to remove that to understand how the chart is built initially
   xlim(c(2, 4)) + # Try to remove that to see how to make a pie chart
   theme_void() +
   theme(legend.position = "none") +
-  scale_fill_manual(values = c("grey","#69b3a2")) +
+  scale_fill_manual(values = c("grey",  "#7a83a2")) +
   labs(fill = "Taxa")
      
 
-# bar chart for other category
+# donut chart for other category
 
-color <- c("#172d28", "#2b544b", "#3f7b6d", "#7aa299", "#76baaa", "#c4e1db") 
+#color <- c("#deeeeb", "#468a7a", "#2b544b", "#7aa299", "#69b3a2", "#c4e1db") 
+color <- c("#46558a", "#697ab3", "#dee2ee", "#8b98c4", "#b7bfdb", "#7a83a2")
 
 
 species_dist %>% 
@@ -116,9 +123,11 @@ species_dist %>%
          labelPosition = (ymax + ymin) / 2) %>% 
   ggplot(aes(ymax=ymax, ymin=ymin, xmax=4, xmin=3, fill=class)) +
   geom_rect() +
-  geom_label(x=c(4.2,4.2,4.2, 3.5,3.5, 3.5), aes(y=labelPosition, label=label), size=4) +
-  coord_polar(theta="y") + # Try to remove that to understand how the chart is built initially
-  xlim(c(2, 4)) + # Try to remove that to see how to make a pie chart
+  #geom_label(x=c(4.5,4.5,4.5, 3.5,3.5, 3.5), aes(y=labelPosition, label=label), size=4) +
+  geom_label_repel(aes(x = 4, y = labelPosition, label = label),
+                   size = 4.5, nudge_x = 1, show.legend = FALSE) +
+  coord_polar(theta="y") +
+  xlim(c(2, 4.5)) +
   theme_void() +
   theme(legend.position = "none") +
   scale_fill_manual(values = color) +
@@ -131,17 +140,17 @@ species_dist %>%
   arrange(desc(-total_rec)) %>%
   mutate(class=factor(class, class)) %>%
   ggplot( aes(x=class, y=total_rec) ) +
-    geom_segment( aes(x=class ,xend=class, y=0, yend=total_rec), color="grey") +
-    geom_point(size=3, color="#69b3a2") +
+    geom_segment(aes(x=class ,xend=class, y=0, yend=total_rec), color="grey", size = 2) +
+    geom_point(size=5, color=c("#242c47", "#242c47", "#242c47", "#242c47", "#242c47", "#242c47", "#697ab3")) +
     coord_flip() +
-    geom_text(aes(label = total_rec), nudge_x = 0.25) +
+    geom_text(aes(label = total_rec), nudge_x = 0.35) +
     theme_classic() +
     theme(panel.grid.minor.y = element_blank(),
           panel.grid.major.y = element_blank(),
           legend.position="none",
           axis.text = element_text(size = 12)) +
     xlab("") +
-    ylab("Occurrences")
+    ylab("Occurrences") 
 
 ```
 
@@ -157,45 +166,7 @@ observation - Observation.org CS - Netherlands
 
 
 
-Summarize how many animal observations in each treatment group and add ndvi
-Plot the average ndvi for the the three deserts
-Get area of burned area and never-burned area
-
-```{r}
-data <- animals %>%
-  group_by(obsYear, treatmentGroup, desert) %>% 
-  summarize(totalObs = n()) %>% 
-  filter(treatmentGroup != "burned prior 2000")
-
-data <- left_join(data, ndvi, by = c("desert", "obsYear", "treatmentGroup"))
-
-head(data)
-
-avg_ndvi <- data %>% group_by(treatmentGroup, desert) %>% summarize(avg_ndvi = mean(ndvi), totalObs = sum(stzd_totalObs))
-
-head(avg_ndvi)
-
-ggplot(avg_ndvi, aes(x = desert, y = avg_ndvi, shape = treatmentGroup)) +
-  geom_point() +
-  ggtitle("Average NDVI between 2000 and 2020") +
-  ylab("Average NVDI") +
-  xlab("Desert")
-  
-ggplot(data, aes(x = treatmentGroup, y = ndvi, color = desert)) +
-  geom_boxplot(outlier.shape = 18)  +
-  ylab("Yearly average NDVI") +
-  xlab("") +
-  scale_color_uchicago("dark") +
-  theme_classic() + 
-  theme(axis.text.y = element_text(size = 12), 
-        axis.text.x = element_text(size = 12),
-        axis.title.x = element_text(size = 12),
-        axis.title.y = element_text(size = 12)) +
-  scale_x_discrete(labels=c("Burned area", "Control"))
-
-
-```
-
+et area of burned area and never-burned area
 
 Get areas to standardize observations
 ```{r, include=FALSE}
@@ -249,6 +220,23 @@ areas <- rbind(areas, areas_nb)
 
 head(areas)
 
+#write.csv(data, "data/animal_observations_2022.csv")
+
+```
+
+
+## NDVI
+Summarize how many animal observations in each treatment group and add ndvi
+Plot the average ndvi for the the three deserts
+
+```{r}
+data <- animals %>%
+  group_by(obsYear, treatmentGroup, desert) %>% 
+  summarize(totalObs = n()) %>% 
+  filter(treatmentGroup != "burned prior 2000")
+
+data <- left_join(data, ndvi, by = c("desert", "obsYear", "treatmentGroup"))
+
 data <- left_join(data, areas, by = c("desert", "treatmentGroup")) %>% 
   mutate(stzd_totalObs = (totalObs * 1000)/area_km2) #total observation per 1000 km2
 
@@ -257,7 +245,28 @@ data$treatmentGroup <- as.factor(data$treatmentGroup)
 
 head(data)
 
-#write.csv(data, "data/animal_observations_2022.csv")
+avg_ndvi <- data %>% group_by(treatmentGroup, desert) %>% summarize(avg_ndvi = mean(ndvi), totalObs = sum(stzd_totalObs))
+
+head(avg_ndvi)
+
+ggplot(avg_ndvi, aes(x = desert, y = avg_ndvi, shape = treatmentGroup)) +
+  geom_point() +
+  ggtitle("Average NDVI between 2000 and 2020") +
+  ylab("Average NVDI") +
+  xlab("Desert")
+  
+ggplot(data, aes(x = treatmentGroup, y = ndvi, color = desert)) +
+  geom_boxplot(outlier.shape = 18)  +
+  ylab("Yearly average NDVI") +
+  xlab("") +
+  scale_color_uchicago("dark") +
+  theme_classic() + 
+  theme(axis.text.y = element_text(size = 12), 
+        axis.text.x = element_text(size = 12),
+        axis.title.x = element_text(size = 12),
+        axis.title.y = element_text(size = 12)) +
+  scale_x_discrete(labels=c("Burned area", "Control"))
+
 
 ```
 
