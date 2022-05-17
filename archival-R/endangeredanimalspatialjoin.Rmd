@@ -13,13 +13,14 @@ output: html_document
 library(tidyverse)
 library(rgbif) # for occ_download
 library(taxize) # for get_gbifid_
-library(here)
 
 user<- "mgoldy"
 email <- "marina.goldgisser@gmail.com"
 pwd <- "ecoblenderlab"
 
-list.csv <- (here("Original-data", "animal_list.csv")) #csv with list of species 
+setwd("~/GitHub/desert-fires-impact-biodiversity")
+
+list.csv <- "~/GitHub/desert-fires-impact-biodiversity/data/archive/Original-data/endangered-species-list.csv" #csv with list of species 
 
 ```
 
@@ -35,10 +36,23 @@ gbif_taxon_keys <-
   taxize::get_gbifid_(method="backbone") %>% # match names to the GBIF backbone to get taxonkeys
   imap(~ .x %>% mutate(original_sciname = .y)) %>% # add original name back into data.frame
   bind_rows() %T>% # combine all data.frames into one
-  readr::write_tsv(path = "all_matches.tsv") %>% # save as side effect for you to inspect if you want
-  filter(matchtype == "EXACT" & status == "ACCEPTED") %>% # get only accepted and matched names
+  readr::write_csv(path = "~/GitHub/desert-fires-impact-biodiversity/data/archive/Original-data/all_matches.csv") %>% # save as side effect for you to inspect if you want
+  filter(matchtype == "EXACT" & (status == "ACCEPTED" | status == "SYNONYM")) %>% # get only accepted and matched names
   filter(kingdom == "Animalia") %>% # remove anything that might have matched to a non-animal
   pull(usagekey)
+
+#check all animal species included; this is done by comparing the match-check to the csv
+
+gbifids <- read_csv("~/GitHub/desert-fires-impact-biodiversity/data/archive/Original-data/all_matches.csv") %>% 
+  filter(usagekey %in% gbif_taxon_keys)
+
+match_check <- read_csv(list.csv) %>% 
+  filter(!species %in% gbifids$original_sciname)
+
+#append species missed
+
+gbif_taxon_keys <- append(gbif_taxon_keys, 6091918)
+
 
 # gbif_taxon_keys should be a long vector like this c(2977832,2977901,2977966,2977835,2977863)
 
@@ -50,6 +64,8 @@ occ_download(
   pred_within("POLYGON((-123.36768 32.60236,-113.62939 32.60236,-113.62939 38.21401,-123.36768 38.21401,-123.36768 32.60236))"), #this polygon is a square Nborder-SanFran Sborder-mexico E/Wborder-include all CA
   pred("hasCoordinate", TRUE),
   pred("hasGeospatialIssue", FALSE),
+  pred_gte("year", 1994),
+  pred_lte('year', 2021),
   format = "SIMPLE_CSV",
   user=user,pwd=pwd,email=email
 )
@@ -62,6 +78,14 @@ occ_download(
   E-mail: marina.goldgisser@gmail.com
   Format: SIMPLE_CSV
   Download key: 0117084-210914110416597
+  
+9 May 2022 <<gbif download>> (made sure all species included in search)
+  Username: mgoldy
+  E-mail: marina.goldgisser@gmail.com
+  Format: SIMPLE_CSV
+  Download key: 0272564-210914110416597
+
+
 
 #filter observation data by fire shapefile
 

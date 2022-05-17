@@ -72,7 +72,7 @@ Fishes,Gobiidae,Eucyclogobius newberryi,Tidewater goby,,,FE,19940307
 Amphibians,Ambystomatidae,Ambystoma californiense,California tiger salamander,ST,20100819,"(FE),",20030319
 Amphibians,Ambystomatidae,Ambystoma macrodactylum croceum,Santa Cruz long-toed salamander,SE,19710627,FE,19670311
 Amphibians,Plethodontidae,Batrachoseps major aridus,Desert slender salamander,SE,19710627,FE,19730604
-Amphibians,Plethodontidae,Batrachoseps simatus simatus,Kern Canyon slender salamander,ST,19710627,,
+Amphibians,Plethodontidae,Batrachoseps simatus,Kern Canyon slender salamander,ST,19710627,,
 Amphibians,Plethodontidae,Batrachoseps stebbinsi,Tehachapi slender salamander,ST,19710627,,
 Amphibians,Plethodontidae,Hydromantes shastae,Shasta salamander,ST,19710627,,
 Amphibians,Plethodontidae,Hydromantes brunus,Limestone salamander,ST,19710627,,
@@ -103,15 +103,13 @@ Reptiles,Natricidae,Thamnophis gigas,Giant garter snake,ST,19710627,FT,19931119
 Reptiles,Natricidae,Thamnophis sirtalis tetrataenia,San Francisco garter snake,SE,19710627,FE,19670311
 Birds,Anatidae,Branta hutchinsii leucopareia,Cackling goose,,,FDR,20010320
 Birds,Diomedeidae,Phoebastria albatrus,Short-tailed albatross,,,FE,20000830
-Birds,Pelecaniidae,"Pelecanus occidentalis californicus
-californicus",California brown pelican,SDR,20090603,FDR,20091217
+Birds,Pelecaniidae,Pelecanus occidentalis californicus,California brown pelican,SDR,20090603,FDR,20091217
 Birds,Cathartidae,Gymnogyps californianus,California condor,SE,19710627,FE,19670311
 Birds,Accipitridae,Buteo swainsoni,Swainson’s hawk,ST,19830417,,
 Birds,Accipitridae,Haliaeetus leucocephalus,Bald eagle,SE (rev),19801002,FDR,20070808
 Birds,Falconidae,Falco peregrinus anatum,American peregrine falcon,SDR,20091104,FDR,19990825
 Birds,Falconidae,Falco peregrinus tundrius,Arctic peregrine falcon,,,FDR,19941005
-Birds,Rallidae,"Laterallus jamaicensis coturniculus
-coturniculus",California black rail,ST,19710627,,
+Birds,Rallidae,Laterallus jamaicensis coturniculus,California black rail,ST,19710627,,
 Birds,Rallidae,Rallus obsoletus levipes,Light-footed Ridgway's rail,SE,19710627,FE,19701013
 Birds,Rallidae,Rallus obsoletus obsoletus,California Ridgway's rail,SE,19710627,FE,19701013
 Birds,Rallidae,Rallus obsoletus yumanensis,Yuma Ridgway's rail,ST,19780222,FE,19670311
@@ -121,8 +119,7 @@ Birds,Laridae,Sternula antillarum browni,California least tern,SE,19710627,FE,19
 Birds,Alcidae,Brachyramphus marmoratus,Marbled murrelet,SE,19920312,FT,19920928
 Birds,Alcidae,Synthliboramphus scrippsi,Scripps’s murrelet,ST,20041222,,
 Birds,Alcidae,Synthliboramphus hypoleucus,Guadalupe murrelet,ST,20041222,,
-Birds,Cuculidae,"Coccyzus americanus occidentalis
-occidentalis",Western yellow-billed cuckoo,SE,19880326,FT,20141103
+Birds,Cuculidae,Coccyzus americanus occidentalis,Western yellow-billed cuckoo,SE,19880326,FT,20141103
 Birds,Strigidae,Micrathene whitneyi,Elf owl,SE,19801002,,
 Birds,Strigidae,Strix nebulosa,Great gray owl,SE,19801002,,
 Birds,Strigidae,Strix occidentalis caurina,Northern spotted owl,ST,20190318,FT,19900723
@@ -144,8 +141,7 @@ Mammals,Soricidae,Sorex ornatus relictus ,Buena Vista Lake ornate shrew,,,FE,200
 Mammals,Phyllostomidae,Leptonycteris yerbabuenae,Lesser long-nosed bat,,,FDR,20180518
 Mammals,Leporidae,Sylvilagus bachmani riparius,Riparian brush rabbit,SE,19940529,FE,20000324
 Mammals,Aplodontidae,Aplodontia rufa nigra,Point Arena mountain beaver,,,FE,19911212
-Mammals,Sciuridae,Ammospermophilus nelsoni,"Nelson’s antelope
-squirrel",ST,19801002,,
+Mammals,Sciuridae,Ammospermophilus nelsoni,Nelson’s antelope squirrel,ST,19801002,,
 Mammals,Sciuridae,Xerospermophilus mohavensis,Mohave ground squirrel,ST,19710627,,
 Mammals,Heteromyidae,Dipodomys heermanni morroensis,Morro Bay kangaroo rat,SE,19710627,FE,19701013
 Mammals,Heteromyidae,Dipodomys ingens,Giant kangaroo rat,SE,19801002,FE,19870105
@@ -172,10 +168,8 @@ Mammals,Mustelidae,Pekania pennanti,Pacific fisher,ST,20190318,FE,20200615
 Mammals,Felidae,Puma concolor,Mountain lion,SC,20200421,,
 Mammals,Otariidae,Arctocephalus townsendi,Guadalupe fur seal,ST,19710627,FT,19860115
 Mammals,Otariidae,Eumetopias jubatus,Steller sea lion,,,FDR,20131204
-Mammals,Bovidae,Ovis canadensis nelsoni,"Peninsular bighorn sheep
-DPS]",ST,19710627,FE,19980318
-Mammals,Bovidae,Ovis canadensis sierrae,"Sierra Nevada bighorn
-sheep",SE,19990827,FE,20000103
+Mammals,Bovidae,Ovis canadensis nelsoni,Peninsular bighorn sheep,ST,19710627,FE,19980318
+Mammals,Bovidae,Ovis canadensis sierrae,Sierra Nevada bighorn sheep,SE,19990827,FE,20000103
 Mammals,Cetacea,Balaenoptera borealis,Sei whale,,,FE,19700602
 Mammals,Cetacea,Balaenoptera musculus,Blue whale,FE,,,19700602
 Mammals,Cetacea,Balaenoptera physalus,Fin whale,FE,,,19700602
