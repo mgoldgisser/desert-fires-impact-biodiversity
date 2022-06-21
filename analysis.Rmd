@@ -383,7 +383,16 @@ sites_sf %>% group_by(desert, FIRE_YEARn) %>%
   xlab("Year") +
   ylab("Total number of fires") +
   scale_color_uchicago("dark", guide = 'none')
-  
+
+#correlation between yearly no. of fires or size of fires and yearly ndvi
+
+cor_ndvi <- as.data.frame(sites_sf) %>% group_by(desert, FIRE_YEARn) %>% 
+  summarize(total_fires = n(), total_area_burned = sum(area_km2)) %>% 
+  left_join(ndvi_burned, by = c('FIRE_YEARn' = 'year', "desert" = "desert")) %>% 
+  ungroup() %>% 
+  select(-c(desert, treatmentGroup))
+
+cor(cor_ndvi)
 
 
 ```
@@ -423,8 +432,11 @@ lm(timeseries_b~time(timeseries_b))
 lm(timeseries_con~time(timeseries_con))
 
 
-acf(timeseries_b)
-acf(timeseries_con)
+acf_b <- acf(timeseries_b)
+acf_con <- acf(timeseries_con)
+
+plot(acf_b, main = "")
+plot(acf_con, main = "")
 ```
 
 
@@ -441,15 +453,34 @@ model_lm3 <- lm(stzd_totalObs ~ obsYear + desert + ndvi, data = data)
 summary(model_lm3)
 
 
-model_gam1 <- gam(stzd_totalObs ~ s(obsYear, by = desert) + s(ndvi, by = desert) + desert + treatmentGroup, data = data)
+model_gam0 <- gam(stzd_totalObs ~ s(obsYear) + ndvi + desert + treatmentGroup, data = data, method = "REML")
+summary(model_gam0)
+
+
+model_gam1 <- gam(stzd_totalObs ~ s(obsYear, by = desert) + s(ndvi, by = desert) + desert + treatmentGroup, data = data, method = "REML")
 summary(model_gam1)
 
-model_gam2 <- gam(stzd_totalObs ~ s(obsYear, by = treatmentGroup) + s(ndvi, by = treatmentGroup) + desert + treatmentGroup, data = data)
+model_gam2 <- gam(stzd_totalObs ~ s(obsYear, by = treatmentGroup) + ndvi + desert + treatmentGroup,family = tw(link = "log"), data = data, method = "REML")
 summary(model_gam2)
+
+model_gam3 <- gam(stzd_totalObs ~ s(obsYear, by = desert) + s(ndvi) + desert + treatmentGroup, family = tw(link = "log"), data = data, method = "REML")
+summary(model_gam3)
 
 gam.check(model_gam1)
 gam.check(model_gam2)
+gam.check(model_gam3)
+
+
+plot(model_gam1, all.terms = TRUE)
+plot(model_gam2, all.terms = TRUE)
+plot(model_gam3, all.terms = TRUE)
+
+AIC(model_gam0, model_gam1, model_gam2, model_gam3, model_lm3)
 ```
+
+model_gam3 has a lower AIC value and is, therefore, a better-fit model.
+
+
 
 ### ANOVA test
 
@@ -462,15 +493,25 @@ summary(ndvi_anova)
 ndvi_interaction_anova  <- aov(ndvi ~ desert*treatmentGroup, data = data)
 summary(ndvi_interaction_anova)
 
-AIC(ndvi_interaction_anova)
+AIC(ndvi_interaction_anova, ndvi_anova)
+
+tuk_ndvi <- TukeyHSD(ndvi_interaction_anova) 
+tuk_ndvi
 
 plot(ndvi_interaction_anova)
+plot(tuk_ndvi)
 
-occ_anova <- aov(stzd_totalObs ~ desert + treatmentGroup + ndvi, data = data)
-summary(occ_anova)
 
-occ_anova_int <- aov(stzd_totalObs ~ obsYear + desert*ndvi + treatmentGroup, data = data)
-summary(occ_anova_int)
+occ_anova1 <- aov(stzd_totalObs ~ treatmentGroup, data = data)
+occ_anova2 <- aov(stzd_totalObs ~ desert + treatmentGroup, data = data)
+
+summary(occ_anova1)
+summary(occ_anova2)
+
+TukeyHSD(occ_anova1)
+TukeyHSD(occ_anova2)
+
+AIC(occ_anova1, occ_anova2)
 
 plot(occ_anova_int)
 
