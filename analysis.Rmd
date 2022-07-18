@@ -513,7 +513,8 @@ TukeyHSD(occ_anova2)
 
 AIC(occ_anova1, occ_anova2)
 
-plot(occ_anova_int)
+plot(occ_anova1)
+plot(occ_anova2)
 
 ```
 
