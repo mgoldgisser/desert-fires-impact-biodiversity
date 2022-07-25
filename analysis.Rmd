@@ -333,7 +333,6 @@ ndvi %>% filter(desert == "San Joaquin" & treatmentGroup == "burned") %>% summar
 
 ```{r viz on occurrences over the years}
 data <- animals %>%
-  filter(class != "Aves") %>% #remove aves from data
   group_by(obsYear, treatmentGroup, desert) %>% 
   summarize(totalObs = n()) %>% 
   filter(treatmentGroup != "burned prior 2000")
@@ -379,7 +378,7 @@ summary(data)
 
 # number of unique species per treatment group
 species <-  animals %>% 
-  filter(treatmentGroup != "burned prior 2000", class != "Aves") %>% 
+  filter(treatmentGroup != "burned prior 2000") %>% 
   group_by(desert, treatmentGroup) %>% 
   summarize(richness = n_distinct(species))
 
@@ -422,7 +421,7 @@ cor(cor_ndvi)
 ```{r}
 #convert occurrences to time series matrix month x years
 
-timeseries <- animals %>% filter(treatmentGroup != "burned prior 2000", class != "Aves") %>% 
+timeseries <- animals %>% filter(treatmentGroup != "burned prior 2000") %>% 
   group_by(obsYear, treatmentGroup) %>% 
   summarize(total_occurrences = n()) %>% 
   ungroup()
