@@ -295,11 +295,12 @@ data$treatmentGroup <- as.factor(data$treatmentGroup)
 
 head(data)
 
+
 avg_ndvi <- data %>% group_by(treatmentGroup, desert) %>% summarize(avg_ndvi = mean(ndvi), totalObs = sum(stzd_totalObs))
 
 head(avg_ndvi)
 
-ggplot(data, aes(x = obsYear, y = ndvi, color = treatmentGroup, shape = desert)) +
+ggplot(ndvi, aes(x = obsYear, y = ndvi, color = treatmentGroup, shape = desert)) +
   geom_point() +
   ylim(0, 1) +
   xlim(2000, 2020) +
@@ -307,15 +308,10 @@ ggplot(data, aes(x = obsYear, y = ndvi, color = treatmentGroup, shape = desert))
   ylab("ndvi") +
   scale_color_manual(values = c("firebrick4", "skyblue4"))
 
-ggplot(avg_ndvi, aes(x = desert, y = avg_ndvi, shape = treatmentGroup)) +
-  geom_point() +
-  ggtitle("Average NDVI between 2000 and 2020") +
-  ylab("Average NVDI") +
-  xlab("Desert")
   
-ggplot(data, aes(x = treatmentGroup, y = ndvi, color = desert)) +
+ggplot(ndvi, aes(x = treatmentGroup, y = ndvi, color = desert)) +
   geom_boxplot(outlier.shape = 18)  +
-  ylab("Yearly average NDVI") +
+  ylab("Annual mean NDVI") +
   xlab("") +
   scale_color_uchicago("dark") +
   theme_classic() + 
@@ -326,12 +322,31 @@ ggplot(data, aes(x = treatmentGroup, y = ndvi, color = desert)) +
   scale_x_discrete(labels=c("Burned area", "Control"))
 
 
+
+ndvi %>% filter(desert == "San Joaquin" & treatmentGroup == "burned") %>% summary()
+
+
 ```
 
 
 ## how many occurrneces over the years?
 
 ```{r viz on occurrences over the years}
+data <- animals %>%
+  filter(class != "Aves") %>% #remove aves from data
+  group_by(obsYear, treatmentGroup, desert) %>% 
+  summarize(totalObs = n()) %>% 
+  filter(treatmentGroup != "burned prior 2000")
+
+data <- left_join(data, ndvi, by = c("desert", "obsYear", "treatmentGroup"))
+
+data <- left_join(data, areas, by = c("desert", "treatmentGroup")) %>% 
+  mutate(stzd_totalObs = (totalObs * 1000)/area_km2) #total observation per 1000 km2
+
+data$desert <- as.factor(data$desert)
+data$treatmentGroup <- as.factor(data$treatmentGroup)
+
+
 head(data)
 
 # how have the number of occurrences changed throughout the years?
@@ -364,7 +379,7 @@ summary(data)
 
 # number of unique species per treatment group
 species <-  animals %>% 
-  filter(treatmentGroup != "burned prior 2000") %>% 
+  filter(treatmentGroup != "burned prior 2000", class != "Aves") %>% 
   group_by(desert, treatmentGroup) %>% 
   summarize(richness = n_distinct(species))
 
@@ -407,7 +422,7 @@ cor(cor_ndvi)
 ```{r}
 #convert occurrences to time series matrix month x years
 
-timeseries <- animals %>% filter(treatmentGroup != "burned prior 2000") %>% 
+timeseries <- animals %>% filter(treatmentGroup != "burned prior 2000", class != "Aves") %>% 
   group_by(obsYear, treatmentGroup) %>% 
   summarize(total_occurrences = n()) %>% 
   ungroup()
@@ -487,10 +502,10 @@ model_gam3 has a lower AIC value and is, therefore, a better-fit model.
 ```{r}
 head(data)
 
-ndvi_anova  <- aov(ndvi ~ desert + treatmentGroup, data = data)
+ndvi_anova  <- aov(ndvi ~ desert + treatmentGroup, data = ndvi)
 summary(ndvi_anova)
 
-ndvi_interaction_anova  <- aov(ndvi ~ desert*treatmentGroup, data = data)
+ndvi_interaction_anova  <- aov(ndvi ~ desert*treatmentGroup, data = ndvi)
 summary(ndvi_interaction_anova)
 
 AIC(ndvi_interaction_anova, ndvi_anova)
