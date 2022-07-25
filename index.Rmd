@@ -14,7 +14,7 @@ library(lme4)
 library(ggsci)
 library(ggrepel)
 library(stats)
-
+library(broom)
 
 setwd("~/GitHub/desert-fires-impact-biodiversity")
 
@@ -223,7 +223,7 @@ ggplot(data, aes(x = obsYear, y = stzd_totalObs, color = treatmentGroup)) +
 ### lms and GAMs
 
 
-```{r}
+```{r, include=FALSE}
 model_lm1 <- lm(stzd_totalObs ~ obsYear + ndvi + desert + treatmentGroup, data = data)
 summary(model_lm1)
 
@@ -256,6 +256,27 @@ gam.check(model_gam3)
 AIC(model_gam0, model_gam1, model_gam2, model_gam3, model_lm1)
 ```
 
+
+```{r broom1}
+AIC(model_lm1, model_lm2, model_lm3)
+
+tidy(model_lm3)
+augment(model_lm3)
+glance(model_lm3)
+
+AIC(model_gam0, model_gam1, model_gam2, model_gam3, model_lm3)
+
+#model_gam3 <- gam(stzd_totalObs ~ s(obsYear, by = desert) + s(ndvi) + desert + treatmentGroup, family = tw(link = "log"), data = data, method = "REML")
+
+tidy(model_gam3)
+augment(model_gam3)
+glance(model_gam3)
+
+
+
+```
+
+
 model_gam3 has a lower AIC value and is, therefore, a better-fit model.
 
 ### plot GAMs
@@ -264,8 +285,6 @@ model_gam3 has a lower AIC value and is, therefore, a better-fit model.
 plot(model_gam3, all.terms = TRUE)
 
 ```
-
-
 
 
 ### ANOVA test
@@ -400,7 +419,7 @@ ggplot(data, aes(x = obsYear, y = stzd_totalObs, color = treatmentGroup)) +
 ### lms and GAMs
 
 
-```{r}
+```{r, include=FALSE}
 model_lm1 <- lm(stzd_totalObs ~ obsYear + ndvi + desert + treatmentGroup, data = data)
 summary(model_lm1)
 
@@ -434,6 +453,25 @@ AIC(model_gam0, model_gam1, model_gam2, model_gam3, model_lm1)
 ```
 
 model_gam2 has a lower AIC value and is, therefore, a better-fit model.
+
+```{r broom2}
+AIC(model_lm1, model_lm2, model_lm3)
+
+tidy(model_lm1)
+augment(model_lm1)
+glance(model_lm1)
+
+AIC(model_gam0, model_gam1, model_gam2, model_gam3, model_lm1)
+
+#model_gam2 <- gam(stzd_totalObs ~ s(obsYear, by = treatmentGroup) + ndvi + desert + treatmentGroup,family = tw(link = "log"), data = data, method = "REML")
+
+tidy(model_gam2)
+augment(model_gam2)
+glance(model_gam2)
+
+
+
+```
 
 ### plot GAMs
 
@@ -576,7 +614,7 @@ ggplot(data, aes(x = obsYear, y = stzd_totalObs, color = treatmentGroup)) +
 ### lms and GAMs
 
 
-```{r}
+```{r, include = FALSE}
 model_lm1 <- lm(stzd_totalObs ~ obsYear + ndvi + desert + treatmentGroup, data = data)
 summary(model_lm1)
 
@@ -609,12 +647,33 @@ gam.check(model_gam3)
 AIC(model_gam0, model_gam1, model_gam2, model_gam3, model_lm1)
 ```
 
-model_gam2 has a lower AIC value and is, therefore, a better-fit model.
+
+
+```{r broom3}
+AIC(model_lm1, model_lm2, model_lm3)
+
+tidy(model_lm2)
+augment(model_lm2)
+glance(model_lm2)
+
+AIC(model_gam0, model_gam1, model_gam2, model_gam3, model_lm2)
+
+#model_gam3 <- gam(stzd_totalObs ~ s(obsYear, by = desert) + s(ndvi) + desert + treatmentGroup, family = tw(link = "log"), data = data, method = "REML")
+
+tidy(model_gam3)
+augment(model_gam3)
+glance(model_gam3)
+
+
+
+```
+
+model_gam3 has a lower AIC value and is, therefore, a better-fit model.
 
 ### plot GAMs
 
 ```{r}
-plot(model_gam2, all.terms = TRUE)
+plot(model_gam3, all.terms = TRUE)
 
 ```
 
