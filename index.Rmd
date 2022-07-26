@@ -2,9 +2,14 @@
 title: "Analysis_ALL"
 author: "Marina"
 date: "11/16/2021"
-output: html_document
+output:
+  html_document:
+    toc: true
+    toc_depth: 4
+    toc_float: true
 ---
-
+##### load packages and data
+code not included
 ```{r packages and data, message=FALSE, include=FALSE}
 library(tidyverse)
 library(mgcv)
@@ -37,6 +42,32 @@ data <- animals %>%
   group_by(obsYear, treatmentGroup, desert) %>% 
   summarize(totalObs = n()) %>% 
   filter(treatmentGroup != "burned prior 2000")
+
+
+sites <- read_csv("data/sitesv2-2022.csv") %>% 
+  select(-desert)
+
+sites_sf <- st_read("shapefiles/fires/fires2000.shp")
+
+fireid <- unique(sites$fireID)
+
+sites_sf <- sites_sf %>% filter(fireID %in% fireid)
+
+sites_sf$confirmarea <- st_geod_area(sites_sf)
+
+#view(sites_sf) #areas for area_km2 confirmed
+
+#just the fires for occurrences
+fireid <- unique(animals$fireID)[-1]
+
+sites$fireID <- as.factor(sites$fireID)
+sites_sf$fireID <- as.factor(sites_sf$fireID)
+
+
+sites_sf <- as.data.frame(sites_sf) %>% filter(fireID %in% fireid) %>%
+  left_join(sites, by = "fireID") %>% 
+  select(c(desert, INCIDENT, FIRE_YEARn, fireID, area_km2, startDate))
+
 
 ```
 
@@ -110,22 +141,29 @@ data$desert <- as.factor(data$desert)
 data$treatmentGroup <- as.factor(data$treatmentGroup)
 ```
 
+## mean annual NDVI
+
 ```{r average ndvi }
 #mean annual NDVI
 ggplot(ndvi, aes(x = obsYear, y = ndvi, color = treatmentGroup, shape = desert)) +
-  geom_point() +
-  ylim(0, 1) +
+  geom_point(size = 3) +
+  ylim(0, 0.5) +
   xlim(2000, 2020) +
-  facet_grid(vars(treatmentGroup)) +
-  ylab("ndvi") +
-  scale_color_manual(values = c("firebrick4", "skyblue4"))
+  facet_grid(vars(desert)) +
+  ylab("Mean NDVI") +
+  xlab("") + 
+  labs(color = "Treatment Group") +
+  scale_color_uchicago(labels=c("Burned area", "Control")) +
+  scale_shape_discrete(guide = 'none') +
+  theme_bw()
+
 
 #boxplot showing mean annual NDVI  
 ggplot(ndvi, aes(x = treatmentGroup, y = ndvi, color = desert)) +
   geom_boxplot(outlier.shape = 18)  +
-  ylab("Annual mean NDVI") +
+  ylab("Annual Mean NDVI") +
   xlab("") +
-  scale_color_uchicago("dark") +
+  scale_color_aaas() +
   theme_classic() + 
   theme(axis.text.y = element_text(size = 12), 
         axis.text.x = element_text(size = 12),
@@ -133,14 +171,30 @@ ggplot(ndvi, aes(x = treatmentGroup, y = ndvi, color = desert)) +
         axis.title.y = element_text(size = 12)) +
   scale_x_discrete(labels=c("Burned area", "Control"))
 
+# number of fires and total burned area 
+sites_sf %>% group_by(desert, FIRE_YEARn) %>% 
+  summarize(total_fires = n(), total_area_burned = sum(area_km2)) %>% 
+  ggplot(aes(x = FIRE_YEARn, y = total_fires, color = desert)) +
+  geom_segment(aes(x = FIRE_YEARn, xend = FIRE_YEARn, y = 0, yend = total_fires), color = "black") +
+  geom_point(aes(size = total_area_burned)) +
+  theme_classic() +
+  facet_grid(rows = vars(desert)) +
+  scale_size_continuous(breaks = c(5, 25, 250), name = bquote("Total burned area "(km^2))) +
+  scale_x_continuous(breaks = c(2000:2020)) +
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1)) +
+  xlab("Year") +
+  ylab("Total number of fires") +
+  scale_color_aaas(guide = 'none')
+
+
 ```
 
 
 ## ALL classes
 
-### class occurrences reported
+### distinct classes reported
 
-```{r tables and graphs all class - class composition of data, message=FALSE}
+```{r tables and graphs all class - class composition of data, message=FALSE, include= FALSE}
 
 ## which class make up the occurrences
 species_dist <- animals %>% group_by(class) %>% 
@@ -170,7 +224,7 @@ species_dist %>%
 ```
 
 
-### Animal occurrences standardized to # of occurrences reported per *1,000km^2* 
+### Standardized to # of occurrences reported per **1,000km^2** 
 
 ```{r table}
 #table showing summarized values (standardized to obs per 1,000km2)
@@ -178,50 +232,275 @@ data %>% group_by(treatmentGroup, desert) %>% summarize(totalObs = sum(totalObs)
 ```
 
 
-### how many total occurrences reported for each desert over the 20-year period?
+### total occurrences reported over the 20-year period
 
 ```{r viz on occurrences over the years1}
 
 data %>% group_by(treatmentGroup, desert) %>% summarize(totalObs = sum(totalObs), mean_ndvi = mean(ndvi), area_km2 = mean(area_km2), total_standard_obs = sum(stzd_totalObs)) %>% 
   ggplot(aes(x = treatmentGroup, y = total_standard_obs, fill = desert)) +
-  geom_col(position = "dodge") +
+  geom_col(width = 0.7, position = position_dodge(0.75)) +
   ylab(bquote('Total occurrences reported per 1,000 km'^2)) +
   xlab("")+
-  scale_fill_uchicago("dark") +
+  scale_fill_aaas() +
+  scale_x_discrete(labels=c("Burned area", "Control")) +
+  theme_bw() +
   theme(axis.text.y = element_text(size = 12), 
         axis.text.x = element_text(size = 12),
         axis.title.x = element_text(size = 12),
-        axis.title.y = element_text(size = 12)) +
-  scale_x_discrete(labels=c("Burned area", "Control"))
+        axis.title.y = element_text(size = 12),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.x = element_blank())
 ```
 
-### how have the number of occurrences changed throughout the years?
+### annual change in occurrence reporting
 
 ```{r}
 
 ggplot(data, aes(x = obsYear, y = stzd_totalObs, color = treatmentGroup)) +
   geom_point(size = 2) +
-  geom_smooth(method = "gam") +
+  geom_smooth(method = "gam", aes(fill = treatmentGroup)) +
   ylim(0, 70) +
   xlim(2000, 2020) +
   facet_grid(vars(desert)) +
   ylab(bquote('Total occurrences reported per 1,000 km'^2)) +
   xlab("Year") +
-  scale_color_manual(values = c("#b3697a", "#697ab3"),
-                     name = "Burn Treatment",
+  scale_color_uchicago(name = "Burn Treatment",
                      labels = c("Burned", "Control")) +
-  scale_fill_manual(values = c("#b3697a", "#697ab3"),
+  scale_fill_manual(values = c("#800000ff", "#767676FF"),
                     name = "Burn Treatment",
                     labels = c("Burned", "Control")) +
   theme_bw()
 
 ```
 
-### linear model
- 
 
-### lms and GAMs
+## NO birds
 
+```{r reload data2, include = FALSE}
+data <- animals  %>% 
+  filter(treatmentGroup != "burned prior 2000", class != 'Aves') %>%
+  group_by(obsYear, treatmentGroup, desert) %>% 
+  summarize(totalObs = n())
+
+#add ndvi data
+data <- left_join(data, ndvi, by = c("desert", "obsYear", "treatmentGroup"))
+
+#add area for burned and unburned
+data <- left_join(data, areas, by = c("desert", "treatmentGroup")) %>% #areas is a dataframe created from shapefiles in a hidden step
+  mutate(stzd_totalObs = (totalObs * 1000)/area_km2) #total observation per 10000 km2
+
+data$desert <- as.factor(data$desert)
+data$treatmentGroup <- as.factor(data$treatmentGroup)
+```
+
+### distinct classes reported
+
+```{r tables and graphs no birds - class composition of data, message=FALSE}
+
+## which class make up the occurrences
+species_dist <- animals %>% 
+  filter(treatmentGroup != "burned prior 2000", class != 'Aves') %>% 
+  group_by(class) %>% 
+  summarize(total_rec = n()) %>% 
+  arrange(desc(-total_rec)) %>% 
+  mutate(percent = (total_rec/sum(total_rec)),label = (paste0(class, "\n", total_rec)))
+
+unique(species_dist$class)
+
+species_dist %>%
+  arrange(desc(-total_rec)) %>%
+  mutate(class=factor(class, class)) %>%
+  ggplot( aes(x=class, y=total_rec) ) +
+    geom_segment(aes(x=class ,xend=class, y=0, yend=total_rec), color="grey", size = 2) +
+    geom_point(size=5, color= "#242c47") +
+    coord_flip() +
+    geom_text(aes(label = total_rec), nudge_x = 0.35) +
+    theme_classic() +
+    theme(panel.grid.minor.y = element_blank(),
+          panel.grid.major.y = element_blank(),
+          legend.position="none",
+          axis.text = element_text(size = 12)) +
+    xlab("") +
+    ylab("Occurrences")
+
+```
+
+### Standardized to # of occurrences reported per **1,000km^2** 
+
+```{r table2}
+#table showing summarized values (standardized to obs per 1,000km2)
+
+data %>% group_by(treatmentGroup, desert) %>% summarize(totalObs = sum(totalObs), mean_ndvi = mean(ndvi), area_km2 = mean(area_km2), total_standard_obs = sum(stzd_totalObs))
+```
+
+
+### total occurrences reported over the 20-year period
+
+```{r viz on occurrences over the years2}
+
+data %>% group_by(treatmentGroup, desert) %>% summarize(totalObs = sum(totalObs), mean_ndvi = mean(ndvi), area_km2 = mean(area_km2), total_standard_obs = sum(stzd_totalObs)) %>% 
+  ggplot(aes(x = treatmentGroup, y = total_standard_obs, fill = desert)) +
+  geom_col(width = 0.7, position = position_dodge(0.75)) +
+  ylab(bquote('Total occurrences reported per 1,000 km'^2)) +
+  xlab("")+
+  annotate("text", x = 2, y = 225, label = "*Birds filtered out from data") +
+  scale_fill_aaas() +
+  scale_x_discrete(labels=c("Burned area", "Control")) +
+  theme_bw() +
+  theme(axis.text.y = element_text(size = 12), 
+        axis.text.x = element_text(size = 12),
+        axis.title.x = element_text(size = 12),
+        axis.title.y = element_text(size = 12),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.x = element_blank())
+```
+
+### annual change in occurrence reporting
+
+```{r}
+
+ggplot(data, aes(x = obsYear, y = stzd_totalObs, color = treatmentGroup)) +
+  geom_point(size = 2) +
+  geom_smooth(method = "gam", aes(fill = treatmentGroup)) +
+  ylim(0, 70) +
+  xlim(2000, 2020) +
+  facet_grid(vars(desert)) +
+  ylab(bquote('Total occurrences reported per 1,000 km'^2)) +
+  xlab("Year") +
+  scale_color_uchicago(name = "Burn Treatment",
+                     labels = c("Burned", "Control")) +
+  scale_fill_manual(values = c("#800000ff", "#767676FF"),
+                    name = "Burn Treatment",
+                    labels = c("Burned", "Control")) +
+  theme_bw()
+
+```
+
+
+## ONLY birds
+
+```{r reload data3, include = FALSE}
+data <- animals  %>% 
+  filter(treatmentGroup != "burned prior 2000", class == 'Aves') %>%
+  group_by(obsYear, treatmentGroup, desert) %>% 
+  summarize(totalObs = n())
+
+#add ndvi data
+data <- left_join(data, ndvi, by = c("desert", "obsYear", "treatmentGroup"))
+
+#add area for burned and unburned
+data <- left_join(data, areas, by = c("desert", "treatmentGroup")) %>% #areas is a dataframe created from shapefiles in a hidden step
+  mutate(stzd_totalObs = (totalObs * 1000)/area_km2) #total observation per 10000 km2
+
+data$desert <- as.factor(data$desert)
+data$treatmentGroup <- as.factor(data$treatmentGroup)
+```
+
+### class occurrences reported
+
+```{r tables and graphs only birds - class composition of data, message=FALSE}
+
+## which class make up the occurrences
+species_dist <- animals %>% 
+  filter(treatmentGroup != "burned prior 2000", class == 'Aves') %>% 
+  group_by(species) %>% 
+  summarize(total_rec = n()) %>% 
+  arrange(desc(-total_rec)) %>% 
+  mutate(percent = (total_rec/sum(total_rec)),label = (paste0(species, "\n", total_rec)))
+
+unique(species_dist$species)
+
+species_dist %>%
+  arrange(desc(-total_rec)) %>%
+  mutate(species=factor(species, species)) %>%
+  ggplot(aes(x=species, y=total_rec) ) +
+    geom_segment(aes(x=species ,xend=species, y=0, yend=total_rec), color="grey", size = 2) +
+    geom_point(size=5, color= "#242c47") +
+    coord_flip() +
+    geom_text(aes(label = total_rec), nudge_x = 0.35) +
+    theme_classic() +
+    theme(panel.grid.minor.y = element_blank(),
+          panel.grid.major.y = element_blank(),
+          legend.position="none",
+          axis.text = element_text(size = 12)) +
+    xlab("") +
+    ylab("Occurrences")
+
+```
+
+
+### Standardized to # of occurrences reported per 1,000km^2 
+
+```{r table3}
+#table showing summarized values (standardized to obs per 1,000km2)
+
+data %>% group_by(treatmentGroup, desert) %>% summarize(totalObs = sum(totalObs), mean_ndvi = mean(ndvi), area_km2 = mean(area_km2), total_standard_obs = sum(stzd_totalObs))
+```
+
+
+### total occurrences reported over the 20-year period
+
+```{r viz on occurrences over the years3}
+
+data %>% group_by(treatmentGroup, desert) %>% summarize(totalObs = sum(totalObs), mean_ndvi = mean(ndvi), area_km2 = mean(area_km2), total_standard_obs = sum(stzd_totalObs)) %>% 
+  ggplot(aes(x = treatmentGroup, y = total_standard_obs, fill = desert)) +
+  geom_col(width = 0.7, position = position_dodge(0.75)) +
+  ylab(bquote('Total bird occurrences reported per 1,000 km'^2)) +
+  xlab("")+
+  scale_fill_aaas() +
+  scale_x_discrete(labels=c("Burned area", "Control")) +
+  theme_bw() +
+  theme(axis.text.y = element_text(size = 12), 
+        axis.text.x = element_text(size = 12),
+        axis.title.x = element_text(size = 12),
+        axis.title.y = element_text(size = 12),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.x = element_blank())
+```
+
+### annual change in occurrence reporting
+
+```{r}
+
+ggplot(data, aes(x = obsYear, y = stzd_totalObs, color = treatmentGroup)) +
+  geom_point(size = 2) +
+  geom_smooth(method = "gam", aes(fill = treatmentGroup)) +
+  ylim(0, 70) +
+  xlim(2000, 2020) +
+  facet_grid(vars(desert)) +
+  ylab(bquote('Total occurrences reported per 1,000 km'^2)) +
+  xlab("Year") +
+  scale_color_uchicago(name = "Burn Treatment",
+                     labels = c("Burned", "Control")) +
+  scale_fill_manual(values = c("#800000ff", "#767676FF"),
+                    name = "Burn Treatment",
+                    labels = c("Burned", "Control")) +
+  theme_bw()
+
+```
+
+
+## stats
+
+### linear models and GAMS
+
+#### All
+```{r reload data1.1, include = FALSE}
+data <- animals  %>% 
+  filter(treatmentGroup != "burned prior 2000") %>%
+  group_by(obsYear, treatmentGroup, desert) %>% 
+  summarize(totalObs = n())
+
+#add ndvi data
+data <- left_join(data, ndvi, by = c("desert", "obsYear", "treatmentGroup"))
+
+#add area for burned and unburned
+data <- left_join(data, areas, by = c("desert", "treatmentGroup")) %>% #areas is a dataframe created from shapefiles in a hidden step
+  mutate(stzd_totalObs = (totalObs * 1000)/area_km2) #total observation per 10000 km2
+
+data$desert <- as.factor(data$desert)
+data$treatmentGroup <- as.factor(data$treatmentGroup)
+```
 
 ```{r, include=FALSE}
 model_lm1 <- lm(stzd_totalObs ~ obsYear + ndvi + desert + treatmentGroup, data = data)
@@ -266,20 +545,22 @@ glance(model_lm3)
 
 AIC(model_gam0, model_gam1, model_gam2, model_gam3, model_lm3)
 
+#model_gam3 has a lower AIC value and is, therefore, a better-fit model.
+
+
 #model_gam3 <- gam(stzd_totalObs ~ s(obsYear, by = desert) + s(ndvi) + desert + treatmentGroup, family = tw(link = "log"), data = data, method = "REML")
 
 tidy(model_gam3)
 augment(model_gam3)
 glance(model_gam3)
 
+gam.check(model_gam3)
 
 
 ```
 
 
-model_gam3 has a lower AIC value and is, therefore, a better-fit model.
-
-### plot GAMs
+##### plot GAMs
 
 ```{r}
 plot(model_gam3, all.terms = TRUE)
@@ -287,33 +568,8 @@ plot(model_gam3, all.terms = TRUE)
 ```
 
 
-### ANOVA test
-
-```{r}
-head(data)
-
-occ_anova1 <- aov(stzd_totalObs ~ treatmentGroup, data = data)
-occ_anova2 <- aov(stzd_totalObs ~ desert + treatmentGroup, data = data)
-occ_anova3 <- aov(stzd_totalObs ~ desert*treatmentGroup, data = data)
-
-AIC(occ_anova1, occ_anova2, occ_anova3)
-
-summary(occ_anova3)
-
-TukeyHSD(occ_anova3)
-
-plot(occ_anova3)
-
-```
-
-Results: 
-- significant difference between occurrences reported in San Joaquin and Mojave.
-- no sig. diff. between burned and control (neither overall or between deserts)
-
-
-## NO birds
-
-```{r reload data2, include = FALSE}
+#### No birds
+```{r reload data2.1, include = FALSE}
 data <- animals  %>% 
   filter(treatmentGroup != "burned prior 2000", class != 'Aves') %>%
   group_by(obsYear, treatmentGroup, desert) %>% 
@@ -329,95 +585,6 @@ data <- left_join(data, areas, by = c("desert", "treatmentGroup")) %>% #areas is
 data$desert <- as.factor(data$desert)
 data$treatmentGroup <- as.factor(data$treatmentGroup)
 ```
-
-
-
-### class occurrences reported
-
-```{r tables and graphs no birds - class composition of data, message=FALSE}
-
-## which class make up the occurrences
-species_dist <- animals %>% 
-  filter(treatmentGroup != "burned prior 2000", class != 'Aves') %>% 
-  group_by(class) %>% 
-  summarize(total_rec = n()) %>% 
-  arrange(desc(-total_rec)) %>% 
-  mutate(percent = (total_rec/sum(total_rec)),label = (paste0(class, "\n", total_rec)))
-
-unique(species_dist$class)
-
-species_dist %>%
-  arrange(desc(-total_rec)) %>%
-  mutate(class=factor(class, class)) %>%
-  ggplot( aes(x=class, y=total_rec) ) +
-    geom_segment(aes(x=class ,xend=class, y=0, yend=total_rec), color="grey", size = 2) +
-    geom_point(size=5, color= "#242c47") +
-    coord_flip() +
-    geom_text(aes(label = total_rec), nudge_x = 0.35) +
-    theme_classic() +
-    theme(panel.grid.minor.y = element_blank(),
-          panel.grid.major.y = element_blank(),
-          legend.position="none",
-          axis.text = element_text(size = 12)) +
-    xlab("") +
-    ylab("Occurrences")
-
-```
-
-
-### Animal occurrences standardized to # of occurrences reported per *1,000km^2* 
-
-```{r table2}
-#table showing summarized values (standardized to obs per 1,000km2)
-
-data %>% group_by(treatmentGroup, desert) %>% summarize(totalObs = sum(totalObs), mean_ndvi = mean(ndvi), area_km2 = mean(area_km2), total_standard_obs = sum(stzd_totalObs))
-```
-
-
-### how many total occurrences reported for each desert over the 20-year period?
-
-```{r viz on occurrences over the years2}
-
-data %>% group_by(treatmentGroup, desert) %>% summarize(totalObs = sum(totalObs), mean_ndvi = mean(ndvi), area_km2 = mean(area_km2), total_standard_obs = sum(stzd_totalObs)) %>% 
-  ggplot(aes(x = treatmentGroup, y = total_standard_obs, fill = desert)) +
-  geom_col(position = "dodge") +
-  ylab(bquote('Total occurrences reported per 1,000 km'^2)) +
-  xlab("")+
-  scale_fill_uchicago("dark") +
-  theme(axis.text.y = element_text(size = 12), 
-        axis.text.x = element_text(size = 12),
-        axis.title.x = element_text(size = 12),
-        axis.title.y = element_text(size = 12)) +
-  scale_x_discrete(labels=c("Burned area", "Control"))
-```
-
-### how have the number of occurrences changed throughout the years?
-
-```{r}
-
-ggplot(data, aes(x = obsYear, y = stzd_totalObs, color = treatmentGroup)) +
-  geom_point(size = 2) +
-  geom_smooth(method = "gam") +
-  ylim(0, 70) +
-  xlim(2000, 2020) +
-  facet_grid(vars(desert)) +
-  ylab(bquote('Total occurrences reported per 1,000 km'^2)) +
-  xlab("Year") +
-  scale_color_manual(values = c("#b3697a", "#697ab3"),
-                     name = "Burn Treatment",
-                     labels = c("Burned", "Control")) +
-  scale_fill_manual(values = c("#b3697a", "#697ab3"),
-                    name = "Burn Treatment",
-                    labels = c("Burned", "Control")) +
-  theme_bw()
-
-```
-
-### linear model
- 
-
-### lms and GAMs
-
 
 ```{r, include=FALSE}
 model_lm1 <- lm(stzd_totalObs ~ obsYear + ndvi + desert + treatmentGroup, data = data)
@@ -452,7 +619,6 @@ gam.check(model_gam3)
 AIC(model_gam0, model_gam1, model_gam2, model_gam3, model_lm1)
 ```
 
-model_gam2 has a lower AIC value and is, therefore, a better-fit model.
 
 ```{r broom2}
 AIC(model_lm1, model_lm2, model_lm3)
@@ -462,6 +628,9 @@ augment(model_lm1)
 glance(model_lm1)
 
 AIC(model_gam0, model_gam1, model_gam2, model_gam3, model_lm1)
+
+#model_gam2 has a lower AIC value and is, therefore, a better-fit model.
+
 
 #model_gam2 <- gam(stzd_totalObs ~ s(obsYear, by = treatmentGroup) + ndvi + desert + treatmentGroup,family = tw(link = "log"), data = data, method = "REML")
 
@@ -473,42 +642,16 @@ glance(model_gam2)
 
 ```
 
-### plot GAMs
+##### plot GAMs
 
 ```{r}
 plot(model_gam2, all.terms = TRUE)
 
 ```
 
-### ANOVA test
 
-```{r}
-head(data)
-
-occ_anova1 <- aov(stzd_totalObs ~ treatmentGroup, data = data)
-occ_anova2 <- aov(stzd_totalObs ~ desert + treatmentGroup, data = data)
-occ_anova3 <- aov(stzd_totalObs ~ desert*treatmentGroup, data = data)
-
-AIC(occ_anova1, occ_anova2, occ_anova3)
-
-summary(occ_anova3)
-
-TukeyHSD(occ_anova3)
-
-plot(occ_anova3)
-
-```
-
-Results: 
-- significant difference between occurrences reported in Sonoran and Mojave(even though their NDVI were not significantly different).
-- significant difference between burned and control (when not taking desert into account)
-- sig. diff. between Sonoran burned and control
-- no sig. diff. between Moj or San Joaquin burned and control
-
-
-## ONLY birds
-
-```{r reload data3, include = FALSE}
+#### ONLY birds
+```{r reload data3.1, include = FALSE}
 data <- animals  %>% 
   filter(treatmentGroup != "burned prior 2000", class == 'Aves') %>%
   group_by(obsYear, treatmentGroup, desert) %>% 
@@ -524,95 +667,6 @@ data <- left_join(data, areas, by = c("desert", "treatmentGroup")) %>% #areas is
 data$desert <- as.factor(data$desert)
 data$treatmentGroup <- as.factor(data$treatmentGroup)
 ```
-
-
-
-### class occurrences reported
-
-```{r tables and graphs only birds - class composition of data, message=FALSE}
-
-## which class make up the occurrences
-species_dist <- animals %>% 
-  filter(treatmentGroup != "burned prior 2000", class == 'Aves') %>% 
-  group_by(species) %>% 
-  summarize(total_rec = n()) %>% 
-  arrange(desc(-total_rec)) %>% 
-  mutate(percent = (total_rec/sum(total_rec)),label = (paste0(species, "\n", total_rec)))
-
-unique(species_dist$species)
-
-species_dist %>%
-  arrange(desc(-total_rec)) %>%
-  mutate(species=factor(species, species)) %>%
-  ggplot(aes(x=species, y=total_rec) ) +
-    geom_segment(aes(x=species ,xend=species, y=0, yend=total_rec), color="grey", size = 2) +
-    geom_point(size=5, color= "#242c47") +
-    coord_flip() +
-    geom_text(aes(label = total_rec), nudge_x = 0.35) +
-    theme_classic() +
-    theme(panel.grid.minor.y = element_blank(),
-          panel.grid.major.y = element_blank(),
-          legend.position="none",
-          axis.text = element_text(size = 12)) +
-    xlab("") +
-    ylab("Occurrences")
-
-```
-
-
-### Animal occurrences standardized to # of occurrences reported per *1,000km^2* 
-
-```{r table3}
-#table showing summarized values (standardized to obs per 1,000km2)
-
-data %>% group_by(treatmentGroup, desert) %>% summarize(totalObs = sum(totalObs), mean_ndvi = mean(ndvi), area_km2 = mean(area_km2), total_standard_obs = sum(stzd_totalObs))
-```
-
-
-### how many total occurrences reported for each desert over the 20-year period?
-
-```{r viz on occurrences over the years3}
-
-data %>% group_by(treatmentGroup, desert) %>% summarize(totalObs = sum(totalObs), mean_ndvi = mean(ndvi), area_km2 = mean(area_km2), total_standard_obs = sum(stzd_totalObs)) %>% 
-  ggplot(aes(x = treatmentGroup, y = total_standard_obs, fill = desert)) +
-  geom_col(position = "dodge") +
-  ylab(bquote('Total occurrences reported per 1,000 km'^2)) +
-  xlab("")+
-  scale_fill_uchicago("dark") +
-  theme(axis.text.y = element_text(size = 12), 
-        axis.text.x = element_text(size = 12),
-        axis.title.x = element_text(size = 12),
-        axis.title.y = element_text(size = 12)) +
-  scale_x_discrete(labels=c("Burned area", "Control"))
-```
-
-### how have the number of occurrences changed throughout the years?
-
-```{r}
-
-ggplot(data, aes(x = obsYear, y = stzd_totalObs, color = treatmentGroup)) +
-  geom_point(size = 2) +
-  geom_smooth(method = "gam") +
-  ylim(0, 70) +
-  xlim(2000, 2020) +
-  facet_grid(vars(desert)) +
-  ylab(bquote('Total occurrences reported per 1,000 km'^2)) +
-  xlab("Year") +
-  scale_color_manual(values = c("#b3697a", "#697ab3"),
-                     name = "Burn Treatment",
-                     labels = c("Burned", "Control")) +
-  scale_fill_manual(values = c("#b3697a", "#697ab3"),
-                    name = "Burn Treatment",
-                    labels = c("Burned", "Control")) +
-  theme_bw()
-
-```
-
-### linear model
- 
-
-### lms and GAMs
-
 
 ```{r, include = FALSE}
 model_lm1 <- lm(stzd_totalObs ~ obsYear + ndvi + desert + treatmentGroup, data = data)
@@ -647,8 +701,6 @@ gam.check(model_gam3)
 AIC(model_gam0, model_gam1, model_gam2, model_gam3, model_lm1)
 ```
 
-
-
 ```{r broom3}
 AIC(model_lm1, model_lm2, model_lm3)
 
@@ -657,6 +709,9 @@ augment(model_lm2)
 glance(model_lm2)
 
 AIC(model_gam0, model_gam1, model_gam2, model_gam3, model_lm2)
+
+#model_gam3 has a lower AIC value and is, therefore, a better-fit model.
+
 
 #model_gam3 <- gam(stzd_totalObs ~ s(obsYear, by = desert) + s(ndvi) + desert + treatmentGroup, family = tw(link = "log"), data = data, method = "REML")
 
@@ -668,16 +723,115 @@ glance(model_gam3)
 
 ```
 
-model_gam3 has a lower AIC value and is, therefore, a better-fit model.
 
-### plot GAMs
+##### plot GAMs
 
 ```{r}
 plot(model_gam3, all.terms = TRUE)
 
 ```
 
-### ANOVA test
+
+### ANOVA
+
+#### All
+```{r reload data1.2, include = FALSE}
+data <- animals  %>% 
+  filter(treatmentGroup != "burned prior 2000") %>%
+  group_by(obsYear, treatmentGroup, desert) %>% 
+  summarize(totalObs = n())
+
+#add ndvi data
+data <- left_join(data, ndvi, by = c("desert", "obsYear", "treatmentGroup"))
+
+#add area for burned and unburned
+data <- left_join(data, areas, by = c("desert", "treatmentGroup")) %>% #areas is a dataframe created from shapefiles in a hidden step
+  mutate(stzd_totalObs = (totalObs * 1000)/area_km2) #total observation per 10000 km2
+
+data$desert <- as.factor(data$desert)
+data$treatmentGroup <- as.factor(data$treatmentGroup)
+```
+
+```{r}
+head(data)
+
+occ_anova1 <- aov(stzd_totalObs ~ treatmentGroup, data = data)
+occ_anova2 <- aov(stzd_totalObs ~ desert + treatmentGroup, data = data)
+occ_anova3 <- aov(stzd_totalObs ~ desert*treatmentGroup, data = data)
+
+AIC(occ_anova1, occ_anova2, occ_anova3)
+
+summary(occ_anova3)
+
+TukeyHSD(occ_anova3)
+
+plot(occ_anova3)
+
+```
+
+Results: 
+- significant difference between occurrences reported in San Joaquin and Mojave.
+- no sig. diff. between burned and control (neither overall or between deserts)
+
+#### No birds
+```{r reload data2.2, include = FALSE}
+data <- animals  %>% 
+  filter(treatmentGroup != "burned prior 2000", class != "Aves") %>%
+  group_by(obsYear, treatmentGroup, desert) %>% 
+  summarize(totalObs = n())
+
+#add ndvi data
+data <- left_join(data, ndvi, by = c("desert", "obsYear", "treatmentGroup"))
+
+#add area for burned and unburned
+data <- left_join(data, areas, by = c("desert", "treatmentGroup")) %>% #areas is a dataframe created from shapefiles in a hidden step
+  mutate(stzd_totalObs = (totalObs * 1000)/area_km2) #total observation per 10000 km2
+
+data$desert <- as.factor(data$desert)
+data$treatmentGroup <- as.factor(data$treatmentGroup)
+```
+
+```{r}
+head(data)
+
+occ_anova1 <- aov(stzd_totalObs ~ treatmentGroup, data = data)
+occ_anova2 <- aov(stzd_totalObs ~ desert + treatmentGroup, data = data)
+occ_anova3 <- aov(stzd_totalObs ~ desert*treatmentGroup, data = data)
+
+AIC(occ_anova1, occ_anova2, occ_anova3)
+
+summary(occ_anova3)
+
+TukeyHSD(occ_anova3)
+
+plot(occ_anova3)
+
+```
+
+Results: 
+- significant difference between occurrences reported in Sonoran and Mojave(even though their NDVI were not significantly different).
+- significant difference between burned and control (when not taking desert into account)
+- sig. diff. between Sonoran burned and control
+- no sig. diff. between Moj or San Joaquin burned and control
+
+
+#### Only birds
+```{r reload data3.2, include = FALSE}
+data <- animals  %>% 
+  filter(treatmentGroup != "burned prior 2000", class == 'Aves') %>%
+  group_by(obsYear, treatmentGroup, desert) %>% 
+  summarize(totalObs = n())
+
+#add ndvi data
+data <- left_join(data, ndvi, by = c("desert", "obsYear", "treatmentGroup"))
+
+#add area for burned and unburned
+data <- left_join(data, areas, by = c("desert", "treatmentGroup")) %>% #areas is a dataframe created from shapefiles in a hidden step
+  mutate(stzd_totalObs = (totalObs * 1000)/area_km2) #total observation per 10000 km2
+
+data$desert <- as.factor(data$desert)
+data$treatmentGroup <- as.factor(data$treatmentGroup)
+```
 
 ```{r}
 head(data)
