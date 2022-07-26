@@ -531,24 +531,26 @@ gam.check(model_gam1)
 gam.check(model_gam2)
 gam.check(model_gam3)
 
-
 AIC(model_gam0, model_gam1, model_gam2, model_gam3, model_lm1)
-```
 
+```
 
 ```{r broom1}
 AIC(model_lm1, model_lm2, model_lm3)
+
+# model_lm3 <- lm(stzd_totalObs ~ obsYear + desert + ndvi, data = data)
 
 tidy(model_lm3)
 augment(model_lm3)
 glance(model_lm3)
 
-AIC(model_gam0, model_gam1, model_gam2, model_gam3, model_lm3)
 
-#model_gam3 has a lower AIC value and is, therefore, a better-fit model.
+#model_gam3 has a lower AIC value and non-linearity is justified 
 
+print(anova(model_gam3))
 
 #model_gam3 <- gam(stzd_totalObs ~ s(obsYear, by = desert) + s(ndvi) + desert + treatmentGroup, family = tw(link = "log"), data = data, method = "REML")
+
 
 tidy(model_gam3)
 augment(model_gam3)
@@ -623,14 +625,17 @@ AIC(model_gam0, model_gam1, model_gam2, model_gam3, model_lm1)
 ```{r broom2}
 AIC(model_lm1, model_lm2, model_lm3)
 
+#model_lm1 <- lm(stzd_totalObs ~ obsYear + ndvi + desert + treatmentGroup, data = data)
+
 tidy(model_lm1)
 augment(model_lm1)
 glance(model_lm1)
 
 AIC(model_gam0, model_gam1, model_gam2, model_gam3, model_lm1)
 
-#model_gam2 has a lower AIC value and is, therefore, a better-fit model.
+#model_gam2 has a lower AIC value; non-linearity is not justified.
 
+print(anova(model_gam2))
 
 #model_gam2 <- gam(stzd_totalObs ~ s(obsYear, by = treatmentGroup) + ndvi + desert + treatmentGroup,family = tw(link = "log"), data = data, method = "REML")
 
@@ -710,8 +715,9 @@ glance(model_lm2)
 
 AIC(model_gam0, model_gam1, model_gam2, model_gam3, model_lm2)
 
-#model_gam3 has a lower AIC value and is, therefore, a better-fit model.
+#model_gam3 has a lower AIC value
 
+print(anova(model_gam3))
 
 #model_gam3 <- gam(stzd_totalObs ~ s(obsYear, by = desert) + s(ndvi) + desert + treatmentGroup, family = tw(link = "log"), data = data, method = "REML")
 
@@ -849,3 +855,74 @@ TukeyHSD(occ_anova3)
 plot(occ_anova3)
 
 ```
+
+
+### One model to rule them all!
+
+```{r reload data1.3, include = FALSE}
+data <- animals  %>% 
+  filter(treatmentGroup != "burned prior 2000") %>%
+  mutate(taxa = ifelse(class == "Aves", "Aves", "Other")) %>% 
+  group_by(obsYear, treatmentGroup, desert, taxa) %>%
+  summarize(totalObs = n())
+
+#add ndvi data
+data <- left_join(data, ndvi, by = c("desert", "obsYear", "treatmentGroup"))
+
+#add area for burned and unburned
+data <- left_join(data, areas, by = c("desert", "treatmentGroup")) %>% #areas is a dataframe created from shapefiles in a hidden step
+  mutate(stzd_totalObs = (totalObs * 1000)/area_km2) #total observation per 10000 km2
+
+data$desert <- as.factor(data$desert)
+data$treatmentGroup <- as.factor(data$treatmentGroup)
+```
+
+```{r}
+model_lm1 <- lm(stzd_totalObs ~ obsYear + ndvi + desert + treatmentGroup + taxa, data = data)
+summary(model_lm1)
+
+model_lm2 <- lm(stzd_totalObs ~ obsYear + ndvi + desert + treatmentGroup, data = data)
+summary(model_lm3)
+
+model_gam0 <- gam(stzd_totalObs ~ s(obsYear) + ndvi + desert + treatmentGroup, data = data, method = "REML")
+summary(model_gam0)
+
+model_gam1 <- gam(stzd_totalObs ~ s(obsYear, by = desert) + s(ndvi, by = desert) + desert + treatmentGroup, data = data, method = "REML")
+summary(model_gam1)
+
+model_gam2 <- gam(stzd_totalObs ~ s(obsYear, by = treatmentGroup) + ndvi + desert + treatmentGroup,family = tw(link = "log"), data = data, method = "REML")
+summary(model_gam2)
+
+model_gam3 <- gam(stzd_totalObs ~ s(obsYear, by = desert) + s(ndvi) + desert + treatmentGroup + taxa, family = tw(link = "log"), data = data, method = "REML")
+summary(model_gam3)
+
+gam.check(model_gam0)
+gam.check(model_gam1)
+gam.check(model_gam2)
+gam.check(model_gam3)
+
+```
+
+```{r}
+#model_lm1 <- lm(stzd_totalObs ~ obsYear + ndvi + desert + treatmentGroup + taxa, data = data)
+summary(model_lm1)
+
+#model_gam3 <- gam(stzd_totalObs ~ s(obsYear, by = desert) + s(ndvi) + desert + treatmentGroup + taxa, family = tw(link = "log"), data = data, method = "REML")
+
+
+AIC(model_gam3, model_lm1)
+
+summary(model_gam3)
+gam.check(model_gam3)
+
+plot(model_gam3)
+
+#some years have other taxa missing (mostly in burned area)
+ggplot(data, aes(x = obsYear, y = stzd_totalObs, color = taxa, shape = desert)) +
+  geom_point() +
+  facet_wrap(vars(treatmentGroup)) +
+  theme_bw()
+
+
+```
+
