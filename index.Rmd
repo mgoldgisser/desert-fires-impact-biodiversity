@@ -972,7 +972,7 @@ explore2 <- animals %>% filter(treatmentGroup != "burned prior 2000", class != "
 ```
 
 ## global model with simplified taxa
-```{r}
+```{r load new data, include = FALSE}
 data <- animals %>%
   group_by(obsYear, treatmentGroup, desert) %>% 
   summarize(totalObs = n()) %>% 
@@ -1018,10 +1018,16 @@ head(data, 10)
 ### visual
 
 ```{r}
+# data %>% 
+#   ggplot(aes(x = ndvi, y = stzd_totalObs, color = simplified_taxa)) +
+#   geom_point() +
+#   facet_grid(vars(desert), vars(treatmentGroup))+
+#   theme_bw()
+
 data %>% 
-  ggplot(aes(x = ndvi, y = stzd_totalObs, color = simplified_taxa)) +
-  geom_point() +
-  facet_grid(vars(desert), vars(treatmentGroup))+
+  ggplot(aes(x = ndvi, y = stzd_totalObs, color = simplified_taxa, shape = desert)) +
+  geom_point(size = 3) +
+  facet_grid(vars(treatmentGroup)) +
   theme_bw()
 
 data2 <- data %>% dplyr::select(-simplified_taxa)
@@ -1031,12 +1037,6 @@ ggplot(data2, aes(x = ndvi, y = stzd_totalObs)) +
   geom_point(color = "gray70") +
   geom_point(data = data, aes(color = simplified_taxa)) +
   facet_wrap(~simplified_taxa) +
-  theme_bw()
-
-data %>% 
-  ggplot(aes(x = ndvi, y = stzd_totalObs, color = simplified_taxa, shape = desert)) +
-  geom_point(size = 3) +
-  facet_grid(vars(treatmentGroup)) +
   theme_bw()
 
 data %>% 
