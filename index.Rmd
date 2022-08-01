@@ -1160,7 +1160,7 @@ ggplot(data = data, aes(x = postingvalue, y = totalObs)) +
 
 at least 2 pre or at least 2 post
 
-```{r data prep, include = FALSE}
+```{r data prep2, include = FALSE}
 data <- animals %>% 
   filter(treatmentGroup == "burned") %>% 
   merge(.,sites[,c("fireID", "fireMonth")], by = "fireID") %>% #NEED to add fire months
