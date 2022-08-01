@@ -1098,7 +1098,7 @@ data <-  data %>% filter(n_years <= 5) %>%
   group_by(desert, fireID, fireYear, postingvalue, pre_or_post, n_years) %>% 
   summarize(totalObs = n())
 
-ggplot(data = data_all, aes(x = postingvalue, y = totalObs)) +
+ggplot(data = data, aes(x = postingvalue, y = totalObs)) +
   geom_point() +
   geom_smooth(method = "lm", family = "poisson") +
   facet_wrap(vars(desert))
