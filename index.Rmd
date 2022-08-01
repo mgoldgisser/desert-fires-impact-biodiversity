@@ -1045,8 +1045,6 @@ data %>%
   geom_smooth()+
   facet_grid(vars(desert)) +
   theme_bw()
-
-
 ```
 
 ### GAMs
@@ -1069,3 +1067,139 @@ plot(model_gam3)
 
 ```
 
+
+## recovery
+### using all observations and fire sites
+```{r prepare data, include = FALSE}
+data <- animals %>% 
+  filter(treatmentGroup == "burned") %>% 
+  merge(.,sites[,c("fireID", "fireMonth")], by = "fireID") %>% #NEED to add fire months
+  mutate(postingvalue = obsYear - fireYear, 
+         pre_or_post = case_when(postingvalue > 0 ~ "post",
+                                 postingvalue < 0 ~ "pre",
+                                 postingvalue == 0 ~ "SY"),
+         n_years = abs(postingvalue))
+
+#find pre- post- for observations in the same year and replace SY in datafire with pre or post
+SY <- filter(data, postingvalue == 0) %>% 
+  mutate(postingmonth = obsMonth - fireMonth,
+    pre_or_post = case_when(postingmonth >0 ~ "post",
+                            postingmonth < 0 ~ "pre",
+                            postingvalue == 0 ~ "SM"))
+data$pre_or_post <- ifelse(data$pre_or_post == "SY", SY$pre_or_post, data$pre_or_post)
+unique(data$pre_or_post) #check if any SM (same month); would need to further categorize
+
+```
+
+```{r}
+
+data <-  data %>% filter(n_years <= 5) %>% 
+  select(c("class", "order", "genus", "species", "individualCount", "obsYear", "desert", "fireID", "fireName", "fireYear", "fireMonth", "postingvalue", "pre_or_post", "n_years")) %>% 
+  group_by(desert, fireID, fireYear, postingvalue, pre_or_post, n_years) %>% 
+  summarize(totalObs = n())
+
+ggplot(data = data_all, aes(x = postingvalue, y = totalObs)) +
+  geom_point() +
+  geom_smooth(method = "lm", family = "poisson") +
+  facet_wrap(vars(desert))
+
+
+```
+
+### controlling for sampling before/after bias
+
+just looking at those with at least 1 pre and 1 post
+
+```{r data prep, include = FALSE}
+data <- animals %>% 
+  filter(treatmentGroup == "burned") %>% 
+  merge(.,sites[,c("fireID", "fireMonth")], by = "fireID") %>% #NEED to add fire months
+  mutate(postingvalue = obsYear - fireYear, 
+         pre_or_post = case_when(postingvalue > 0 ~ "post",
+                                 postingvalue < 0 ~ "pre",
+                                 postingvalue == 0 ~ "SY"),
+         n_years = abs(postingvalue))
+
+#find pre- post- for observations in the same year and replace SY in datafire with pre or post
+SY <- filter(data, postingvalue == 0) %>% 
+  mutate(postingmonth = obsMonth - fireMonth,
+    pre_or_post = case_when(postingmonth >0 ~ "post",
+                            postingmonth < 0 ~ "pre",
+                            postingvalue == 0 ~ "SM"))
+data$pre_or_post <- ifelse(data$pre_or_post == "SY", SY$pre_or_post, data$pre_or_post)
+unique(data$pre_or_post) #check if any SM (same month); would need to further categorize
+
+samp_bias <- data %>% filter(n_years <= 5) %>% 
+  group_by(desert, fireID, obsYear, eventDate, pre_or_post) %>% 
+  summarize(samplingEvents = n()) %>% 
+  ungroup() %>% 
+  group_by(desert, fireID, pre_or_post) %>% 
+  summarize(samplingEvents = n())
+
+sampled_sites <- samp_bias %>% group_by(desert, fireID) %>% 
+  summarize(return = n()) %>% 
+  filter(return > 1) %>% 
+  .$fireID
+```
+```{r}
+data <- data %>%  filter(fireID %in% sampled_sites, n_years <= 5) %>% 
+  select(c("class", "order", "genus", "species", "individualCount", "obsYear", "desert", "fireID", "fireName", "fireYear", "fireMonth", "postingvalue", "pre_or_post", "n_years")) %>% 
+  group_by(desert, fireID, fireYear, postingvalue, pre_or_post, n_years) %>% 
+  summarize(totalObs = n())
+
+ggplot(data = data, aes(x = postingvalue, y = totalObs)) +
+  geom_point() +
+  geom_smooth(method = "lm", family = "poisson") +
+  facet_wrap(vars(desert))
+  
+```
+
+
+
+### controlling for sampling bias
+
+at least 2 pre or at least 2 post
+
+```{r data prep, include = FALSE}
+data <- animals %>% 
+  filter(treatmentGroup == "burned") %>% 
+  merge(.,sites[,c("fireID", "fireMonth")], by = "fireID") %>% #NEED to add fire months
+  mutate(postingvalue = obsYear - fireYear, 
+         pre_or_post = case_when(postingvalue > 0 ~ "post",
+                                 postingvalue < 0 ~ "pre",
+                                 postingvalue == 0 ~ "SY"),
+         n_years = abs(postingvalue))
+
+#find pre- post- for observations in the same year and replace SY in datafire with pre or post
+SY <- filter(data, postingvalue == 0) %>% 
+  mutate(postingmonth = obsMonth - fireMonth,
+    pre_or_post = case_when(postingmonth >0 ~ "post",
+                            postingmonth < 0 ~ "pre",
+                            postingvalue == 0 ~ "SM"))
+data$pre_or_post <- ifelse(data$pre_or_post == "SY", SY$pre_or_post, data$pre_or_post)
+unique(data$pre_or_post) #check if any SM (same month); would need to further categorize
+
+samp_bias <- data %>% filter(n_years <= 5) %>% 
+  group_by(desert, fireID, obsYear, eventDate, pre_or_post) %>% 
+  summarize(samplingEvents = n()) %>% 
+  ungroup() %>% 
+  group_by(desert, fireID, pre_or_post) %>% 
+  summarize(samplingEvents = n()) %>% 
+  filter(samplingEvents >1)
+
+sampled_sites <- samp_bias %>% group_by(desert, fireID) %>% 
+  summarize(return = n()) %>% 
+  filter(return > 1) %>% 
+  .$fireID
+```
+```{r}
+data <- data %>%  filter(fireID %in% samp_bias$fireID, n_years <= 5) %>% 
+  select(c("class", "order", "genus", "species", "individualCount", "obsYear", "desert", "fireID", "fireName", "fireYear", "fireMonth", "postingvalue", "pre_or_post", "n_years")) %>% 
+  group_by(desert, fireID, fireYear, postingvalue, pre_or_post, n_years) %>% 
+  summarize(totalObs = n())
+
+ggplot(data = data, aes(x = postingvalue, y = totalObs)) +
+  geom_point() +
+  geom_smooth(method = "lm", family = "poisson") +
+  facet_wrap(vars(desert))
+```  
