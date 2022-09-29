@@ -1,0 +1,133 @@
+obsYear,desert,ndvi,treatmentGroup
+2000,San Joaquin,0.354756911622239,burned
+2000,Mojave,0.2324562412992,burned
+2000,Sonoran,0.225908419856059,burned
+2001,San Joaquin,0.354435490536503,burned
+2001,Mojave,0.239174953770042,burned
+2001,Sonoran,0.235284377216738,burned
+2002,San Joaquin,0.336652020491586,burned
+2002,Mojave,0.205005250027501,burned
+2002,Sonoran,0.203390311621437,burned
+2003,San Joaquin,0.365314913708093,burned
+2003,Mojave,0.248952349799622,burned
+2003,Sonoran,0.243352752055754,burned
+2004,San Joaquin,0.351021512598667,burned
+2004,Mojave,0.238892096646894,burned
+2004,Sonoran,0.233257615148618,burned
+2005,San Joaquin,0.39630719962481,burned
+2005,Mojave,0.274455588363665,burned
+2005,Sonoran,0.286271777078752,burned
+2006,San Joaquin,0.347083592782789,burned
+2006,Mojave,0.246920446414552,burned
+2006,Sonoran,0.23605725301955,burned
+2007,San Joaquin,0.263654656514922,burned
+2007,Mojave,0.198073476366218,burned
+2007,Sonoran,0.194033949086302,burned
+2008,San Joaquin,0.335403178284411,burned
+2008,Mojave,0.230435496269091,burned
+2008,Sonoran,0.237765107288999,burned
+2009,San Joaquin,0.337672477693546,burned
+2009,Mojave,0.240728998551061,burned
+2009,Sonoran,0.243180527942847,burned
+2010,San Joaquin,0.402403124616037,burned
+2010,Mojave,0.246609619252128,burned
+2010,Sonoran,0.257590618361952,burned
+2011,San Joaquin,0.363193248612118,burned
+2011,Mojave,0.246315005389494,burned
+2011,Sonoran,0.264558287651502,burned
+2012,San Joaquin,0.282864522495036,burned
+2012,Mojave,0.223241474078764,burned
+2012,Sonoran,0.224113807586349,burned
+2013,San Joaquin,0.311112928024578,burned
+2013,Mojave,0.199836310754125,burned
+2013,Sonoran,0.207900763140467,burned
+2014,San Joaquin,0.262035810511757,burned
+2014,Mojave,0.209302733128499,burned
+2014,Sonoran,0.198250946434504,burned
+2015,San Joaquin,0.342109664840903,burned
+2015,Mojave,0.227981711330156,burned
+2015,Sonoran,0.214459572244272,burned
+2016,San Joaquin,0.370446958796849,burned
+2016,Mojave,0.220164241418588,burned
+2016,Sonoran,0.208976716775255,burned
+2017,San Joaquin,0.362104736130943,burned
+2017,Mojave,0.220650625184818,burned
+2017,Sonoran,0.24815565084172,burned
+2018,San Joaquin,0.31753566615628,burned
+2018,Mojave,0.217624947618298,burned
+2018,Sonoran,0.212439778793071,burned
+2019,San Joaquin,0.371645129936682,burned
+2019,Mojave,0.242678323363064,burned
+2019,Sonoran,0.259000033201399,burned
+2020,San Joaquin,0.340029542935994,burned
+2020,Mojave,0.239710556164375,burned
+2020,Sonoran,0.247394291460241,burned
+2021,San Joaquin,0.279445574512118,burned
+2021,Mojave,0.206139239754127,burned
+2021,Sonoran,0.217809255159466,burned
+2000,San Joaquin,0.369834265,never burned
+2000,Mojave,0.10973983,never burned
+2000,Sonoran,0.132827836,never burned
+2001,San Joaquin,0.365446133,never burned
+2001,Mojave,0.124131124,never burned
+2001,Sonoran,0.141474321,never burned
+2002,San Joaquin,0.352284681,never burned
+2002,Mojave,0.10649385,never burned
+2002,Sonoran,0.135388341,never burned
+2003,San Joaquin,0.377407611,never burned
+2003,Mojave,0.12983656,never burned
+2003,Sonoran,0.144883038,never burned
+2004,San Joaquin,0.376622463,never burned
+2004,Mojave,0.133918085,never burned
+2004,Sonoran,0.143292682,never burned
+2005,San Joaquin,0.404784243,never burned
+2005,Mojave,0.173643898,never burned
+2005,Sonoran,0.181760726,never burned
+2006,San Joaquin,0.377612394,never burned
+2006,Mojave,0.133301308,never burned
+2006,Sonoran,0.146596154,never burned
+2007,San Joaquin,0.319747404,never burned
+2007,Mojave,0.114108846,never burned
+2007,Sonoran,0.136720739,never burned
+2008,San Joaquin,0.355514039,never burned
+2008,Mojave,0.125088658,never burned
+2008,Sonoran,0.143396571,never burned
+2009,San Joaquin,0.348728106,never burned
+2009,Mojave,0.131191397,never burned
+2009,Sonoran,0.143741245,never burned
+2010,San Joaquin,0.408463488,never burned
+2010,Mojave,0.137270818,never burned
+2010,Sonoran,0.154587191,never burned
+2011,San Joaquin,0.397013241,never burned
+2011,Mojave,0.141780138,never burned
+2011,Sonoran,0.146383721,never burned
+2012,San Joaquin,0.339940647,never burned
+2012,Mojave,0.114092707,never burned
+2012,Sonoran,0.140788474,never burned
+2013,San Joaquin,0.343299971,never burned
+2013,Mojave,0.109453911,never burned
+2013,Sonoran,0.142394357,never burned
+2014,San Joaquin,0.313948252,never burned
+2014,Mojave,0.114814627,never burned
+2014,Sonoran,0.136790804,never burned
+2015,San Joaquin,0.357176233,never burned
+2015,Mojave,0.120059975,never burned
+2015,Sonoran,0.133058923,never burned
+2016,San Joaquin,0.365054885,never burned
+2016,Mojave,0.11562054,never burned
+2016,Sonoran,0.129626829,never burned
+2017,San Joaquin,0.388954757,never burned
+2017,Mojave,0.128634729,never burned
+2017,Sonoran,0.146697379,never burned
+2018,San Joaquin,0.35009793,never burned
+2018,Mojave,0.113126584,never burned
+2018,Sonoran,0.131657488,never burned
+2019,San Joaquin,0.393655492,never burned
+2019,Mojave,0.137082697,never burned
+2019,Sonoran,0.154125779,never burned
+2020,San Joaquin,0.373018556,never burned
+2020,Mojave,0.141941169,never burned
+2020,Sonoran,0.153296954,never burned
+2021,San Joaquin,0.332357055,never burned
+2021,Mojave,0.116097873,never burned
+2021,Sonoran,0.13942815,never burned
