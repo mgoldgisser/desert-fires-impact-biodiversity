@@ -24,6 +24,7 @@ library(gghighlight)
 library(gamm4)
 library(MuMIn)
 library(cowplot)
+library(MASS)
 
 setwd("~/GitHub/desert-fires-impact-biodiversity")
 
@@ -38,7 +39,7 @@ animals <- st_read("shapefiles/animals/animals_51022.shp") %>%
          institutionalCode = institutio, 
          treatmentGroup = treatmentG, fireName = INCIDENT, 
          fireYear = FIRE_YEARn, fireSize = GISAcres) %>% 
-  select(-c("verbatimSc", "issue", "coordinate", 'nearRd_FID', "nearUA_FID", 
+  dplyr::select(-c("verbatimSc", "issue", "coordinate", 'nearRd_FID', "nearUA_FID", 
             'basisOfRec', 'institutionalCode', 'collection', 'recordedBy', 'nearRdDist', 'nearUADist')) %>% 
   filter(obsYear > 1994, obsYear < 2021, species != "Canis lupus", species != "Balaenoptera musculus", 
          species != "Grus canadensis", treatmentGroup != "burned prior 2000") %>%  
@@ -339,7 +340,7 @@ abline(0, 0, lty = 2)
 
 # model with varying slope and intercept too complex
 
-#interaction of taxa and desert with varying intercept for year 
+#interaction of taxa and desert with varying intercept for year
 lmm1 <- lmer(Z_obs ~ Z_ndvi * treatmentGroup + (1|obsYear) + (1|desert:ez_taxa), data = data, REML = TRUE)
 
 #varying intercepts for all
@@ -700,20 +701,21 @@ plot_smooth(gamm19, view="ndvi", rm.ranef = FALSE,
             add = TRUE, col = 'turquoise')
 ```
 
-Model evaluation of lm, glmm, gam, and gamm shows that the strongest model is a gamm in which desert is included as a random slope and intercept. NDVI is included as a smooth function and treatment group is included as an interaction term. The observation year (factor) and simiplified taxa are included as main effects.
+Model evaluation of lm, glmm, gam, and gamm shows that the strongest model is a gamm in which desert is included as a random slope and intercept. NDVI is included as a smooth function and treatment group is included as an interaction term. The observation year (factor) and simplified taxa are included as main effects.
 
 Tweedie distribution was used because the variance increases with the mean.
 
 
 ```{r}
-gamm17 <- gam(stzd_totalObs ~ s(ndvi, by = treatmentGroup) + s(desert, ndvi, bs = "re") +
+gamm17A <- gam(stzd_totalObs ~ s(ndvi, by = treatmentGroup) + s(desert, ndvi, bs = "re") +
               s(desert, bs = "re") +
               treatmentGroup + 
               obsYear +
               simplified_taxa, family = tw(link = "log"), data = data, method = "REML")
-gam.check(gamm17)
 
+gam.check(gamm17)
 summary(gamm17)
+
 ```
 
 ```{r, include=FALSE}
@@ -744,56 +746,6 @@ ggplot(data, aes(x = ndvi, y = stzd_totalObs, color=treatmentGroup)) +
   facet_grid(vars(desert))
 ```
 
-
-### ANOVA
-
-```{r, include = FALSE}
-
-data_birds <- data %>% filter(ez_taxa == "Aves")
-data_other <- data %>% filter(ez_taxa == "Other")
-
-anova1 <- aov(stzd_totalObs ~ desert + treatmentGroup, data = data)
-anova2 <- aov(stzd_totalObs ~ desert*ez_taxa, data = data)
-anova3 <- aov(stzd_totalObs ~ treatmentGroup*ez_taxa, data = data)
-anova4 <- aov(stzd_totalObs ~ desert*treatmentGroup, data = data)
-
-AIC(anova1, anova2, anova3, anova4)
-
-anova5 <- aov(stzd_totalObs ~ desert*treatmentGroup, data = data_birds)
-anova6 <- aov(stzd_totalObs ~ desert*treatmentGroup, data = data_other)
-
-AIC(anova1, anova2, anova3, anova4)
-
-summary(anova4)
-
-TukeyHSD(anova4)
-TukeyHSD(anova5)
-TukeyHSD(anova6)
-
-plot(anova4)
-
-```
-
-**Tukey for birds: p-value**
-1. Mojave:burned-Mojave:never burned 0.9935370  
-2. San Joaquin:burned-San Joaquin:never burned  0.0000638  
-3. Sonoran:burned-Sonoran:never burned 0.9999994  
-
-+ No significant difference between occurrences reported in Sonoran and Mojave.
-+ sig. diff. between burned and control for birds reported in San Joaquin only
-
-***
-
-
-**Tukey for other taxa: p-value**
-1. Mojave:burned-Mojave:never burned 0.9935370  
-2. San Joaquin:burned-San Joaquin:never burned  0.0000638  
-3. Sonoran:burned-Sonoran:never burned 0.9999994  
-
-+ No significant difference between occurrences reported in Sonoran and Mojave.
-+ sig. diff. between burned and control for birds reported in San Joaquin only
-
-
 ## recovery
 ```{r prepare recovery data, include = FALSE}
 data_r <- animals %>% 
@@ -817,7 +769,7 @@ unique(data_r$pre_or_post) #check if any SM (same month); would need to further 
 data_r <- left_join(data_r, ndvi, by = c("desert", "obsYear", "treatmentGroup"))
 
 ###data for pre-/post- burned sites
-data_pp <-  data_r %>% filter(n_years <=5) %>% 
+data_pp_b <-  data_r %>% filter(n_years <=5) %>% 
   dplyr::select(c("ez_taxa", "simplified_taxa", "individualCount", "obsYear", "desert", "fireID", "fireName", "fireYear", "fireMonth", "yearsSinceFire", "pre_or_post", "n_years", "ndvi")) %>% 
   group_by(desert, obsYear, fireID, fireYear, yearsSinceFire, ez_taxa, simplified_taxa, pre_or_post, n_years, ndvi) %>% 
   summarize(totalObs = n()) %>% 
@@ -829,9 +781,9 @@ data_pp <-  data_r %>% filter(n_years <=5) %>%
 
 #first column = list of fireYear
 ###old code
-# fireYear <- data_pp %>% filter(n_years <=5) %>% {unique(.$fireYear)} %>% sort() %>% rep(.,each=11)
+# fireYear <- data_pp_b %>% filter(n_years <=5) %>% {unique(.$fireYear)} %>% sort() %>% rep(.,each=11)
 
-fireYear <- data_pp %>% filter(n_years <=5) %>% group_by(fireYear, desert) %>% summarize(total = n()) %>% select(-total)
+fireYear <- data_pp_b %>% filter(n_years <=5) %>% group_by(fireYear, desert) %>% summarize(total = n()) %>% dplyr::select(-total)
 
 data_c <- data.frame(rep(fireYear$fireYear, each = 11), rep(fireYear$desert, each = 11))
 
@@ -855,11 +807,11 @@ test <- merge(data_c, totalObs) %>% mutate(pre_or_post = case_when(yearsSinceFir
                                  yearsSinceFire < 0 ~ "pre",
                                  yearsSinceFire == 0 ~ "same year")) %>% 
   left_join(., filter(ndvi, treatmentGroup == "never burned"), by = c("desert", "obsYear")) %>%#add ndvi
-  select(-treatmentGroup) %>% 
+  dplyr::select(-treatmentGroup) %>% 
   left_join(., filter(areas, treatmentGroup == "never burned"), by = "desert") %>% #add area
   mutate(stzdObs = ceiling((totalObs/area_km2)*10000), treatmentGroup = "control")
 
-data_recovery <- rbind(data_pp, test)
+data_pp <- rbind(data_pp_b, test) %>% filter(pre_or_post != "same year")
 
 ###data for over-time for burned sites
 
@@ -900,17 +852,17 @@ data_ot_c <- data.frame(desert, fireYear, yearsSinceFire) %>%
   filter(obsYear < 2021) %>% 
   left_join(., totalObs, by = c("obsYear", "desert")) %>% 
   left_join(., filter(ndvi, treatmentGroup == "never burned"), by = c("desert", "obsYear")) %>%#add ndvi
-  select(-treatmentGroup) %>% 
+  dplyr::select(-treatmentGroup) %>% 
   left_join(., filter(areas, treatmentGroup == "never burned"), by = "desert") %>% #add area
   mutate(stzdObs = ceiling((totalObs/area_km2)*10000), treatmentGroup = "control")
 
 data_ot <- rbind(data_ot_b, data_ot_c) %>% 
-  select(-c(pre_or_post, n_years))
+  dplyr::select(-c(pre_or_post, n_years))
 ```
 
 ```{r, echo =FALSE}
 
-ggplot(data_pp, aes(x = yearsSinceFire, y = totalObs)) +
+ggplot(data_pp_b, aes(x = yearsSinceFire, y = totalObs)) +
   geom_point() +
   geom_smooth() +
   facet_wrap(vars(desert), scales = "free_y") +
@@ -918,9 +870,9 @@ ggplot(data_pp, aes(x = yearsSinceFire, y = totalObs)) +
   ylab("Species occurrences reported") +
   theme_bw()
 
-data_pp$desert <- as.factor(data_pp$desert)
+data_pp_b$desert <- as.factor(data_pp_b$desert)
 
-do(data_pp, glance(gam(totalObs ~ yearsSinceFire, data = .)))
+do(data_pp_b, glance(gam(totalObs ~ yearsSinceFire, data = .)))
 
 
 ```
@@ -929,7 +881,7 @@ do(data_pp, glance(gam(totalObs ~ yearsSinceFire, data = .)))
 
 ```{r graphs comparing pre- and post- burn, echo = FALSE}
 
-ggplot(filter(data_recovery, pre_or_post != "same year" & ez_taxa == "Aves"), aes(x = treatmentGroup, y =  stzdObs, fill = factor(pre_or_post, levels = c("pre", "post")))) +
+ggplot(filter(data_pp, pre_or_post != "same year" & ez_taxa == "Aves"), aes(x = treatmentGroup, y =  stzdObs, fill = factor(pre_or_post, levels = c("pre", "post")))) +
   geom_boxplot() +
   scale_fill_aaas(labels = c("Before fire", "After fire")) +
   scale_x_discrete(labels = c("Burned", "Control")) +
@@ -937,7 +889,7 @@ ggplot(filter(data_recovery, pre_or_post != "same year" & ez_taxa == "Aves"), ae
   xlab("Treatment Group") +
   ylab(bquote("Number of Birds Reported per 10,000 km"^2))
 
-ggplot(filter(data_recovery, pre_or_post != "same year" & ez_taxa == "Other"), aes(x = treatmentGroup, y =  stzdObs, fill = factor(pre_or_post, levels = c("pre", "post")))) +
+ggplot(filter(data_pp, pre_or_post != "same year" & ez_taxa == "Other"), aes(x = treatmentGroup, y =  stzdObs, fill = factor(pre_or_post, levels = c("pre", "post")))) +
   geom_boxplot()+
   scale_fill_aaas(labels = c("Before fire", "After fire")) +
   scale_x_discrete(labels = c("Burned", "Control")) +
@@ -945,7 +897,7 @@ ggplot(filter(data_recovery, pre_or_post != "same year" & ez_taxa == "Other"), a
   xlab("Treatment Group") +
   ylab(bquote("Number of other taxa reported per 10,000 km"^2))
 
-ggplot(filter(data_recovery, pre_or_post != "same year"), aes(x = treatmentGroup, y =  stzdObs, fill = factor(pre_or_post, levels = c("pre", "post")))) +
+ggplot(filter(data_pp, pre_or_post != "same year"), aes(x = treatmentGroup, y =  stzdObs, fill = factor(pre_or_post, levels = c("pre", "post")))) +
   geom_boxplot()+
   scale_fill_aaas(labels = c("Before fire", "After fire")) +
   scale_x_discrete(labels = c("Burned", "Control")) +
@@ -954,7 +906,7 @@ ggplot(filter(data_recovery, pre_or_post != "same year"), aes(x = treatmentGroup
   ylab(bquote("Animal occurrences reported per 10,000 km"^2)) +
   facet_grid(vars(desert), vars(ez_taxa), scales = "free_y")
 
-ggplot(filter(data_recovery, pre_or_post != "same year"), aes(x = treatmentGroup, y =  stzdObs, fill = factor(pre_or_post, levels = c("pre", "post")))) +
+ggplot(filter(data_pp, pre_or_post != "same year"), aes(x = treatmentGroup, y =  stzdObs, fill = factor(pre_or_post, levels = c("pre", "post")))) +
   geom_boxplot()+
   scale_fill_aaas(labels = c("Before fire", "After fire")) +
   scale_x_discrete(labels = c("Burned", "Control")) +
@@ -963,7 +915,7 @@ ggplot(filter(data_recovery, pre_or_post != "same year"), aes(x = treatmentGroup
   ylab(bquote("Animal occurrences reported per 10,000 km"^2)) +
   facet_grid(vars(ez_taxa),vars(desert), scales = "free_y")
 
-ggplot(filter(data_recovery, pre_or_post != "same year"), aes(x = treatmentGroup, y =  stzdObs, fill = factor(pre_or_post, levels = c("pre", "post")))) +
+ggplot(filter(data_pp, pre_or_post != "same year"), aes(x = treatmentGroup, y =  stzdObs, fill = factor(pre_or_post, levels = c("pre", "post")))) +
   geom_boxplot()+
   scale_fill_aaas(labels = c("Before fire", "After fire")) +
   scale_x_discrete(labels = c("Burned", "Control")) +
@@ -1013,6 +965,122 @@ ggplot(filter(data_ot, ez_taxa == "Other"), aes(x=yearsSinceFire, y = stzdObs, c
   ylab(bquote("Number of other taxa Reported per 10,000 km"^2)) +
   facet_wrap(vars(desert), scales = "free_y")+
   guides(fill = FALSE)
+
+
+```
+
+## Recovery Stats
+
+### Pre-/post- 
+
+```{r, include = FALSE}
+#check assumptins
+
+hist(data_pp$stzdObs, xlab = "Standardized Occurrences")
+#data follows a quasi-Poisson distribution
+
+#glm
+glm_pp1 <- glm(stzdObs ~ pre_or_post + treatmentGroup + desert, family = poisson, data = data_pp)
+glm_pp2 <- glm(stzdObs ~ pre_or_post*ez_taxa +treatmentGroup + desert, family = poisson, data = data_pp)
+glm_pp3 <- glm.nb(stzdObs ~ pre_or_post*ez_taxa + treatmentGroup + desert, data = data_pp)
+glm_pp4 <- glm.nb(stzdObs ~ pre_or_post*treatmentGroup + desert, data = data_pp)
+
+AIC(glm_pp1, glm_pp2, glm_pp3, glm_pp4)
+
+#glm_pp3 has the lowest AIC
+
+summary(glm_pp3)
+plot(glm_pp3)
+
+
+data_pp$ez_taxa <- as.factor(data_pp$ez_taxa)
+data_pp$desert <- as.factor(data_pp$desert)
+
+glmm_pp1 <- glmer.nb(stzdObs ~ pre_or_post*treatmentGroup +
+                    (1 | ez_taxa) +
+                    (1 | desert), data = data_pp, control = glmerControl(optimizer = "bobyqa"))
+glmm_pp2 <- glmer.nb(stzdObs ~ pre_or_post + treatmentGroup +
+                    (1 | ez_taxa) +
+                    (1 + treatmentGroup | desert), data = data_pp, control = glmerControl(optimizer = "bobyqa"))
+glmm_pp3 <- glmer.nb(stzdObs ~ pre_or_post*treatmentGroup +
+                    (1 + treatmentGroup | ez_taxa) +
+                    (1 + treatmentGroup | desert), data = data_pp, control = glmerControl(optimizer = "bobyqa"))
+glmm_pp4 <- glmer.nb(stzdObs ~ pre_or_post*treatmentGroup +
+                    (1 + treatmentGroup | ez_taxa) +
+                    (1 | desert), data = data_pp, control = glmerControl(optimizer = "bobyqa"))
+
+AIC(glmm_pp1, glmm_pp2, glmm_pp3, glmm_pp4)
+AIC(glm_pp3, glmm_pp2)
+
+summary(glmm_pp2)
+
+plot(glmm_pp2)
+```
+### overtime
+```{r, include=FALSE}
+hist(data_ot$stzdObs, xlab = "Standardized Occurrences")
+#data follows a quasi-Poisson distribution
+
+#glm
+gam_ot1 <- gam(stzdObs ~ s(yearsSinceFire) + treatmentGroup + desert + ez_taxa, family = tw(link = "log"), data = data_ot)
+gam_ot2 <- gam(stzdObs ~ s(yearsSinceFire, by = factor(treatmentGroup)) + treatmentGroup + desert +ez_taxa, family = tw(link = "log"), data = data_ot, method = "REML")
+gam_ot3 <- gam(stzdObs ~ s(yearsSinceFire, by = factor(desert)) + treatmentGroup + desert +ez_taxa, family = tw(link = "log"), data = data_ot, method = "REML")
+gam_ot4 <- gam(stzdObs ~ s(yearsSinceFire, by = factor(treatmentGroup)) + treatmentGroup + desert +ez_taxa, family = nb(link = "log"), data = data_ot)
+
+
+AIC(gam_ot1, gam_ot2, gam_ot3, gam_ot4)
+
+#gam_ot3 has the lowest AIC
+
+summary(gam_ot2)
+gam.check(gam_ot2)
+
+data_ot$ez_taxa <- factor(data_ot$ez_taxa)
+data_ot$desert <- factor(data_ot$desert)
+data_ot$treatmentGroup <- factor(data_ot$treatmentGroup)
+
+gamm_ot1 <- gam(stzdObs ~ s(yearsSinceFire) + 
+                  treatmentGroup + desert + 
+                  s(ez_taxa, bs = "re"), family = tw(link = "log"), data = data_ot, method = "REML")
+gamm_ot2 <- gam(stzdObs ~ s(yearsSinceFire, by = desert)+ 
+                  s(desert, bs = "re") + 
+                  treatmentGroup + s(yearsSinceFire, desert, bs = "re") + 
+                  s(ez_taxa, bs = "re"), family = tw(link = "log"), data = data_ot, method = "REML")
+gamm_ot3 <- gam(stzdObs ~ s(yearsSinceFire, by = desert) + 
+                  treatmentGroup + s(desert, bs = "re") + 
+                  s(ez_taxa, bs = "re"), family = tw(link = "log"), data = data_ot, method = "REML")
+gamm_ot4 <- gam(stzdObs ~ s(yearsSinceFire, by = desert) + 
+                  treatmentGroup + s(desert, bs = "re") + 
+                  s(ez_taxa, bs = "re"), family = nb(link = "log"), data = data_ot, method = "REML")
+
+AIC(gamm_ot1, gamm_ot2, gamm_ot3, gamm_ot4)
+AIC(gam_ot3, gamm_ot3)
+
+summary(gam_ot3)
+plot(gam_ot3)
+gam.check(gam_ot3)
+```
+
+```{r}
+summary(gam_ot3)
+plot(gam_ot3)
+gam.check(gam_ot3)
+```
+
+
+```{r figures w stats, eval = FALSE, include = FALSE}
+#means of occurrences
+
+data_pp %>% group_by(treatmentGroup, pre_or_post, ez_taxa, desert) %>% 
+  summarize(mean_stzdObs = mean(stzdObs)) %>% ungroup() %>% 
+ggplot(aes(x = treatmentGroup, y = mean_stzdObs, color = pre_or_post)) + 
+  geom_bar() + 
+  geom_point(data_pp, aes(x = treatmentGroup, y = stzdObs, color = pre_or_post), position = "dodge") +
+  facet_grid(vars(desert), vars(ez_taxa))
+
+
+
+# change over-time; x = time since fire, y = stzgObs, color = treatment Group (facet by desert and taxa)
 
 
 ```
