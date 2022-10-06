@@ -707,7 +707,7 @@ Tweedie distribution was used because the variance increases with the mean.
 
 
 ```{r}
-gamm17A <- gam(stzd_totalObs ~ s(ndvi, by = treatmentGroup) + s(desert, ndvi, bs = "re") +
+gamm17 <- gam(stzd_totalObs ~ s(ndvi, by = treatmentGroup) + s(desert, ndvi, bs = "re") +
               s(desert, bs = "re") +
               treatmentGroup + 
               obsYear +
@@ -973,7 +973,7 @@ ggplot(filter(data_ot, ez_taxa == "Other"), aes(x=yearsSinceFire, y = stzdObs, c
 
 ### Pre-/post- 
 
-```{r, include = FALSE}
+```{r, include = FALSE, eval = FALSE}
 #check assumptins
 
 hist(data_pp$stzdObs, xlab = "Standardized Occurrences")
@@ -1012,10 +1012,18 @@ glmm_pp4 <- glmer.nb(stzdObs ~ pre_or_post*treatmentGroup +
 AIC(glmm_pp1, glmm_pp2, glmm_pp3, glmm_pp4)
 AIC(glm_pp3, glmm_pp2)
 
+```
+```{r}
+glmm_pp2 <- glmer.nb(stzdObs ~ pre_or_post + treatmentGroup +
+                    (1 | ez_taxa) +
+                    (1 + treatmentGroup | desert), data = data_pp, control = glmerControl(optimizer = "bobyqa"))
+
 summary(glmm_pp2)
 
 plot(glmm_pp2)
 ```
+
+
 ### overtime
 ```{r, include=FALSE}
 hist(data_ot$stzdObs, xlab = "Standardized Occurrences")
