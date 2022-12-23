@@ -285,14 +285,14 @@ ggplot(data_pp_5yr, aes(x = treatmentGroup, y =  mean_occurrence, fill = factor(
   #scale_x_discrete(labels = c("Burned", "Control")) +
   theme(legend.title = element_blank()) +
   xlab("Treatment Group") +
-  ylab(bquote("Bird occurrences reported per 10,000 km"^2)) +
+  ylab(bquote("5-yr average of bird occurrences reported per 10,000 km"^2)) +
   facet_grid(vars(funcGroup),vars(desert))
 
 
 ```
 
 
-Graph shows birds occurrences between 1995-2020 for fires burned 2000-2015. 
+##GLMM model
 
 ```{r stats on just birds recovery}
 
@@ -304,9 +304,11 @@ plot(simulationOutput)
 
 summary(pp_nb1)
 
-#stepwise regression to select best predictors
+#stepwise regression to select best predictors; both summary above and stepAIC show that funcGroup not significant
 null <- glmmTMB(mean_occurrence ~ 1, family = nbinom1, data = data_pp_5yr)
 stepAIC(pp_nb1, scope=list(lower=null, upper=pp_nb1), data=data_pp_5yr, direction='backward')
+
+
 
 emm_pp <- emmeans(pp_nb1, ~ pre_or_post + treatmentGroup)
 pp_tukey <- contrast(emm_pp, method ='pairwise')
