@@ -5,14 +5,24 @@ library(sp)
 library(sf)
 library(tidyverse)
 
+# packages require to run MODIStsp()
+p <- c("leaflet", "shiny","shinydashboard",
+       "shinyFiles","shinyalert", "rappdirs",
+       "shinyjs","leafem", "mapedit", "magrittr")
+install.packages(setdiff(p, rownames(installed.packages())))
+
 setwd("~/GitHub/desert-fires-impact-biodiversity")
+
 
 ##DOWNLOADING NDVI##
 
 # download MODIS monthly NDVI data for Southern California from 2000-01-01 to 2021-12-31
+## MODIS DATA DOES NOT EXIST PRIOR TO 2000 ##
+
 # 1 km resolution MOD13A3 (Vegetation Indices Monthly L3 Global 1km)
 # also dl MODIS NDII7 (normalized burn ratio) 
-MODIStsp()
+# EPSG code: 4326
+# southern California tile (x = 8, y = 5)
 
 ##PROCESSING NDVI RASTERS##
 
