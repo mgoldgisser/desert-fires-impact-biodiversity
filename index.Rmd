@@ -259,9 +259,11 @@ data_ot <- rbind(data_ot_b, data_ot_c) %>%
 ## Occurrences before and after fire
 
 First graph below shows the overall occurrences of raptors and passerines between 1995-2020
-Second graph shows the average number of occurrences reported 5 years before fire and 5 years after fire. Zeros were add to years when no occurrences were reported.
 
-```{r prepost birds only data prep}
+
+Second graph shows the average number of occurrences reported 5 years before fire and 5 years after fire. Zeros were added to years when no occurrences were reported.
+
+```{r prepost birds only data prep, echo = FALSE}
 
 
 
@@ -292,7 +294,7 @@ ggplot(data_pp_5yr, aes(x = treatmentGroup, y =  mean_occurrence, fill = factor(
 ```
 
 
-##GLMM model
+## GLMM model w/ emmeans
 
 ```{r stats on just birds recovery}
 
