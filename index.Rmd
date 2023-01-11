@@ -310,17 +310,17 @@ summary(pp_nb1)
 null <- glmmTMB(mean_occurrence ~ 1, family = nbinom1, data = data_pp_5yr)
 stepAIC(pp_nb1, scope=list(lower=null, upper=pp_nb1), data=data_pp_5yr, direction='backward')
 
+pp_nb1 <- glmmTMB(mean_occurrence ~ pre_or_post + treatmentGroup + (1|desert), family = nbinom1, data = data_pp_5yr)
 
 
-emm_pp <- emmeans(pp_nb1, ~ pre_or_post + treatmentGroup)
+
+emm_pp <- emmeans(pp_nb1, ~ treatmentGroup)
 pp_tukey <- contrast(emm_pp, method ='pairwise')
 
 summary(pp_tukey)
 
 # tukey test of emmeans shows that: 
-#   post-control is higher than pre-control with p-value 0.0021;
-#   pre-burned is lower than pre-control with p-value <0.0001;
-#   post-burnd is higher than pre-burned with p-value <0.0001
+#   burned adjusted means are higher than control adjusted means with p-value <0.0001
 
 confint(pp_tukey)
 
@@ -328,3 +328,71 @@ plot(pp_tukey, xlab = "Difference in log(average occurrences in 5-yr period)")
 
 ```
 
+### overtime
+```{r, include=FALSE}
+data_ot_aves <- data_ot %>% filter(ez_taxa == "Aves")
+hist(data_ot_aves$stzdObs, xlab = "Standardized Occurrences")
+
+ggplot(filter(data_ot_aves), aes(x=yearsSinceFire, y = stzdObs, color = treatmentGroup, shape = simplified_taxa)) +
+  geom_point() +
+  geom_smooth(aes(fill = treatmentGroup)) +
+  scale_color_aaas(limits = c("control", "burned"), labels = c("Control", "Burned")) +
+  scale_fill_aaas(limits = c("control", "burned")) +
+  theme(legend.title = element_blank()) +
+  ylim(0, 350) +
+  xlab("Years since fire") +
+  ylab(bquote("Number of Birds Reported per 10,000 km"^2)) +
+  facet_wrap(vars(desert)) +
+  guides(fill = FALSE)
+
+
+
+
+
+ot_nb1 <- glmmTMB(stzdObs ~ treatmentGroup, family = nbinom1, data = data_pp_5yr)
+
+#glm
+gam_ot1 <- gam(stzdObs ~ s(yearsSinceFire) + treatmentGroup + desert + ez_taxa, family = tw(link = "log"), data = data_ot)
+gam_ot2 <- gam(stzdObs ~ s(yearsSinceFire, by = factor(treatmentGroup)) + treatmentGroup + desert +ez_taxa, family = tw(link = "log"), data = data_ot, method = "REML")
+gam_ot3 <- gam(stzdObs ~ s(yearsSinceFire, by = factor(desert)) + treatmentGroup + desert +ez_taxa, family = tw(link = "log"), data = data_ot, method = "REML")
+gam_ot4 <- gam(stzdObs ~ s(yearsSinceFire, by = factor(treatmentGroup)) + treatmentGroup + desert +ez_taxa, family = nb(link = "log"), data = data_ot)
+
+
+AIC(gam_ot1, gam_ot2, gam_ot3, gam_ot4)
+
+#gam_ot3 has the lowest AIC
+
+summary(gam_ot2)
+gam.check(gam_ot2)
+
+data_ot$ez_taxa <- factor(data_ot$ez_taxa)
+data_ot$desert <- factor(data_ot$desert)
+data_ot$treatmentGroup <- factor(data_ot$treatmentGroup)
+
+gamm_ot1 <- gam(stzdObs ~ s(yearsSinceFire) + 
+                  treatmentGroup + desert + 
+                  s(ez_taxa, bs = "re"), family = tw(link = "log"), data = data_ot, method = "REML")
+gamm_ot2 <- gam(stzdObs ~ s(yearsSinceFire, by = desert)+ 
+                  s(desert, bs = "re") + 
+                  treatmentGroup + s(yearsSinceFire, desert, bs = "re") + 
+                  s(ez_taxa, bs = "re"), family = tw(link = "log"), data = data_ot, method = "REML")
+gamm_ot3 <- gam(stzdObs ~ s(yearsSinceFire, by = desert) + 
+                  treatmentGroup + s(desert, bs = "re") + 
+                  s(ez_taxa, bs = "re"), family = tw(link = "log"), data = data_ot, method = "REML")
+gamm_ot4 <- gam(stzdObs ~ s(yearsSinceFire, by = desert) + 
+                  treatmentGroup + s(desert, bs = "re") + 
+                  s(ez_taxa, bs = "re"), family = nb(link = "log"), data = data_ot, method = "REML")
+
+AIC(gamm_ot1, gamm_ot2, gamm_ot3, gamm_ot4)
+AIC(gam_ot3, gamm_ot3)
+
+summary(gam_ot3)
+plot(gam_ot3)
+gam.check(gam_ot3)
+```
+
+```{r}
+summary(gam_ot3)
+plot(gam_ot3)
+gam.check(gam_ot3)
+```
