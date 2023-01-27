@@ -2,7 +2,11 @@
 title: "index_recovery"
 author: "Marina"
 date: '2022-12-18'
-output: html_document
+output:
+  html_document:
+    toc: true
+    toc_depth: 4
+    toc_float: true
 ---
 
 ##### load packages and data
@@ -310,14 +314,18 @@ ggplot(data_pp_5yr_4, aes(x = treatmentGroup, y =  mean_occurrence, fill = facto
   ylab(bquote("5-yr average of all occurrences reported per 10,000 km"^2)) +
   facet_grid(vars(desert))
 ```
+
 ### GLMM model w/ emmeans - pre/post
 
+#### passerine and raptor only
 ```{r stats on pass/rapt recovery}
 pp_nb1 <- glmmTMB(mean_occurrence ~ pre_or_post + treatmentGroup + funcGroup + (1|desert), family = nbinom1, data = data_pp_5yr_1)
 
 #validate model using simulated residuals 
 simulationOutput <- simulateResiduals(fittedModel = pp_nb1, plot = F)
-plot(simulationOutput)
+#plot(simulationOutput)
+testDispersion(simulationOutput)
+testZeroInflation(simulationOutput)
 
 summary(pp_nb1)
 
@@ -330,34 +338,29 @@ pp_nb1 <- glmmTMB(mean_occurrence ~ pre_or_post + treatmentGroup + (1|desert), f
 pp_nb1 <- glmmTMB(mean_occurrence ~ pre_or_post*treatmentGroup + (1|desert), family = nbinom1, data = data_pp_5yr_1)
 
 emm_pp <- emmeans(pp_nb1, ~ pairwise ~ pre_or_post + treatmentGroup)
-
 summary(emm_pp)
 
 emm_pp <- emmeans(pp_nb1, ~ pairwise ~ treatmentGroup)
-
 summary(emm_pp)
 
 emm_pp <- emmeans(pp_nb1, ~ pairwise ~ pre_or_post|treatmentGroup)
-
 summary(emm_pp)
 
 emm_pp <- emmeans(pp_nb1, ~ pairwise ~ treatmentGroup|pre_or_post)
-
 summary(emm_pp)
 
-
-# tukey test of emmeans shows that: 
-#   burned adjusted means are higher than control adjusted means with p-value <0.0001
-
-
-plot(emm_pp[[1]], xlab = "Difference in log(average occurrences in 5-yr period)")
 ```
+
+#### all aves
 ```{r stats on all aves recovery}
 pp_nb2 <- glmmTMB(mean_occurrence ~ pre_or_post*treatmentGroup + funcGroup + (1|desert), family = nbinom1, data = data_pp_5yr_2)
 
 #validate model using simulated residuals 
 simulationOutput <- simulateResiduals(fittedModel = pp_nb2, plot = F)
-plot(simulationOutput)
+#plot(simulationOutput)
+
+testDispersion(simulationOutput)
+testZeroInflation(simulationOutput)
 
 summary(pp_nb2)
 
@@ -366,30 +369,28 @@ null <- glmmTMB(mean_occurrence ~ 1, family = nbinom1, data = data_pp_5yr_2)
 stepAIC(pp_nb2, scope=list(lower=null, upper=pp_nb2), data=data_pp_5yr_2, direction='backward')
 
 emm_pp <- emmeans(pp_nb2, ~ pairwise ~ pre_or_post + treatmentGroup)
-
 summary(emm_pp)
 
 emm_pp <- emmeans(pp_nb2, ~ pairwise ~ treatmentGroup)
-
 summary(emm_pp)
 
 emm_pp <- emmeans(pp_nb2, ~ pairwise ~ pre_or_post|treatmentGroup)
-
 summary(emm_pp)
 
 emm_pp <- emmeans(pp_nb2, ~ pairwise ~ treatmentGroup|pre_or_post)
-
 summary(emm_pp)
 ```
+
+#### non-avian species
 ```{r stats on other recovery}
 pp_nb3 <- glmmTMB(mean_occurrence ~ pre_or_post*treatmentGroup + funcGroup + (1|desert), family = nbinom1, data = data_pp_5yr_3)
 
 #validate model using simulated residuals 
 simulationOutput <- simulateResiduals(fittedModel = pp_nb3, plot = F)
-plot(simulationOutput)
-
+#plot(simulationOutput)
+testDispersion(simulationOutput)
 testZeroInflation(simulationOutput)
-
+                  
 summary(pp_nb3)
 
 
@@ -409,6 +410,8 @@ summary(emm_pp)
 emm_pp <- emmeans(pp_nb3, ~ pairwise ~ treatmentGroup|pre_or_post)
 summary(emm_pp)
 ```
+
+#### all species
 ```{r stats on all recovery}
 pp_nb4 <- glmmTMB(mean_occurrence ~ pre_or_post*treatmentGroup + ez_taxa + (1|desert), family = nbinom1, data = data_pp_5yr_4)
 
@@ -438,7 +441,7 @@ summary(emm_pp)
 ```
 
 ## Occurrences overtime
-```{r data for over-time}
+```{r data for over-time, include=FALSE}
 ###data for over-time for burned sites
 
 data_ot_b <- data_r %>% filter(yearsSinceFire >0) %>% 
@@ -503,23 +506,23 @@ data_ot_psab <- full_join(data_ot_b_avg, data_ot_c_avg, by = c("desert", "yearsS
 
 ```
 
-## overtime
-```{r overtime birds only, include=FALSE}
+### birds only 
+```{r overtime birds only}
 ##no pseudo-absence
 data_ot_1 <- data_ot %>% filter(ez_taxa == "Aves")
 hist(data_ot_1$diffObs, xlab = "difference between burn/control occurrences")
 
-###check for normality
-#define plotting region
-par(mfrow=c(1,2)) 
-
-#create Q-Q plot for both datasets
-qqnorm(data_ot_1$diffObs)
-qqline(data_ot_1$diffObs)
-
-
-#perform shapiro-wilk test
-shapiro.test(data_ot_1$diffObs)
+# ###check for normality
+# #define plotting region
+# par(mfrow=c(1,2)) 
+# 
+# #create Q-Q plot for both datasets
+# qqnorm(data_ot_1$diffObs)
+# qqline(data_ot_1$diffObs)
+# 
+# 
+# #perform shapiro-wilk test
+# shapiro.test(data_ot_1$diffObs)
 
 ggplot(data_ot_1, aes(x=yearsSinceFire, y = diffObs, shape = desert)) +
   geom_point() +
@@ -530,10 +533,10 @@ ggplot(data_ot_1, aes(x=yearsSinceFire, y = diffObs, shape = desert)) +
   guides(fill = FALSE)
 
 
-##no pseudo-absence follows a normal distribution
-ot_mod_1 <- lm(diffObs ~ yearsSinceFire + desert, data = data_ot_1)
-summary(ot_mod_1)
-plot(ot_mod_1)
+# ##no pseudo-absence follows a normal distribution
+# ot_mod_1 <- lm(diffObs ~ yearsSinceFire + desert, data = data_ot_1)
+# summary(ot_mod_1)
+# plot(ot_mod_1)
 
 
 # ##pseudo-absence 0 data is not normally distributed
@@ -552,6 +555,8 @@ plot(ot_mod_1)
 #   guides(fill = FALSE)
 
 ```
+
+### all species 
 ```{r overtime all}
 ##no pseudo-absence
 data_ot_2 <- data_ot %>% filter(ez_taxa == "Other")
@@ -565,21 +570,21 @@ ggplot(data_ot_2, aes(x=yearsSinceFire, y = log(diffObs), shape = desert)) +
   ylab(bquote("Log(Difference in ES Reported per 10,000 km"^2)) +
   guides(fill = FALSE)
 
-###check for normality
-#define plotting region
-par(mfrow=c(1,2)) 
-
-#create Q-Q plot for both datasets
-qqnorm(log(data_ot$diffObs))
-qqline(log(data_ot$diffObs))
-
-#perform shapiro-wilk test
-shapiro.test(log(data_ot$diffObs))
-
-##no pseudo-absence does not follows a normal distribution
-ot_mod_2 <- lm(log(diffObs) ~ yearsSinceFire + desert, data = data_ot_2)
-summary(ot_mod_2)
-plot(ot_mod_2)
+# ###check for normality
+# #define plotting region
+# par(mfrow=c(1,2)) 
+# 
+# #create Q-Q plot for both datasets
+# qqnorm(log(data_ot$diffObs))
+# qqline(log(data_ot$diffObs))
+# 
+# #perform shapiro-wilk test
+# shapiro.test(log(data_ot$diffObs))
+# 
+# ##no pseudo-absence does not follows a normal distribution
+# ot_mod_2 <- lm(log(diffObs) ~ yearsSinceFire + desert, data = data_ot_2)
+# summary(ot_mod_2)
+# plot(ot_mod_2)
 
 
 ```
