@@ -440,120 +440,151 @@ emm_pp <- emmeans(pp_nb4, ~ pairwise ~ treatmentGroup|pre_or_post)
 summary(emm_pp)
 ```
 
-## Recovery over-time
+## Occurrences overtime
 ```{r data for over-time, include=FALSE}
-
 ###data for over-time for burned sites
-burned <- animals %>% 
-  filter(treatmentGroup == "burned") %>% 
-  merge(.,sites[,c("fireID", "fireMonth")], by = "fireID") %>% #NEED to add fire months
-  mutate(yearsSinceFire = obsYear - fireYear, 
-         pre_or_post = case_when(yearsSinceFire > 0 ~ "post",
-                                 yearsSinceFire < 0 ~ "pre",
-                                 yearsSinceFire == 0 ~ "SY"),
-         n_years = abs(yearsSinceFire))
 
-#find pre- post- for observations in the same year and replace SY in datafire with pre or post
-SY <- filter(burned, yearsSinceFire == 0) %>% 
-  mutate(postingmonth = obsMonth - fireMonth,
-         pre_or_post = case_when(postingmonth >0 ~ "post",
-                                 postingmonth < 0 ~ "pre",
-                                 yearsSinceFire == 0 ~ "SM"))
-
-burned$pre_or_post <- ifelse(burned$pre_or_post == "SY", SY$pre_or_post, burned$pre_or_post)
-unique(burned$pre_or_post) #check if any SM (same month); would need to further categorize
-
-burned <- burned %>% 
-  filter(pre_or_post == "post") %>% 
-  dplyr::select(c("desert", "obsYear", "fireYear", "species",
-                  "yearsSinceFire")) %>% 
-  mutate(count = 1) %>% 
-  mutate(yearsSinceFire = ifelse(yearsSinceFire == 0, 1, yearsSinceFire))
-
-### get fire years to make control
-fireYear <- burned %>% 
-  group_by(fireYear, desert) %>% 
-  summarize(total = n()) %>% 
-  dplyr::select(-total) 
-
-### make control
-control <- burned %>% group_by(desert, fireYear) %>% 
-  summarize(maxTime = max(yearsSinceFire)) %>% 
-  filter(maxTime != 0)
-
-### get species info for control
-control_species <- animals %>% 
-  filter(treatmentGroup == "never burned", obsYear > 1999) %>% 
-  group_by(desert, obsYear, species) %>%
-  summarize(count = n()) 
-
-### how many species each year in control?
-
-control_sp_total <- control_species %>% 
-  group_by(desert, obsYear) %>%
-  summarize(count = n())
+data_ot_b <- data_r %>% filter(yearsSinceFire >0) %>% 
+  dplyr::select(c("ez_taxa", "funcGroup", "individualCount", "obsYear", "desert", "fireID", "fireName", "fireYear", "fireMonth", "yearsSinceFire", "pre_or_post", "n_years", "ndvi")) %>% 
+  group_by(desert, obsYear, fireID, fireYear, yearsSinceFire, ez_taxa, funcGroup, pre_or_post, n_years, ndvi) %>% 
+  summarize(totalObs = n()) %>% 
+  left_join(., filter(areas, treatmentGroup == "burned"), by = "desert") %>% #add area
+  mutate(stzdObs = ceiling((totalObs/area_km2)*10000)) %>% 
+  ungroup() %>% group_by(desert)
 
 
-  
-## vectors for control df
+###data for over time for control
+
+test2 <- data_ot_b %>% group_by(desert, fireYear) %>% 
+  summarize(maxTime = max(yearsSinceFire)) 
+
+
 yearsSinceFire <- c()
 desert <- c()
 fireYear <- c()
 
+for (i in 1:nrow(test2)) {
+   yearsSinceFire <-  c(yearsSinceFire, rep(1:test2$maxTime[i], 1))
+  }
 
-for (i in 1:nrow(control)) {
-  yearsSinceFire <-  c(yearsSinceFire, rep(1:control$maxTime[i], 1))
-}
+for (i in 1:nrow(test2)) {
+   desert <-  c(desert, rep(test2$desert[i], each = test2$maxTime[i]))
+  }
 
-for (i in 1:nrow(control)) {
-  desert <-  c(desert, rep(control$desert[i], each = control$maxTime[i]))
-}
-
-for (i in 1:nrow(control)) {
-  fireYear <-  c(fireYear, rep(control$fireYear[i], each = control$maxTime[i]))
-}
+for (i in 1:nrow(test2)) {
+   fireYear <-  c(fireYear, rep(test2$fireYear[i], each = test2$maxTime[i]))
+  }
 
 
-control <- data.frame(desert, fireYear, yearsSinceFire) %>% 
+data_ot_c <- data.frame(desert, fireYear, yearsSinceFire) %>% 
   mutate(obsYear = fireYear + yearsSinceFire) %>% 
   filter(obsYear < 2021) %>% 
-  left_join(., dplyr::select(control_species, -count), by = c("obsYear", "desert"))
+  left_join(., totalObs, by = c("obsYear", "desert")) %>% 
+  left_join(., filter(ndvi, treatmentGroup == "never burned"), by = c("desert", "obsYear")) %>%#add ndvi
+  dplyr::select(-treatmentGroup) %>% 
+  left_join(., filter(areas, treatmentGroup == "never burned"), by = "desert") %>% #add area
+  mutate(stzdObs = ceiling((totalObs/area_km2)*10000), treatmentGroup = "control")
 
-## make df with just desert, TSF, and species for both burned and control sites
+# data_ot <- rbind(data_ot_b, data_ot_c) %>% 
+#   dplyr::select(-c(pre_or_post, n_years))
 
-burned <- burned %>% group_by(desert, yearsSinceFire, species) %>% 
-  summarize(count = n()) %>% 
-  dplyr::select(-count)
+data_ot_b_avg <- data_ot_b %>% group_by(desert, yearsSinceFire, ez_taxa, funcGroup) %>% 
+  summarize(avgObs_burn = mean(stzdObs))
 
-control <- control %>% group_by(desert, yearsSinceFire, species) %>% 
-  summarize(count = n()) %>% 
-  dplyr::select(-count)
+data_ot_c_avg <- data_ot_c %>% group_by(desert, yearsSinceFire, ez_taxa, funcGroup) %>% 
+  summarize(avgObs_con = mean(stzdObs))
 
-unique_b <- anti_join(burned, control) %>% 
-  group_by(desert, yearsSinceFire) %>% 
-  summarize(unique_b = n())
+##join control and burn
+data_ot <- left_join(filter(data_ot_b_avg), filter(data_ot_c_avg), by = c("desert", "yearsSinceFire", "funcGroup", "ez_taxa")) %>% 
+  mutate(diffObs = avgObs_burn - avgObs_con)
 
-unique_c <- anti_join(control, burned) %>% 
-  group_by(desert, yearsSinceFire) %>% 
-  summarize(unique_c = n())
-
-shared <- anti_join(burned, anti_join(burned, control)) %>% 
-  group_by(desert, yearsSinceFire) %>% 
-  summarize(shared = n())
-
-tsf_df <- full_join(shared, unique_b, by = c("desert", "yearsSinceFire")) %>% 
-  full_join(., unique_c, by = c("desert", "yearsSinceFire")) %>% 
-  mutate(unique_b = ifelse(is.na(unique_b), 0, unique_b),
-         shared = ifelse(is.na(shared), 0, shared),
-         unique_c = ifelse(is.na(unique_c), 0, unique_c),
-         si = (2*shared)/(unique_b + unique_c))
+#create pseudo absence
+data_ot_psab <- full_join(data_ot_b_avg, data_ot_c_avg, by = c("desert", "yearsSinceFire", "funcGroup", "ez_taxa")) %>%  
+  mutate(avgObs_con = ifelse(is.na(avgObs_con), 0, avgObs_con),
+         avgObs_burn = ifelse(is.na(avgObs_burn), 0, avgObs_burn),
+         diffObs = avgObs_burn - avgObs_con)
 
 ```
-```{r graph for over-time recovery}
-ggplot(data = tsf_df, aes(x = yearsSinceFire, y = si, color = desert)) +
+
+### birds only 
+```{r overtime birds only}
+##no pseudo-absence
+data_ot_1 <- data_ot %>% filter(ez_taxa == "Aves")
+hist(data_ot_1$diffObs, xlab = "difference between burn/control occurrences")
+
+# ###check for normality
+# #define plotting region
+# par(mfrow=c(1,2)) 
+# 
+# #create Q-Q plot for both datasets
+# qqnorm(data_ot_1$diffObs)
+# qqline(data_ot_1$diffObs)
+# 
+# 
+# #perform shapiro-wilk test
+# shapiro.test(data_ot_1$diffObs)
+
+ggplot(data_ot_1, aes(x=yearsSinceFire, y = diffObs, shape = desert)) +
   geom_point() +
-  geom_smooth(method = "lm", se = FALSE) +
-  ylab("Sorensen's Similarity Index")
+  geom_smooth(method = "lm", se = TRUE, aes(color = desert)) +
+  theme(legend.title = element_blank()) +
+  xlab("Years since fire") +
+  ylab(bquote("Difference in Birds Reported per 10,000 km"^2)) +
+  guides(fill = FALSE)
+
+
+# ##no pseudo-absence follows a normal distribution
+# ot_mod_1 <- lm(diffObs ~ yearsSinceFire + desert, data = data_ot_1)
+# summary(ot_mod_1)
+# plot(ot_mod_1)
+
+
+# ##pseudo-absence 0 data is not normally distributed
+# data_ot_1a <- data_ot_psab %>% filter(ez_taxa == "Aves")
+# 
+# 
+# 
+# hist(data_ot_1a$diffObs, xlab = "difference between burn/control occurrences")
+# 
+# ggplot(data_ot_1a, aes(x=yearsSinceFire, y = diffObs, shape = desert)) +
+#   geom_point() +
+#   geom_smooth(se = FALSE, aes(color = desert)) +
+#   theme(legend.title = element_blank()) +
+#   xlab("Years since fire") +
+#   ylab(bquote("Difference in Birds Reported per 10,000 km"^2)) +
+#   guides(fill = FALSE)
+
 ```
- 
- 
+
+### all species 
+```{r overtime all}
+##no pseudo-absence
+data_ot_2 <- data_ot %>% filter(ez_taxa == "Other")
+hist(log(data_ot_2$diffObs), xlab = "difference between burn/control occurrences")
+
+ggplot(data_ot_2, aes(x=yearsSinceFire, y = log(diffObs), shape = desert)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = TRUE, aes(color = desert)) +
+  theme(legend.title = element_blank()) +
+  xlab("Years since fire") +
+  ylab(bquote("Log(Difference in ES Reported per 10,000 km"^2)) +
+  guides(fill = FALSE)
+
+# ###check for normality
+# #define plotting region
+# par(mfrow=c(1,2)) 
+# 
+# #create Q-Q plot for both datasets
+# qqnorm(log(data_ot$diffObs))
+# qqline(log(data_ot$diffObs))
+# 
+# #perform shapiro-wilk test
+# shapiro.test(log(data_ot$diffObs))
+# 
+# ##no pseudo-absence does not follows a normal distribution
+# ot_mod_2 <- lm(log(diffObs) ~ yearsSinceFire + desert, data = data_ot_2)
+# summary(ot_mod_2)
+# plot(ot_mod_2)
+
+
+```
