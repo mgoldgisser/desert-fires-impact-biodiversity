@@ -337,16 +337,16 @@ pp_nb1 <- glmmTMB(mean_occurrence ~ pre_or_post + treatmentGroup + (1|desert), f
 
 pp_nb1 <- glmmTMB(mean_occurrence ~ pre_or_post*treatmentGroup + (1|desert), family = nbinom1, data = data_pp_5yr_1)
 
-emm_pp <- emmeans(pp_nb1, ~ pairwise ~ pre_or_post + treatmentGroup)
+emm_pp <- emmeans(pp_nb1, pairwise ~ pre_or_post + treatmentGroup)
 summary(emm_pp)
 
-emm_pp <- emmeans(pp_nb1, ~ pairwise ~ treatmentGroup)
+emm_pp <- emmeans(pp_nb1, pairwise ~ treatmentGroup)
 summary(emm_pp)
 
-emm_pp <- emmeans(pp_nb1, ~ pairwise ~ pre_or_post|treatmentGroup)
+emm_pp <- emmeans(pp_nb1, pairwise ~ pre_or_post|treatmentGroup)
 summary(emm_pp)
 
-emm_pp <- emmeans(pp_nb1, ~ pairwise ~ treatmentGroup|pre_or_post)
+emm_pp <- emmeans(pp_nb1, pairwise ~ treatmentGroup|pre_or_post)
 summary(emm_pp)
 
 ```
@@ -368,22 +368,22 @@ summary(pp_nb2)
 null <- glmmTMB(mean_occurrence ~ 1, family = nbinom1, data = data_pp_5yr_2)
 stepAIC(pp_nb2, scope=list(lower=null, upper=pp_nb2), data=data_pp_5yr_2, direction='backward')
 
-emm_pp <- emmeans(pp_nb2, ~ pairwise ~ pre_or_post + treatmentGroup)
+emm_pp <- emmeans(pp_nb2, pairwise ~ pre_or_post + treatmentGroup)
 summary(emm_pp)
 
-emm_pp <- emmeans(pp_nb2, ~ pairwise ~ treatmentGroup)
+emm_pp <- emmeans(pp_nb2, pairwise ~ treatmentGroup)
 summary(emm_pp)
 
-emm_pp <- emmeans(pp_nb2, ~ pairwise ~ pre_or_post|treatmentGroup)
+emm_pp <- emmeans(pp_nb2, pairwise ~ pre_or_post|treatmentGroup)
 summary(emm_pp)
 
-emm_pp <- emmeans(pp_nb2, ~ pairwise ~ treatmentGroup|pre_or_post)
+emm_pp <- emmeans(pp_nb2, pairwise ~ treatmentGroup|pre_or_post)
 summary(emm_pp)
 ```
 
 #### non-avian species
 ```{r stats on other recovery}
-pp_nb3 <- glmmTMB(mean_occurrence ~ pre_or_post*treatmentGroup + funcGroup + (1|desert), family = nbinom1, data = data_pp_5yr_3)
+pp_nb3 <- glmmTMB(mean_occurrence ~ pre_or_post*treatmentGroup + funcGroup + (1|desert), family = nbinom2, data = data_pp_5yr_3)
 
 #validate model using simulated residuals 
 simulationOutput <- simulateResiduals(fittedModel = pp_nb3, plot = F)
@@ -398,27 +398,28 @@ summary(pp_nb3)
 null <- glmmTMB(mean_occurrence ~ 1, family = nbinom1, data = data_pp_5yr_3)
 stepAIC(pp_nb3, scope=list(lower=null, upper=pp_nb3), data=data_pp_5yr_aves, direction='backward')
 
-emm_pp <- emmeans(pp_nb3, ~ pairwise ~ pre_or_post + treatmentGroup)
+emm_pp <- emmeans(pp_nb3, pairwise ~ pre_or_post + treatmentGroup)
 summary(emm_pp)
 
-emm_pp <- emmeans(pp_nb3, ~ pairwise ~ treatmentGroup)
+emm_pp <- emmeans(pp_nb3, pairwise ~ treatmentGroup)
 summary(emm_pp)
 
-emm_pp <- emmeans(pp_nb3, ~ pairwise ~ pre_or_post|treatmentGroup)
+emm_pp <- emmeans(pp_nb3, pairwise ~ pre_or_post|treatmentGroup)
 summary(emm_pp)
 
-emm_pp <- emmeans(pp_nb3, ~ pairwise ~ treatmentGroup|pre_or_post)
+emm_pp <- emmeans(pp_nb3, pairwise ~ treatmentGroup|pre_or_post)
 summary(emm_pp)
 ```
 
 #### all species
 ```{r stats on all recovery}
-pp_nb4 <- glmmTMB(mean_occurrence ~ pre_or_post*treatmentGroup + ez_taxa + (1|desert), family = nbinom1, data = data_pp_5yr_4)
+pp_nb4 <- glmmTMB(mean_occurrence ~ pre_or_post*treatmentGroup + ez_taxa + (1|desert), family = nbinom2, data = data_pp_5yr_4)
 
 #validate model using simulated residuals 
 simulationOutput <- simulateResiduals(fittedModel = pp_nb4, plot = F)
 plot(simulationOutput)
-
+testOverdispersion(simulationOutput)
+testZeroInflation(simulationOutput)
 
 summary(pp_nb4)
 
@@ -427,16 +428,16 @@ summary(pp_nb4)
 null <- glmmTMB(mean_occurrence ~ 1, family = nbinom1, data = data_pp_5yr_4)
 stepAIC(pp_nb4, scope=list(lower=null, upper=pp_nb4), data=data_pp_5yr_4, direction='backward')
 
-emm_pp <- emmeans(pp_nb4, ~ pairwise ~ pre_or_post + treatmentGroup)
+emm_pp <- emmeans(pp_nb4, pairwise ~ pre_or_post + treatmentGroup)
 summary(emm_pp)
 
-emm_pp <- emmeans(pp_nb4, ~ pairwise ~ treatmentGroup)
+emm_pp <- emmeans(pp_nb4, pairwise ~ treatmentGroup)
 summary(emm_pp)
 
-emm_pp <- emmeans(pp_nb4, ~ pairwise ~ pre_or_post|treatmentGroup)
+emm_pp <- emmeans(pp_nb4, pairwise ~ pre_or_post|treatmentGroup)
 summary(emm_pp)
 
-emm_pp <- emmeans(pp_nb4, ~ pairwise ~ treatmentGroup|pre_or_post)
+emm_pp <- emmeans(pp_nb4, pairwise ~ treatmentGroup|pre_or_post)
 summary(emm_pp)
 ```
 
