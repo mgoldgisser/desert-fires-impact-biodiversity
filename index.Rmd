@@ -34,6 +34,7 @@ library(glmmTMB) #glmm with zero-truncated nb
 library(DHARMa) #diagnostic for mixed regression models
 library(emmeans)
 library(remote)
+library(SpadeR)
 
 setwd("~/GitHub/desert-fires-impact-biodiversity")
 
@@ -106,7 +107,10 @@ data_2000 <- filter(data, obsYear > 1999) # filter out anything before 2000 sinc
 
 ```
 ```{r prepare recovery data, include = FALSE}
-data_r <- animals %>% 
+
+
+
+burned <- animals %>% 
   filter(treatmentGroup == "burned") %>% 
   merge(.,sites[,c("fireID", "fireMonth")], by = "fireID") %>% #NEED to add fire months
   mutate(yearsSinceFire = obsYear - fireYear, 
@@ -116,19 +120,23 @@ data_r <- animals %>%
          n_years = abs(yearsSinceFire))
 
 #find pre- post- for observations in the same year and replace SY in datafire with pre or post
-SY <- filter(data_r, yearsSinceFire == 0) %>% 
+SY <- filter(burned, yearsSinceFire == 0) %>% 
   mutate(postingmonth = obsMonth - fireMonth,
-    pre_or_post = case_when(postingmonth >0 ~ "post",
-                            postingmonth < 0 ~ "pre",
-                            yearsSinceFire == 0 ~ "SM"))
-data_r$pre_or_post <- ifelse(data_r$pre_or_post == "SY", SY$pre_or_post, data_r$pre_or_post)
-unique(data_r$pre_or_post) #check if any SM (same month); would need to further categorize
+         pre_or_post = case_when(postingmonth >0 ~ "post",
+                                 postingmonth < 0 ~ "pre",
+                                 yearsSinceFire == 0 ~ "SM")) %>% 
+  dplyr::select(-postingmonth)
 
-data_r <- left_join(data_r, ndvi, by = c("desert", "obsYear", "treatmentGroup"))
+burned <- burned %>% filter(pre_or_post != "SY") %>% 
+  rbind(., SY)
+
+unique(burned$pre_or_post) #check if any SM (same month); would need to further categorize
+
+burned <- left_join(burned, ndvi, by = c("desert", "obsYear", "treatmentGroup"))
 ```
 ```{r data for pre-/post- all, include=FALSE}
 ###data for pre-/post- burned sites ALL
-data_pp_b1 <-  data_r %>% 
+data_pp_b1 <-  burned %>% 
   filter(n_years <=5) %>% 
   dplyr::select(c("ez_taxa", "funcGroup", "individualCount", 
                   "obsYear", "desert", "fireID", 
@@ -441,7 +449,7 @@ emm_pp <- emmeans(pp_nb4, pairwise ~ treatmentGroup|pre_or_post)
 summary(emm_pp)
 ```
 
-## Recovery over-time
+## Recovery over-time - manual
 ```{r data for over-time, include=FALSE}
 
 ###data for over-time for burned sites
@@ -459,9 +467,12 @@ SY <- filter(burned, yearsSinceFire == 0) %>%
   mutate(postingmonth = obsMonth - fireMonth,
          pre_or_post = case_when(postingmonth >0 ~ "post",
                                  postingmonth < 0 ~ "pre",
-                                 yearsSinceFire == 0 ~ "SM"))
+                                 yearsSinceFire == 0 ~ "SM")) %>% 
+  dplyr::select(-postingmonth)
 
-burned$pre_or_post <- ifelse(burned$pre_or_post == "SY", SY$pre_or_post, burned$pre_or_post)
+burned <- burned %>% filter(pre_or_post != "SY") %>% 
+  rbind(., SY)
+
 unique(burned$pre_or_post) #check if any SM (same month); would need to further categorize
 
 burned <- burned %>% 
@@ -547,7 +558,9 @@ tsf_df <- full_join(shared, unique_b, by = c("desert", "yearsSinceFire")) %>%
   mutate(unique_b = ifelse(is.na(unique_b), 0, unique_b),
          shared = ifelse(is.na(shared), 0, shared),
          unique_c = ifelse(is.na(unique_c), 0, unique_c),
-         si = (2*shared)/(unique_b + unique_c))
+         si = (2*shared)/(shared +unique_b + unique_c))
+
+print(tsf_df)
 
 ```
 ```{r graph for over-time recovery}
@@ -557,4 +570,562 @@ ggplot(data = tsf_df, aes(x = yearsSinceFire, y = si, color = desert)) +
   ylab("Sorensen's Similarity Index")
 ```
  
+```{r}
+
+hist(x = tsf_df$si)
+shapiro.test(tsf_df$si)
+
+tsf_mod <- lm(si ~ yearsSinceFire + desert, data = tsf_df)
+summary(tsf_mod)
+
+plot(tsf_mod)
+
+
+
+```
  
+ 
+ 
+ 
+## Recovery over-time - SpadeR
+```{r SpadeR data matrix, include = FALSE, eval = FALSE}
+###data for over time for burned sites
+burned <- animals %>% 
+  filter(treatmentGroup == "burned") %>% 
+  merge(.,sites[,c("fireID", "fireMonth")], by = "fireID") %>% #NEED to add fire months
+  mutate(yearsSinceFire = obsYear - fireYear, 
+         pre_or_post = case_when(yearsSinceFire > 0 ~ "post",
+                                 yearsSinceFire < 0 ~ "pre",
+                                 yearsSinceFire == 0 ~ "SY"),
+         n_years = abs(yearsSinceFire))
+
+#find pre- post- for observations in the same year and replace SY in datafire with pre or post
+SY <- filter(burned, yearsSinceFire == 0) %>% 
+  mutate(postingmonth = obsMonth - fireMonth,
+         pre_or_post = case_when(postingmonth >0 ~ "post",
+                                 postingmonth < 0 ~ "pre",
+                                 yearsSinceFire == 0 ~ "SM")) %>% 
+  dplyr::select(-postingmonth)
+
+burned <- burned %>% filter(pre_or_post != "SY") %>% 
+  rbind(., SY)
+
+unique(burned$pre_or_post) #check if any SM (same month); would need to further categorize
+
+#filter out only post fire observations
+#### only sums the area of burned sites where any detection was reported. burned areas with no
+#### observations reported are EXCLUDED (counted as unsampled)
+su_ex <- burned %>% filter(pre_or_post == "post") %>% 
+  dplyr::select(c("fireID", "desert", "fireName", "area_km2", "yearsSinceFire")) %>% 
+  mutate(yearsSinceFire = ifelse(yearsSinceFire == 0, 1, yearsSinceFire)) %>% 
+  group_by(fireID, desert, fireName, yearsSinceFire, area_km2) %>% 
+  summarize(area_km2 = mean(area_km2)) %>% 
+  group_by(desert, yearsSinceFire) %>% 
+  summarize(area_km2 = sum(area_km2))
+
+#### sums the area of burned sites every progressing year. burned areas with no
+#### observations reported are INCLUDED (counted as undetected)
+
+### did not complete because did not think this was the appropriate approach. This would imply that all of the burned area (including fires burning  in different years) are including in the same 'year since fire' value
+
+# su_in <- burned %>% filter(pre_or_post == "post") %>% 
+#   dplyr::select(c("fireID", 'fireYear', "obsYear","yearsSinceFire","desert", "fireName", "area_km2")) %>% 
+#   mutate(yearsSinceFire = ifelse(yearsSinceFire == 0, 1, yearsSinceFire)) %>%
+#   group_by(fireID, fireYear, obsYear, desert, fireName, area_km2, yearsSinceFire) %>%
+#   summarize(area_km2 = mean(area_km2)) 
+# 
+# 
+# 
+# su_in1 <-  su_in %>% group_by(fireID, fireYear, desert) %>%
+#   summarize(area_km2 = mean(area_km2)) %>% 
+#   group_by(fireYear, desert) %>% 
+#   summarize(area_km2 = sum(area_km2))
+# 
+# su_in2 <- su_in %>% group_by(desert, obsYear, yearsSinceFire) %>% 
+#   summarize(count = n()) %>% 
+#   dplyr::select(-count)
+
+  
+burned <- burned %>% 
+  filter(pre_or_post == "post") %>% 
+  dplyr::select(c("desert", "obsYear", "fireYear", "species",
+                  "yearsSinceFire")) %>% 
+  mutate(yearsSinceFire = ifelse(yearsSinceFire == 0, 1, yearsSinceFire))
+
+### get fire years to make control
+fireYear <- burned %>% 
+  group_by(fireYear, desert) %>% 
+  summarize(total = n()) %>% 
+  dplyr::select(-total) 
+
+### make control
+control <- burned %>% group_by(desert, fireYear) %>% 
+  summarize(maxTime = max(yearsSinceFire)) %>% 
+  filter(maxTime != 0)
+
+### get species info for control
+control_species <- animals %>% 
+  filter(treatmentGroup == "never burned", obsYear > 1999) %>% 
+  group_by(desert, obsYear, species) %>%
+  summarize(count = n()) 
+
+### how many species each year in control?
+
+control_sp_total <- control_species %>% 
+  group_by(desert, obsYear) %>%
+  summarize(count = n())
+
+
+  
+## vectors for control df
+yearsSinceFire <- c()
+desert <- c()
+fireYear <- c()
+
+
+for (i in 1:nrow(control)) {
+  yearsSinceFire <-  c(yearsSinceFire, rep(1:control$maxTime[i], 1))
+}
+
+for (i in 1:nrow(control)) {
+  desert <-  c(desert, rep(control$desert[i], each = control$maxTime[i]))
+}
+
+for (i in 1:nrow(control)) {
+  fireYear <-  c(fireYear, rep(control$fireYear[i], each = control$maxTime[i]))
+}
+
+
+control <- data.frame(desert, fireYear, yearsSinceFire) %>% 
+  mutate(obsYear = fireYear + yearsSinceFire) %>% 
+  filter(obsYear < 2021) %>% 
+  left_join(., dplyr::select(control_species, -count), by = c("obsYear", "desert"))
+
+## make df with just desert, TSF, and species for both burned and control sites
+
+#sampling unit = areas
+areas <- areas %>% mutate(treatmentGroup = ifelse(treatmentGroup == 'never burned', "control", treatmentGroup))
+
+burned <- burned %>% group_by(desert, yearsSinceFire, species) %>% 
+  summarize(count = n()) %>% 
+  left_join(su_ex, by =  c("desert", "yearsSinceFire")) %>% 
+  mutate(area_km2 = round(area_km2, digits = 0))
+
+control <- control %>% group_by(desert, yearsSinceFire, species) %>% 
+  summarize(count = n()) %>% 
+  left_join(filter(areas, treatmentGroup == 'control'), by = 'desert') %>% 
+  dplyr::select(-treatmentGroup) %>% 
+  mutate(area_km2 = round(area_km2, digits = 0))
+
+species <- c(unique(control_species$species), "Anaxyrus californicus")
+
+desert <- c("Mojave", "San Joaquin", "Sonoran")
+
+recoverytsf_list <- list()
+
+df <- data.frame(species)
+
+for (d in 1:3) {
+  tsf_list <- list()
+  loc <- desert[d]
+  
+  for (y in 1:20) {
+  df <- data.frame(species)
+  
+  if (nrow(filter(burned, desert == loc, yearsSinceFire == y)) == 0) {
+    next
+  }
+  
+  spread1 <- burned %>%
+    filter(desert == loc, yearsSinceFire == y) %>%
+    mutate(area_km2 = ifelse(is.na(.[1,1]), 0, area_km2)) %>%
+    spread(area_km2, count) %>%
+    ungroup() %>% 
+    dplyr::select(3:4)
+    
+  df <- left_join(df, spread1, by = "species")
+    
+  spread2 <- control %>% 
+    filter(desert == loc, yearsSinceFire == y) %>% 
+    ungroup() %>% 
+    spread(area_km2, count) %>%
+    dplyr::select(3:4)
+    
+  df <- left_join(df, spread2, by = "species")
+  df <- mutate_if(df, is.numeric, ~replace_na(.,0))
+  
+  matrix <- rbind(matrix(as.integer(colnames(df[,2:3])), nrow = 1, ncol = 2), 
+                  as.matrix(df[,2:3]))
+  
+  colnames(matrix) <- c("burned", "control")
+  rownames(matrix) <- c("sampling unit", species)
+  
+  df <- as.data.frame(matrix) 
+  
+  tsf_list <- append(tsf_list, list(df))
+  names(tsf_list)[length(tsf_list)] <- y
+  }
+  recoverytsf_list <- append(recoverytsf_list, list(tsf_list))
+  
+  names(recoverytsf_list)[d] <- desert[d]
+  
+}
+```
+```{r SpadeR data matrix SU is unique reports, include=FALSE}
+burned <- animals %>% 
+  filter(treatmentGroup == "burned") %>% 
+  merge(.,sites[,c("fireID", "fireMonth")], by = "fireID") %>% #NEED to add fire months
+  mutate(yearsSinceFire = obsYear - fireYear, 
+         pre_or_post = case_when(yearsSinceFire > 0 ~ "post",
+                                 yearsSinceFire < 0 ~ "pre",
+                                 yearsSinceFire == 0 ~ "SY"),
+         n_years = abs(yearsSinceFire))
+
+#find pre- post- for observations in the same year and replace SY in datafire with pre or post
+SY <- filter(burned, yearsSinceFire == 0) %>% 
+  mutate(postingmonth = obsMonth - fireMonth,
+         pre_or_post = case_when(postingmonth >0 ~ "post",
+                                 postingmonth < 0 ~ "pre",
+                                 yearsSinceFire == 0 ~ "SM")) %>% 
+  dplyr::select(-postingmonth)
+
+burned <- burned %>% filter(pre_or_post != "SY") %>% 
+  rbind(., SY)
+
+unique(burned$pre_or_post) #check if any SM (same month); would need to further categorize
+
+
+### SU by occurrence reports
+su <- burned %>% filter(pre_or_post == "post") %>% 
+  mutate(yearsSinceFire = ifelse(yearsSinceFire == 0, 1, yearsSinceFire), 
+         decimalLat = round(decimalLat, digits = 3), 
+         decimalLon = round(decimalLon, digits = 3)) %>% 
+  group_by(fireID, desert, decimalLat, decimalLon, eventDate, obsYear, yearsSinceFire) %>% 
+  summarize(count = n()) %>% 
+  group_by(desert, yearsSinceFire) %>% 
+  summarize(su = n()) 
+
+
+burned <- burned %>% 
+  filter(pre_or_post == "post") %>% 
+  dplyr::select(c("desert", "obsYear", "fireYear", "species",
+                  "yearsSinceFire")) %>% 
+  mutate(yearsSinceFire = ifelse(yearsSinceFire == 0, 1, yearsSinceFire))
+
+### get fire years to make control
+fireYear <- burned %>% 
+  group_by(fireYear, desert) %>% 
+  summarize(total = n()) %>% 
+  dplyr::select(-total) 
+
+### make control
+control <- burned %>% group_by(desert, fireYear) %>% 
+  summarize(maxTime = max(yearsSinceFire)) %>% 
+  filter(maxTime != 0)
+
+### get species info for control
+control_species <- animals %>% 
+  filter(treatmentGroup == "never burned", obsYear > 1999) %>% 
+  group_by(desert, obsYear, species) %>%
+  summarize(count = n()) 
+
+### how many species each year in control?
+
+control_sp_total <- control_species %>% 
+  group_by(desert, obsYear) %>%
+  summarize(count = n())
+
+
+  
+## vectors for control df
+yearsSinceFire <- c()
+desert <- c()
+fireYear <- c()
+
+
+for (i in 1:nrow(control)) {
+  yearsSinceFire <-  c(yearsSinceFire, rep(1:control$maxTime[i], 1))
+}
+
+for (i in 1:nrow(control)) {
+  desert <-  c(desert, rep(control$desert[i], each = control$maxTime[i]))
+}
+
+for (i in 1:nrow(control)) {
+  fireYear <-  c(fireYear, rep(control$fireYear[i], each = control$maxTime[i]))
+}
+
+
+control <- data.frame(desert, fireYear, yearsSinceFire) %>% 
+  mutate(obsYear = fireYear + yearsSinceFire) %>% 
+  filter(obsYear < 2021) %>% 
+  left_join(., control_species, by = c("obsYear", "desert"))
+
+## make df with just desert, TSF, and species for both burned and control sites
+
+#sampling unit = # of unique reportings
+burned <- burned %>% group_by(desert, yearsSinceFire, species) %>% 
+  summarize(count = n()) %>% 
+  left_join(su, by =  c("desert", "yearsSinceFire"))
+
+control_su <- animals %>% 
+  filter(treatmentGroup == "never burned", obsYear > 1999) %>%
+  mutate(decimalLat = round(decimalLat, digits = 3), decimalLon = round(decimalLon, digits = 3)) %>% 
+  group_by(desert, decimalLat, decimalLon, eventDate, obsYear) %>%
+  summarize(count = n()) %>% #unique sampling units by location and date; anything within 360ft on the same date is counted as one sampling unit
+  group_by(desert, obsYear) %>% 
+  summarize(su = n()) #sum up sampling units for each year; each reported occurrence is one sampling unit
+
+control_su2 <- control %>% 
+  left_join(control_su, by = c("desert", "obsYear")) %>% 
+  group_by(desert, yearsSinceFire, obsYear, su) %>% 
+  summarize(su = mean(su)) %>%
+  group_by(desert, yearsSinceFire) %>% 
+  summarize(su = sum(su))
+
+control <- control %>% 
+  left_join(control_su2, by = c("desert", "yearsSinceFire")) %>% 
+  group_by(desert, yearsSinceFire, species, su) %>% 
+  summarize(count = sum(count)) 
+  
+species <- c(unique(control_species$species), "Anaxyrus californicus")
+
+desert <- c("Mojave", "San Joaquin", "Sonoran")
+
+recoverytsf_list <- list()
+
+df <- data.frame(species)
+
+for (d in 1:3) {
+  tsf_list <- list()
+  loc <- desert[d]
+  
+  for (y in 1:20) {
+  df <- data.frame(species)
+  
+  if (nrow(filter(burned, desert == loc, yearsSinceFire == y)) == 0) {
+    next
+  }
+  
+  spread1 <- burned %>%
+    filter(desert == loc, yearsSinceFire == y)%>%
+    spread(su, count) %>%
+    ungroup() %>% 
+    dplyr::select(3:4)
+    
+  df <- left_join(df, spread1, by = "species")
+    
+  spread2 <- control %>% 
+    filter(desert == loc, yearsSinceFire == y) %>% 
+    ungroup() %>% 
+    spread(su, count) %>%
+    dplyr::select(3:4)
+    
+  df <- left_join(df, spread2, by = "species")
+  df <- mutate_if(df, is.numeric, ~replace_na(.,0))
+  
+  matrix <- rbind(matrix(as.integer(colnames(df[,2:3])), nrow = 1, ncol = 2), 
+                  as.matrix(df[,2:3]))
+  
+  colnames(matrix) <- c("burned", "control")
+  rownames(matrix) <- c("sampling unit", species)
+  
+  df <- as.data.frame(matrix) 
+  
+  tsf_list <- append(tsf_list, list(df))
+  names(tsf_list)[length(tsf_list)] <- y
+   }
+  recoverytsf_list <- append(recoverytsf_list, list(tsf_list))
+  
+  names(recoverytsf_list)[d] <- desert[d]
+}
+
+
+#capture.output(recoverytsf_list, file = "recovery_tsf_list.csv")
+```
+### Chao Two Community Similarity
+```{r SpadeR SimPair, include = FALSE}
+#Chao Similarity Pair
+
+desert1 <- c()
+yearsSinceFire <- c()
+SpRich_burned <- c()
+SpRich_control <- c()
+SI <- c()
+SI_CIlower <- c()
+SI_CIupper <- c()
+error_desert <- c()
+error_tsf <- c()
+
+for (d in 1:3) {
+  
+  for (t in 1:length(recoverytsf_list[[d]])){
+    tryCatch(
+      #try to do this
+      {
+    
+      Sim <- SimilarityPair(recoverytsf_list[[d]][[t]],"incidence_freq", nboot = 200)
+      
+      desert1 <- append(desert1, names(recoverytsf_list[d]))
+      yearsSinceFire <- append(yearsSinceFire, as.integer(names(recoverytsf_list[[d]][t])))
+      SpRich_burned <- append(SpRich_burned, Sim[["info"]][["D1"]])
+      SpRich_control <- append(SpRich_control, Sim[["info"]][["D2"]])
+      SI <- append(SI, Sim[["estimated_relative"]][[5]])
+      SI_CIlower <- append(SI_CIlower, Sim[["estimated_relative"]][[5, 3]])
+      SI_CIupper <- append(SI_CIupper, Sim[["estimated_relative"]][[5, 4]])
+      
+      
+      },
+      #if an error occurs, say error
+      
+      error=function(e) {
+        message(paste('An Error Occurred for:', desert[d], '| TSF:', as.integer(names(recoverytsf_list[[d]][t]))))
+        # print(e)
+        # error_desert <- append(error_desert, desert[d])
+        # error_tsf <- append(error_tsf, as.integer(names(recoverytsf_list[[d]][tsf])))
+        }
+      
+    )
+  }
+    
+  }
+df_tsf <- data.frame(desert1, yearsSinceFire, SpRich_burned, SpRich_control, SI, SI_CIlower, SI_CIupper) %>%
+  rename(desert = desert1)
+# 
+# df_error <- data.frame(error_desert, error_tsf)
+
+#45 errors
+
+```
+```{r SpadeR SimPair graph}
+
+ggplot(df_tsf, aes(x=yearsSinceFire, y=SI, color = desert)) +
+  geom_point() +
+  geom_errorbar(aes(ymin=SI_CIlower, ymax=SI_CIupper), color = "black", width=.2) +
+  geom_smooth(method = "lm", se = FALSE)
+
+print(df_tsf)
+```
+
+
+### Chao Community Species and Shared Species
+```{r SpadeR ChaoShared, include = FALSE}
+#Chao Similarity Pair
+
+CShared <- ChaoShared(recoverytsf_list[[1]][[1]], datatype = "incidence_freq")
+
+CSpecies <- ChaoSpecies(as.data.frame(recoverytsf_list[[1]][[2]][["control"]]), datatype="incidence_freq",k=5,conf=0.95)
+
+
+##ChaoSpecies
+desert1 <- c()
+yearsSinceFire <- c()
+tG <- c()
+Chao2 <- c()
+Chao2_CIlower <- c()
+Chao2_CIupper <- c()
+
+
+for (d in 1:3) {
+  for (g in 1:2){
+    for (t in 1:length(recoverytsf_list[[d]])){
+      
+      tryCatch(
+      #try to do this
+      {
+        CSpecies <- ChaoSpecies(as.data.frame(recoverytsf_list[[d]][[t]][[g]]), datatype="incidence_freq",k=3,conf=0.95)
+      
+        desert1 <- append(desert1, names(recoverytsf_list[d]))
+        yearsSinceFire <- append(yearsSinceFire, as.integer(names(recoverytsf_list[[d]][t])))
+        tG <- append(tG, names(recoverytsf_list[[d]][[t]][g]))
+        Chao2 <- append(Chao2, CSpecies[["Species_table"]][[2, 1]])
+        Chao2_CIlower <- append(Chao2_CIlower, CSpecies[["Species_table"]][[2, 3]])
+        Chao2_CIupper <- append(Chao2_CIupper, CSpecies[["Species_table"]][[2, 4]])
+        
+        },
+      error=function(e) {
+        message(paste('An Error Occurred for:', 
+                      desert[d], 
+                      names(recoverytsf_list[[d]][[t]][g]) , 
+                      '| TSF:', as.integer(names(recoverytsf_list[[d]][t])), 
+                      '| Zeros: ', sum(recoverytsf_list[[d]][[t]][[g]]==0)))
+        # print(e)
+        # error_desert <- append(error_desert, desert[d])
+        # error_tsf <- append(error_tsf, as.integer(names(recoverytsf_list[[d]][tsf])))
+      }
+      )
+      
+    }
+  }
+  
+}
+df_species <- data.frame(desert1, yearsSinceFire, tG, Chao2, Chao2_CIlower, Chao2_CIupper) %>%
+  rename(desert = desert1, treatmentGroup = tG)
+
+
+##ChaoShared
+      
+      
+desert1 <- c()
+yearsSinceFire <- c()
+spRep_burned <- c()
+spRep_control <- c()
+CShared <-  c()
+CShared_CIlower <- c()
+CShared_CIupper <- c()
+
+
+##ChaoShared
+for (d in 1:3) {
+  
+  for (t in 1:length(recoverytsf_list[[d]])){
+    tryCatch(
+      #try to do this
+      {
+    
+      ChaoShared <- ChaoShared(recoverytsf_list[[d]][[t]],"incidence_freq", nboot = 200)
+      desert1 <- append(desert1, names(recoverytsf_list[d]))
+      yearsSinceFire <- append(yearsSinceFire, as.integer(names(recoverytsf_list[[d]][t])))
+      spRep_burned <- append(spRep_burned, ChaoShared[["Basic_data_information"]][["D1"]])
+      spRep_control <- append(spRep_control, ChaoShared[["Basic_data_information"]][["D2"]]) 
+      CShared <- append(CShared, ChaoShared[["Estimation_results"]][[1]])
+      CShared_CIlower <- append(CShared_CIlower, ChaoShared[["Estimation_results"]][[1, 3]])
+      CShared_CIupper <- append(CShared_CIupper, ChaoShared[["Estimation_results"]][[1, 4]])
+      
+      
+      },
+      #if an error occurs, say error
+      
+      error=function(e) {
+        message(paste('An Error Occurred for:', desert[d], '| TSF:', as.integer(names(recoverytsf_list[[d]][t]))))
+        # print(e)
+        # error_desert <- append(error_desert, desert[d])
+        # error_tsf <- append(error_tsf, as.integer(names(recoverytsf_list[[d]][tsf])))
+        }
+      
+    )
+  }
+    
+}
+df_shared <- data.frame(desert1, yearsSinceFire,  spRep_burned, spRep_control, CShared, CShared_CIlower, CShared_CIupper) %>%
+  rename(desert = desert1)
+
+
+# 
+
+```
+
+```{r SpadeR ChaoShared ChaoSpecies graph}
+ggplot(df_shared, aes(x=yearsSinceFire, y=CShared, color = desert)) +
+  geom_point() +
+  #geom_errorbar(aes(ymin=CShared_CIlower, ymax=CShared_CIupper), color = "black", width=.2) +
+  geom_smooth(method = "lm", se = FALSE)
+
+ggplot(df_species, aes(x=yearsSinceFire, y=Chao2, color = desert, shape = treatmentGroup)) +
+  geom_point() +
+  geom_errorbar(aes(ymin=Chao2_CIlower, ymax=Chao2_CIupper), color = "black", width=.2) +
+  geom_smooth(method = "lm", se = FALSE) +
+  facet_wrap(vars(treatmentGroup))
+
+```
+
