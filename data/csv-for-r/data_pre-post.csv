@@ -1,0 +1,2516 @@
+fireYear,desert,fireID,funcGroup,yearsSinceFire,obsYear,ez_taxa,pre_or_post,n_years,ndvi,totalObs,area_km2,treatmentGroup,stzdObs
+2000,San Joaquin,926,Birds:Passerines,-5,1995,NA,pre,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Birds:Passerines,-4,1996,NA,pre,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Birds:Passerines,-3,1997,NA,pre,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Birds:Passerines,-2,1998,NA,pre,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Birds:Passerines,-1,1999,NA,pre,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Birds:Passerines,1,2001,NA,post,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Birds:Passerines,2,2002,NA,post,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Birds:Passerines,3,2003,Aves,post,3,0.365314913708093,1,399.4220205,burned,26
+2000,San Joaquin,926,Birds:Passerines,4,2004,NA,post,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Birds:Passerines,5,2005,NA,post,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Birds:Raptors,-5,1995,NA,pre,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Birds:Raptors,-4,1996,NA,pre,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Birds:Raptors,-3,1997,NA,pre,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Birds:Raptors,-2,1998,NA,pre,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Birds:Raptors,-1,1999,NA,pre,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Birds:Raptors,1,2001,NA,post,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Birds:Raptors,2,2002,NA,post,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Birds:Raptors,3,2003,NA,post,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Birds:Raptors,4,2004,NA,post,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Birds:Raptors,5,2005,NA,post,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Large Mammals,-5,1995,NA,pre,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Large Mammals,-4,1996,NA,pre,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Large Mammals,-3,1997,NA,pre,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Large Mammals,-2,1998,NA,pre,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Large Mammals,-1,1999,NA,pre,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Large Mammals,1,2001,NA,post,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Large Mammals,2,2002,NA,post,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Large Mammals,3,2003,NA,post,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Large Mammals,4,2004,NA,post,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Large Mammals,5,2005,NA,post,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Tortoises,-5,1995,NA,pre,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Tortoises,-4,1996,NA,pre,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Tortoises,-3,1997,NA,pre,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Tortoises,-2,1998,NA,pre,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Tortoises,-1,1999,NA,pre,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Tortoises,1,2001,NA,post,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Tortoises,2,2002,NA,post,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Tortoises,3,2003,NA,post,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Tortoises,4,2004,NA,post,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Tortoises,5,2005,NA,post,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Butterflies & Moths,-5,1995,NA,pre,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Butterflies & Moths,-4,1996,NA,pre,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Butterflies & Moths,-3,1997,NA,pre,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Butterflies & Moths,-2,1998,NA,pre,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Butterflies & Moths,-1,1999,NA,pre,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Butterflies & Moths,1,2001,NA,post,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Butterflies & Moths,2,2002,NA,post,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Butterflies & Moths,3,2003,NA,post,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Butterflies & Moths,4,2004,NA,post,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Butterflies & Moths,5,2005,NA,post,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Birds:Woodpeckers,-5,1995,NA,pre,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Birds:Woodpeckers,-4,1996,NA,pre,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Birds:Woodpeckers,-3,1997,NA,pre,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Birds:Woodpeckers,-2,1998,NA,pre,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Birds:Woodpeckers,-1,1999,NA,pre,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Birds:Woodpeckers,1,2001,NA,post,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Birds:Woodpeckers,2,2002,NA,post,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Birds:Woodpeckers,3,2003,NA,post,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Birds:Woodpeckers,4,2004,NA,post,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Birds:Woodpeckers,5,2005,NA,post,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Small Mammals,-5,1995,NA,pre,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Small Mammals,-4,1996,NA,pre,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Small Mammals,-3,1997,NA,pre,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Small Mammals,-2,1998,NA,pre,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Small Mammals,-1,1999,NA,pre,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Small Mammals,1,2001,NA,post,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Small Mammals,2,2002,NA,post,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Small Mammals,3,2003,NA,post,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Small Mammals,4,2004,NA,post,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Small Mammals,5,2005,NA,post,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Birds:Rails and Geese,-5,1995,NA,pre,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Birds:Rails and Geese,-4,1996,NA,pre,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Birds:Rails and Geese,-3,1997,NA,pre,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Birds:Rails and Geese,-2,1998,NA,pre,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Birds:Rails and Geese,-1,1999,NA,pre,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Birds:Rails and Geese,1,2001,NA,post,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Birds:Rails and Geese,2,2002,NA,post,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Birds:Rails and Geese,3,2003,NA,post,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Birds:Rails and Geese,4,2004,NA,post,NA,NA,0,NA,burned,0
+2000,San Joaquin,926,Birds:Rails and Geese,5,2005,NA,post,NA,NA,0,NA,burned,0
+2002,Mojave,508,Birds:Passerines,-5,1997,NA,pre,NA,NA,0,NA,burned,0
+2002,Mojave,508,Birds:Passerines,-4,1998,NA,pre,NA,NA,0,NA,burned,0
+2002,Mojave,508,Birds:Passerines,-3,1999,NA,pre,NA,NA,0,NA,burned,0
+2002,Mojave,508,Birds:Passerines,-2,2000,NA,pre,NA,NA,0,NA,burned,0
+2002,Mojave,508,Birds:Passerines,-1,2001,Aves,pre,1,0.239174953770042,1,721.5012132,burned,14
+2002,Mojave,508,Birds:Passerines,1,2003,NA,post,NA,NA,0,NA,burned,0
+2002,Mojave,508,Birds:Passerines,2,2004,NA,post,NA,NA,0,NA,burned,0
+2002,Mojave,508,Birds:Passerines,3,2005,NA,post,NA,NA,0,NA,burned,0
+2002,Mojave,508,Birds:Passerines,4,2006,NA,post,NA,NA,0,NA,burned,0
+2002,Mojave,508,Birds:Passerines,5,2007,NA,post,NA,NA,0,NA,burned,0
+2002,Mojave,508,Birds:Raptors,-5,1997,NA,pre,NA,NA,0,NA,burned,0
+2002,Mojave,508,Birds:Raptors,-4,1998,NA,pre,NA,NA,0,NA,burned,0
+2002,Mojave,508,Birds:Raptors,-3,1999,NA,pre,NA,NA,0,NA,burned,0
+2002,Mojave,508,Birds:Raptors,-2,2000,NA,pre,NA,NA,0,NA,burned,0
+2002,Mojave,508,Birds:Raptors,-1,2001,NA,pre,NA,NA,0,NA,burned,0
+2002,Mojave,508,Birds:Raptors,1,2003,NA,post,NA,NA,0,NA,burned,0
+2002,Mojave,508,Birds:Raptors,2,2004,NA,post,NA,NA,0,NA,burned,0
+2002,Mojave,508,Birds:Raptors,3,2005,NA,post,NA,NA,0,NA,burned,0
+2002,Mojave,508,Birds:Raptors,4,2006,NA,post,NA,NA,0,NA,burned,0
+2002,Mojave,508,Birds:Raptors,5,2007,NA,post,NA,NA,0,NA,burned,0
+2002,Mojave,508,Large Mammals,-5,1997,NA,pre,NA,NA,0,NA,burned,0
+2002,Mojave,508,Large Mammals,-4,1998,NA,pre,NA,NA,0,NA,burned,0
+2002,Mojave,508,Large Mammals,-3,1999,NA,pre,NA,NA,0,NA,burned,0
+2002,Mojave,508,Large Mammals,-2,2000,NA,pre,NA,NA,0,NA,burned,0
+2002,Mojave,508,Large Mammals,-1,2001,NA,pre,NA,NA,0,NA,burned,0
+2002,Mojave,508,Large Mammals,1,2003,NA,post,NA,NA,0,NA,burned,0
+2002,Mojave,508,Large Mammals,2,2004,NA,post,NA,NA,0,NA,burned,0
+2002,Mojave,508,Large Mammals,3,2005,NA,post,NA,NA,0,NA,burned,0
+2002,Mojave,508,Large Mammals,4,2006,NA,post,NA,NA,0,NA,burned,0
+2002,Mojave,508,Large Mammals,5,2007,NA,post,NA,NA,0,NA,burned,0
+2002,Mojave,508,Tortoises,-5,1997,NA,pre,NA,NA,0,NA,burned,0
+2002,Mojave,508,Tortoises,-4,1998,NA,pre,NA,NA,0,NA,burned,0
+2002,Mojave,508,Tortoises,-3,1999,NA,pre,NA,NA,0,NA,burned,0
+2002,Mojave,508,Tortoises,-2,2000,NA,pre,NA,NA,0,NA,burned,0
+2002,Mojave,508,Tortoises,-1,2001,NA,pre,NA,NA,0,NA,burned,0
+2002,Mojave,508,Tortoises,1,2003,NA,post,NA,NA,0,NA,burned,0
+2002,Mojave,508,Tortoises,2,2004,NA,post,NA,NA,0,NA,burned,0
+2002,Mojave,508,Tortoises,3,2005,NA,post,NA,NA,0,NA,burned,0
+2002,Mojave,508,Tortoises,4,2006,NA,post,NA,NA,0,NA,burned,0
+2002,Mojave,508,Tortoises,5,2007,NA,post,NA,NA,0,NA,burned,0
+2002,Mojave,508,Butterflies & Moths,-5,1997,NA,pre,NA,NA,0,NA,burned,0
+2002,Mojave,508,Butterflies & Moths,-4,1998,NA,pre,NA,NA,0,NA,burned,0
+2002,Mojave,508,Butterflies & Moths,-3,1999,NA,pre,NA,NA,0,NA,burned,0
+2002,Mojave,508,Butterflies & Moths,-2,2000,NA,pre,NA,NA,0,NA,burned,0
+2002,Mojave,508,Butterflies & Moths,-1,2001,NA,pre,NA,NA,0,NA,burned,0
+2002,Mojave,508,Butterflies & Moths,1,2003,NA,post,NA,NA,0,NA,burned,0
+2002,Mojave,508,Butterflies & Moths,2,2004,NA,post,NA,NA,0,NA,burned,0
+2002,Mojave,508,Butterflies & Moths,3,2005,NA,post,NA,NA,0,NA,burned,0
+2002,Mojave,508,Butterflies & Moths,4,2006,NA,post,NA,NA,0,NA,burned,0
+2002,Mojave,508,Butterflies & Moths,5,2007,NA,post,NA,NA,0,NA,burned,0
+2002,Mojave,508,Birds:Woodpeckers,-5,1997,NA,pre,NA,NA,0,NA,burned,0
+2002,Mojave,508,Birds:Woodpeckers,-4,1998,NA,pre,NA,NA,0,NA,burned,0
+2002,Mojave,508,Birds:Woodpeckers,-3,1999,NA,pre,NA,NA,0,NA,burned,0
+2002,Mojave,508,Birds:Woodpeckers,-2,2000,NA,pre,NA,NA,0,NA,burned,0
+2002,Mojave,508,Birds:Woodpeckers,-1,2001,NA,pre,NA,NA,0,NA,burned,0
+2002,Mojave,508,Birds:Woodpeckers,1,2003,NA,post,NA,NA,0,NA,burned,0
+2002,Mojave,508,Birds:Woodpeckers,2,2004,NA,post,NA,NA,0,NA,burned,0
+2002,Mojave,508,Birds:Woodpeckers,3,2005,NA,post,NA,NA,0,NA,burned,0
+2002,Mojave,508,Birds:Woodpeckers,4,2006,NA,post,NA,NA,0,NA,burned,0
+2002,Mojave,508,Birds:Woodpeckers,5,2007,NA,post,NA,NA,0,NA,burned,0
+2002,Mojave,508,Small Mammals,-5,1997,NA,pre,NA,NA,0,NA,burned,0
+2002,Mojave,508,Small Mammals,-4,1998,NA,pre,NA,NA,0,NA,burned,0
+2002,Mojave,508,Small Mammals,-3,1999,NA,pre,NA,NA,0,NA,burned,0
+2002,Mojave,508,Small Mammals,-2,2000,NA,pre,NA,NA,0,NA,burned,0
+2002,Mojave,508,Small Mammals,-1,2001,NA,pre,NA,NA,0,NA,burned,0
+2002,Mojave,508,Small Mammals,1,2003,NA,post,NA,NA,0,NA,burned,0
+2002,Mojave,508,Small Mammals,2,2004,NA,post,NA,NA,0,NA,burned,0
+2002,Mojave,508,Small Mammals,3,2005,NA,post,NA,NA,0,NA,burned,0
+2002,Mojave,508,Small Mammals,4,2006,NA,post,NA,NA,0,NA,burned,0
+2002,Mojave,508,Small Mammals,5,2007,NA,post,NA,NA,0,NA,burned,0
+2002,Mojave,508,Birds:Rails and Geese,-5,1997,NA,pre,NA,NA,0,NA,burned,0
+2002,Mojave,508,Birds:Rails and Geese,-4,1998,NA,pre,NA,NA,0,NA,burned,0
+2002,Mojave,508,Birds:Rails and Geese,-3,1999,NA,pre,NA,NA,0,NA,burned,0
+2002,Mojave,508,Birds:Rails and Geese,-2,2000,NA,pre,NA,NA,0,NA,burned,0
+2002,Mojave,508,Birds:Rails and Geese,-1,2001,NA,pre,NA,NA,0,NA,burned,0
+2002,Mojave,508,Birds:Rails and Geese,1,2003,NA,post,NA,NA,0,NA,burned,0
+2002,Mojave,508,Birds:Rails and Geese,2,2004,NA,post,NA,NA,0,NA,burned,0
+2002,Mojave,508,Birds:Rails and Geese,3,2005,NA,post,NA,NA,0,NA,burned,0
+2002,Mojave,508,Birds:Rails and Geese,4,2006,NA,post,NA,NA,0,NA,burned,0
+2002,Mojave,508,Birds:Rails and Geese,5,2007,NA,post,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Birds:Passerines,-5,1997,NA,pre,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Birds:Passerines,-4,1998,NA,pre,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Birds:Passerines,-3,1999,NA,pre,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Birds:Passerines,-2,2000,NA,pre,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Birds:Passerines,-1,2001,NA,pre,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Birds:Passerines,1,2003,Aves,post,1,0.243352752055754,1,218.8631564,burned,46
+2002,Sonoran,263,Birds:Passerines,2,2004,Aves,post,2,0.233257615148618,1,218.8631564,burned,46
+2002,Sonoran,263,Birds:Passerines,3,2005,NA,post,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Birds:Passerines,4,2006,NA,post,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Birds:Passerines,5,2007,NA,post,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Birds:Raptors,-5,1997,NA,pre,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Birds:Raptors,-4,1998,NA,pre,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Birds:Raptors,-3,1999,NA,pre,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Birds:Raptors,-2,2000,NA,pre,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Birds:Raptors,-1,2001,NA,pre,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Birds:Raptors,1,2003,NA,post,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Birds:Raptors,2,2004,NA,post,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Birds:Raptors,3,2005,NA,post,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Birds:Raptors,4,2006,NA,post,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Birds:Raptors,5,2007,NA,post,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Large Mammals,-5,1997,NA,pre,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Large Mammals,-4,1998,NA,pre,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Large Mammals,-3,1999,NA,pre,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Large Mammals,-2,2000,NA,pre,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Large Mammals,-1,2001,NA,pre,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Large Mammals,1,2003,NA,post,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Large Mammals,2,2004,NA,post,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Large Mammals,3,2005,NA,post,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Large Mammals,4,2006,NA,post,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Large Mammals,5,2007,NA,post,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Tortoises,-5,1997,NA,pre,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Tortoises,-4,1998,NA,pre,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Tortoises,-3,1999,NA,pre,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Tortoises,-2,2000,NA,pre,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Tortoises,-1,2001,NA,pre,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Tortoises,1,2003,NA,post,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Tortoises,2,2004,NA,post,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Tortoises,3,2005,NA,post,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Tortoises,4,2006,NA,post,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Tortoises,5,2007,NA,post,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Butterflies & Moths,-5,1997,NA,pre,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Butterflies & Moths,-4,1998,NA,pre,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Butterflies & Moths,-3,1999,NA,pre,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Butterflies & Moths,-2,2000,NA,pre,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Butterflies & Moths,-1,2001,NA,pre,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Butterflies & Moths,1,2003,NA,post,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Butterflies & Moths,2,2004,NA,post,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Butterflies & Moths,3,2005,NA,post,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Butterflies & Moths,4,2006,NA,post,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Butterflies & Moths,5,2007,NA,post,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Birds:Woodpeckers,-5,1997,NA,pre,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Birds:Woodpeckers,-4,1998,NA,pre,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Birds:Woodpeckers,-3,1999,NA,pre,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Birds:Woodpeckers,-2,2000,NA,pre,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Birds:Woodpeckers,-1,2001,NA,pre,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Birds:Woodpeckers,1,2003,NA,post,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Birds:Woodpeckers,2,2004,NA,post,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Birds:Woodpeckers,3,2005,NA,post,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Birds:Woodpeckers,4,2006,NA,post,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Birds:Woodpeckers,5,2007,NA,post,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Small Mammals,-5,1997,NA,pre,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Small Mammals,-4,1998,NA,pre,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Small Mammals,-3,1999,NA,pre,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Small Mammals,-2,2000,NA,pre,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Small Mammals,-1,2001,NA,pre,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Small Mammals,1,2003,NA,post,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Small Mammals,2,2004,NA,post,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Small Mammals,3,2005,NA,post,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Small Mammals,4,2006,NA,post,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Small Mammals,5,2007,NA,post,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Birds:Rails and Geese,-5,1997,NA,pre,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Birds:Rails and Geese,-4,1998,NA,pre,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Birds:Rails and Geese,-3,1999,NA,pre,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Birds:Rails and Geese,-2,2000,NA,pre,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Birds:Rails and Geese,-1,2001,NA,pre,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Birds:Rails and Geese,1,2003,NA,post,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Birds:Rails and Geese,2,2004,NA,post,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Birds:Rails and Geese,3,2005,NA,post,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Birds:Rails and Geese,4,2006,NA,post,NA,NA,0,NA,burned,0
+2002,Sonoran,263,Birds:Rails and Geese,5,2007,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Birds:Passerines,-5,1999,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Birds:Passerines,-4,2000,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Birds:Passerines,-3,2001,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Birds:Passerines,-2,2002,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Birds:Passerines,-1,2003,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Birds:Passerines,1,2005,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Birds:Passerines,2,2006,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Birds:Passerines,3,2007,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Birds:Passerines,4,2008,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Birds:Passerines,5,2009,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Birds:Raptors,-5,1999,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Birds:Raptors,-4,2000,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Birds:Raptors,-3,2001,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Birds:Raptors,-2,2002,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Birds:Raptors,-1,2003,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Birds:Raptors,1,2005,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Birds:Raptors,2,2006,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Birds:Raptors,3,2007,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Birds:Raptors,4,2008,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Birds:Raptors,5,2009,Aves,post,5,0.337672477693546,1,399.4220205,burned,26
+2004,San Joaquin,856,Large Mammals,-5,1999,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Large Mammals,-4,2000,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Large Mammals,-3,2001,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Large Mammals,-2,2002,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Large Mammals,-1,2003,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Large Mammals,1,2005,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Large Mammals,2,2006,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Large Mammals,3,2007,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Large Mammals,4,2008,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Large Mammals,5,2009,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Tortoises,-5,1999,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Tortoises,-4,2000,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Tortoises,-3,2001,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Tortoises,-2,2002,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Tortoises,-1,2003,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Tortoises,1,2005,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Tortoises,2,2006,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Tortoises,3,2007,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Tortoises,4,2008,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Tortoises,5,2009,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Butterflies & Moths,-5,1999,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Butterflies & Moths,-4,2000,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Butterflies & Moths,-3,2001,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Butterflies & Moths,-2,2002,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Butterflies & Moths,-1,2003,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Butterflies & Moths,1,2005,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Butterflies & Moths,2,2006,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Butterflies & Moths,3,2007,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Butterflies & Moths,4,2008,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Butterflies & Moths,5,2009,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Birds:Woodpeckers,-5,1999,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Birds:Woodpeckers,-4,2000,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Birds:Woodpeckers,-3,2001,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Birds:Woodpeckers,-2,2002,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Birds:Woodpeckers,-1,2003,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Birds:Woodpeckers,1,2005,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Birds:Woodpeckers,2,2006,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Birds:Woodpeckers,3,2007,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Birds:Woodpeckers,4,2008,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Birds:Woodpeckers,5,2009,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Small Mammals,-5,1999,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Small Mammals,-4,2000,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Small Mammals,-3,2001,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Small Mammals,-2,2002,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Small Mammals,-1,2003,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Small Mammals,1,2005,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Small Mammals,2,2006,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Small Mammals,3,2007,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Small Mammals,4,2008,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Small Mammals,5,2009,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Birds:Rails and Geese,-5,1999,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Birds:Rails and Geese,-4,2000,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Birds:Rails and Geese,-3,2001,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Birds:Rails and Geese,-2,2002,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Birds:Rails and Geese,-1,2003,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Birds:Rails and Geese,1,2005,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Birds:Rails and Geese,2,2006,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Birds:Rails and Geese,3,2007,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Birds:Rails and Geese,4,2008,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,856,Birds:Rails and Geese,5,2009,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Birds:Passerines,-5,1999,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Birds:Passerines,-4,2000,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Birds:Passerines,-3,2001,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Birds:Passerines,-2,2002,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Birds:Passerines,-1,2003,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Birds:Passerines,1,2005,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Birds:Passerines,2,2006,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Birds:Passerines,3,2007,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Birds:Passerines,4,2008,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Birds:Passerines,5,2009,Aves,post,5,0.337672477693546,1,399.4220205,burned,26
+2004,San Joaquin,929,Birds:Raptors,-5,1999,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Birds:Raptors,-4,2000,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Birds:Raptors,-3,2001,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Birds:Raptors,-2,2002,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Birds:Raptors,-1,2003,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Birds:Raptors,1,2005,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Birds:Raptors,2,2006,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Birds:Raptors,3,2007,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Birds:Raptors,4,2008,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Birds:Raptors,5,2009,Aves,post,5,0.337672477693546,1,399.4220205,burned,26
+2004,San Joaquin,929,Large Mammals,-5,1999,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Large Mammals,-4,2000,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Large Mammals,-3,2001,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Large Mammals,-2,2002,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Large Mammals,-1,2003,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Large Mammals,1,2005,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Large Mammals,2,2006,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Large Mammals,3,2007,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Large Mammals,4,2008,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Large Mammals,5,2009,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Tortoises,-5,1999,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Tortoises,-4,2000,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Tortoises,-3,2001,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Tortoises,-2,2002,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Tortoises,-1,2003,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Tortoises,1,2005,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Tortoises,2,2006,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Tortoises,3,2007,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Tortoises,4,2008,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Tortoises,5,2009,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Butterflies & Moths,-5,1999,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Butterflies & Moths,-4,2000,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Butterflies & Moths,-3,2001,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Butterflies & Moths,-2,2002,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Butterflies & Moths,-1,2003,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Butterflies & Moths,1,2005,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Butterflies & Moths,2,2006,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Butterflies & Moths,3,2007,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Butterflies & Moths,4,2008,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Butterflies & Moths,5,2009,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Birds:Woodpeckers,-5,1999,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Birds:Woodpeckers,-4,2000,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Birds:Woodpeckers,-3,2001,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Birds:Woodpeckers,-2,2002,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Birds:Woodpeckers,-1,2003,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Birds:Woodpeckers,1,2005,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Birds:Woodpeckers,2,2006,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Birds:Woodpeckers,3,2007,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Birds:Woodpeckers,4,2008,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Birds:Woodpeckers,5,2009,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Small Mammals,-5,1999,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Small Mammals,-4,2000,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Small Mammals,-3,2001,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Small Mammals,-2,2002,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Small Mammals,-1,2003,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Small Mammals,1,2005,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Small Mammals,2,2006,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Small Mammals,3,2007,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Small Mammals,4,2008,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Small Mammals,5,2009,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Birds:Rails and Geese,-5,1999,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Birds:Rails and Geese,-4,2000,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Birds:Rails and Geese,-3,2001,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Birds:Rails and Geese,-2,2002,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Birds:Rails and Geese,-1,2003,NA,pre,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Birds:Rails and Geese,1,2005,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Birds:Rails and Geese,2,2006,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Birds:Rails and Geese,3,2007,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Birds:Rails and Geese,4,2008,NA,post,NA,NA,0,NA,burned,0
+2004,San Joaquin,929,Birds:Rails and Geese,5,2009,NA,post,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Birds:Passerines,-5,1999,NA,pre,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Birds:Passerines,-4,2000,NA,pre,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Birds:Passerines,-3,2001,NA,pre,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Birds:Passerines,-2,2002,NA,pre,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Birds:Passerines,-1,2003,NA,pre,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Birds:Passerines,1,2005,NA,post,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Birds:Passerines,2,2006,NA,post,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Birds:Passerines,3,2007,NA,post,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Birds:Passerines,4,2008,NA,post,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Birds:Passerines,5,2009,NA,post,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Birds:Raptors,-5,1999,NA,pre,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Birds:Raptors,-4,2000,NA,pre,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Birds:Raptors,-3,2001,NA,pre,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Birds:Raptors,-2,2002,NA,pre,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Birds:Raptors,-1,2003,NA,pre,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Birds:Raptors,1,2005,NA,post,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Birds:Raptors,2,2006,NA,post,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Birds:Raptors,3,2007,NA,post,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Birds:Raptors,4,2008,NA,post,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Birds:Raptors,5,2009,NA,post,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Large Mammals,-5,1999,NA,pre,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Large Mammals,-4,2000,NA,pre,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Large Mammals,-3,2001,NA,pre,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Large Mammals,-2,2002,NA,pre,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Large Mammals,-1,2003,NA,pre,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Large Mammals,1,2005,NA,post,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Large Mammals,2,2006,NA,post,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Large Mammals,3,2007,NA,post,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Large Mammals,4,2008,NA,post,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Large Mammals,5,2009,Other,post,5,0.243180527942847,1,218.8631564,burned,46
+2004,Sonoran,82,Tortoises,-5,1999,NA,pre,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Tortoises,-4,2000,NA,pre,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Tortoises,-3,2001,NA,pre,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Tortoises,-2,2002,NA,pre,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Tortoises,-1,2003,NA,pre,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Tortoises,1,2005,NA,post,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Tortoises,2,2006,NA,post,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Tortoises,3,2007,NA,post,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Tortoises,4,2008,NA,post,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Tortoises,5,2009,NA,post,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Butterflies & Moths,-5,1999,NA,pre,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Butterflies & Moths,-4,2000,NA,pre,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Butterflies & Moths,-3,2001,NA,pre,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Butterflies & Moths,-2,2002,NA,pre,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Butterflies & Moths,-1,2003,NA,pre,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Butterflies & Moths,1,2005,NA,post,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Butterflies & Moths,2,2006,NA,post,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Butterflies & Moths,3,2007,NA,post,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Butterflies & Moths,4,2008,NA,post,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Butterflies & Moths,5,2009,NA,post,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Birds:Woodpeckers,-5,1999,NA,pre,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Birds:Woodpeckers,-4,2000,NA,pre,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Birds:Woodpeckers,-3,2001,NA,pre,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Birds:Woodpeckers,-2,2002,NA,pre,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Birds:Woodpeckers,-1,2003,NA,pre,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Birds:Woodpeckers,1,2005,NA,post,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Birds:Woodpeckers,2,2006,NA,post,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Birds:Woodpeckers,3,2007,NA,post,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Birds:Woodpeckers,4,2008,NA,post,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Birds:Woodpeckers,5,2009,NA,post,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Small Mammals,-5,1999,NA,pre,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Small Mammals,-4,2000,NA,pre,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Small Mammals,-3,2001,NA,pre,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Small Mammals,-2,2002,NA,pre,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Small Mammals,-1,2003,NA,pre,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Small Mammals,1,2005,NA,post,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Small Mammals,2,2006,NA,post,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Small Mammals,3,2007,NA,post,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Small Mammals,4,2008,NA,post,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Small Mammals,5,2009,NA,post,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Birds:Rails and Geese,-5,1999,NA,pre,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Birds:Rails and Geese,-4,2000,NA,pre,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Birds:Rails and Geese,-3,2001,NA,pre,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Birds:Rails and Geese,-2,2002,NA,pre,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Birds:Rails and Geese,-1,2003,NA,pre,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Birds:Rails and Geese,1,2005,NA,post,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Birds:Rails and Geese,2,2006,NA,post,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Birds:Rails and Geese,3,2007,NA,post,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Birds:Rails and Geese,4,2008,NA,post,NA,NA,0,NA,burned,0
+2004,Sonoran,82,Birds:Rails and Geese,5,2009,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,271,Birds:Passerines,-5,2000,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,271,Birds:Passerines,-4,2001,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,271,Birds:Passerines,-3,2002,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,271,Birds:Passerines,-2,2003,Aves,pre,2,0.248952349799622,1,721.5012132,burned,14
+2005,Mojave,271,Birds:Passerines,-1,2004,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,271,Birds:Passerines,1,2006,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,271,Birds:Passerines,2,2007,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,271,Birds:Passerines,3,2008,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,271,Birds:Passerines,4,2009,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,271,Birds:Passerines,5,2010,Aves,post,5,0.246609619252128,1,721.5012132,burned,14
+2005,Mojave,271,Birds:Raptors,-5,2000,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,271,Birds:Raptors,-4,2001,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,271,Birds:Raptors,-3,2002,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,271,Birds:Raptors,-2,2003,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,271,Birds:Raptors,-1,2004,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,271,Birds:Raptors,1,2006,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,271,Birds:Raptors,2,2007,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,271,Birds:Raptors,3,2008,Aves,post,3,0.230435496269091,1,721.5012132,burned,14
+2005,Mojave,271,Birds:Raptors,4,2009,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,271,Birds:Raptors,5,2010,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,271,Large Mammals,-5,2000,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,271,Large Mammals,-4,2001,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,271,Large Mammals,-3,2002,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,271,Large Mammals,-2,2003,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,271,Large Mammals,-1,2004,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,271,Large Mammals,1,2006,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,271,Large Mammals,2,2007,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,271,Large Mammals,3,2008,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,271,Large Mammals,4,2009,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,271,Large Mammals,5,2010,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,271,Tortoises,-5,2000,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,271,Tortoises,-4,2001,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,271,Tortoises,-3,2002,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,271,Tortoises,-2,2003,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,271,Tortoises,-1,2004,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,271,Tortoises,1,2006,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,271,Tortoises,2,2007,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,271,Tortoises,3,2008,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,271,Tortoises,4,2009,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,271,Tortoises,5,2010,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,271,Butterflies & Moths,-5,2000,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,271,Butterflies & Moths,-4,2001,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,271,Butterflies & Moths,-3,2002,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,271,Butterflies & Moths,-2,2003,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,271,Butterflies & Moths,-1,2004,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,271,Butterflies & Moths,1,2006,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,271,Butterflies & Moths,2,2007,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,271,Butterflies & Moths,3,2008,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,271,Butterflies & Moths,4,2009,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,271,Butterflies & Moths,5,2010,Other,post,5,0.246609619252128,1,721.5012132,burned,14
+2005,Mojave,271,Birds:Woodpeckers,-5,2000,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,271,Birds:Woodpeckers,-4,2001,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,271,Birds:Woodpeckers,-3,2002,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,271,Birds:Woodpeckers,-2,2003,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,271,Birds:Woodpeckers,-1,2004,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,271,Birds:Woodpeckers,1,2006,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,271,Birds:Woodpeckers,2,2007,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,271,Birds:Woodpeckers,3,2008,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,271,Birds:Woodpeckers,4,2009,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,271,Birds:Woodpeckers,5,2010,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,271,Small Mammals,-5,2000,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,271,Small Mammals,-4,2001,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,271,Small Mammals,-3,2002,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,271,Small Mammals,-2,2003,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,271,Small Mammals,-1,2004,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,271,Small Mammals,1,2006,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,271,Small Mammals,2,2007,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,271,Small Mammals,3,2008,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,271,Small Mammals,4,2009,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,271,Small Mammals,5,2010,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,271,Birds:Rails and Geese,-5,2000,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,271,Birds:Rails and Geese,-4,2001,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,271,Birds:Rails and Geese,-3,2002,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,271,Birds:Rails and Geese,-2,2003,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,271,Birds:Rails and Geese,-1,2004,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,271,Birds:Rails and Geese,1,2006,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,271,Birds:Rails and Geese,2,2007,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,271,Birds:Rails and Geese,3,2008,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,271,Birds:Rails and Geese,4,2009,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,271,Birds:Rails and Geese,5,2010,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,565,Birds:Passerines,-5,2000,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,565,Birds:Passerines,-4,2001,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,565,Birds:Passerines,-3,2002,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,565,Birds:Passerines,-2,2003,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,565,Birds:Passerines,-1,2004,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,565,Birds:Passerines,1,2006,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,565,Birds:Passerines,2,2007,Aves,post,2,0.198073476366218,1,721.5012132,burned,14
+2005,Mojave,565,Birds:Passerines,3,2008,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,565,Birds:Passerines,4,2009,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,565,Birds:Passerines,5,2010,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,565,Birds:Raptors,-5,2000,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,565,Birds:Raptors,-4,2001,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,565,Birds:Raptors,-3,2002,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,565,Birds:Raptors,-2,2003,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,565,Birds:Raptors,-1,2004,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,565,Birds:Raptors,1,2006,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,565,Birds:Raptors,2,2007,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,565,Birds:Raptors,3,2008,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,565,Birds:Raptors,4,2009,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,565,Birds:Raptors,5,2010,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,565,Large Mammals,-5,2000,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,565,Large Mammals,-4,2001,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,565,Large Mammals,-3,2002,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,565,Large Mammals,-2,2003,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,565,Large Mammals,-1,2004,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,565,Large Mammals,1,2006,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,565,Large Mammals,2,2007,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,565,Large Mammals,3,2008,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,565,Large Mammals,4,2009,Other,post,4,0.240728998551061,1,721.5012132,burned,14
+2005,Mojave,565,Large Mammals,5,2010,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,565,Tortoises,-5,2000,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,565,Tortoises,-4,2001,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,565,Tortoises,-3,2002,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,565,Tortoises,-2,2003,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,565,Tortoises,-1,2004,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,565,Tortoises,1,2006,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,565,Tortoises,2,2007,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,565,Tortoises,3,2008,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,565,Tortoises,4,2009,Other,post,4,0.240728998551061,1,721.5012132,burned,14
+2005,Mojave,565,Tortoises,5,2010,Other,post,5,0.246609619252128,2,721.5012132,burned,28
+2005,Mojave,565,Butterflies & Moths,-5,2000,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,565,Butterflies & Moths,-4,2001,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,565,Butterflies & Moths,-3,2002,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,565,Butterflies & Moths,-2,2003,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,565,Butterflies & Moths,-1,2004,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,565,Butterflies & Moths,1,2006,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,565,Butterflies & Moths,2,2007,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,565,Butterflies & Moths,3,2008,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,565,Butterflies & Moths,4,2009,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,565,Butterflies & Moths,5,2010,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,565,Birds:Woodpeckers,-5,2000,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,565,Birds:Woodpeckers,-4,2001,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,565,Birds:Woodpeckers,-3,2002,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,565,Birds:Woodpeckers,-2,2003,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,565,Birds:Woodpeckers,-1,2004,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,565,Birds:Woodpeckers,1,2006,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,565,Birds:Woodpeckers,2,2007,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,565,Birds:Woodpeckers,3,2008,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,565,Birds:Woodpeckers,4,2009,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,565,Birds:Woodpeckers,5,2010,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,565,Small Mammals,-5,2000,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,565,Small Mammals,-4,2001,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,565,Small Mammals,-3,2002,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,565,Small Mammals,-2,2003,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,565,Small Mammals,-1,2004,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,565,Small Mammals,1,2006,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,565,Small Mammals,2,2007,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,565,Small Mammals,3,2008,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,565,Small Mammals,4,2009,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,565,Small Mammals,5,2010,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,565,Birds:Rails and Geese,-5,2000,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,565,Birds:Rails and Geese,-4,2001,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,565,Birds:Rails and Geese,-3,2002,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,565,Birds:Rails and Geese,-2,2003,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,565,Birds:Rails and Geese,-1,2004,NA,pre,NA,NA,0,NA,burned,0
+2005,Mojave,565,Birds:Rails and Geese,1,2006,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,565,Birds:Rails and Geese,2,2007,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,565,Birds:Rails and Geese,3,2008,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,565,Birds:Rails and Geese,4,2009,NA,post,NA,NA,0,NA,burned,0
+2005,Mojave,565,Birds:Rails and Geese,5,2010,NA,post,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Birds:Passerines,-5,2000,NA,pre,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Birds:Passerines,-4,2001,NA,pre,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Birds:Passerines,-3,2002,NA,pre,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Birds:Passerines,-2,2003,NA,pre,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Birds:Passerines,-1,2004,NA,pre,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Birds:Passerines,1,2006,NA,post,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Birds:Passerines,2,2007,NA,post,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Birds:Passerines,3,2008,NA,post,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Birds:Passerines,4,2009,NA,post,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Birds:Passerines,5,2010,NA,post,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Birds:Raptors,-5,2000,NA,pre,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Birds:Raptors,-4,2001,NA,pre,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Birds:Raptors,-3,2002,NA,pre,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Birds:Raptors,-2,2003,NA,pre,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Birds:Raptors,-1,2004,NA,pre,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Birds:Raptors,0,2005,Aves,post,0,0.39630719962481,1,399.4220205,burned,26
+2005,San Joaquin,678,Birds:Raptors,1,2006,NA,post,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Birds:Raptors,2,2007,NA,post,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Birds:Raptors,3,2008,NA,post,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Birds:Raptors,4,2009,NA,post,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Birds:Raptors,5,2010,NA,post,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Large Mammals,-5,2000,NA,pre,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Large Mammals,-4,2001,NA,pre,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Large Mammals,-3,2002,NA,pre,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Large Mammals,-2,2003,NA,pre,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Large Mammals,-1,2004,NA,pre,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Large Mammals,1,2006,NA,post,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Large Mammals,2,2007,NA,post,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Large Mammals,3,2008,NA,post,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Large Mammals,4,2009,NA,post,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Large Mammals,5,2010,NA,post,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Tortoises,-5,2000,NA,pre,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Tortoises,-4,2001,NA,pre,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Tortoises,-3,2002,NA,pre,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Tortoises,-2,2003,NA,pre,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Tortoises,-1,2004,NA,pre,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Tortoises,1,2006,NA,post,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Tortoises,2,2007,NA,post,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Tortoises,3,2008,NA,post,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Tortoises,4,2009,NA,post,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Tortoises,5,2010,NA,post,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Butterflies & Moths,-5,2000,NA,pre,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Butterflies & Moths,-4,2001,NA,pre,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Butterflies & Moths,-3,2002,NA,pre,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Butterflies & Moths,-2,2003,NA,pre,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Butterflies & Moths,-1,2004,NA,pre,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Butterflies & Moths,1,2006,NA,post,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Butterflies & Moths,2,2007,NA,post,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Butterflies & Moths,3,2008,NA,post,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Butterflies & Moths,4,2009,NA,post,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Butterflies & Moths,5,2010,NA,post,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Birds:Woodpeckers,-5,2000,NA,pre,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Birds:Woodpeckers,-4,2001,NA,pre,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Birds:Woodpeckers,-3,2002,NA,pre,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Birds:Woodpeckers,-2,2003,NA,pre,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Birds:Woodpeckers,-1,2004,NA,pre,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Birds:Woodpeckers,1,2006,NA,post,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Birds:Woodpeckers,2,2007,NA,post,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Birds:Woodpeckers,3,2008,NA,post,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Birds:Woodpeckers,4,2009,NA,post,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Birds:Woodpeckers,5,2010,NA,post,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Small Mammals,-5,2000,NA,pre,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Small Mammals,-4,2001,NA,pre,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Small Mammals,-3,2002,NA,pre,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Small Mammals,-2,2003,NA,pre,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Small Mammals,-1,2004,NA,pre,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Small Mammals,1,2006,NA,post,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Small Mammals,2,2007,NA,post,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Small Mammals,3,2008,NA,post,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Small Mammals,4,2009,NA,post,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Small Mammals,5,2010,NA,post,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Birds:Rails and Geese,-5,2000,NA,pre,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Birds:Rails and Geese,-4,2001,NA,pre,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Birds:Rails and Geese,-3,2002,NA,pre,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Birds:Rails and Geese,-2,2003,NA,pre,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Birds:Rails and Geese,-1,2004,NA,pre,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Birds:Rails and Geese,1,2006,NA,post,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Birds:Rails and Geese,2,2007,NA,post,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Birds:Rails and Geese,3,2008,NA,post,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Birds:Rails and Geese,4,2009,NA,post,NA,NA,0,NA,burned,0
+2005,San Joaquin,678,Birds:Rails and Geese,5,2010,NA,post,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Birds:Passerines,-5,2003,NA,pre,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Birds:Passerines,-4,2004,NA,pre,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Birds:Passerines,-3,2005,NA,pre,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Birds:Passerines,-2,2006,NA,pre,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Birds:Passerines,-1,2007,NA,pre,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Birds:Passerines,1,2009,Aves,post,1,0.337672477693546,2,399.4220205,burned,51
+2008,San Joaquin,941,Birds:Passerines,2,2010,Aves,post,2,0.402403124616037,1,399.4220205,burned,26
+2008,San Joaquin,941,Birds:Passerines,3,2011,Aves,post,3,0.363193248612118,1,399.4220205,burned,26
+2008,San Joaquin,941,Birds:Passerines,4,2012,NA,post,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Birds:Passerines,5,2013,NA,post,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Birds:Raptors,-5,2003,NA,pre,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Birds:Raptors,-4,2004,NA,pre,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Birds:Raptors,-3,2005,NA,pre,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Birds:Raptors,-2,2006,NA,pre,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Birds:Raptors,-1,2007,NA,pre,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Birds:Raptors,1,2009,NA,post,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Birds:Raptors,2,2010,NA,post,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Birds:Raptors,3,2011,NA,post,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Birds:Raptors,4,2012,Aves,post,4,0.282864522495036,1,399.4220205,burned,26
+2008,San Joaquin,941,Birds:Raptors,5,2013,NA,post,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Large Mammals,-5,2003,NA,pre,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Large Mammals,-4,2004,NA,pre,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Large Mammals,-3,2005,NA,pre,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Large Mammals,-2,2006,NA,pre,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Large Mammals,-1,2007,NA,pre,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Large Mammals,1,2009,NA,post,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Large Mammals,2,2010,NA,post,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Large Mammals,3,2011,NA,post,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Large Mammals,4,2012,NA,post,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Large Mammals,5,2013,NA,post,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Tortoises,-5,2003,NA,pre,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Tortoises,-4,2004,NA,pre,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Tortoises,-3,2005,NA,pre,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Tortoises,-2,2006,NA,pre,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Tortoises,-1,2007,NA,pre,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Tortoises,1,2009,NA,post,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Tortoises,2,2010,NA,post,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Tortoises,3,2011,NA,post,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Tortoises,4,2012,NA,post,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Tortoises,5,2013,NA,post,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Butterflies & Moths,-5,2003,NA,pre,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Butterflies & Moths,-4,2004,NA,pre,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Butterflies & Moths,-3,2005,NA,pre,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Butterflies & Moths,-2,2006,NA,pre,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Butterflies & Moths,-1,2007,NA,pre,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Butterflies & Moths,1,2009,NA,post,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Butterflies & Moths,2,2010,NA,post,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Butterflies & Moths,3,2011,NA,post,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Butterflies & Moths,4,2012,NA,post,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Butterflies & Moths,5,2013,NA,post,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Birds:Woodpeckers,-5,2003,NA,pre,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Birds:Woodpeckers,-4,2004,NA,pre,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Birds:Woodpeckers,-3,2005,NA,pre,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Birds:Woodpeckers,-2,2006,NA,pre,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Birds:Woodpeckers,-1,2007,NA,pre,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Birds:Woodpeckers,1,2009,NA,post,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Birds:Woodpeckers,2,2010,NA,post,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Birds:Woodpeckers,3,2011,NA,post,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Birds:Woodpeckers,4,2012,NA,post,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Birds:Woodpeckers,5,2013,NA,post,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Small Mammals,-5,2003,NA,pre,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Small Mammals,-4,2004,NA,pre,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Small Mammals,-3,2005,NA,pre,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Small Mammals,-2,2006,NA,pre,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Small Mammals,-1,2007,NA,pre,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Small Mammals,1,2009,NA,post,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Small Mammals,2,2010,NA,post,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Small Mammals,3,2011,NA,post,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Small Mammals,4,2012,NA,post,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Small Mammals,5,2013,NA,post,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Birds:Rails and Geese,-5,2003,NA,pre,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Birds:Rails and Geese,-4,2004,NA,pre,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Birds:Rails and Geese,-3,2005,NA,pre,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Birds:Rails and Geese,-2,2006,NA,pre,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Birds:Rails and Geese,-1,2007,NA,pre,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Birds:Rails and Geese,1,2009,NA,post,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Birds:Rails and Geese,2,2010,NA,post,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Birds:Rails and Geese,3,2011,NA,post,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Birds:Rails and Geese,4,2012,NA,post,NA,NA,0,NA,burned,0
+2008,San Joaquin,941,Birds:Rails and Geese,5,2013,NA,post,NA,NA,0,NA,burned,0
+2010,Mojave,291,Birds:Passerines,-5,2005,Aves,pre,5,0.274455588363665,3,721.5012132,burned,42
+2010,Mojave,291,Birds:Passerines,-4,2006,NA,pre,NA,NA,0,NA,burned,0
+2010,Mojave,291,Birds:Passerines,-3,2007,Aves,pre,3,0.198073476366218,1,721.5012132,burned,14
+2010,Mojave,291,Birds:Passerines,-2,2008,Aves,pre,2,0.230435496269091,4,721.5012132,burned,56
+2010,Mojave,291,Birds:Passerines,-1,2009,Aves,pre,1,0.240728998551061,2,721.5012132,burned,28
+2010,Mojave,291,Birds:Passerines,1,2011,NA,post,NA,NA,0,NA,burned,0
+2010,Mojave,291,Birds:Passerines,2,2012,NA,post,NA,NA,0,NA,burned,0
+2010,Mojave,291,Birds:Passerines,3,2013,NA,post,NA,NA,0,NA,burned,0
+2010,Mojave,291,Birds:Passerines,4,2014,NA,post,NA,NA,0,NA,burned,0
+2010,Mojave,291,Birds:Passerines,5,2015,NA,post,NA,NA,0,NA,burned,0
+2010,Mojave,291,Birds:Raptors,-5,2005,NA,pre,NA,NA,0,NA,burned,0
+2010,Mojave,291,Birds:Raptors,-4,2006,NA,pre,NA,NA,0,NA,burned,0
+2010,Mojave,291,Birds:Raptors,-3,2007,NA,pre,NA,NA,0,NA,burned,0
+2010,Mojave,291,Birds:Raptors,-2,2008,NA,pre,NA,NA,0,NA,burned,0
+2010,Mojave,291,Birds:Raptors,-1,2009,NA,pre,NA,NA,0,NA,burned,0
+2010,Mojave,291,Birds:Raptors,1,2011,NA,post,NA,NA,0,NA,burned,0
+2010,Mojave,291,Birds:Raptors,2,2012,NA,post,NA,NA,0,NA,burned,0
+2010,Mojave,291,Birds:Raptors,3,2013,NA,post,NA,NA,0,NA,burned,0
+2010,Mojave,291,Birds:Raptors,4,2014,NA,post,NA,NA,0,NA,burned,0
+2010,Mojave,291,Birds:Raptors,5,2015,NA,post,NA,NA,0,NA,burned,0
+2010,Mojave,291,Large Mammals,-5,2005,NA,pre,NA,NA,0,NA,burned,0
+2010,Mojave,291,Large Mammals,-4,2006,NA,pre,NA,NA,0,NA,burned,0
+2010,Mojave,291,Large Mammals,-3,2007,NA,pre,NA,NA,0,NA,burned,0
+2010,Mojave,291,Large Mammals,-2,2008,NA,pre,NA,NA,0,NA,burned,0
+2010,Mojave,291,Large Mammals,-1,2009,NA,pre,NA,NA,0,NA,burned,0
+2010,Mojave,291,Large Mammals,1,2011,NA,post,NA,NA,0,NA,burned,0
+2010,Mojave,291,Large Mammals,2,2012,NA,post,NA,NA,0,NA,burned,0
+2010,Mojave,291,Large Mammals,3,2013,NA,post,NA,NA,0,NA,burned,0
+2010,Mojave,291,Large Mammals,4,2014,NA,post,NA,NA,0,NA,burned,0
+2010,Mojave,291,Large Mammals,5,2015,NA,post,NA,NA,0,NA,burned,0
+2010,Mojave,291,Tortoises,-5,2005,NA,pre,NA,NA,0,NA,burned,0
+2010,Mojave,291,Tortoises,-4,2006,NA,pre,NA,NA,0,NA,burned,0
+2010,Mojave,291,Tortoises,-3,2007,NA,pre,NA,NA,0,NA,burned,0
+2010,Mojave,291,Tortoises,-2,2008,NA,pre,NA,NA,0,NA,burned,0
+2010,Mojave,291,Tortoises,-1,2009,NA,pre,NA,NA,0,NA,burned,0
+2010,Mojave,291,Tortoises,1,2011,NA,post,NA,NA,0,NA,burned,0
+2010,Mojave,291,Tortoises,2,2012,NA,post,NA,NA,0,NA,burned,0
+2010,Mojave,291,Tortoises,3,2013,NA,post,NA,NA,0,NA,burned,0
+2010,Mojave,291,Tortoises,4,2014,NA,post,NA,NA,0,NA,burned,0
+2010,Mojave,291,Tortoises,5,2015,NA,post,NA,NA,0,NA,burned,0
+2010,Mojave,291,Butterflies & Moths,-5,2005,NA,pre,NA,NA,0,NA,burned,0
+2010,Mojave,291,Butterflies & Moths,-4,2006,NA,pre,NA,NA,0,NA,burned,0
+2010,Mojave,291,Butterflies & Moths,-3,2007,NA,pre,NA,NA,0,NA,burned,0
+2010,Mojave,291,Butterflies & Moths,-2,2008,NA,pre,NA,NA,0,NA,burned,0
+2010,Mojave,291,Butterflies & Moths,-1,2009,NA,pre,NA,NA,0,NA,burned,0
+2010,Mojave,291,Butterflies & Moths,1,2011,NA,post,NA,NA,0,NA,burned,0
+2010,Mojave,291,Butterflies & Moths,2,2012,NA,post,NA,NA,0,NA,burned,0
+2010,Mojave,291,Butterflies & Moths,3,2013,NA,post,NA,NA,0,NA,burned,0
+2010,Mojave,291,Butterflies & Moths,4,2014,NA,post,NA,NA,0,NA,burned,0
+2010,Mojave,291,Butterflies & Moths,5,2015,NA,post,NA,NA,0,NA,burned,0
+2010,Mojave,291,Birds:Woodpeckers,-5,2005,NA,pre,NA,NA,0,NA,burned,0
+2010,Mojave,291,Birds:Woodpeckers,-4,2006,NA,pre,NA,NA,0,NA,burned,0
+2010,Mojave,291,Birds:Woodpeckers,-3,2007,NA,pre,NA,NA,0,NA,burned,0
+2010,Mojave,291,Birds:Woodpeckers,-2,2008,NA,pre,NA,NA,0,NA,burned,0
+2010,Mojave,291,Birds:Woodpeckers,-1,2009,NA,pre,NA,NA,0,NA,burned,0
+2010,Mojave,291,Birds:Woodpeckers,1,2011,NA,post,NA,NA,0,NA,burned,0
+2010,Mojave,291,Birds:Woodpeckers,2,2012,NA,post,NA,NA,0,NA,burned,0
+2010,Mojave,291,Birds:Woodpeckers,3,2013,NA,post,NA,NA,0,NA,burned,0
+2010,Mojave,291,Birds:Woodpeckers,4,2014,NA,post,NA,NA,0,NA,burned,0
+2010,Mojave,291,Birds:Woodpeckers,5,2015,NA,post,NA,NA,0,NA,burned,0
+2010,Mojave,291,Small Mammals,-5,2005,NA,pre,NA,NA,0,NA,burned,0
+2010,Mojave,291,Small Mammals,-4,2006,NA,pre,NA,NA,0,NA,burned,0
+2010,Mojave,291,Small Mammals,-3,2007,NA,pre,NA,NA,0,NA,burned,0
+2010,Mojave,291,Small Mammals,-2,2008,NA,pre,NA,NA,0,NA,burned,0
+2010,Mojave,291,Small Mammals,-1,2009,NA,pre,NA,NA,0,NA,burned,0
+2010,Mojave,291,Small Mammals,1,2011,NA,post,NA,NA,0,NA,burned,0
+2010,Mojave,291,Small Mammals,2,2012,NA,post,NA,NA,0,NA,burned,0
+2010,Mojave,291,Small Mammals,3,2013,NA,post,NA,NA,0,NA,burned,0
+2010,Mojave,291,Small Mammals,4,2014,NA,post,NA,NA,0,NA,burned,0
+2010,Mojave,291,Small Mammals,5,2015,NA,post,NA,NA,0,NA,burned,0
+2010,Mojave,291,Birds:Rails and Geese,-5,2005,NA,pre,NA,NA,0,NA,burned,0
+2010,Mojave,291,Birds:Rails and Geese,-4,2006,NA,pre,NA,NA,0,NA,burned,0
+2010,Mojave,291,Birds:Rails and Geese,-3,2007,NA,pre,NA,NA,0,NA,burned,0
+2010,Mojave,291,Birds:Rails and Geese,-2,2008,NA,pre,NA,NA,0,NA,burned,0
+2010,Mojave,291,Birds:Rails and Geese,-1,2009,NA,pre,NA,NA,0,NA,burned,0
+2010,Mojave,291,Birds:Rails and Geese,1,2011,NA,post,NA,NA,0,NA,burned,0
+2010,Mojave,291,Birds:Rails and Geese,2,2012,NA,post,NA,NA,0,NA,burned,0
+2010,Mojave,291,Birds:Rails and Geese,3,2013,NA,post,NA,NA,0,NA,burned,0
+2010,Mojave,291,Birds:Rails and Geese,4,2014,NA,post,NA,NA,0,NA,burned,0
+2010,Mojave,291,Birds:Rails and Geese,5,2015,NA,post,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Birds:Passerines,-5,2005,NA,pre,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Birds:Passerines,-4,2006,NA,pre,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Birds:Passerines,-3,2007,NA,pre,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Birds:Passerines,-2,2008,NA,pre,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Birds:Passerines,-1,2009,NA,pre,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Birds:Passerines,1,2011,NA,post,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Birds:Passerines,2,2012,NA,post,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Birds:Passerines,3,2013,NA,post,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Birds:Passerines,4,2014,NA,post,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Birds:Passerines,5,2015,NA,post,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Birds:Raptors,-5,2005,NA,pre,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Birds:Raptors,-4,2006,NA,pre,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Birds:Raptors,-3,2007,NA,pre,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Birds:Raptors,-2,2008,NA,pre,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Birds:Raptors,-1,2009,NA,pre,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Birds:Raptors,1,2011,NA,post,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Birds:Raptors,2,2012,NA,post,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Birds:Raptors,3,2013,NA,post,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Birds:Raptors,4,2014,NA,post,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Birds:Raptors,5,2015,NA,post,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Large Mammals,-5,2005,NA,pre,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Large Mammals,-4,2006,NA,pre,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Large Mammals,-3,2007,NA,pre,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Large Mammals,-2,2008,NA,pre,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Large Mammals,-1,2009,NA,pre,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Large Mammals,1,2011,NA,post,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Large Mammals,2,2012,NA,post,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Large Mammals,3,2013,NA,post,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Large Mammals,4,2014,NA,post,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Large Mammals,5,2015,NA,post,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Tortoises,-5,2005,NA,pre,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Tortoises,-4,2006,NA,pre,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Tortoises,-3,2007,NA,pre,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Tortoises,-2,2008,NA,pre,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Tortoises,-1,2009,NA,pre,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Tortoises,1,2011,NA,post,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Tortoises,2,2012,NA,post,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Tortoises,3,2013,NA,post,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Tortoises,4,2014,NA,post,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Tortoises,5,2015,NA,post,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Butterflies & Moths,-5,2005,NA,pre,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Butterflies & Moths,-4,2006,NA,pre,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Butterflies & Moths,-3,2007,NA,pre,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Butterflies & Moths,-2,2008,NA,pre,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Butterflies & Moths,-1,2009,NA,pre,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Butterflies & Moths,1,2011,NA,post,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Butterflies & Moths,2,2012,NA,post,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Butterflies & Moths,3,2013,NA,post,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Butterflies & Moths,4,2014,NA,post,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Butterflies & Moths,5,2015,NA,post,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Birds:Woodpeckers,-5,2005,NA,pre,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Birds:Woodpeckers,-4,2006,NA,pre,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Birds:Woodpeckers,-3,2007,NA,pre,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Birds:Woodpeckers,-2,2008,NA,pre,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Birds:Woodpeckers,-1,2009,NA,pre,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Birds:Woodpeckers,1,2011,NA,post,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Birds:Woodpeckers,2,2012,NA,post,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Birds:Woodpeckers,3,2013,NA,post,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Birds:Woodpeckers,4,2014,NA,post,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Birds:Woodpeckers,5,2015,NA,post,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Small Mammals,-5,2005,NA,pre,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Small Mammals,-4,2006,NA,pre,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Small Mammals,-3,2007,NA,pre,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Small Mammals,-2,2008,NA,pre,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Small Mammals,-1,2009,NA,pre,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Small Mammals,1,2011,NA,post,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Small Mammals,2,2012,NA,post,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Small Mammals,3,2013,Other,post,3,0.311112928024578,1,399.4220205,burned,26
+2010,San Joaquin,1092,Small Mammals,4,2014,NA,post,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Small Mammals,5,2015,NA,post,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Birds:Rails and Geese,-5,2005,NA,pre,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Birds:Rails and Geese,-4,2006,NA,pre,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Birds:Rails and Geese,-3,2007,NA,pre,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Birds:Rails and Geese,-2,2008,NA,pre,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Birds:Rails and Geese,-1,2009,NA,pre,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Birds:Rails and Geese,1,2011,NA,post,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Birds:Rails and Geese,2,2012,NA,post,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Birds:Rails and Geese,3,2013,NA,post,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Birds:Rails and Geese,4,2014,NA,post,NA,NA,0,NA,burned,0
+2010,San Joaquin,1092,Birds:Rails and Geese,5,2015,NA,post,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Birds:Passerines,-5,2005,NA,pre,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Birds:Passerines,-4,2006,NA,pre,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Birds:Passerines,-3,2007,NA,pre,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Birds:Passerines,-2,2008,NA,pre,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Birds:Passerines,-1,2009,NA,pre,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Birds:Passerines,1,2011,NA,post,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Birds:Passerines,2,2012,NA,post,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Birds:Passerines,3,2013,NA,post,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Birds:Passerines,4,2014,NA,post,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Birds:Passerines,5,2015,NA,post,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Birds:Raptors,-5,2005,NA,pre,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Birds:Raptors,-4,2006,NA,pre,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Birds:Raptors,-3,2007,NA,pre,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Birds:Raptors,-2,2008,NA,pre,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Birds:Raptors,-1,2009,NA,pre,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Birds:Raptors,1,2011,NA,post,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Birds:Raptors,2,2012,NA,post,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Birds:Raptors,3,2013,NA,post,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Birds:Raptors,4,2014,NA,post,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Birds:Raptors,5,2015,NA,post,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Large Mammals,-5,2005,NA,pre,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Large Mammals,-4,2006,NA,pre,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Large Mammals,-3,2007,NA,pre,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Large Mammals,-2,2008,NA,pre,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Large Mammals,-1,2009,NA,pre,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Large Mammals,1,2011,NA,post,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Large Mammals,2,2012,NA,post,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Large Mammals,3,2013,NA,post,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Large Mammals,4,2014,NA,post,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Large Mammals,5,2015,NA,post,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Tortoises,-5,2005,NA,pre,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Tortoises,-4,2006,NA,pre,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Tortoises,-3,2007,NA,pre,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Tortoises,-2,2008,NA,pre,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Tortoises,-1,2009,NA,pre,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Tortoises,1,2011,NA,post,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Tortoises,2,2012,NA,post,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Tortoises,3,2013,NA,post,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Tortoises,4,2014,NA,post,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Tortoises,5,2015,NA,post,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Butterflies & Moths,-5,2005,NA,pre,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Butterflies & Moths,-4,2006,NA,pre,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Butterflies & Moths,-3,2007,NA,pre,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Butterflies & Moths,-2,2008,NA,pre,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Butterflies & Moths,-1,2009,NA,pre,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Butterflies & Moths,1,2011,NA,post,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Butterflies & Moths,2,2012,NA,post,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Butterflies & Moths,3,2013,NA,post,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Butterflies & Moths,4,2014,NA,post,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Butterflies & Moths,5,2015,NA,post,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Birds:Woodpeckers,-5,2005,NA,pre,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Birds:Woodpeckers,-4,2006,NA,pre,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Birds:Woodpeckers,-3,2007,NA,pre,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Birds:Woodpeckers,-2,2008,NA,pre,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Birds:Woodpeckers,-1,2009,NA,pre,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Birds:Woodpeckers,1,2011,NA,post,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Birds:Woodpeckers,2,2012,NA,post,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Birds:Woodpeckers,3,2013,Aves,post,3,0.207900763140467,1,218.8631564,burned,46
+2010,Sonoran,356,Birds:Woodpeckers,4,2014,NA,post,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Birds:Woodpeckers,5,2015,NA,post,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Small Mammals,-5,2005,NA,pre,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Small Mammals,-4,2006,NA,pre,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Small Mammals,-3,2007,NA,pre,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Small Mammals,-2,2008,NA,pre,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Small Mammals,-1,2009,NA,pre,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Small Mammals,1,2011,NA,post,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Small Mammals,2,2012,NA,post,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Small Mammals,3,2013,NA,post,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Small Mammals,4,2014,NA,post,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Small Mammals,5,2015,NA,post,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Birds:Rails and Geese,-5,2005,NA,pre,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Birds:Rails and Geese,-4,2006,NA,pre,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Birds:Rails and Geese,-3,2007,NA,pre,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Birds:Rails and Geese,-2,2008,NA,pre,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Birds:Rails and Geese,-1,2009,NA,pre,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Birds:Rails and Geese,1,2011,NA,post,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Birds:Rails and Geese,2,2012,NA,post,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Birds:Rails and Geese,3,2013,NA,post,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Birds:Rails and Geese,4,2014,NA,post,NA,NA,0,NA,burned,0
+2010,Sonoran,356,Birds:Rails and Geese,5,2015,NA,post,NA,NA,0,NA,burned,0
+2011,Mojave,311,Birds:Passerines,-5,2006,NA,pre,NA,NA,0,NA,burned,0
+2011,Mojave,311,Birds:Passerines,-4,2007,NA,pre,NA,NA,0,NA,burned,0
+2011,Mojave,311,Birds:Passerines,-3,2008,NA,pre,NA,NA,0,NA,burned,0
+2011,Mojave,311,Birds:Passerines,-2,2009,NA,pre,NA,NA,0,NA,burned,0
+2011,Mojave,311,Birds:Passerines,-1,2010,NA,pre,NA,NA,0,NA,burned,0
+2011,Mojave,311,Birds:Passerines,1,2012,NA,post,NA,NA,0,NA,burned,0
+2011,Mojave,311,Birds:Passerines,2,2013,NA,post,NA,NA,0,NA,burned,0
+2011,Mojave,311,Birds:Passerines,3,2014,NA,post,NA,NA,0,NA,burned,0
+2011,Mojave,311,Birds:Passerines,4,2015,Aves,post,4,0.227981711330156,1,721.5012132,burned,14
+2011,Mojave,311,Birds:Passerines,5,2016,NA,post,NA,NA,0,NA,burned,0
+2011,Mojave,311,Birds:Raptors,-5,2006,NA,pre,NA,NA,0,NA,burned,0
+2011,Mojave,311,Birds:Raptors,-4,2007,NA,pre,NA,NA,0,NA,burned,0
+2011,Mojave,311,Birds:Raptors,-3,2008,NA,pre,NA,NA,0,NA,burned,0
+2011,Mojave,311,Birds:Raptors,-2,2009,NA,pre,NA,NA,0,NA,burned,0
+2011,Mojave,311,Birds:Raptors,-1,2010,NA,pre,NA,NA,0,NA,burned,0
+2011,Mojave,311,Birds:Raptors,1,2012,NA,post,NA,NA,0,NA,burned,0
+2011,Mojave,311,Birds:Raptors,2,2013,NA,post,NA,NA,0,NA,burned,0
+2011,Mojave,311,Birds:Raptors,3,2014,NA,post,NA,NA,0,NA,burned,0
+2011,Mojave,311,Birds:Raptors,4,2015,NA,post,NA,NA,0,NA,burned,0
+2011,Mojave,311,Birds:Raptors,5,2016,NA,post,NA,NA,0,NA,burned,0
+2011,Mojave,311,Large Mammals,-5,2006,NA,pre,NA,NA,0,NA,burned,0
+2011,Mojave,311,Large Mammals,-4,2007,NA,pre,NA,NA,0,NA,burned,0
+2011,Mojave,311,Large Mammals,-3,2008,NA,pre,NA,NA,0,NA,burned,0
+2011,Mojave,311,Large Mammals,-2,2009,NA,pre,NA,NA,0,NA,burned,0
+2011,Mojave,311,Large Mammals,-1,2010,NA,pre,NA,NA,0,NA,burned,0
+2011,Mojave,311,Large Mammals,1,2012,NA,post,NA,NA,0,NA,burned,0
+2011,Mojave,311,Large Mammals,2,2013,NA,post,NA,NA,0,NA,burned,0
+2011,Mojave,311,Large Mammals,3,2014,NA,post,NA,NA,0,NA,burned,0
+2011,Mojave,311,Large Mammals,4,2015,NA,post,NA,NA,0,NA,burned,0
+2011,Mojave,311,Large Mammals,5,2016,NA,post,NA,NA,0,NA,burned,0
+2011,Mojave,311,Tortoises,-5,2006,NA,pre,NA,NA,0,NA,burned,0
+2011,Mojave,311,Tortoises,-4,2007,NA,pre,NA,NA,0,NA,burned,0
+2011,Mojave,311,Tortoises,-3,2008,NA,pre,NA,NA,0,NA,burned,0
+2011,Mojave,311,Tortoises,-2,2009,NA,pre,NA,NA,0,NA,burned,0
+2011,Mojave,311,Tortoises,-1,2010,NA,pre,NA,NA,0,NA,burned,0
+2011,Mojave,311,Tortoises,1,2012,NA,post,NA,NA,0,NA,burned,0
+2011,Mojave,311,Tortoises,2,2013,NA,post,NA,NA,0,NA,burned,0
+2011,Mojave,311,Tortoises,3,2014,NA,post,NA,NA,0,NA,burned,0
+2011,Mojave,311,Tortoises,4,2015,NA,post,NA,NA,0,NA,burned,0
+2011,Mojave,311,Tortoises,5,2016,NA,post,NA,NA,0,NA,burned,0
+2011,Mojave,311,Butterflies & Moths,-5,2006,NA,pre,NA,NA,0,NA,burned,0
+2011,Mojave,311,Butterflies & Moths,-4,2007,NA,pre,NA,NA,0,NA,burned,0
+2011,Mojave,311,Butterflies & Moths,-3,2008,NA,pre,NA,NA,0,NA,burned,0
+2011,Mojave,311,Butterflies & Moths,-2,2009,NA,pre,NA,NA,0,NA,burned,0
+2011,Mojave,311,Butterflies & Moths,-1,2010,NA,pre,NA,NA,0,NA,burned,0
+2011,Mojave,311,Butterflies & Moths,1,2012,NA,post,NA,NA,0,NA,burned,0
+2011,Mojave,311,Butterflies & Moths,2,2013,NA,post,NA,NA,0,NA,burned,0
+2011,Mojave,311,Butterflies & Moths,3,2014,NA,post,NA,NA,0,NA,burned,0
+2011,Mojave,311,Butterflies & Moths,4,2015,NA,post,NA,NA,0,NA,burned,0
+2011,Mojave,311,Butterflies & Moths,5,2016,NA,post,NA,NA,0,NA,burned,0
+2011,Mojave,311,Birds:Woodpeckers,-5,2006,NA,pre,NA,NA,0,NA,burned,0
+2011,Mojave,311,Birds:Woodpeckers,-4,2007,NA,pre,NA,NA,0,NA,burned,0
+2011,Mojave,311,Birds:Woodpeckers,-3,2008,NA,pre,NA,NA,0,NA,burned,0
+2011,Mojave,311,Birds:Woodpeckers,-2,2009,NA,pre,NA,NA,0,NA,burned,0
+2011,Mojave,311,Birds:Woodpeckers,-1,2010,NA,pre,NA,NA,0,NA,burned,0
+2011,Mojave,311,Birds:Woodpeckers,1,2012,NA,post,NA,NA,0,NA,burned,0
+2011,Mojave,311,Birds:Woodpeckers,2,2013,NA,post,NA,NA,0,NA,burned,0
+2011,Mojave,311,Birds:Woodpeckers,3,2014,NA,post,NA,NA,0,NA,burned,0
+2011,Mojave,311,Birds:Woodpeckers,4,2015,NA,post,NA,NA,0,NA,burned,0
+2011,Mojave,311,Birds:Woodpeckers,5,2016,NA,post,NA,NA,0,NA,burned,0
+2011,Mojave,311,Small Mammals,-5,2006,NA,pre,NA,NA,0,NA,burned,0
+2011,Mojave,311,Small Mammals,-4,2007,NA,pre,NA,NA,0,NA,burned,0
+2011,Mojave,311,Small Mammals,-3,2008,NA,pre,NA,NA,0,NA,burned,0
+2011,Mojave,311,Small Mammals,-2,2009,NA,pre,NA,NA,0,NA,burned,0
+2011,Mojave,311,Small Mammals,-1,2010,NA,pre,NA,NA,0,NA,burned,0
+2011,Mojave,311,Small Mammals,1,2012,NA,post,NA,NA,0,NA,burned,0
+2011,Mojave,311,Small Mammals,2,2013,NA,post,NA,NA,0,NA,burned,0
+2011,Mojave,311,Small Mammals,3,2014,NA,post,NA,NA,0,NA,burned,0
+2011,Mojave,311,Small Mammals,4,2015,NA,post,NA,NA,0,NA,burned,0
+2011,Mojave,311,Small Mammals,5,2016,NA,post,NA,NA,0,NA,burned,0
+2011,Mojave,311,Birds:Rails and Geese,-5,2006,NA,pre,NA,NA,0,NA,burned,0
+2011,Mojave,311,Birds:Rails and Geese,-4,2007,NA,pre,NA,NA,0,NA,burned,0
+2011,Mojave,311,Birds:Rails and Geese,-3,2008,NA,pre,NA,NA,0,NA,burned,0
+2011,Mojave,311,Birds:Rails and Geese,-2,2009,NA,pre,NA,NA,0,NA,burned,0
+2011,Mojave,311,Birds:Rails and Geese,-1,2010,NA,pre,NA,NA,0,NA,burned,0
+2011,Mojave,311,Birds:Rails and Geese,1,2012,NA,post,NA,NA,0,NA,burned,0
+2011,Mojave,311,Birds:Rails and Geese,2,2013,NA,post,NA,NA,0,NA,burned,0
+2011,Mojave,311,Birds:Rails and Geese,3,2014,NA,post,NA,NA,0,NA,burned,0
+2011,Mojave,311,Birds:Rails and Geese,4,2015,NA,post,NA,NA,0,NA,burned,0
+2011,Mojave,311,Birds:Rails and Geese,5,2016,NA,post,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Birds:Passerines,-5,2006,NA,pre,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Birds:Passerines,-4,2007,NA,pre,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Birds:Passerines,-3,2008,NA,pre,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Birds:Passerines,-2,2009,NA,pre,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Birds:Passerines,-1,2010,NA,pre,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Birds:Passerines,1,2012,NA,post,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Birds:Passerines,2,2013,NA,post,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Birds:Passerines,3,2014,NA,post,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Birds:Passerines,4,2015,NA,post,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Birds:Passerines,5,2016,NA,post,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Birds:Raptors,-5,2006,NA,pre,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Birds:Raptors,-4,2007,NA,pre,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Birds:Raptors,-3,2008,NA,pre,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Birds:Raptors,-2,2009,NA,pre,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Birds:Raptors,-1,2010,NA,pre,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Birds:Raptors,1,2012,NA,post,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Birds:Raptors,2,2013,NA,post,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Birds:Raptors,3,2014,NA,post,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Birds:Raptors,4,2015,NA,post,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Birds:Raptors,5,2016,NA,post,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Large Mammals,-5,2006,Other,pre,5,0.23605725301955,1,218.8631564,burned,46
+2011,Sonoran,314,Large Mammals,-4,2007,NA,pre,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Large Mammals,-3,2008,NA,pre,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Large Mammals,-2,2009,NA,pre,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Large Mammals,-1,2010,Other,pre,1,0.257590618361952,1,218.8631564,burned,46
+2011,Sonoran,314,Large Mammals,1,2012,NA,post,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Large Mammals,2,2013,NA,post,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Large Mammals,3,2014,NA,post,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Large Mammals,4,2015,NA,post,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Large Mammals,5,2016,Other,post,5,0.208976716775255,1,218.8631564,burned,46
+2011,Sonoran,314,Tortoises,-5,2006,NA,pre,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Tortoises,-4,2007,NA,pre,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Tortoises,-3,2008,NA,pre,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Tortoises,-2,2009,NA,pre,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Tortoises,-1,2010,NA,pre,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Tortoises,1,2012,NA,post,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Tortoises,2,2013,NA,post,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Tortoises,3,2014,NA,post,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Tortoises,4,2015,NA,post,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Tortoises,5,2016,NA,post,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Butterflies & Moths,-5,2006,NA,pre,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Butterflies & Moths,-4,2007,NA,pre,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Butterflies & Moths,-3,2008,NA,pre,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Butterflies & Moths,-2,2009,NA,pre,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Butterflies & Moths,-1,2010,NA,pre,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Butterflies & Moths,1,2012,NA,post,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Butterflies & Moths,2,2013,NA,post,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Butterflies & Moths,3,2014,NA,post,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Butterflies & Moths,4,2015,NA,post,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Butterflies & Moths,5,2016,NA,post,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Birds:Woodpeckers,-5,2006,NA,pre,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Birds:Woodpeckers,-4,2007,NA,pre,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Birds:Woodpeckers,-3,2008,NA,pre,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Birds:Woodpeckers,-2,2009,NA,pre,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Birds:Woodpeckers,-1,2010,NA,pre,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Birds:Woodpeckers,1,2012,NA,post,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Birds:Woodpeckers,2,2013,NA,post,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Birds:Woodpeckers,3,2014,NA,post,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Birds:Woodpeckers,4,2015,NA,post,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Birds:Woodpeckers,5,2016,NA,post,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Small Mammals,-5,2006,NA,pre,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Small Mammals,-4,2007,NA,pre,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Small Mammals,-3,2008,NA,pre,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Small Mammals,-2,2009,NA,pre,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Small Mammals,-1,2010,NA,pre,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Small Mammals,1,2012,NA,post,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Small Mammals,2,2013,NA,post,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Small Mammals,3,2014,NA,post,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Small Mammals,4,2015,NA,post,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Small Mammals,5,2016,NA,post,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Birds:Rails and Geese,-5,2006,NA,pre,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Birds:Rails and Geese,-4,2007,NA,pre,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Birds:Rails and Geese,-3,2008,NA,pre,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Birds:Rails and Geese,-2,2009,NA,pre,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Birds:Rails and Geese,-1,2010,NA,pre,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Birds:Rails and Geese,1,2012,NA,post,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Birds:Rails and Geese,2,2013,NA,post,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Birds:Rails and Geese,3,2014,NA,post,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Birds:Rails and Geese,4,2015,NA,post,NA,NA,0,NA,burned,0
+2011,Sonoran,314,Birds:Rails and Geese,5,2016,NA,post,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Birds:Passerines,-5,2007,NA,pre,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Birds:Passerines,-4,2008,NA,pre,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Birds:Passerines,-3,2009,NA,pre,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Birds:Passerines,-2,2010,NA,pre,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Birds:Passerines,-1,2011,NA,pre,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Birds:Passerines,1,2013,NA,post,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Birds:Passerines,2,2014,NA,post,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Birds:Passerines,3,2015,NA,post,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Birds:Passerines,4,2016,NA,post,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Birds:Passerines,5,2017,Aves,post,5,0.362104736130943,1,399.4220205,burned,26
+2012,San Joaquin,975,Birds:Raptors,-5,2007,NA,pre,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Birds:Raptors,-4,2008,NA,pre,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Birds:Raptors,-3,2009,NA,pre,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Birds:Raptors,-2,2010,NA,pre,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Birds:Raptors,-1,2011,NA,pre,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Birds:Raptors,1,2013,NA,post,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Birds:Raptors,2,2014,NA,post,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Birds:Raptors,3,2015,NA,post,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Birds:Raptors,4,2016,NA,post,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Birds:Raptors,5,2017,NA,post,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Large Mammals,-5,2007,NA,pre,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Large Mammals,-4,2008,NA,pre,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Large Mammals,-3,2009,NA,pre,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Large Mammals,-2,2010,NA,pre,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Large Mammals,-1,2011,NA,pre,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Large Mammals,1,2013,NA,post,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Large Mammals,2,2014,NA,post,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Large Mammals,3,2015,NA,post,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Large Mammals,4,2016,NA,post,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Large Mammals,5,2017,NA,post,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Tortoises,-5,2007,NA,pre,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Tortoises,-4,2008,NA,pre,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Tortoises,-3,2009,NA,pre,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Tortoises,-2,2010,NA,pre,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Tortoises,-1,2011,NA,pre,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Tortoises,1,2013,NA,post,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Tortoises,2,2014,NA,post,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Tortoises,3,2015,NA,post,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Tortoises,4,2016,NA,post,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Tortoises,5,2017,NA,post,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Butterflies & Moths,-5,2007,NA,pre,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Butterflies & Moths,-4,2008,NA,pre,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Butterflies & Moths,-3,2009,NA,pre,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Butterflies & Moths,-2,2010,NA,pre,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Butterflies & Moths,-1,2011,NA,pre,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Butterflies & Moths,1,2013,NA,post,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Butterflies & Moths,2,2014,NA,post,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Butterflies & Moths,3,2015,NA,post,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Butterflies & Moths,4,2016,NA,post,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Butterflies & Moths,5,2017,NA,post,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Birds:Woodpeckers,-5,2007,NA,pre,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Birds:Woodpeckers,-4,2008,NA,pre,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Birds:Woodpeckers,-3,2009,NA,pre,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Birds:Woodpeckers,-2,2010,NA,pre,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Birds:Woodpeckers,-1,2011,NA,pre,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Birds:Woodpeckers,1,2013,NA,post,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Birds:Woodpeckers,2,2014,NA,post,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Birds:Woodpeckers,3,2015,NA,post,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Birds:Woodpeckers,4,2016,NA,post,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Birds:Woodpeckers,5,2017,NA,post,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Small Mammals,-5,2007,NA,pre,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Small Mammals,-4,2008,NA,pre,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Small Mammals,-3,2009,NA,pre,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Small Mammals,-2,2010,NA,pre,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Small Mammals,-1,2011,NA,pre,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Small Mammals,1,2013,NA,post,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Small Mammals,2,2014,NA,post,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Small Mammals,3,2015,NA,post,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Small Mammals,4,2016,NA,post,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Small Mammals,5,2017,NA,post,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Birds:Rails and Geese,-5,2007,NA,pre,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Birds:Rails and Geese,-4,2008,NA,pre,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Birds:Rails and Geese,-3,2009,NA,pre,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Birds:Rails and Geese,-2,2010,NA,pre,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Birds:Rails and Geese,-1,2011,NA,pre,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Birds:Rails and Geese,1,2013,NA,post,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Birds:Rails and Geese,2,2014,NA,post,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Birds:Rails and Geese,3,2015,NA,post,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Birds:Rails and Geese,4,2016,NA,post,NA,NA,0,NA,burned,0
+2012,San Joaquin,975,Birds:Rails and Geese,5,2017,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Birds:Passerines,-5,2007,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Birds:Passerines,-4,2008,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Birds:Passerines,-3,2009,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Birds:Passerines,-2,2010,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Birds:Passerines,-1,2011,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Birds:Passerines,1,2013,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Birds:Passerines,2,2014,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Birds:Passerines,3,2015,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Birds:Passerines,4,2016,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Birds:Passerines,5,2017,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Birds:Raptors,-5,2007,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Birds:Raptors,-4,2008,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Birds:Raptors,-3,2009,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Birds:Raptors,-2,2010,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Birds:Raptors,-1,2011,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Birds:Raptors,1,2013,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Birds:Raptors,2,2014,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Birds:Raptors,3,2015,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Birds:Raptors,4,2016,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Birds:Raptors,5,2017,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Large Mammals,-5,2007,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Large Mammals,-4,2008,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Large Mammals,-3,2009,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Large Mammals,-2,2010,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Large Mammals,-1,2011,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Large Mammals,1,2013,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Large Mammals,2,2014,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Large Mammals,3,2015,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Large Mammals,4,2016,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Large Mammals,5,2017,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Tortoises,-5,2007,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Tortoises,-4,2008,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Tortoises,-3,2009,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Tortoises,-2,2010,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Tortoises,-1,2011,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Tortoises,1,2013,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Tortoises,2,2014,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Tortoises,3,2015,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Tortoises,4,2016,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Tortoises,5,2017,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Butterflies & Moths,-5,2007,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Butterflies & Moths,-4,2008,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Butterflies & Moths,-3,2009,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Butterflies & Moths,-2,2010,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Butterflies & Moths,-1,2011,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Butterflies & Moths,1,2013,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Butterflies & Moths,2,2014,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Butterflies & Moths,3,2015,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Butterflies & Moths,4,2016,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Butterflies & Moths,5,2017,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Birds:Woodpeckers,-5,2007,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Birds:Woodpeckers,-4,2008,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Birds:Woodpeckers,-3,2009,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Birds:Woodpeckers,-2,2010,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Birds:Woodpeckers,-1,2011,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Birds:Woodpeckers,1,2013,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Birds:Woodpeckers,2,2014,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Birds:Woodpeckers,3,2015,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Birds:Woodpeckers,4,2016,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Birds:Woodpeckers,5,2017,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Small Mammals,-5,2007,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Small Mammals,-4,2008,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Small Mammals,-3,2009,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Small Mammals,-2,2010,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Small Mammals,-1,2011,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Small Mammals,1,2013,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Small Mammals,2,2014,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Small Mammals,3,2015,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Small Mammals,4,2016,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Small Mammals,5,2017,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Birds:Rails and Geese,-5,2007,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Birds:Rails and Geese,-4,2008,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Birds:Rails and Geese,-3,2009,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Birds:Rails and Geese,-2,2010,Aves,pre,2,0.257590618361952,1,218.8631564,burned,46
+2012,Sonoran,359,Birds:Rails and Geese,-1,2011,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Birds:Rails and Geese,1,2013,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Birds:Rails and Geese,2,2014,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Birds:Rails and Geese,3,2015,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Birds:Rails and Geese,4,2016,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,359,Birds:Rails and Geese,5,2017,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Birds:Passerines,-5,2007,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Birds:Passerines,-4,2008,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Birds:Passerines,-3,2009,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Birds:Passerines,-2,2010,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Birds:Passerines,-1,2011,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Birds:Passerines,1,2013,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Birds:Passerines,2,2014,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Birds:Passerines,3,2015,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Birds:Passerines,4,2016,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Birds:Passerines,5,2017,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Birds:Raptors,-5,2007,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Birds:Raptors,-4,2008,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Birds:Raptors,-3,2009,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Birds:Raptors,-2,2010,Aves,pre,2,0.257590618361952,1,218.8631564,burned,46
+2012,Sonoran,417,Birds:Raptors,-1,2011,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Birds:Raptors,1,2013,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Birds:Raptors,2,2014,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Birds:Raptors,3,2015,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Birds:Raptors,4,2016,Aves,post,4,0.208976716775255,3,218.8631564,burned,138
+2012,Sonoran,417,Birds:Raptors,5,2017,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Large Mammals,-5,2007,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Large Mammals,-4,2008,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Large Mammals,-3,2009,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Large Mammals,-2,2010,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Large Mammals,-1,2011,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Large Mammals,1,2013,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Large Mammals,2,2014,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Large Mammals,3,2015,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Large Mammals,4,2016,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Large Mammals,5,2017,Other,post,5,0.24815565084172,2,218.8631564,burned,92
+2012,Sonoran,417,Tortoises,-5,2007,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Tortoises,-4,2008,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Tortoises,-3,2009,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Tortoises,-2,2010,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Tortoises,-1,2011,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Tortoises,1,2013,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Tortoises,2,2014,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Tortoises,3,2015,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Tortoises,4,2016,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Tortoises,5,2017,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Butterflies & Moths,-5,2007,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Butterflies & Moths,-4,2008,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Butterflies & Moths,-3,2009,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Butterflies & Moths,-2,2010,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Butterflies & Moths,-1,2011,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Butterflies & Moths,1,2013,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Butterflies & Moths,2,2014,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Butterflies & Moths,3,2015,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Butterflies & Moths,4,2016,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Butterflies & Moths,5,2017,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Birds:Woodpeckers,-5,2007,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Birds:Woodpeckers,-4,2008,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Birds:Woodpeckers,-3,2009,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Birds:Woodpeckers,-2,2010,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Birds:Woodpeckers,-1,2011,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Birds:Woodpeckers,1,2013,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Birds:Woodpeckers,2,2014,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Birds:Woodpeckers,3,2015,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Birds:Woodpeckers,4,2016,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Birds:Woodpeckers,5,2017,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Small Mammals,-5,2007,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Small Mammals,-4,2008,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Small Mammals,-3,2009,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Small Mammals,-2,2010,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Small Mammals,-1,2011,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Small Mammals,1,2013,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Small Mammals,2,2014,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Small Mammals,3,2015,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Small Mammals,4,2016,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Small Mammals,5,2017,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Birds:Rails and Geese,-5,2007,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Birds:Rails and Geese,-4,2008,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Birds:Rails and Geese,-3,2009,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Birds:Rails and Geese,-2,2010,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Birds:Rails and Geese,-1,2011,NA,pre,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Birds:Rails and Geese,1,2013,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Birds:Rails and Geese,2,2014,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Birds:Rails and Geese,3,2015,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Birds:Rails and Geese,4,2016,NA,post,NA,NA,0,NA,burned,0
+2012,Sonoran,417,Birds:Rails and Geese,5,2017,NA,post,NA,NA,0,NA,burned,0
+2013,Mojave,418,Birds:Passerines,-5,2008,NA,pre,NA,NA,0,NA,burned,0
+2013,Mojave,418,Birds:Passerines,-4,2009,NA,pre,NA,NA,0,NA,burned,0
+2013,Mojave,418,Birds:Passerines,-3,2010,Aves,pre,3,0.246609619252128,1,721.5012132,burned,14
+2013,Mojave,418,Birds:Passerines,-2,2011,Aves,pre,2,0.246315005389494,1,721.5012132,burned,14
+2013,Mojave,418,Birds:Passerines,-1,2012,Aves,pre,1,0.223241474078764,3,721.5012132,burned,42
+2013,Mojave,418,Birds:Passerines,1,2014,NA,post,NA,NA,0,NA,burned,0
+2013,Mojave,418,Birds:Passerines,2,2015,NA,post,NA,NA,0,NA,burned,0
+2013,Mojave,418,Birds:Passerines,3,2016,NA,post,NA,NA,0,NA,burned,0
+2013,Mojave,418,Birds:Passerines,4,2017,NA,post,NA,NA,0,NA,burned,0
+2013,Mojave,418,Birds:Passerines,5,2018,NA,post,NA,NA,0,NA,burned,0
+2013,Mojave,418,Birds:Raptors,-5,2008,NA,pre,NA,NA,0,NA,burned,0
+2013,Mojave,418,Birds:Raptors,-4,2009,NA,pre,NA,NA,0,NA,burned,0
+2013,Mojave,418,Birds:Raptors,-3,2010,NA,pre,NA,NA,0,NA,burned,0
+2013,Mojave,418,Birds:Raptors,-2,2011,NA,pre,NA,NA,0,NA,burned,0
+2013,Mojave,418,Birds:Raptors,-1,2012,NA,pre,NA,NA,0,NA,burned,0
+2013,Mojave,418,Birds:Raptors,1,2014,NA,post,NA,NA,0,NA,burned,0
+2013,Mojave,418,Birds:Raptors,2,2015,NA,post,NA,NA,0,NA,burned,0
+2013,Mojave,418,Birds:Raptors,3,2016,NA,post,NA,NA,0,NA,burned,0
+2013,Mojave,418,Birds:Raptors,4,2017,NA,post,NA,NA,0,NA,burned,0
+2013,Mojave,418,Birds:Raptors,5,2018,NA,post,NA,NA,0,NA,burned,0
+2013,Mojave,418,Large Mammals,-5,2008,NA,pre,NA,NA,0,NA,burned,0
+2013,Mojave,418,Large Mammals,-4,2009,NA,pre,NA,NA,0,NA,burned,0
+2013,Mojave,418,Large Mammals,-3,2010,NA,pre,NA,NA,0,NA,burned,0
+2013,Mojave,418,Large Mammals,-2,2011,NA,pre,NA,NA,0,NA,burned,0
+2013,Mojave,418,Large Mammals,-1,2012,NA,pre,NA,NA,0,NA,burned,0
+2013,Mojave,418,Large Mammals,1,2014,NA,post,NA,NA,0,NA,burned,0
+2013,Mojave,418,Large Mammals,2,2015,NA,post,NA,NA,0,NA,burned,0
+2013,Mojave,418,Large Mammals,3,2016,NA,post,NA,NA,0,NA,burned,0
+2013,Mojave,418,Large Mammals,4,2017,NA,post,NA,NA,0,NA,burned,0
+2013,Mojave,418,Large Mammals,5,2018,NA,post,NA,NA,0,NA,burned,0
+2013,Mojave,418,Tortoises,-5,2008,NA,pre,NA,NA,0,NA,burned,0
+2013,Mojave,418,Tortoises,-4,2009,NA,pre,NA,NA,0,NA,burned,0
+2013,Mojave,418,Tortoises,-3,2010,NA,pre,NA,NA,0,NA,burned,0
+2013,Mojave,418,Tortoises,-2,2011,NA,pre,NA,NA,0,NA,burned,0
+2013,Mojave,418,Tortoises,-1,2012,NA,pre,NA,NA,0,NA,burned,0
+2013,Mojave,418,Tortoises,1,2014,NA,post,NA,NA,0,NA,burned,0
+2013,Mojave,418,Tortoises,2,2015,NA,post,NA,NA,0,NA,burned,0
+2013,Mojave,418,Tortoises,3,2016,NA,post,NA,NA,0,NA,burned,0
+2013,Mojave,418,Tortoises,4,2017,NA,post,NA,NA,0,NA,burned,0
+2013,Mojave,418,Tortoises,5,2018,NA,post,NA,NA,0,NA,burned,0
+2013,Mojave,418,Butterflies & Moths,-5,2008,NA,pre,NA,NA,0,NA,burned,0
+2013,Mojave,418,Butterflies & Moths,-4,2009,NA,pre,NA,NA,0,NA,burned,0
+2013,Mojave,418,Butterflies & Moths,-3,2010,NA,pre,NA,NA,0,NA,burned,0
+2013,Mojave,418,Butterflies & Moths,-2,2011,NA,pre,NA,NA,0,NA,burned,0
+2013,Mojave,418,Butterflies & Moths,-1,2012,NA,pre,NA,NA,0,NA,burned,0
+2013,Mojave,418,Butterflies & Moths,1,2014,NA,post,NA,NA,0,NA,burned,0
+2013,Mojave,418,Butterflies & Moths,2,2015,NA,post,NA,NA,0,NA,burned,0
+2013,Mojave,418,Butterflies & Moths,3,2016,NA,post,NA,NA,0,NA,burned,0
+2013,Mojave,418,Butterflies & Moths,4,2017,NA,post,NA,NA,0,NA,burned,0
+2013,Mojave,418,Butterflies & Moths,5,2018,NA,post,NA,NA,0,NA,burned,0
+2013,Mojave,418,Birds:Woodpeckers,-5,2008,NA,pre,NA,NA,0,NA,burned,0
+2013,Mojave,418,Birds:Woodpeckers,-4,2009,NA,pre,NA,NA,0,NA,burned,0
+2013,Mojave,418,Birds:Woodpeckers,-3,2010,NA,pre,NA,NA,0,NA,burned,0
+2013,Mojave,418,Birds:Woodpeckers,-2,2011,NA,pre,NA,NA,0,NA,burned,0
+2013,Mojave,418,Birds:Woodpeckers,-1,2012,NA,pre,NA,NA,0,NA,burned,0
+2013,Mojave,418,Birds:Woodpeckers,1,2014,NA,post,NA,NA,0,NA,burned,0
+2013,Mojave,418,Birds:Woodpeckers,2,2015,NA,post,NA,NA,0,NA,burned,0
+2013,Mojave,418,Birds:Woodpeckers,3,2016,NA,post,NA,NA,0,NA,burned,0
+2013,Mojave,418,Birds:Woodpeckers,4,2017,NA,post,NA,NA,0,NA,burned,0
+2013,Mojave,418,Birds:Woodpeckers,5,2018,NA,post,NA,NA,0,NA,burned,0
+2013,Mojave,418,Small Mammals,-5,2008,NA,pre,NA,NA,0,NA,burned,0
+2013,Mojave,418,Small Mammals,-4,2009,NA,pre,NA,NA,0,NA,burned,0
+2013,Mojave,418,Small Mammals,-3,2010,NA,pre,NA,NA,0,NA,burned,0
+2013,Mojave,418,Small Mammals,-2,2011,NA,pre,NA,NA,0,NA,burned,0
+2013,Mojave,418,Small Mammals,-1,2012,NA,pre,NA,NA,0,NA,burned,0
+2013,Mojave,418,Small Mammals,1,2014,NA,post,NA,NA,0,NA,burned,0
+2013,Mojave,418,Small Mammals,2,2015,NA,post,NA,NA,0,NA,burned,0
+2013,Mojave,418,Small Mammals,3,2016,NA,post,NA,NA,0,NA,burned,0
+2013,Mojave,418,Small Mammals,4,2017,NA,post,NA,NA,0,NA,burned,0
+2013,Mojave,418,Small Mammals,5,2018,NA,post,NA,NA,0,NA,burned,0
+2013,Mojave,418,Birds:Rails and Geese,-5,2008,NA,pre,NA,NA,0,NA,burned,0
+2013,Mojave,418,Birds:Rails and Geese,-4,2009,NA,pre,NA,NA,0,NA,burned,0
+2013,Mojave,418,Birds:Rails and Geese,-3,2010,NA,pre,NA,NA,0,NA,burned,0
+2013,Mojave,418,Birds:Rails and Geese,-2,2011,NA,pre,NA,NA,0,NA,burned,0
+2013,Mojave,418,Birds:Rails and Geese,-1,2012,NA,pre,NA,NA,0,NA,burned,0
+2013,Mojave,418,Birds:Rails and Geese,1,2014,NA,post,NA,NA,0,NA,burned,0
+2013,Mojave,418,Birds:Rails and Geese,2,2015,NA,post,NA,NA,0,NA,burned,0
+2013,Mojave,418,Birds:Rails and Geese,3,2016,NA,post,NA,NA,0,NA,burned,0
+2013,Mojave,418,Birds:Rails and Geese,4,2017,NA,post,NA,NA,0,NA,burned,0
+2013,Mojave,418,Birds:Rails and Geese,5,2018,NA,post,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Birds:Passerines,-5,2009,NA,pre,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Birds:Passerines,-4,2010,NA,pre,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Birds:Passerines,-3,2011,NA,pre,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Birds:Passerines,-2,2012,NA,pre,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Birds:Passerines,-1,2013,NA,pre,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Birds:Passerines,1,2015,NA,post,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Birds:Passerines,2,2016,NA,post,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Birds:Passerines,3,2017,NA,post,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Birds:Passerines,4,2018,NA,post,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Birds:Passerines,5,2019,NA,post,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Birds:Raptors,-5,2009,NA,pre,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Birds:Raptors,-4,2010,NA,pre,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Birds:Raptors,-3,2011,NA,pre,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Birds:Raptors,-2,2012,Aves,pre,2,0.282864522495036,3,399.4220205,burned,76
+2014,San Joaquin,1094,Birds:Raptors,-1,2013,NA,pre,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Birds:Raptors,1,2015,NA,post,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Birds:Raptors,2,2016,NA,post,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Birds:Raptors,3,2017,Aves,post,3,0.362104736130943,1,399.4220205,burned,26
+2014,San Joaquin,1094,Birds:Raptors,4,2018,NA,post,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Birds:Raptors,5,2019,NA,post,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Large Mammals,-5,2009,NA,pre,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Large Mammals,-4,2010,NA,pre,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Large Mammals,-3,2011,NA,pre,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Large Mammals,-2,2012,NA,pre,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Large Mammals,-1,2013,NA,pre,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Large Mammals,1,2015,NA,post,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Large Mammals,2,2016,NA,post,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Large Mammals,3,2017,NA,post,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Large Mammals,4,2018,NA,post,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Large Mammals,5,2019,NA,post,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Tortoises,-5,2009,NA,pre,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Tortoises,-4,2010,NA,pre,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Tortoises,-3,2011,NA,pre,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Tortoises,-2,2012,NA,pre,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Tortoises,-1,2013,NA,pre,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Tortoises,1,2015,NA,post,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Tortoises,2,2016,NA,post,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Tortoises,3,2017,NA,post,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Tortoises,4,2018,NA,post,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Tortoises,5,2019,NA,post,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Butterflies & Moths,-5,2009,NA,pre,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Butterflies & Moths,-4,2010,NA,pre,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Butterflies & Moths,-3,2011,NA,pre,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Butterflies & Moths,-2,2012,NA,pre,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Butterflies & Moths,-1,2013,NA,pre,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Butterflies & Moths,1,2015,NA,post,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Butterflies & Moths,2,2016,NA,post,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Butterflies & Moths,3,2017,NA,post,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Butterflies & Moths,4,2018,NA,post,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Butterflies & Moths,5,2019,NA,post,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Birds:Woodpeckers,-5,2009,NA,pre,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Birds:Woodpeckers,-4,2010,NA,pre,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Birds:Woodpeckers,-3,2011,NA,pre,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Birds:Woodpeckers,-2,2012,NA,pre,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Birds:Woodpeckers,-1,2013,NA,pre,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Birds:Woodpeckers,1,2015,NA,post,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Birds:Woodpeckers,2,2016,NA,post,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Birds:Woodpeckers,3,2017,NA,post,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Birds:Woodpeckers,4,2018,NA,post,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Birds:Woodpeckers,5,2019,NA,post,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Small Mammals,-5,2009,NA,pre,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Small Mammals,-4,2010,NA,pre,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Small Mammals,-3,2011,NA,pre,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Small Mammals,-2,2012,NA,pre,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Small Mammals,-1,2013,NA,pre,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Small Mammals,1,2015,NA,post,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Small Mammals,2,2016,NA,post,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Small Mammals,3,2017,NA,post,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Small Mammals,4,2018,NA,post,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Small Mammals,5,2019,NA,post,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Birds:Rails and Geese,-5,2009,NA,pre,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Birds:Rails and Geese,-4,2010,NA,pre,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Birds:Rails and Geese,-3,2011,NA,pre,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Birds:Rails and Geese,-2,2012,NA,pre,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Birds:Rails and Geese,-1,2013,NA,pre,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Birds:Rails and Geese,1,2015,NA,post,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Birds:Rails and Geese,2,2016,NA,post,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Birds:Rails and Geese,3,2017,NA,post,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Birds:Rails and Geese,4,2018,NA,post,NA,NA,0,NA,burned,0
+2014,San Joaquin,1094,Birds:Rails and Geese,5,2019,NA,post,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Birds:Passerines,-5,2010,NA,pre,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Birds:Passerines,-4,2011,NA,pre,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Birds:Passerines,-3,2012,NA,pre,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Birds:Passerines,-2,2013,NA,pre,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Birds:Passerines,-1,2014,NA,pre,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Birds:Passerines,1,2016,NA,post,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Birds:Passerines,2,2017,NA,post,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Birds:Passerines,3,2018,NA,post,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Birds:Passerines,4,2019,NA,post,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Birds:Passerines,5,2020,NA,post,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Birds:Raptors,-5,2010,NA,pre,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Birds:Raptors,-4,2011,NA,pre,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Birds:Raptors,-3,2012,NA,pre,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Birds:Raptors,-2,2013,NA,pre,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Birds:Raptors,-1,2014,NA,pre,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Birds:Raptors,0,2015,Aves,post,0,0.342109664840903,1,399.4220205,burned,26
+2015,San Joaquin,997,Birds:Raptors,1,2016,NA,post,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Birds:Raptors,2,2017,NA,post,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Birds:Raptors,3,2018,NA,post,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Birds:Raptors,4,2019,Aves,post,4,0.371645129936682,2,399.4220205,burned,51
+2015,San Joaquin,997,Birds:Raptors,5,2020,NA,post,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Large Mammals,-5,2010,NA,pre,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Large Mammals,-4,2011,NA,pre,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Large Mammals,-3,2012,NA,pre,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Large Mammals,-2,2013,NA,pre,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Large Mammals,-1,2014,NA,pre,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Large Mammals,1,2016,NA,post,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Large Mammals,2,2017,NA,post,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Large Mammals,3,2018,NA,post,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Large Mammals,4,2019,NA,post,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Large Mammals,5,2020,NA,post,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Tortoises,-5,2010,NA,pre,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Tortoises,-4,2011,NA,pre,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Tortoises,-3,2012,NA,pre,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Tortoises,-2,2013,NA,pre,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Tortoises,-1,2014,NA,pre,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Tortoises,1,2016,NA,post,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Tortoises,2,2017,NA,post,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Tortoises,3,2018,NA,post,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Tortoises,4,2019,NA,post,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Tortoises,5,2020,NA,post,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Butterflies & Moths,-5,2010,NA,pre,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Butterflies & Moths,-4,2011,NA,pre,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Butterflies & Moths,-3,2012,NA,pre,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Butterflies & Moths,-2,2013,NA,pre,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Butterflies & Moths,-1,2014,NA,pre,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Butterflies & Moths,1,2016,NA,post,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Butterflies & Moths,2,2017,NA,post,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Butterflies & Moths,3,2018,NA,post,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Butterflies & Moths,4,2019,NA,post,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Butterflies & Moths,5,2020,NA,post,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Birds:Woodpeckers,-5,2010,NA,pre,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Birds:Woodpeckers,-4,2011,NA,pre,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Birds:Woodpeckers,-3,2012,NA,pre,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Birds:Woodpeckers,-2,2013,NA,pre,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Birds:Woodpeckers,-1,2014,NA,pre,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Birds:Woodpeckers,1,2016,NA,post,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Birds:Woodpeckers,2,2017,NA,post,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Birds:Woodpeckers,3,2018,NA,post,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Birds:Woodpeckers,4,2019,NA,post,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Birds:Woodpeckers,5,2020,NA,post,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Small Mammals,-5,2010,NA,pre,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Small Mammals,-4,2011,NA,pre,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Small Mammals,-3,2012,NA,pre,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Small Mammals,-2,2013,NA,pre,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Small Mammals,-1,2014,NA,pre,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Small Mammals,1,2016,NA,post,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Small Mammals,2,2017,NA,post,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Small Mammals,3,2018,NA,post,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Small Mammals,4,2019,NA,post,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Small Mammals,5,2020,NA,post,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Birds:Rails and Geese,-5,2010,NA,pre,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Birds:Rails and Geese,-4,2011,NA,pre,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Birds:Rails and Geese,-3,2012,NA,pre,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Birds:Rails and Geese,-2,2013,NA,pre,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Birds:Rails and Geese,-1,2014,NA,pre,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Birds:Rails and Geese,1,2016,NA,post,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Birds:Rails and Geese,2,2017,NA,post,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Birds:Rails and Geese,3,2018,NA,post,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Birds:Rails and Geese,4,2019,NA,post,NA,NA,0,NA,burned,0
+2015,San Joaquin,997,Birds:Rails and Geese,5,2020,NA,post,NA,NA,0,NA,burned,0
+2002,Mojave,NA,Birds:Passerines,-5,1997,Aves,pre,5,NA,42,73161.42482,control,6
+2002,Mojave,NA,Birds:Passerines,-4,1998,Aves,pre,4,NA,51,73161.42482,control,7
+2002,Mojave,NA,Birds:Passerines,-3,1999,Aves,pre,3,NA,81,73161.42482,control,12
+2005,Mojave,NA,Birds:Passerines,-5,2000,Aves,pre,5,0.10973983,82,73161.42482,control,12
+2002,Mojave,NA,Birds:Passerines,-2,2000,Aves,pre,2,0.10973983,82,73161.42482,control,12
+2005,Mojave,NA,Birds:Passerines,-5,2000,Aves,pre,5,0.10973983,82,73161.42482,control,12
+2005,Mojave,NA,Birds:Passerines,-4,2001,Aves,pre,4,0.124131124,53,73161.42482,control,8
+2002,Mojave,NA,Birds:Passerines,-1,2001,Aves,pre,1,0.124131124,53,73161.42482,control,8
+2005,Mojave,NA,Birds:Passerines,-4,2001,Aves,pre,4,0.124131124,53,73161.42482,control,8
+2005,Mojave,NA,Birds:Passerines,-3,2002,Aves,pre,3,0.10649385,141,73161.42482,control,20
+2005,Mojave,NA,Birds:Passerines,-3,2002,Aves,pre,3,0.10649385,141,73161.42482,control,20
+2002,Mojave,NA,Birds:Passerines,1,2003,Aves,post,1,0.12983656,135,73161.42482,control,19
+2005,Mojave,NA,Birds:Passerines,-2,2003,Aves,pre,2,0.12983656,135,73161.42482,control,19
+2005,Mojave,NA,Birds:Passerines,-2,2003,Aves,pre,2,0.12983656,135,73161.42482,control,19
+2002,Mojave,NA,Birds:Passerines,2,2004,Aves,post,2,0.133918085,119,73161.42482,control,17
+2005,Mojave,NA,Birds:Passerines,-1,2004,Aves,pre,1,0.133918085,119,73161.42482,control,17
+2005,Mojave,NA,Birds:Passerines,-1,2004,Aves,pre,1,0.133918085,119,73161.42482,control,17
+2010,Mojave,NA,Birds:Passerines,-5,2005,Aves,pre,5,0.173643898,98,73161.42482,control,14
+2002,Mojave,NA,Birds:Passerines,3,2005,Aves,post,3,0.173643898,98,73161.42482,control,14
+2005,Mojave,NA,Birds:Passerines,1,2006,Aves,post,1,0.133301308,169,73161.42482,control,24
+2011,Mojave,NA,Birds:Passerines,-5,2006,Aves,pre,5,0.133301308,169,73161.42482,control,24
+2005,Mojave,NA,Birds:Passerines,1,2006,Aves,post,1,0.133301308,169,73161.42482,control,24
+2010,Mojave,NA,Birds:Passerines,-4,2006,Aves,pre,4,0.133301308,169,73161.42482,control,24
+2002,Mojave,NA,Birds:Passerines,4,2006,Aves,post,4,0.133301308,169,73161.42482,control,24
+2002,Mojave,NA,Birds:Passerines,5,2007,Aves,post,5,0.114108846,287,73161.42482,control,40
+2010,Mojave,NA,Birds:Passerines,-3,2007,Aves,pre,3,0.114108846,287,73161.42482,control,40
+2005,Mojave,NA,Birds:Passerines,2,2007,Aves,post,2,0.114108846,287,73161.42482,control,40
+2011,Mojave,NA,Birds:Passerines,-4,2007,Aves,pre,4,0.114108846,287,73161.42482,control,40
+2005,Mojave,NA,Birds:Passerines,2,2007,Aves,post,2,0.114108846,287,73161.42482,control,40
+2011,Mojave,NA,Birds:Passerines,-3,2008,Aves,pre,3,0.125088658,247,73161.42482,control,34
+2010,Mojave,NA,Birds:Passerines,-2,2008,Aves,pre,2,0.125088658,247,73161.42482,control,34
+2013,Mojave,NA,Birds:Passerines,-5,2008,Aves,pre,5,0.125088658,247,73161.42482,control,34
+2005,Mojave,NA,Birds:Passerines,3,2008,Aves,post,3,0.125088658,247,73161.42482,control,34
+2005,Mojave,NA,Birds:Passerines,3,2008,Aves,post,3,0.125088658,247,73161.42482,control,34
+2013,Mojave,NA,Birds:Passerines,-4,2009,Aves,pre,4,0.131191397,237,73161.42482,control,33
+2005,Mojave,NA,Birds:Passerines,4,2009,Aves,post,4,0.131191397,237,73161.42482,control,33
+2011,Mojave,NA,Birds:Passerines,-2,2009,Aves,pre,2,0.131191397,237,73161.42482,control,33
+2005,Mojave,NA,Birds:Passerines,4,2009,Aves,post,4,0.131191397,237,73161.42482,control,33
+2010,Mojave,NA,Birds:Passerines,-1,2009,Aves,pre,1,0.131191397,237,73161.42482,control,33
+2005,Mojave,NA,Birds:Passerines,5,2010,Aves,post,5,0.137270818,302,73161.42482,control,42
+2011,Mojave,NA,Birds:Passerines,-1,2010,Aves,pre,1,0.137270818,302,73161.42482,control,42
+2013,Mojave,NA,Birds:Passerines,-3,2010,Aves,pre,3,0.137270818,302,73161.42482,control,42
+2005,Mojave,NA,Birds:Passerines,5,2010,Aves,post,5,0.137270818,302,73161.42482,control,42
+2013,Mojave,NA,Birds:Passerines,-2,2011,Aves,pre,2,0.141780138,258,73161.42482,control,36
+2010,Mojave,NA,Birds:Passerines,1,2011,Aves,post,1,0.141780138,258,73161.42482,control,36
+2010,Mojave,NA,Birds:Passerines,2,2012,Aves,post,2,0.114092707,388,73161.42482,control,54
+2011,Mojave,NA,Birds:Passerines,1,2012,Aves,post,1,0.114092707,388,73161.42482,control,54
+2013,Mojave,NA,Birds:Passerines,-1,2012,Aves,pre,1,0.114092707,388,73161.42482,control,54
+2010,Mojave,NA,Birds:Passerines,3,2013,Aves,post,3,0.109453911,371,73161.42482,control,51
+2011,Mojave,NA,Birds:Passerines,2,2013,Aves,post,2,0.109453911,371,73161.42482,control,51
+2011,Mojave,NA,Birds:Passerines,3,2014,Aves,post,3,0.114814627,369,73161.42482,control,51
+2010,Mojave,NA,Birds:Passerines,4,2014,Aves,post,4,0.114814627,369,73161.42482,control,51
+2013,Mojave,NA,Birds:Passerines,1,2014,Aves,post,1,0.114814627,369,73161.42482,control,51
+2013,Mojave,NA,Birds:Passerines,2,2015,Aves,post,2,0.120059975,595,73161.42482,control,82
+2010,Mojave,NA,Birds:Passerines,5,2015,Aves,post,5,0.120059975,595,73161.42482,control,82
+2011,Mojave,NA,Birds:Passerines,4,2015,Aves,post,4,0.120059975,595,73161.42482,control,82
+2011,Mojave,NA,Birds:Passerines,5,2016,Aves,post,5,0.11562054,635,73161.42482,control,87
+2013,Mojave,NA,Birds:Passerines,3,2016,Aves,post,3,0.11562054,635,73161.42482,control,87
+2013,Mojave,NA,Birds:Passerines,4,2017,Aves,post,4,0.128634729,582,73161.42482,control,80
+2013,Mojave,NA,Birds:Passerines,5,2018,Aves,post,5,0.113126584,497,73161.42482,control,68
+2002,Mojave,NA,Birds:Raptors,-5,1997,Aves,pre,5,NA,5,73161.42482,control,1
+2002,Mojave,NA,Birds:Raptors,-4,1998,Aves,pre,4,NA,2,73161.42482,control,1
+2002,Mojave,NA,Birds:Raptors,-3,1999,Aves,pre,3,NA,6,73161.42482,control,1
+2005,Mojave,NA,Birds:Raptors,-5,2000,Aves,pre,5,0.10973983,13,73161.42482,control,2
+2005,Mojave,NA,Birds:Raptors,-5,2000,Aves,pre,5,0.10973983,13,73161.42482,control,2
+2002,Mojave,NA,Birds:Raptors,-2,2000,Aves,pre,2,0.10973983,13,73161.42482,control,2
+2005,Mojave,NA,Birds:Raptors,-4,2001,Aves,pre,4,0.124131124,8,73161.42482,control,2
+2005,Mojave,NA,Birds:Raptors,-4,2001,Aves,pre,4,0.124131124,8,73161.42482,control,2
+2002,Mojave,NA,Birds:Raptors,-1,2001,Aves,pre,1,0.124131124,8,73161.42482,control,2
+2005,Mojave,NA,Birds:Raptors,-3,2002,Aves,pre,3,0.10649385,7,73161.42482,control,1
+2005,Mojave,NA,Birds:Raptors,-3,2002,Aves,pre,3,0.10649385,7,73161.42482,control,1
+2002,Mojave,NA,Birds:Raptors,1,2003,Aves,post,1,0.12983656,12,73161.42482,control,2
+2005,Mojave,NA,Birds:Raptors,-2,2003,Aves,pre,2,0.12983656,12,73161.42482,control,2
+2005,Mojave,NA,Birds:Raptors,-2,2003,Aves,pre,2,0.12983656,12,73161.42482,control,2
+2005,Mojave,NA,Birds:Raptors,-1,2004,Aves,pre,1,0.133918085,15,73161.42482,control,3
+2005,Mojave,NA,Birds:Raptors,-1,2004,Aves,pre,1,0.133918085,15,73161.42482,control,3
+2002,Mojave,NA,Birds:Raptors,2,2004,Aves,post,2,0.133918085,15,73161.42482,control,3
+2002,Mojave,NA,Birds:Raptors,3,2005,Aves,post,3,0.173643898,18,73161.42482,control,3
+2010,Mojave,NA,Birds:Raptors,-5,2005,Aves,pre,5,0.173643898,18,73161.42482,control,3
+2005,Mojave,NA,Birds:Raptors,1,2006,Aves,post,1,0.133301308,22,73161.42482,control,4
+2002,Mojave,NA,Birds:Raptors,4,2006,Aves,post,4,0.133301308,22,73161.42482,control,4
+2011,Mojave,NA,Birds:Raptors,-5,2006,Aves,pre,5,0.133301308,22,73161.42482,control,4
+2005,Mojave,NA,Birds:Raptors,1,2006,Aves,post,1,0.133301308,22,73161.42482,control,4
+2010,Mojave,NA,Birds:Raptors,-4,2006,Aves,pre,4,0.133301308,22,73161.42482,control,4
+2011,Mojave,NA,Birds:Raptors,-4,2007,Aves,pre,4,0.114108846,21,73161.42482,control,3
+2002,Mojave,NA,Birds:Raptors,5,2007,Aves,post,5,0.114108846,21,73161.42482,control,3
+2010,Mojave,NA,Birds:Raptors,-3,2007,Aves,pre,3,0.114108846,21,73161.42482,control,3
+2005,Mojave,NA,Birds:Raptors,2,2007,Aves,post,2,0.114108846,21,73161.42482,control,3
+2005,Mojave,NA,Birds:Raptors,2,2007,Aves,post,2,0.114108846,21,73161.42482,control,3
+2011,Mojave,NA,Birds:Raptors,-3,2008,Aves,pre,3,0.125088658,14,73161.42482,control,2
+2013,Mojave,NA,Birds:Raptors,-5,2008,Aves,pre,5,0.125088658,14,73161.42482,control,2
+2010,Mojave,NA,Birds:Raptors,-2,2008,Aves,pre,2,0.125088658,14,73161.42482,control,2
+2005,Mojave,NA,Birds:Raptors,3,2008,Aves,post,3,0.125088658,14,73161.42482,control,2
+2005,Mojave,NA,Birds:Raptors,3,2008,Aves,post,3,0.125088658,14,73161.42482,control,2
+2011,Mojave,NA,Birds:Raptors,-2,2009,Aves,pre,2,0.131191397,33,73161.42482,control,5
+2013,Mojave,NA,Birds:Raptors,-4,2009,Aves,pre,4,0.131191397,33,73161.42482,control,5
+2005,Mojave,NA,Birds:Raptors,4,2009,Aves,post,4,0.131191397,33,73161.42482,control,5
+2005,Mojave,NA,Birds:Raptors,4,2009,Aves,post,4,0.131191397,33,73161.42482,control,5
+2010,Mojave,NA,Birds:Raptors,-1,2009,Aves,pre,1,0.131191397,33,73161.42482,control,5
+2013,Mojave,NA,Birds:Raptors,-3,2010,Aves,pre,3,0.137270818,55,73161.42482,control,8
+2005,Mojave,NA,Birds:Raptors,5,2010,Aves,post,5,0.137270818,55,73161.42482,control,8
+2011,Mojave,NA,Birds:Raptors,-1,2010,Aves,pre,1,0.137270818,55,73161.42482,control,8
+2005,Mojave,NA,Birds:Raptors,5,2010,Aves,post,5,0.137270818,55,73161.42482,control,8
+2013,Mojave,NA,Birds:Raptors,-2,2011,Aves,pre,2,0.141780138,52,73161.42482,control,8
+2010,Mojave,NA,Birds:Raptors,1,2011,Aves,post,1,0.141780138,52,73161.42482,control,8
+2013,Mojave,NA,Birds:Raptors,-1,2012,Aves,pre,1,0.114092707,51,73161.42482,control,7
+2011,Mojave,NA,Birds:Raptors,1,2012,Aves,post,1,0.114092707,51,73161.42482,control,7
+2010,Mojave,NA,Birds:Raptors,2,2012,Aves,post,2,0.114092707,51,73161.42482,control,7
+2011,Mojave,NA,Birds:Raptors,2,2013,Aves,post,2,0.109453911,44,73161.42482,control,7
+2010,Mojave,NA,Birds:Raptors,3,2013,Aves,post,3,0.109453911,44,73161.42482,control,7
+2010,Mojave,NA,Birds:Raptors,4,2014,Aves,post,4,0.114814627,50,73161.42482,control,7
+2013,Mojave,NA,Birds:Raptors,1,2014,Aves,post,1,0.114814627,50,73161.42482,control,7
+2011,Mojave,NA,Birds:Raptors,3,2014,Aves,post,3,0.114814627,50,73161.42482,control,7
+2010,Mojave,NA,Birds:Raptors,5,2015,Aves,post,5,0.120059975,67,73161.42482,control,10
+2011,Mojave,NA,Birds:Raptors,4,2015,Aves,post,4,0.120059975,67,73161.42482,control,10
+2013,Mojave,NA,Birds:Raptors,2,2015,Aves,post,2,0.120059975,67,73161.42482,control,10
+2013,Mojave,NA,Birds:Raptors,3,2016,Aves,post,3,0.11562054,133,73161.42482,control,19
+2011,Mojave,NA,Birds:Raptors,5,2016,Aves,post,5,0.11562054,133,73161.42482,control,19
+2013,Mojave,NA,Birds:Raptors,4,2017,Aves,post,4,0.128634729,145,73161.42482,control,20
+2013,Mojave,NA,Birds:Raptors,5,2018,Aves,post,5,0.113126584,181,73161.42482,control,25
+2002,Mojave,NA,Birds:Woodpeckers,-5,1997,Aves,pre,5,NA,3,73161.42482,control,1
+2002,Mojave,NA,Birds:Woodpeckers,-4,1998,Aves,pre,4,NA,2,73161.42482,control,1
+2002,Mojave,NA,Birds:Woodpeckers,-3,1999,Aves,pre,3,NA,1,73161.42482,control,1
+2005,Mojave,NA,Birds:Woodpeckers,-4,2001,Aves,pre,4,0.124131124,1,73161.42482,control,1
+2002,Mojave,NA,Birds:Woodpeckers,-1,2001,Aves,pre,1,0.124131124,1,73161.42482,control,1
+2005,Mojave,NA,Birds:Woodpeckers,-4,2001,Aves,pre,4,0.124131124,1,73161.42482,control,1
+2005,Mojave,NA,Birds:Woodpeckers,-1,2004,Aves,pre,1,0.133918085,3,73161.42482,control,1
+2002,Mojave,NA,Birds:Woodpeckers,2,2004,Aves,post,2,0.133918085,3,73161.42482,control,1
+2005,Mojave,NA,Birds:Woodpeckers,-1,2004,Aves,pre,1,0.133918085,3,73161.42482,control,1
+2010,Mojave,NA,Birds:Woodpeckers,-5,2005,Aves,pre,5,0.173643898,1,73161.42482,control,1
+2002,Mojave,NA,Birds:Woodpeckers,3,2005,Aves,post,3,0.173643898,1,73161.42482,control,1
+2011,Mojave,NA,Birds:Woodpeckers,-5,2006,Aves,pre,5,0.133301308,4,73161.42482,control,1
+2002,Mojave,NA,Birds:Woodpeckers,4,2006,Aves,post,4,0.133301308,4,73161.42482,control,1
+2005,Mojave,NA,Birds:Woodpeckers,1,2006,Aves,post,1,0.133301308,4,73161.42482,control,1
+2005,Mojave,NA,Birds:Woodpeckers,1,2006,Aves,post,1,0.133301308,4,73161.42482,control,1
+2010,Mojave,NA,Birds:Woodpeckers,-4,2006,Aves,pre,4,0.133301308,4,73161.42482,control,1
+2005,Mojave,NA,Birds:Woodpeckers,2,2007,Aves,post,2,0.114108846,1,73161.42482,control,1
+2005,Mojave,NA,Birds:Woodpeckers,2,2007,Aves,post,2,0.114108846,1,73161.42482,control,1
+2011,Mojave,NA,Birds:Woodpeckers,-4,2007,Aves,pre,4,0.114108846,1,73161.42482,control,1
+2002,Mojave,NA,Birds:Woodpeckers,5,2007,Aves,post,5,0.114108846,1,73161.42482,control,1
+2010,Mojave,NA,Birds:Woodpeckers,-3,2007,Aves,pre,3,0.114108846,1,73161.42482,control,1
+2005,Mojave,NA,Birds:Woodpeckers,3,2008,Aves,post,3,0.125088658,2,73161.42482,control,1
+2010,Mojave,NA,Birds:Woodpeckers,-2,2008,Aves,pre,2,0.125088658,2,73161.42482,control,1
+2013,Mojave,NA,Birds:Woodpeckers,-5,2008,Aves,pre,5,0.125088658,2,73161.42482,control,1
+2011,Mojave,NA,Birds:Woodpeckers,-3,2008,Aves,pre,3,0.125088658,2,73161.42482,control,1
+2005,Mojave,NA,Birds:Woodpeckers,3,2008,Aves,post,3,0.125088658,2,73161.42482,control,1
+2013,Mojave,NA,Birds:Woodpeckers,-4,2009,Aves,pre,4,0.131191397,2,73161.42482,control,1
+2011,Mojave,NA,Birds:Woodpeckers,-2,2009,Aves,pre,2,0.131191397,2,73161.42482,control,1
+2010,Mojave,NA,Birds:Woodpeckers,-1,2009,Aves,pre,1,0.131191397,2,73161.42482,control,1
+2005,Mojave,NA,Birds:Woodpeckers,4,2009,Aves,post,4,0.131191397,2,73161.42482,control,1
+2005,Mojave,NA,Birds:Woodpeckers,4,2009,Aves,post,4,0.131191397,2,73161.42482,control,1
+2011,Mojave,NA,Birds:Woodpeckers,-1,2010,Aves,pre,1,0.137270818,1,73161.42482,control,1
+2005,Mojave,NA,Birds:Woodpeckers,5,2010,Aves,post,5,0.137270818,1,73161.42482,control,1
+2005,Mojave,NA,Birds:Woodpeckers,5,2010,Aves,post,5,0.137270818,1,73161.42482,control,1
+2013,Mojave,NA,Birds:Woodpeckers,-3,2010,Aves,pre,3,0.137270818,1,73161.42482,control,1
+2013,Mojave,NA,Birds:Woodpeckers,-2,2011,Aves,pre,2,0.141780138,4,73161.42482,control,1
+2010,Mojave,NA,Birds:Woodpeckers,1,2011,Aves,post,1,0.141780138,4,73161.42482,control,1
+2010,Mojave,NA,Birds:Woodpeckers,2,2012,Aves,post,2,0.114092707,3,73161.42482,control,1
+2013,Mojave,NA,Birds:Woodpeckers,-1,2012,Aves,pre,1,0.114092707,3,73161.42482,control,1
+2011,Mojave,NA,Birds:Woodpeckers,1,2012,Aves,post,1,0.114092707,3,73161.42482,control,1
+2011,Mojave,NA,Birds:Woodpeckers,2,2013,Aves,post,2,0.109453911,2,73161.42482,control,1
+2010,Mojave,NA,Birds:Woodpeckers,3,2013,Aves,post,3,0.109453911,2,73161.42482,control,1
+2010,Mojave,NA,Birds:Woodpeckers,4,2014,Aves,post,4,0.114814627,7,73161.42482,control,1
+2013,Mojave,NA,Birds:Woodpeckers,1,2014,Aves,post,1,0.114814627,7,73161.42482,control,1
+2011,Mojave,NA,Birds:Woodpeckers,3,2014,Aves,post,3,0.114814627,7,73161.42482,control,1
+2010,Mojave,NA,Birds:Woodpeckers,5,2015,Aves,post,5,0.120059975,4,73161.42482,control,1
+2013,Mojave,NA,Birds:Woodpeckers,2,2015,Aves,post,2,0.120059975,4,73161.42482,control,1
+2011,Mojave,NA,Birds:Woodpeckers,4,2015,Aves,post,4,0.120059975,4,73161.42482,control,1
+2011,Mojave,NA,Birds:Woodpeckers,5,2016,Aves,post,5,0.11562054,6,73161.42482,control,1
+2013,Mojave,NA,Birds:Woodpeckers,3,2016,Aves,post,3,0.11562054,6,73161.42482,control,1
+2013,Mojave,NA,Birds:Woodpeckers,4,2017,Aves,post,4,0.128634729,11,73161.42482,control,2
+2013,Mojave,NA,Birds:Woodpeckers,5,2018,Aves,post,5,0.113126584,14,73161.42482,control,2
+2005,Mojave,NA,Butterflies & Moths,2,2007,Other,post,2,0.114108846,1,73161.42482,control,1
+2010,Mojave,NA,Butterflies & Moths,-3,2007,Other,pre,3,0.114108846,1,73161.42482,control,1
+2011,Mojave,NA,Butterflies & Moths,-4,2007,Other,pre,4,0.114108846,1,73161.42482,control,1
+2005,Mojave,NA,Butterflies & Moths,2,2007,Other,post,2,0.114108846,1,73161.42482,control,1
+2002,Mojave,NA,Butterflies & Moths,5,2007,Other,post,5,0.114108846,1,73161.42482,control,1
+2013,Mojave,NA,Butterflies & Moths,-2,2011,Other,pre,2,0.141780138,1,73161.42482,control,1
+2010,Mojave,NA,Butterflies & Moths,1,2011,Other,post,1,0.141780138,1,73161.42482,control,1
+2011,Mojave,NA,Butterflies & Moths,1,2012,Other,post,1,0.114092707,2,73161.42482,control,1
+2013,Mojave,NA,Butterflies & Moths,-1,2012,Other,pre,1,0.114092707,2,73161.42482,control,1
+2010,Mojave,NA,Butterflies & Moths,2,2012,Other,post,2,0.114092707,2,73161.42482,control,1
+2011,Mojave,NA,Butterflies & Moths,2,2013,Other,post,2,0.109453911,1,73161.42482,control,1
+2010,Mojave,NA,Butterflies & Moths,3,2013,Other,post,3,0.109453911,1,73161.42482,control,1
+2011,Mojave,NA,Butterflies & Moths,3,2014,Other,post,3,0.114814627,2,73161.42482,control,1
+2013,Mojave,NA,Butterflies & Moths,1,2014,Other,post,1,0.114814627,2,73161.42482,control,1
+2010,Mojave,NA,Butterflies & Moths,4,2014,Other,post,4,0.114814627,2,73161.42482,control,1
+2010,Mojave,NA,Butterflies & Moths,5,2015,Other,post,5,0.120059975,2,73161.42482,control,1
+2013,Mojave,NA,Butterflies & Moths,2,2015,Other,post,2,0.120059975,2,73161.42482,control,1
+2011,Mojave,NA,Butterflies & Moths,4,2015,Other,post,4,0.120059975,2,73161.42482,control,1
+2013,Mojave,NA,Butterflies & Moths,3,2016,Other,post,3,0.11562054,7,73161.42482,control,1
+2011,Mojave,NA,Butterflies & Moths,5,2016,Other,post,5,0.11562054,7,73161.42482,control,1
+2013,Mojave,NA,Butterflies & Moths,4,2017,Other,post,4,0.128634729,6,73161.42482,control,1
+2013,Mojave,NA,Butterflies & Moths,5,2018,Other,post,5,0.113126584,1,73161.42482,control,1
+2005,Mojave,NA,Large Mammals,1,2006,Other,post,1,0.133301308,1,73161.42482,control,1
+2010,Mojave,NA,Large Mammals,-4,2006,Other,pre,4,0.133301308,1,73161.42482,control,1
+2002,Mojave,NA,Large Mammals,4,2006,Other,post,4,0.133301308,1,73161.42482,control,1
+2011,Mojave,NA,Large Mammals,-5,2006,Other,pre,5,0.133301308,1,73161.42482,control,1
+2005,Mojave,NA,Large Mammals,1,2006,Other,post,1,0.133301308,1,73161.42482,control,1
+2002,Mojave,NA,Large Mammals,5,2007,Other,post,5,0.114108846,1,73161.42482,control,1
+2005,Mojave,NA,Large Mammals,2,2007,Other,post,2,0.114108846,1,73161.42482,control,1
+2010,Mojave,NA,Large Mammals,-3,2007,Other,pre,3,0.114108846,1,73161.42482,control,1
+2005,Mojave,NA,Large Mammals,2,2007,Other,post,2,0.114108846,1,73161.42482,control,1
+2011,Mojave,NA,Large Mammals,-4,2007,Other,pre,4,0.114108846,1,73161.42482,control,1
+2005,Mojave,NA,Large Mammals,3,2008,Other,post,3,0.125088658,1,73161.42482,control,1
+2010,Mojave,NA,Large Mammals,-2,2008,Other,pre,2,0.125088658,1,73161.42482,control,1
+2011,Mojave,NA,Large Mammals,-3,2008,Other,pre,3,0.125088658,1,73161.42482,control,1
+2013,Mojave,NA,Large Mammals,-5,2008,Other,pre,5,0.125088658,1,73161.42482,control,1
+2005,Mojave,NA,Large Mammals,3,2008,Other,post,3,0.125088658,1,73161.42482,control,1
+2005,Mojave,NA,Large Mammals,5,2010,Other,post,5,0.137270818,2,73161.42482,control,1
+2011,Mojave,NA,Large Mammals,-1,2010,Other,pre,1,0.137270818,2,73161.42482,control,1
+2005,Mojave,NA,Large Mammals,5,2010,Other,post,5,0.137270818,2,73161.42482,control,1
+2013,Mojave,NA,Large Mammals,-3,2010,Other,pre,3,0.137270818,2,73161.42482,control,1
+2010,Mojave,NA,Large Mammals,1,2011,Other,post,1,0.141780138,2,73161.42482,control,1
+2013,Mojave,NA,Large Mammals,-2,2011,Other,pre,2,0.141780138,2,73161.42482,control,1
+2011,Mojave,NA,Large Mammals,1,2012,Other,post,1,0.114092707,6,73161.42482,control,1
+2010,Mojave,NA,Large Mammals,2,2012,Other,post,2,0.114092707,6,73161.42482,control,1
+2013,Mojave,NA,Large Mammals,-1,2012,Other,pre,1,0.114092707,6,73161.42482,control,1
+2011,Mojave,NA,Large Mammals,3,2014,Other,post,3,0.114814627,5,73161.42482,control,1
+2013,Mojave,NA,Large Mammals,1,2014,Other,post,1,0.114814627,5,73161.42482,control,1
+2010,Mojave,NA,Large Mammals,4,2014,Other,post,4,0.114814627,5,73161.42482,control,1
+2011,Mojave,NA,Large Mammals,4,2015,Other,post,4,0.120059975,3,73161.42482,control,1
+2010,Mojave,NA,Large Mammals,5,2015,Other,post,5,0.120059975,3,73161.42482,control,1
+2013,Mojave,NA,Large Mammals,2,2015,Other,post,2,0.120059975,3,73161.42482,control,1
+2013,Mojave,NA,Large Mammals,3,2016,Other,post,3,0.11562054,6,73161.42482,control,1
+2011,Mojave,NA,Large Mammals,5,2016,Other,post,5,0.11562054,6,73161.42482,control,1
+2013,Mojave,NA,Large Mammals,4,2017,Other,post,4,0.128634729,15,73161.42482,control,3
+2013,Mojave,NA,Large Mammals,5,2018,Other,post,5,0.113126584,15,73161.42482,control,3
+2002,Mojave,NA,Tortoises,-4,1998,Other,pre,4,NA,1,73161.42482,control,1
+2005,Mojave,NA,Tortoises,-3,2002,Other,pre,3,0.10649385,1,73161.42482,control,1
+2005,Mojave,NA,Tortoises,-3,2002,Other,pre,3,0.10649385,1,73161.42482,control,1
+2002,Mojave,NA,Tortoises,1,2003,Other,post,1,0.12983656,3,73161.42482,control,1
+2005,Mojave,NA,Tortoises,-2,2003,Other,pre,2,0.12983656,3,73161.42482,control,1
+2005,Mojave,NA,Tortoises,-2,2003,Other,pre,2,0.12983656,3,73161.42482,control,1
+2005,Mojave,NA,Tortoises,-1,2004,Other,pre,1,0.133918085,2,73161.42482,control,1
+2002,Mojave,NA,Tortoises,2,2004,Other,post,2,0.133918085,2,73161.42482,control,1
+2005,Mojave,NA,Tortoises,-1,2004,Other,pre,1,0.133918085,2,73161.42482,control,1
+2010,Mojave,NA,Tortoises,-5,2005,Other,pre,5,0.173643898,1,73161.42482,control,1
+2002,Mojave,NA,Tortoises,3,2005,Other,post,3,0.173643898,1,73161.42482,control,1
+2005,Mojave,NA,Tortoises,1,2006,Other,post,1,0.133301308,6,73161.42482,control,1
+2010,Mojave,NA,Tortoises,-4,2006,Other,pre,4,0.133301308,6,73161.42482,control,1
+2002,Mojave,NA,Tortoises,4,2006,Other,post,4,0.133301308,6,73161.42482,control,1
+2005,Mojave,NA,Tortoises,1,2006,Other,post,1,0.133301308,6,73161.42482,control,1
+2011,Mojave,NA,Tortoises,-5,2006,Other,pre,5,0.133301308,6,73161.42482,control,1
+2005,Mojave,NA,Tortoises,2,2007,Other,post,2,0.114108846,2,73161.42482,control,1
+2005,Mojave,NA,Tortoises,2,2007,Other,post,2,0.114108846,2,73161.42482,control,1
+2011,Mojave,NA,Tortoises,-4,2007,Other,pre,4,0.114108846,2,73161.42482,control,1
+2010,Mojave,NA,Tortoises,-3,2007,Other,pre,3,0.114108846,2,73161.42482,control,1
+2002,Mojave,NA,Tortoises,5,2007,Other,post,5,0.114108846,2,73161.42482,control,1
+2005,Mojave,NA,Tortoises,3,2008,Other,post,3,0.125088658,7,73161.42482,control,1
+2005,Mojave,NA,Tortoises,3,2008,Other,post,3,0.125088658,7,73161.42482,control,1
+2011,Mojave,NA,Tortoises,-3,2008,Other,pre,3,0.125088658,7,73161.42482,control,1
+2013,Mojave,NA,Tortoises,-5,2008,Other,pre,5,0.125088658,7,73161.42482,control,1
+2010,Mojave,NA,Tortoises,-2,2008,Other,pre,2,0.125088658,7,73161.42482,control,1
+2005,Mojave,NA,Tortoises,4,2009,Other,post,4,0.131191397,8,73161.42482,control,2
+2010,Mojave,NA,Tortoises,-1,2009,Other,pre,1,0.131191397,8,73161.42482,control,2
+2013,Mojave,NA,Tortoises,-4,2009,Other,pre,4,0.131191397,8,73161.42482,control,2
+2005,Mojave,NA,Tortoises,4,2009,Other,post,4,0.131191397,8,73161.42482,control,2
+2011,Mojave,NA,Tortoises,-2,2009,Other,pre,2,0.131191397,8,73161.42482,control,2
+2013,Mojave,NA,Tortoises,-3,2010,Other,pre,3,0.137270818,7,73161.42482,control,1
+2005,Mojave,NA,Tortoises,5,2010,Other,post,5,0.137270818,7,73161.42482,control,1
+2011,Mojave,NA,Tortoises,-1,2010,Other,pre,1,0.137270818,7,73161.42482,control,1
+2005,Mojave,NA,Tortoises,5,2010,Other,post,5,0.137270818,7,73161.42482,control,1
+2013,Mojave,NA,Tortoises,-2,2011,Other,pre,2,0.141780138,7,73161.42482,control,1
+2010,Mojave,NA,Tortoises,1,2011,Other,post,1,0.141780138,7,73161.42482,control,1
+2013,Mojave,NA,Tortoises,-1,2012,Other,pre,1,0.114092707,7,73161.42482,control,1
+2011,Mojave,NA,Tortoises,1,2012,Other,post,1,0.114092707,7,73161.42482,control,1
+2010,Mojave,NA,Tortoises,2,2012,Other,post,2,0.114092707,7,73161.42482,control,1
+2011,Mojave,NA,Tortoises,2,2013,Other,post,2,0.109453911,10,73161.42482,control,2
+2010,Mojave,NA,Tortoises,3,2013,Other,post,3,0.109453911,10,73161.42482,control,2
+2010,Mojave,NA,Tortoises,4,2014,Other,post,4,0.114814627,32,73161.42482,control,5
+2011,Mojave,NA,Tortoises,3,2014,Other,post,3,0.114814627,32,73161.42482,control,5
+2013,Mojave,NA,Tortoises,1,2014,Other,post,1,0.114814627,32,73161.42482,control,5
+2013,Mojave,NA,Tortoises,2,2015,Other,post,2,0.120059975,18,73161.42482,control,3
+2011,Mojave,NA,Tortoises,4,2015,Other,post,4,0.120059975,18,73161.42482,control,3
+2010,Mojave,NA,Tortoises,5,2015,Other,post,5,0.120059975,18,73161.42482,control,3
+2011,Mojave,NA,Tortoises,5,2016,Other,post,5,0.11562054,38,73161.42482,control,6
+2013,Mojave,NA,Tortoises,3,2016,Other,post,3,0.11562054,38,73161.42482,control,6
+2013,Mojave,NA,Tortoises,4,2017,Other,post,4,0.128634729,77,73161.42482,control,11
+2013,Mojave,NA,Tortoises,5,2018,Other,post,5,0.113126584,39,73161.42482,control,6
+2000,San Joaquin,NA,Birds:Passerines,-5,1995,Aves,pre,5,NA,33,26537.13547,control,13
+2000,San Joaquin,NA,Birds:Passerines,-4,1996,Aves,pre,4,NA,15,26537.13547,control,6
+2000,San Joaquin,NA,Birds:Passerines,-3,1997,Aves,pre,3,NA,19,26537.13547,control,8
+2000,San Joaquin,NA,Birds:Passerines,-2,1998,Aves,pre,2,NA,19,26537.13547,control,8
+2000,San Joaquin,NA,Birds:Passerines,-1,1999,Aves,pre,1,NA,23,26537.13547,control,9
+2004,San Joaquin,NA,Birds:Passerines,-5,1999,Aves,pre,5,NA,23,26537.13547,control,9
+2004,San Joaquin,NA,Birds:Passerines,-5,1999,Aves,pre,5,NA,23,26537.13547,control,9
+2005,San Joaquin,NA,Birds:Passerines,-5,2000,Aves,pre,5,0.369834265,22,26537.13547,control,9
+2004,San Joaquin,NA,Birds:Passerines,-4,2000,Aves,pre,4,0.369834265,22,26537.13547,control,9
+2004,San Joaquin,NA,Birds:Passerines,-4,2000,Aves,pre,4,0.369834265,22,26537.13547,control,9
+2005,San Joaquin,NA,Birds:Passerines,-4,2001,Aves,pre,4,0.365446133,27,26537.13547,control,11
+2004,San Joaquin,NA,Birds:Passerines,-3,2001,Aves,pre,3,0.365446133,27,26537.13547,control,11
+2000,San Joaquin,NA,Birds:Passerines,1,2001,Aves,post,1,0.365446133,27,26537.13547,control,11
+2004,San Joaquin,NA,Birds:Passerines,-3,2001,Aves,pre,3,0.365446133,27,26537.13547,control,11
+2004,San Joaquin,NA,Birds:Passerines,-2,2002,Aves,pre,2,0.352284681,29,26537.13547,control,11
+2005,San Joaquin,NA,Birds:Passerines,-3,2002,Aves,pre,3,0.352284681,29,26537.13547,control,11
+2004,San Joaquin,NA,Birds:Passerines,-2,2002,Aves,pre,2,0.352284681,29,26537.13547,control,11
+2000,San Joaquin,NA,Birds:Passerines,2,2002,Aves,post,2,0.352284681,29,26537.13547,control,11
+2004,San Joaquin,NA,Birds:Passerines,-1,2003,Aves,pre,1,0.377407611,38,26537.13547,control,15
+2004,San Joaquin,NA,Birds:Passerines,-1,2003,Aves,pre,1,0.377407611,38,26537.13547,control,15
+2000,San Joaquin,NA,Birds:Passerines,3,2003,Aves,post,3,0.377407611,38,26537.13547,control,15
+2008,San Joaquin,NA,Birds:Passerines,-5,2003,Aves,pre,5,0.377407611,38,26537.13547,control,15
+2005,San Joaquin,NA,Birds:Passerines,-2,2003,Aves,pre,2,0.377407611,38,26537.13547,control,15
+2008,San Joaquin,NA,Birds:Passerines,-4,2004,Aves,pre,4,0.376622463,38,26537.13547,control,15
+2005,San Joaquin,NA,Birds:Passerines,-1,2004,Aves,pre,1,0.376622463,38,26537.13547,control,15
+2000,San Joaquin,NA,Birds:Passerines,4,2004,Aves,post,4,0.376622463,38,26537.13547,control,15
+2004,San Joaquin,NA,Birds:Passerines,1,2005,Aves,post,1,0.404784243,53,26537.13547,control,20
+2010,San Joaquin,NA,Birds:Passerines,-5,2005,Aves,pre,5,0.404784243,53,26537.13547,control,20
+2008,San Joaquin,NA,Birds:Passerines,-3,2005,Aves,pre,3,0.404784243,53,26537.13547,control,20
+2000,San Joaquin,NA,Birds:Passerines,5,2005,Aves,post,5,0.404784243,53,26537.13547,control,20
+2004,San Joaquin,NA,Birds:Passerines,1,2005,Aves,post,1,0.404784243,53,26537.13547,control,20
+2004,San Joaquin,NA,Birds:Passerines,2,2006,Aves,post,2,0.377612394,71,26537.13547,control,27
+2005,San Joaquin,NA,Birds:Passerines,1,2006,Aves,post,1,0.377612394,71,26537.13547,control,27
+2008,San Joaquin,NA,Birds:Passerines,-2,2006,Aves,pre,2,0.377612394,71,26537.13547,control,27
+2004,San Joaquin,NA,Birds:Passerines,2,2006,Aves,post,2,0.377612394,71,26537.13547,control,27
+2010,San Joaquin,NA,Birds:Passerines,-4,2006,Aves,pre,4,0.377612394,71,26537.13547,control,27
+2010,San Joaquin,NA,Birds:Passerines,-3,2007,Aves,pre,3,0.319747404,66,26537.13547,control,25
+2008,San Joaquin,NA,Birds:Passerines,-1,2007,Aves,pre,1,0.319747404,66,26537.13547,control,25
+2005,San Joaquin,NA,Birds:Passerines,2,2007,Aves,post,2,0.319747404,66,26537.13547,control,25
+2012,San Joaquin,NA,Birds:Passerines,-5,2007,Aves,pre,5,0.319747404,66,26537.13547,control,25
+2004,San Joaquin,NA,Birds:Passerines,3,2007,Aves,post,3,0.319747404,66,26537.13547,control,25
+2004,San Joaquin,NA,Birds:Passerines,3,2007,Aves,post,3,0.319747404,66,26537.13547,control,25
+2010,San Joaquin,NA,Birds:Passerines,-2,2008,Aves,pre,2,0.355514039,73,26537.13547,control,28
+2012,San Joaquin,NA,Birds:Passerines,-4,2008,Aves,pre,4,0.355514039,73,26537.13547,control,28
+2004,San Joaquin,NA,Birds:Passerines,4,2008,Aves,post,4,0.355514039,73,26537.13547,control,28
+2004,San Joaquin,NA,Birds:Passerines,4,2008,Aves,post,4,0.355514039,73,26537.13547,control,28
+2005,San Joaquin,NA,Birds:Passerines,3,2008,Aves,post,3,0.355514039,73,26537.13547,control,28
+2014,San Joaquin,NA,Birds:Passerines,-5,2009,Aves,pre,5,0.348728106,105,26537.13547,control,40
+2004,San Joaquin,NA,Birds:Passerines,5,2009,Aves,post,5,0.348728106,105,26537.13547,control,40
+2010,San Joaquin,NA,Birds:Passerines,-1,2009,Aves,pre,1,0.348728106,105,26537.13547,control,40
+2008,San Joaquin,NA,Birds:Passerines,1,2009,Aves,post,1,0.348728106,105,26537.13547,control,40
+2012,San Joaquin,NA,Birds:Passerines,-3,2009,Aves,pre,3,0.348728106,105,26537.13547,control,40
+2005,San Joaquin,NA,Birds:Passerines,4,2009,Aves,post,4,0.348728106,105,26537.13547,control,40
+2004,San Joaquin,NA,Birds:Passerines,5,2009,Aves,post,5,0.348728106,105,26537.13547,control,40
+2005,San Joaquin,NA,Birds:Passerines,5,2010,Aves,post,5,0.408463488,161,26537.13547,control,61
+2012,San Joaquin,NA,Birds:Passerines,-2,2010,Aves,pre,2,0.408463488,161,26537.13547,control,61
+2015,San Joaquin,NA,Birds:Passerines,-5,2010,Aves,pre,5,0.408463488,161,26537.13547,control,61
+2008,San Joaquin,NA,Birds:Passerines,2,2010,Aves,post,2,0.408463488,161,26537.13547,control,61
+2014,San Joaquin,NA,Birds:Passerines,-4,2010,Aves,pre,4,0.408463488,161,26537.13547,control,61
+2015,San Joaquin,NA,Birds:Passerines,-4,2011,Aves,pre,4,0.397013241,193,26537.13547,control,73
+2008,San Joaquin,NA,Birds:Passerines,3,2011,Aves,post,3,0.397013241,193,26537.13547,control,73
+2014,San Joaquin,NA,Birds:Passerines,-3,2011,Aves,pre,3,0.397013241,193,26537.13547,control,73
+2012,San Joaquin,NA,Birds:Passerines,-1,2011,Aves,pre,1,0.397013241,193,26537.13547,control,73
+2010,San Joaquin,NA,Birds:Passerines,1,2011,Aves,post,1,0.397013241,193,26537.13547,control,73
+2010,San Joaquin,NA,Birds:Passerines,2,2012,Aves,post,2,0.339940647,164,26537.13547,control,62
+2008,San Joaquin,NA,Birds:Passerines,4,2012,Aves,post,4,0.339940647,164,26537.13547,control,62
+2015,San Joaquin,NA,Birds:Passerines,-3,2012,Aves,pre,3,0.339940647,164,26537.13547,control,62
+2014,San Joaquin,NA,Birds:Passerines,-2,2012,Aves,pre,2,0.339940647,164,26537.13547,control,62
+2008,San Joaquin,NA,Birds:Passerines,5,2013,Aves,post,5,0.343299971,224,26537.13547,control,85
+2012,San Joaquin,NA,Birds:Passerines,1,2013,Aves,post,1,0.343299971,224,26537.13547,control,85
+2014,San Joaquin,NA,Birds:Passerines,-1,2013,Aves,pre,1,0.343299971,224,26537.13547,control,85
+2010,San Joaquin,NA,Birds:Passerines,3,2013,Aves,post,3,0.343299971,224,26537.13547,control,85
+2015,San Joaquin,NA,Birds:Passerines,-2,2013,Aves,pre,2,0.343299971,224,26537.13547,control,85
+2012,San Joaquin,NA,Birds:Passerines,2,2014,Aves,post,2,0.313948252,205,26537.13547,control,78
+2010,San Joaquin,NA,Birds:Passerines,4,2014,Aves,post,4,0.313948252,205,26537.13547,control,78
+2015,San Joaquin,NA,Birds:Passerines,-1,2014,Aves,pre,1,0.313948252,205,26537.13547,control,78
+2012,San Joaquin,NA,Birds:Passerines,3,2015,Aves,post,3,0.357176233,319,26537.13547,control,121
+2010,San Joaquin,NA,Birds:Passerines,5,2015,Aves,post,5,0.357176233,319,26537.13547,control,121
+2014,San Joaquin,NA,Birds:Passerines,1,2015,Aves,post,1,0.357176233,319,26537.13547,control,121
+2015,San Joaquin,NA,Birds:Passerines,1,2016,Aves,post,1,0.365054885,289,26537.13547,control,109
+2012,San Joaquin,NA,Birds:Passerines,4,2016,Aves,post,4,0.365054885,289,26537.13547,control,109
+2014,San Joaquin,NA,Birds:Passerines,2,2016,Aves,post,2,0.365054885,289,26537.13547,control,109
+2015,San Joaquin,NA,Birds:Passerines,2,2017,Aves,post,2,0.388954757,389,26537.13547,control,147
+2014,San Joaquin,NA,Birds:Passerines,3,2017,Aves,post,3,0.388954757,389,26537.13547,control,147
+2012,San Joaquin,NA,Birds:Passerines,5,2017,Aves,post,5,0.388954757,389,26537.13547,control,147
+2014,San Joaquin,NA,Birds:Passerines,4,2018,Aves,post,4,0.35009793,219,26537.13547,control,83
+2015,San Joaquin,NA,Birds:Passerines,3,2018,Aves,post,3,0.35009793,219,26537.13547,control,83
+2014,San Joaquin,NA,Birds:Passerines,5,2019,Aves,post,5,0.393655492,320,26537.13547,control,121
+2015,San Joaquin,NA,Birds:Passerines,4,2019,Aves,post,4,0.393655492,320,26537.13547,control,121
+2015,San Joaquin,NA,Birds:Passerines,5,2020,Aves,post,5,0.373018556,328,26537.13547,control,124
+2015,San Joaquin,NA,Birds:Rails and Geese,5,2020,Aves,post,5,0.373018556,4,26537.13547,control,2
+2000,San Joaquin,NA,Birds:Raptors,-5,1995,Aves,pre,5,NA,11,26537.13547,control,5
+2000,San Joaquin,NA,Birds:Raptors,-4,1996,Aves,pre,4,NA,12,26537.13547,control,5
+2000,San Joaquin,NA,Birds:Raptors,-3,1997,Aves,pre,3,NA,15,26537.13547,control,6
+2000,San Joaquin,NA,Birds:Raptors,-2,1998,Aves,pre,2,NA,16,26537.13547,control,7
+2004,San Joaquin,NA,Birds:Raptors,-5,1999,Aves,pre,5,NA,18,26537.13547,control,7
+2000,San Joaquin,NA,Birds:Raptors,-1,1999,Aves,pre,1,NA,18,26537.13547,control,7
+2004,San Joaquin,NA,Birds:Raptors,-5,1999,Aves,pre,5,NA,18,26537.13547,control,7
+2005,San Joaquin,NA,Birds:Raptors,-5,2000,Aves,pre,5,0.369834265,19,26537.13547,control,8
+2004,San Joaquin,NA,Birds:Raptors,-4,2000,Aves,pre,4,0.369834265,19,26537.13547,control,8
+2004,San Joaquin,NA,Birds:Raptors,-4,2000,Aves,pre,4,0.369834265,19,26537.13547,control,8
+2005,San Joaquin,NA,Birds:Raptors,-4,2001,Aves,pre,4,0.365446133,29,26537.13547,control,11
+2004,San Joaquin,NA,Birds:Raptors,-3,2001,Aves,pre,3,0.365446133,29,26537.13547,control,11
+2000,San Joaquin,NA,Birds:Raptors,1,2001,Aves,post,1,0.365446133,29,26537.13547,control,11
+2004,San Joaquin,NA,Birds:Raptors,-3,2001,Aves,pre,3,0.365446133,29,26537.13547,control,11
+2004,San Joaquin,NA,Birds:Raptors,-2,2002,Aves,pre,2,0.352284681,27,26537.13547,control,11
+2000,San Joaquin,NA,Birds:Raptors,2,2002,Aves,post,2,0.352284681,27,26537.13547,control,11
+2005,San Joaquin,NA,Birds:Raptors,-3,2002,Aves,pre,3,0.352284681,27,26537.13547,control,11
+2004,San Joaquin,NA,Birds:Raptors,-2,2002,Aves,pre,2,0.352284681,27,26537.13547,control,11
+2008,San Joaquin,NA,Birds:Raptors,-5,2003,Aves,pre,5,0.377407611,28,26537.13547,control,11
+2004,San Joaquin,NA,Birds:Raptors,-1,2003,Aves,pre,1,0.377407611,28,26537.13547,control,11
+2000,San Joaquin,NA,Birds:Raptors,3,2003,Aves,post,3,0.377407611,28,26537.13547,control,11
+2005,San Joaquin,NA,Birds:Raptors,-2,2003,Aves,pre,2,0.377407611,28,26537.13547,control,11
+2004,San Joaquin,NA,Birds:Raptors,-1,2003,Aves,pre,1,0.377407611,28,26537.13547,control,11
+2005,San Joaquin,NA,Birds:Raptors,-1,2004,Aves,pre,1,0.376622463,17,26537.13547,control,7
+2008,San Joaquin,NA,Birds:Raptors,-4,2004,Aves,pre,4,0.376622463,17,26537.13547,control,7
+2000,San Joaquin,NA,Birds:Raptors,4,2004,Aves,post,4,0.376622463,17,26537.13547,control,7
+2000,San Joaquin,NA,Birds:Raptors,5,2005,Aves,post,5,0.404784243,30,26537.13547,control,12
+2004,San Joaquin,NA,Birds:Raptors,1,2005,Aves,post,1,0.404784243,30,26537.13547,control,12
+2010,San Joaquin,NA,Birds:Raptors,-5,2005,Aves,pre,5,0.404784243,30,26537.13547,control,12
+2004,San Joaquin,NA,Birds:Raptors,1,2005,Aves,post,1,0.404784243,30,26537.13547,control,12
+2008,San Joaquin,NA,Birds:Raptors,-3,2005,Aves,pre,3,0.404784243,30,26537.13547,control,12
+2004,San Joaquin,NA,Birds:Raptors,2,2006,Aves,post,2,0.377612394,73,26537.13547,control,28
+2004,San Joaquin,NA,Birds:Raptors,2,2006,Aves,post,2,0.377612394,73,26537.13547,control,28
+2005,San Joaquin,NA,Birds:Raptors,1,2006,Aves,post,1,0.377612394,73,26537.13547,control,28
+2010,San Joaquin,NA,Birds:Raptors,-4,2006,Aves,pre,4,0.377612394,73,26537.13547,control,28
+2008,San Joaquin,NA,Birds:Raptors,-2,2006,Aves,pre,2,0.377612394,73,26537.13547,control,28
+2012,San Joaquin,NA,Birds:Raptors,-5,2007,Aves,pre,5,0.319747404,50,26537.13547,control,19
+2005,San Joaquin,NA,Birds:Raptors,2,2007,Aves,post,2,0.319747404,50,26537.13547,control,19
+2010,San Joaquin,NA,Birds:Raptors,-3,2007,Aves,pre,3,0.319747404,50,26537.13547,control,19
+2004,San Joaquin,NA,Birds:Raptors,3,2007,Aves,post,3,0.319747404,50,26537.13547,control,19
+2004,San Joaquin,NA,Birds:Raptors,3,2007,Aves,post,3,0.319747404,50,26537.13547,control,19
+2008,San Joaquin,NA,Birds:Raptors,-1,2007,Aves,pre,1,0.319747404,50,26537.13547,control,19
+2010,San Joaquin,NA,Birds:Raptors,-2,2008,Aves,pre,2,0.355514039,54,26537.13547,control,21
+2012,San Joaquin,NA,Birds:Raptors,-4,2008,Aves,pre,4,0.355514039,54,26537.13547,control,21
+2004,San Joaquin,NA,Birds:Raptors,4,2008,Aves,post,4,0.355514039,54,26537.13547,control,21
+2004,San Joaquin,NA,Birds:Raptors,4,2008,Aves,post,4,0.355514039,54,26537.13547,control,21
+2005,San Joaquin,NA,Birds:Raptors,3,2008,Aves,post,3,0.355514039,54,26537.13547,control,21
+2012,San Joaquin,NA,Birds:Raptors,-3,2009,Aves,pre,3,0.348728106,178,26537.13547,control,68
+2004,San Joaquin,NA,Birds:Raptors,5,2009,Aves,post,5,0.348728106,178,26537.13547,control,68
+2010,San Joaquin,NA,Birds:Raptors,-1,2009,Aves,pre,1,0.348728106,178,26537.13547,control,68
+2005,San Joaquin,NA,Birds:Raptors,4,2009,Aves,post,4,0.348728106,178,26537.13547,control,68
+2008,San Joaquin,NA,Birds:Raptors,1,2009,Aves,post,1,0.348728106,178,26537.13547,control,68
+2004,San Joaquin,NA,Birds:Raptors,5,2009,Aves,post,5,0.348728106,178,26537.13547,control,68
+2014,San Joaquin,NA,Birds:Raptors,-5,2009,Aves,pre,5,0.348728106,178,26537.13547,control,68
+2012,San Joaquin,NA,Birds:Raptors,-2,2010,Aves,pre,2,0.408463488,208,26537.13547,control,79
+2015,San Joaquin,NA,Birds:Raptors,-5,2010,Aves,pre,5,0.408463488,208,26537.13547,control,79
+2014,San Joaquin,NA,Birds:Raptors,-4,2010,Aves,pre,4,0.408463488,208,26537.13547,control,79
+2005,San Joaquin,NA,Birds:Raptors,5,2010,Aves,post,5,0.408463488,208,26537.13547,control,79
+2008,San Joaquin,NA,Birds:Raptors,2,2010,Aves,post,2,0.408463488,208,26537.13547,control,79
+2010,San Joaquin,NA,Birds:Raptors,1,2011,Aves,post,1,0.397013241,278,26537.13547,control,105
+2008,San Joaquin,NA,Birds:Raptors,3,2011,Aves,post,3,0.397013241,278,26537.13547,control,105
+2014,San Joaquin,NA,Birds:Raptors,-3,2011,Aves,pre,3,0.397013241,278,26537.13547,control,105
+2012,San Joaquin,NA,Birds:Raptors,-1,2011,Aves,pre,1,0.397013241,278,26537.13547,control,105
+2015,San Joaquin,NA,Birds:Raptors,-4,2011,Aves,pre,4,0.397013241,278,26537.13547,control,105
+2014,San Joaquin,NA,Birds:Raptors,-2,2012,Aves,pre,2,0.339940647,343,26537.13547,control,130
+2010,San Joaquin,NA,Birds:Raptors,2,2012,Aves,post,2,0.339940647,343,26537.13547,control,130
+2015,San Joaquin,NA,Birds:Raptors,-3,2012,Aves,pre,3,0.339940647,343,26537.13547,control,130
+2008,San Joaquin,NA,Birds:Raptors,4,2012,Aves,post,4,0.339940647,343,26537.13547,control,130
+2010,San Joaquin,NA,Birds:Raptors,3,2013,Aves,post,3,0.343299971,325,26537.13547,control,123
+2008,San Joaquin,NA,Birds:Raptors,5,2013,Aves,post,5,0.343299971,325,26537.13547,control,123
+2015,San Joaquin,NA,Birds:Raptors,-2,2013,Aves,pre,2,0.343299971,325,26537.13547,control,123
+2012,San Joaquin,NA,Birds:Raptors,1,2013,Aves,post,1,0.343299971,325,26537.13547,control,123
+2014,San Joaquin,NA,Birds:Raptors,-1,2013,Aves,pre,1,0.343299971,325,26537.13547,control,123
+2010,San Joaquin,NA,Birds:Raptors,4,2014,Aves,post,4,0.313948252,320,26537.13547,control,121
+2015,San Joaquin,NA,Birds:Raptors,-1,2014,Aves,pre,1,0.313948252,320,26537.13547,control,121
+2012,San Joaquin,NA,Birds:Raptors,2,2014,Aves,post,2,0.313948252,320,26537.13547,control,121
+2010,San Joaquin,NA,Birds:Raptors,5,2015,Aves,post,5,0.357176233,444,26537.13547,control,168
+2012,San Joaquin,NA,Birds:Raptors,3,2015,Aves,post,3,0.357176233,444,26537.13547,control,168
+2014,San Joaquin,NA,Birds:Raptors,1,2015,Aves,post,1,0.357176233,444,26537.13547,control,168
+2015,San Joaquin,NA,Birds:Raptors,1,2016,Aves,post,1,0.365054885,441,26537.13547,control,167
+2014,San Joaquin,NA,Birds:Raptors,2,2016,Aves,post,2,0.365054885,441,26537.13547,control,167
+2012,San Joaquin,NA,Birds:Raptors,4,2016,Aves,post,4,0.365054885,441,26537.13547,control,167
+2014,San Joaquin,NA,Birds:Raptors,3,2017,Aves,post,3,0.388954757,520,26537.13547,control,196
+2012,San Joaquin,NA,Birds:Raptors,5,2017,Aves,post,5,0.388954757,520,26537.13547,control,196
+2015,San Joaquin,NA,Birds:Raptors,2,2017,Aves,post,2,0.388954757,520,26537.13547,control,196
+2015,San Joaquin,NA,Birds:Raptors,3,2018,Aves,post,3,0.35009793,581,26537.13547,control,219
+2014,San Joaquin,NA,Birds:Raptors,4,2018,Aves,post,4,0.35009793,581,26537.13547,control,219
+2014,San Joaquin,NA,Birds:Raptors,5,2019,Aves,post,5,0.393655492,645,26537.13547,control,244
+2015,San Joaquin,NA,Birds:Raptors,4,2019,Aves,post,4,0.393655492,645,26537.13547,control,244
+2015,San Joaquin,NA,Birds:Raptors,5,2020,Aves,post,5,0.373018556,670,26537.13547,control,253
+2004,San Joaquin,NA,Butterflies & Moths,-3,2001,Other,pre,3,0.365446133,1,26537.13547,control,1
+2005,San Joaquin,NA,Butterflies & Moths,-4,2001,Other,pre,4,0.365446133,1,26537.13547,control,1
+2004,San Joaquin,NA,Butterflies & Moths,-3,2001,Other,pre,3,0.365446133,1,26537.13547,control,1
+2000,San Joaquin,NA,Butterflies & Moths,1,2001,Other,post,1,0.365446133,1,26537.13547,control,1
+2004,San Joaquin,NA,Butterflies & Moths,4,2008,Other,post,4,0.355514039,2,26537.13547,control,1
+2004,San Joaquin,NA,Butterflies & Moths,4,2008,Other,post,4,0.355514039,2,26537.13547,control,1
+2005,San Joaquin,NA,Butterflies & Moths,3,2008,Other,post,3,0.355514039,2,26537.13547,control,1
+2012,San Joaquin,NA,Butterflies & Moths,-4,2008,Other,pre,4,0.355514039,2,26537.13547,control,1
+2010,San Joaquin,NA,Butterflies & Moths,-2,2008,Other,pre,2,0.355514039,2,26537.13547,control,1
+2010,San Joaquin,NA,Butterflies & Moths,2,2012,Other,post,2,0.339940647,1,26537.13547,control,1
+2015,San Joaquin,NA,Butterflies & Moths,-3,2012,Other,pre,3,0.339940647,1,26537.13547,control,1
+2008,San Joaquin,NA,Butterflies & Moths,4,2012,Other,post,4,0.339940647,1,26537.13547,control,1
+2014,San Joaquin,NA,Butterflies & Moths,-2,2012,Other,pre,2,0.339940647,1,26537.13547,control,1
+2015,San Joaquin,NA,Butterflies & Moths,-1,2014,Other,pre,1,0.313948252,2,26537.13547,control,1
+2012,San Joaquin,NA,Butterflies & Moths,2,2014,Other,post,2,0.313948252,2,26537.13547,control,1
+2010,San Joaquin,NA,Butterflies & Moths,4,2014,Other,post,4,0.313948252,2,26537.13547,control,1
+2010,San Joaquin,NA,Butterflies & Moths,5,2015,Other,post,5,0.357176233,2,26537.13547,control,1
+2014,San Joaquin,NA,Butterflies & Moths,1,2015,Other,post,1,0.357176233,2,26537.13547,control,1
+2012,San Joaquin,NA,Butterflies & Moths,3,2015,Other,post,3,0.357176233,2,26537.13547,control,1
+2012,San Joaquin,NA,Butterflies & Moths,4,2016,Other,post,4,0.365054885,6,26537.13547,control,3
+2014,San Joaquin,NA,Butterflies & Moths,2,2016,Other,post,2,0.365054885,6,26537.13547,control,3
+2015,San Joaquin,NA,Butterflies & Moths,1,2016,Other,post,1,0.365054885,6,26537.13547,control,3
+2012,San Joaquin,NA,Butterflies & Moths,5,2017,Other,post,5,0.388954757,1,26537.13547,control,1
+2015,San Joaquin,NA,Butterflies & Moths,2,2017,Other,post,2,0.388954757,1,26537.13547,control,1
+2014,San Joaquin,NA,Butterflies & Moths,3,2017,Other,post,3,0.388954757,1,26537.13547,control,1
+2015,San Joaquin,NA,Butterflies & Moths,4,2019,Other,post,4,0.393655492,4,26537.13547,control,2
+2014,San Joaquin,NA,Butterflies & Moths,5,2019,Other,post,5,0.393655492,4,26537.13547,control,2
+2005,San Joaquin,NA,Small Mammals,-1,2004,Other,pre,1,0.376622463,1,26537.13547,control,1
+2000,San Joaquin,NA,Small Mammals,4,2004,Other,post,4,0.376622463,1,26537.13547,control,1
+2008,San Joaquin,NA,Small Mammals,-4,2004,Other,pre,4,0.376622463,1,26537.13547,control,1
+2000,San Joaquin,NA,Small Mammals,5,2005,Other,post,5,0.404784243,1,26537.13547,control,1
+2004,San Joaquin,NA,Small Mammals,1,2005,Other,post,1,0.404784243,1,26537.13547,control,1
+2008,San Joaquin,NA,Small Mammals,-3,2005,Other,pre,3,0.404784243,1,26537.13547,control,1
+2010,San Joaquin,NA,Small Mammals,-5,2005,Other,pre,5,0.404784243,1,26537.13547,control,1
+2004,San Joaquin,NA,Small Mammals,1,2005,Other,post,1,0.404784243,1,26537.13547,control,1
+2012,San Joaquin,NA,Small Mammals,-4,2008,Other,pre,4,0.355514039,1,26537.13547,control,1
+2004,San Joaquin,NA,Small Mammals,4,2008,Other,post,4,0.355514039,1,26537.13547,control,1
+2005,San Joaquin,NA,Small Mammals,3,2008,Other,post,3,0.355514039,1,26537.13547,control,1
+2004,San Joaquin,NA,Small Mammals,4,2008,Other,post,4,0.355514039,1,26537.13547,control,1
+2010,San Joaquin,NA,Small Mammals,-2,2008,Other,pre,2,0.355514039,1,26537.13547,control,1
+2014,San Joaquin,NA,Small Mammals,-4,2010,Other,pre,4,0.408463488,4,26537.13547,control,2
+2008,San Joaquin,NA,Small Mammals,2,2010,Other,post,2,0.408463488,4,26537.13547,control,2
+2005,San Joaquin,NA,Small Mammals,5,2010,Other,post,5,0.408463488,4,26537.13547,control,2
+2012,San Joaquin,NA,Small Mammals,-2,2010,Other,pre,2,0.408463488,4,26537.13547,control,2
+2015,San Joaquin,NA,Small Mammals,-5,2010,Other,pre,5,0.408463488,4,26537.13547,control,2
+2008,San Joaquin,NA,Small Mammals,3,2011,Other,post,3,0.397013241,2,26537.13547,control,1
+2010,San Joaquin,NA,Small Mammals,1,2011,Other,post,1,0.397013241,2,26537.13547,control,1
+2014,San Joaquin,NA,Small Mammals,-3,2011,Other,pre,3,0.397013241,2,26537.13547,control,1
+2015,San Joaquin,NA,Small Mammals,-4,2011,Other,pre,4,0.397013241,2,26537.13547,control,1
+2012,San Joaquin,NA,Small Mammals,-1,2011,Other,pre,1,0.397013241,2,26537.13547,control,1
+2015,San Joaquin,NA,Small Mammals,-3,2012,Other,pre,3,0.339940647,3,26537.13547,control,2
+2008,San Joaquin,NA,Small Mammals,4,2012,Other,post,4,0.339940647,3,26537.13547,control,2
+2010,San Joaquin,NA,Small Mammals,2,2012,Other,post,2,0.339940647,3,26537.13547,control,2
+2014,San Joaquin,NA,Small Mammals,-2,2012,Other,pre,2,0.339940647,3,26537.13547,control,2
+2014,San Joaquin,NA,Small Mammals,-1,2013,Other,pre,1,0.343299971,4,26537.13547,control,2
+2010,San Joaquin,NA,Small Mammals,3,2013,Other,post,3,0.343299971,4,26537.13547,control,2
+2012,San Joaquin,NA,Small Mammals,1,2013,Other,post,1,0.343299971,4,26537.13547,control,2
+2008,San Joaquin,NA,Small Mammals,5,2013,Other,post,5,0.343299971,4,26537.13547,control,2
+2015,San Joaquin,NA,Small Mammals,-2,2013,Other,pre,2,0.343299971,4,26537.13547,control,2
+2010,San Joaquin,NA,Small Mammals,4,2014,Other,post,4,0.313948252,2,26537.13547,control,1
+2015,San Joaquin,NA,Small Mammals,-1,2014,Other,pre,1,0.313948252,2,26537.13547,control,1
+2012,San Joaquin,NA,Small Mammals,2,2014,Other,post,2,0.313948252,2,26537.13547,control,1
+2010,San Joaquin,NA,Small Mammals,5,2015,Other,post,5,0.357176233,1,26537.13547,control,1
+2012,San Joaquin,NA,Small Mammals,3,2015,Other,post,3,0.357176233,1,26537.13547,control,1
+2014,San Joaquin,NA,Small Mammals,1,2015,Other,post,1,0.357176233,1,26537.13547,control,1
+2014,San Joaquin,NA,Small Mammals,2,2016,Other,post,2,0.365054885,18,26537.13547,control,7
+2015,San Joaquin,NA,Small Mammals,1,2016,Other,post,1,0.365054885,18,26537.13547,control,7
+2012,San Joaquin,NA,Small Mammals,4,2016,Other,post,4,0.365054885,18,26537.13547,control,7
+2014,San Joaquin,NA,Small Mammals,3,2017,Other,post,3,0.388954757,11,26537.13547,control,5
+2015,San Joaquin,NA,Small Mammals,2,2017,Other,post,2,0.388954757,11,26537.13547,control,5
+2012,San Joaquin,NA,Small Mammals,5,2017,Other,post,5,0.388954757,11,26537.13547,control,5
+2014,San Joaquin,NA,Small Mammals,4,2018,Other,post,4,0.35009793,24,26537.13547,control,10
+2015,San Joaquin,NA,Small Mammals,3,2018,Other,post,3,0.35009793,24,26537.13547,control,10
+2015,San Joaquin,NA,Small Mammals,4,2019,Other,post,4,0.393655492,40,26537.13547,control,16
+2014,San Joaquin,NA,Small Mammals,5,2019,Other,post,5,0.393655492,40,26537.13547,control,16
+2015,San Joaquin,NA,Small Mammals,5,2020,Other,post,5,0.373018556,35,26537.13547,control,14
+2002,Sonoran,NA,Birds:Passerines,-5,1997,Aves,pre,5,NA,13,27788.51104,control,5
+2002,Sonoran,NA,Birds:Passerines,-4,1998,Aves,pre,4,NA,6,27788.51104,control,3
+2002,Sonoran,NA,Birds:Passerines,-3,1999,Aves,pre,3,NA,17,27788.51104,control,7
+2004,Sonoran,NA,Birds:Passerines,-5,1999,Aves,pre,5,NA,17,27788.51104,control,7
+2004,Sonoran,NA,Birds:Passerines,-4,2000,Aves,pre,4,0.132827836,13,27788.51104,control,5
+2002,Sonoran,NA,Birds:Passerines,-2,2000,Aves,pre,2,0.132827836,13,27788.51104,control,5
+2004,Sonoran,NA,Birds:Passerines,-3,2001,Aves,pre,3,0.141474321,21,27788.51104,control,8
+2002,Sonoran,NA,Birds:Passerines,-1,2001,Aves,pre,1,0.141474321,21,27788.51104,control,8
+2004,Sonoran,NA,Birds:Passerines,-2,2002,Aves,pre,2,0.135388341,24,27788.51104,control,9
+2004,Sonoran,NA,Birds:Passerines,-1,2003,Aves,pre,1,0.144883038,19,27788.51104,control,7
+2002,Sonoran,NA,Birds:Passerines,1,2003,Aves,post,1,0.144883038,19,27788.51104,control,7
+2002,Sonoran,NA,Birds:Passerines,2,2004,Aves,post,2,0.143292682,24,27788.51104,control,9
+2002,Sonoran,NA,Birds:Passerines,3,2005,Aves,post,3,0.181760726,25,27788.51104,control,9
+2004,Sonoran,NA,Birds:Passerines,1,2005,Aves,post,1,0.181760726,25,27788.51104,control,9
+2010,Sonoran,NA,Birds:Passerines,-5,2005,Aves,pre,5,0.181760726,25,27788.51104,control,9
+2004,Sonoran,NA,Birds:Passerines,2,2006,Aves,post,2,0.146596154,38,27788.51104,control,14
+2010,Sonoran,NA,Birds:Passerines,-4,2006,Aves,pre,4,0.146596154,38,27788.51104,control,14
+2011,Sonoran,NA,Birds:Passerines,-5,2006,Aves,pre,5,0.146596154,38,27788.51104,control,14
+2002,Sonoran,NA,Birds:Passerines,4,2006,Aves,post,4,0.146596154,38,27788.51104,control,14
+2002,Sonoran,NA,Birds:Passerines,5,2007,Aves,post,5,0.136720739,29,27788.51104,control,11
+2012,Sonoran,NA,Birds:Passerines,-5,2007,Aves,pre,5,0.136720739,29,27788.51104,control,11
+2012,Sonoran,NA,Birds:Passerines,-5,2007,Aves,pre,5,0.136720739,29,27788.51104,control,11
+2004,Sonoran,NA,Birds:Passerines,3,2007,Aves,post,3,0.136720739,29,27788.51104,control,11
+2010,Sonoran,NA,Birds:Passerines,-3,2007,Aves,pre,3,0.136720739,29,27788.51104,control,11
+2011,Sonoran,NA,Birds:Passerines,-4,2007,Aves,pre,4,0.136720739,29,27788.51104,control,11
+2012,Sonoran,NA,Birds:Passerines,-4,2008,Aves,pre,4,0.143396571,42,27788.51104,control,16
+2012,Sonoran,NA,Birds:Passerines,-4,2008,Aves,pre,4,0.143396571,42,27788.51104,control,16
+2011,Sonoran,NA,Birds:Passerines,-3,2008,Aves,pre,3,0.143396571,42,27788.51104,control,16
+2004,Sonoran,NA,Birds:Passerines,4,2008,Aves,post,4,0.143396571,42,27788.51104,control,16
+2010,Sonoran,NA,Birds:Passerines,-2,2008,Aves,pre,2,0.143396571,42,27788.51104,control,16
+2012,Sonoran,NA,Birds:Passerines,-3,2009,Aves,pre,3,0.143741245,42,27788.51104,control,16
+2012,Sonoran,NA,Birds:Passerines,-3,2009,Aves,pre,3,0.143741245,42,27788.51104,control,16
+2011,Sonoran,NA,Birds:Passerines,-2,2009,Aves,pre,2,0.143741245,42,27788.51104,control,16
+2010,Sonoran,NA,Birds:Passerines,-1,2009,Aves,pre,1,0.143741245,42,27788.51104,control,16
+2004,Sonoran,NA,Birds:Passerines,5,2009,Aves,post,5,0.143741245,42,27788.51104,control,16
+2012,Sonoran,NA,Birds:Passerines,-2,2010,Aves,pre,2,0.154587191,69,27788.51104,control,25
+2011,Sonoran,NA,Birds:Passerines,-1,2010,Aves,pre,1,0.154587191,69,27788.51104,control,25
+2012,Sonoran,NA,Birds:Passerines,-2,2010,Aves,pre,2,0.154587191,69,27788.51104,control,25
+2010,Sonoran,NA,Birds:Passerines,1,2011,Aves,post,1,0.146383721,84,27788.51104,control,31
+2012,Sonoran,NA,Birds:Passerines,-1,2011,Aves,pre,1,0.146383721,84,27788.51104,control,31
+2012,Sonoran,NA,Birds:Passerines,-1,2011,Aves,pre,1,0.146383721,84,27788.51104,control,31
+2011,Sonoran,NA,Birds:Passerines,1,2012,Aves,post,1,0.140788474,126,27788.51104,control,46
+2010,Sonoran,NA,Birds:Passerines,2,2012,Aves,post,2,0.140788474,126,27788.51104,control,46
+2011,Sonoran,NA,Birds:Passerines,2,2013,Aves,post,2,0.142394357,172,27788.51104,control,62
+2012,Sonoran,NA,Birds:Passerines,1,2013,Aves,post,1,0.142394357,172,27788.51104,control,62
+2012,Sonoran,NA,Birds:Passerines,1,2013,Aves,post,1,0.142394357,172,27788.51104,control,62
+2010,Sonoran,NA,Birds:Passerines,3,2013,Aves,post,3,0.142394357,172,27788.51104,control,62
+2012,Sonoran,NA,Birds:Passerines,2,2014,Aves,post,2,0.136790804,172,27788.51104,control,62
+2011,Sonoran,NA,Birds:Passerines,3,2014,Aves,post,3,0.136790804,172,27788.51104,control,62
+2012,Sonoran,NA,Birds:Passerines,2,2014,Aves,post,2,0.136790804,172,27788.51104,control,62
+2010,Sonoran,NA,Birds:Passerines,4,2014,Aves,post,4,0.136790804,172,27788.51104,control,62
+2012,Sonoran,NA,Birds:Passerines,3,2015,Aves,post,3,0.133058923,171,27788.51104,control,62
+2011,Sonoran,NA,Birds:Passerines,4,2015,Aves,post,4,0.133058923,171,27788.51104,control,62
+2010,Sonoran,NA,Birds:Passerines,5,2015,Aves,post,5,0.133058923,171,27788.51104,control,62
+2012,Sonoran,NA,Birds:Passerines,3,2015,Aves,post,3,0.133058923,171,27788.51104,control,62
+2012,Sonoran,NA,Birds:Passerines,4,2016,Aves,post,4,0.129626829,151,27788.51104,control,55
+2012,Sonoran,NA,Birds:Passerines,4,2016,Aves,post,4,0.129626829,151,27788.51104,control,55
+2011,Sonoran,NA,Birds:Passerines,5,2016,Aves,post,5,0.129626829,151,27788.51104,control,55
+2012,Sonoran,NA,Birds:Passerines,5,2017,Aves,post,5,0.146697379,103,27788.51104,control,38
+2012,Sonoran,NA,Birds:Passerines,5,2017,Aves,post,5,0.146697379,103,27788.51104,control,38
+2002,Sonoran,NA,Birds:Rails and Geese,-2,2000,Aves,pre,2,0.132827836,1,27788.51104,control,1
+2004,Sonoran,NA,Birds:Rails and Geese,-4,2000,Aves,pre,4,0.132827836,1,27788.51104,control,1
+2011,Sonoran,NA,Birds:Rails and Geese,-4,2007,Aves,pre,4,0.136720739,1,27788.51104,control,1
+2012,Sonoran,NA,Birds:Rails and Geese,-5,2007,Aves,pre,5,0.136720739,1,27788.51104,control,1
+2010,Sonoran,NA,Birds:Rails and Geese,-3,2007,Aves,pre,3,0.136720739,1,27788.51104,control,1
+2012,Sonoran,NA,Birds:Rails and Geese,-5,2007,Aves,pre,5,0.136720739,1,27788.51104,control,1
+2004,Sonoran,NA,Birds:Rails and Geese,3,2007,Aves,post,3,0.136720739,1,27788.51104,control,1
+2002,Sonoran,NA,Birds:Rails and Geese,5,2007,Aves,post,5,0.136720739,1,27788.51104,control,1
+2012,Sonoran,NA,Birds:Rails and Geese,-4,2008,Aves,pre,4,0.143396571,2,27788.51104,control,1
+2011,Sonoran,NA,Birds:Rails and Geese,-3,2008,Aves,pre,3,0.143396571,2,27788.51104,control,1
+2012,Sonoran,NA,Birds:Rails and Geese,-4,2008,Aves,pre,4,0.143396571,2,27788.51104,control,1
+2004,Sonoran,NA,Birds:Rails and Geese,4,2008,Aves,post,4,0.143396571,2,27788.51104,control,1
+2010,Sonoran,NA,Birds:Rails and Geese,-2,2008,Aves,pre,2,0.143396571,2,27788.51104,control,1
+2004,Sonoran,NA,Birds:Rails and Geese,5,2009,Aves,post,5,0.143741245,1,27788.51104,control,1
+2012,Sonoran,NA,Birds:Rails and Geese,-3,2009,Aves,pre,3,0.143741245,1,27788.51104,control,1
+2011,Sonoran,NA,Birds:Rails and Geese,-2,2009,Aves,pre,2,0.143741245,1,27788.51104,control,1
+2012,Sonoran,NA,Birds:Rails and Geese,-3,2009,Aves,pre,3,0.143741245,1,27788.51104,control,1
+2010,Sonoran,NA,Birds:Rails and Geese,-1,2009,Aves,pre,1,0.143741245,1,27788.51104,control,1
+2011,Sonoran,NA,Birds:Rails and Geese,-1,2010,Aves,pre,1,0.154587191,1,27788.51104,control,1
+2012,Sonoran,NA,Birds:Rails and Geese,-2,2010,Aves,pre,2,0.154587191,1,27788.51104,control,1
+2012,Sonoran,NA,Birds:Rails and Geese,-2,2010,Aves,pre,2,0.154587191,1,27788.51104,control,1
+2012,Sonoran,NA,Birds:Rails and Geese,2,2014,Aves,post,2,0.136790804,1,27788.51104,control,1
+2012,Sonoran,NA,Birds:Rails and Geese,2,2014,Aves,post,2,0.136790804,1,27788.51104,control,1
+2010,Sonoran,NA,Birds:Rails and Geese,4,2014,Aves,post,4,0.136790804,1,27788.51104,control,1
+2011,Sonoran,NA,Birds:Rails and Geese,3,2014,Aves,post,3,0.136790804,1,27788.51104,control,1
+2012,Sonoran,NA,Birds:Rails and Geese,3,2015,Aves,post,3,0.133058923,4,27788.51104,control,2
+2012,Sonoran,NA,Birds:Rails and Geese,3,2015,Aves,post,3,0.133058923,4,27788.51104,control,2
+2011,Sonoran,NA,Birds:Rails and Geese,4,2015,Aves,post,4,0.133058923,4,27788.51104,control,2
+2010,Sonoran,NA,Birds:Rails and Geese,5,2015,Aves,post,5,0.133058923,4,27788.51104,control,2
+2012,Sonoran,NA,Birds:Rails and Geese,4,2016,Aves,post,4,0.129626829,2,27788.51104,control,1
+2011,Sonoran,NA,Birds:Rails and Geese,5,2016,Aves,post,5,0.129626829,2,27788.51104,control,1
+2012,Sonoran,NA,Birds:Rails and Geese,4,2016,Aves,post,4,0.129626829,2,27788.51104,control,1
+2012,Sonoran,NA,Birds:Rails and Geese,5,2017,Aves,post,5,0.146697379,1,27788.51104,control,1
+2012,Sonoran,NA,Birds:Rails and Geese,5,2017,Aves,post,5,0.146697379,1,27788.51104,control,1
+2002,Sonoran,NA,Birds:Raptors,-5,1997,Aves,pre,5,NA,3,27788.51104,control,2
+2002,Sonoran,NA,Birds:Raptors,-4,1998,Aves,pre,4,NA,2,27788.51104,control,1
+2002,Sonoran,NA,Birds:Raptors,-3,1999,Aves,pre,3,NA,4,27788.51104,control,2
+2004,Sonoran,NA,Birds:Raptors,-5,1999,Aves,pre,5,NA,4,27788.51104,control,2
+2002,Sonoran,NA,Birds:Raptors,-2,2000,Aves,pre,2,0.132827836,5,27788.51104,control,2
+2004,Sonoran,NA,Birds:Raptors,-4,2000,Aves,pre,4,0.132827836,5,27788.51104,control,2
+2002,Sonoran,NA,Birds:Raptors,-1,2001,Aves,pre,1,0.141474321,8,27788.51104,control,3
+2004,Sonoran,NA,Birds:Raptors,-3,2001,Aves,pre,3,0.141474321,8,27788.51104,control,3
+2004,Sonoran,NA,Birds:Raptors,-2,2002,Aves,pre,2,0.135388341,9,27788.51104,control,4
+2002,Sonoran,NA,Birds:Raptors,1,2003,Aves,post,1,0.144883038,14,27788.51104,control,6
+2004,Sonoran,NA,Birds:Raptors,-1,2003,Aves,pre,1,0.144883038,14,27788.51104,control,6
+2002,Sonoran,NA,Birds:Raptors,2,2004,Aves,post,2,0.143292682,4,27788.51104,control,2
+2010,Sonoran,NA,Birds:Raptors,-5,2005,Aves,pre,5,0.181760726,7,27788.51104,control,3
+2004,Sonoran,NA,Birds:Raptors,1,2005,Aves,post,1,0.181760726,7,27788.51104,control,3
+2002,Sonoran,NA,Birds:Raptors,3,2005,Aves,post,3,0.181760726,7,27788.51104,control,3
+2010,Sonoran,NA,Birds:Raptors,-4,2006,Aves,pre,4,0.146596154,16,27788.51104,control,6
+2011,Sonoran,NA,Birds:Raptors,-5,2006,Aves,pre,5,0.146596154,16,27788.51104,control,6
+2002,Sonoran,NA,Birds:Raptors,4,2006,Aves,post,4,0.146596154,16,27788.51104,control,6
+2004,Sonoran,NA,Birds:Raptors,2,2006,Aves,post,2,0.146596154,16,27788.51104,control,6
+2010,Sonoran,NA,Birds:Raptors,-3,2007,Aves,pre,3,0.136720739,11,27788.51104,control,4
+2011,Sonoran,NA,Birds:Raptors,-4,2007,Aves,pre,4,0.136720739,11,27788.51104,control,4
+2012,Sonoran,NA,Birds:Raptors,-5,2007,Aves,pre,5,0.136720739,11,27788.51104,control,4
+2004,Sonoran,NA,Birds:Raptors,3,2007,Aves,post,3,0.136720739,11,27788.51104,control,4
+2012,Sonoran,NA,Birds:Raptors,-5,2007,Aves,pre,5,0.136720739,11,27788.51104,control,4
+2002,Sonoran,NA,Birds:Raptors,5,2007,Aves,post,5,0.136720739,11,27788.51104,control,4
+2011,Sonoran,NA,Birds:Raptors,-3,2008,Aves,pre,3,0.143396571,24,27788.51104,control,9
+2012,Sonoran,NA,Birds:Raptors,-4,2008,Aves,pre,4,0.143396571,24,27788.51104,control,9
+2010,Sonoran,NA,Birds:Raptors,-2,2008,Aves,pre,2,0.143396571,24,27788.51104,control,9
+2004,Sonoran,NA,Birds:Raptors,4,2008,Aves,post,4,0.143396571,24,27788.51104,control,9
+2012,Sonoran,NA,Birds:Raptors,-4,2008,Aves,pre,4,0.143396571,24,27788.51104,control,9
+2004,Sonoran,NA,Birds:Raptors,5,2009,Aves,post,5,0.143741245,25,27788.51104,control,9
+2011,Sonoran,NA,Birds:Raptors,-2,2009,Aves,pre,2,0.143741245,25,27788.51104,control,9
+2010,Sonoran,NA,Birds:Raptors,-1,2009,Aves,pre,1,0.143741245,25,27788.51104,control,9
+2012,Sonoran,NA,Birds:Raptors,-3,2009,Aves,pre,3,0.143741245,25,27788.51104,control,9
+2012,Sonoran,NA,Birds:Raptors,-3,2009,Aves,pre,3,0.143741245,25,27788.51104,control,9
+2012,Sonoran,NA,Birds:Raptors,-2,2010,Aves,pre,2,0.154587191,44,27788.51104,control,16
+2012,Sonoran,NA,Birds:Raptors,-2,2010,Aves,pre,2,0.154587191,44,27788.51104,control,16
+2011,Sonoran,NA,Birds:Raptors,-1,2010,Aves,pre,1,0.154587191,44,27788.51104,control,16
+2010,Sonoran,NA,Birds:Raptors,1,2011,Aves,post,1,0.146383721,54,27788.51104,control,20
+2012,Sonoran,NA,Birds:Raptors,-1,2011,Aves,pre,1,0.146383721,54,27788.51104,control,20
+2012,Sonoran,NA,Birds:Raptors,-1,2011,Aves,pre,1,0.146383721,54,27788.51104,control,20
+2010,Sonoran,NA,Birds:Raptors,2,2012,Aves,post,2,0.140788474,78,27788.51104,control,29
+2011,Sonoran,NA,Birds:Raptors,1,2012,Aves,post,1,0.140788474,78,27788.51104,control,29
+2010,Sonoran,NA,Birds:Raptors,3,2013,Aves,post,3,0.142394357,105,27788.51104,control,38
+2012,Sonoran,NA,Birds:Raptors,1,2013,Aves,post,1,0.142394357,105,27788.51104,control,38
+2011,Sonoran,NA,Birds:Raptors,2,2013,Aves,post,2,0.142394357,105,27788.51104,control,38
+2012,Sonoran,NA,Birds:Raptors,1,2013,Aves,post,1,0.142394357,105,27788.51104,control,38
+2012,Sonoran,NA,Birds:Raptors,2,2014,Aves,post,2,0.136790804,81,27788.51104,control,30
+2012,Sonoran,NA,Birds:Raptors,2,2014,Aves,post,2,0.136790804,81,27788.51104,control,30
+2010,Sonoran,NA,Birds:Raptors,4,2014,Aves,post,4,0.136790804,81,27788.51104,control,30
+2011,Sonoran,NA,Birds:Raptors,3,2014,Aves,post,3,0.136790804,81,27788.51104,control,30
+2011,Sonoran,NA,Birds:Raptors,4,2015,Aves,post,4,0.133058923,72,27788.51104,control,26
+2012,Sonoran,NA,Birds:Raptors,3,2015,Aves,post,3,0.133058923,72,27788.51104,control,26
+2012,Sonoran,NA,Birds:Raptors,3,2015,Aves,post,3,0.133058923,72,27788.51104,control,26
+2010,Sonoran,NA,Birds:Raptors,5,2015,Aves,post,5,0.133058923,72,27788.51104,control,26
+2012,Sonoran,NA,Birds:Raptors,4,2016,Aves,post,4,0.129626829,143,27788.51104,control,52
+2011,Sonoran,NA,Birds:Raptors,5,2016,Aves,post,5,0.129626829,143,27788.51104,control,52
+2012,Sonoran,NA,Birds:Raptors,4,2016,Aves,post,4,0.129626829,143,27788.51104,control,52
+2012,Sonoran,NA,Birds:Raptors,5,2017,Aves,post,5,0.146697379,117,27788.51104,control,43
+2012,Sonoran,NA,Birds:Raptors,5,2017,Aves,post,5,0.146697379,117,27788.51104,control,43
+2002,Sonoran,NA,Birds:Woodpeckers,-5,1997,Aves,pre,5,NA,24,27788.51104,control,9
+2002,Sonoran,NA,Birds:Woodpeckers,-4,1998,Aves,pre,4,NA,26,27788.51104,control,10
+2002,Sonoran,NA,Birds:Woodpeckers,-3,1999,Aves,pre,3,NA,26,27788.51104,control,10
+2004,Sonoran,NA,Birds:Woodpeckers,-5,1999,Aves,pre,5,NA,26,27788.51104,control,10
+2004,Sonoran,NA,Birds:Woodpeckers,-4,2000,Aves,pre,4,0.132827836,18,27788.51104,control,7
+2002,Sonoran,NA,Birds:Woodpeckers,-2,2000,Aves,pre,2,0.132827836,18,27788.51104,control,7
+2002,Sonoran,NA,Birds:Woodpeckers,-1,2001,Aves,pre,1,0.141474321,32,27788.51104,control,12
+2004,Sonoran,NA,Birds:Woodpeckers,-3,2001,Aves,pre,3,0.141474321,32,27788.51104,control,12
+2004,Sonoran,NA,Birds:Woodpeckers,-2,2002,Aves,pre,2,0.135388341,53,27788.51104,control,20
+2004,Sonoran,NA,Birds:Woodpeckers,-1,2003,Aves,pre,1,0.144883038,64,27788.51104,control,24
+2002,Sonoran,NA,Birds:Woodpeckers,1,2003,Aves,post,1,0.144883038,64,27788.51104,control,24
+2002,Sonoran,NA,Birds:Woodpeckers,2,2004,Aves,post,2,0.143292682,58,27788.51104,control,21
+2010,Sonoran,NA,Birds:Woodpeckers,-5,2005,Aves,pre,5,0.181760726,63,27788.51104,control,23
+2004,Sonoran,NA,Birds:Woodpeckers,1,2005,Aves,post,1,0.181760726,63,27788.51104,control,23
+2002,Sonoran,NA,Birds:Woodpeckers,3,2005,Aves,post,3,0.181760726,63,27788.51104,control,23
+2004,Sonoran,NA,Birds:Woodpeckers,2,2006,Aves,post,2,0.146596154,67,27788.51104,control,25
+2011,Sonoran,NA,Birds:Woodpeckers,-5,2006,Aves,pre,5,0.146596154,67,27788.51104,control,25
+2002,Sonoran,NA,Birds:Woodpeckers,4,2006,Aves,post,4,0.146596154,67,27788.51104,control,25
+2010,Sonoran,NA,Birds:Woodpeckers,-4,2006,Aves,pre,4,0.146596154,67,27788.51104,control,25
+2012,Sonoran,NA,Birds:Woodpeckers,-5,2007,Aves,pre,5,0.136720739,79,27788.51104,control,29
+2002,Sonoran,NA,Birds:Woodpeckers,5,2007,Aves,post,5,0.136720739,79,27788.51104,control,29
+2004,Sonoran,NA,Birds:Woodpeckers,3,2007,Aves,post,3,0.136720739,79,27788.51104,control,29
+2010,Sonoran,NA,Birds:Woodpeckers,-3,2007,Aves,pre,3,0.136720739,79,27788.51104,control,29
+2011,Sonoran,NA,Birds:Woodpeckers,-4,2007,Aves,pre,4,0.136720739,79,27788.51104,control,29
+2012,Sonoran,NA,Birds:Woodpeckers,-5,2007,Aves,pre,5,0.136720739,79,27788.51104,control,29
+2011,Sonoran,NA,Birds:Woodpeckers,-3,2008,Aves,pre,3,0.143396571,91,27788.51104,control,33
+2012,Sonoran,NA,Birds:Woodpeckers,-4,2008,Aves,pre,4,0.143396571,91,27788.51104,control,33
+2010,Sonoran,NA,Birds:Woodpeckers,-2,2008,Aves,pre,2,0.143396571,91,27788.51104,control,33
+2012,Sonoran,NA,Birds:Woodpeckers,-4,2008,Aves,pre,4,0.143396571,91,27788.51104,control,33
+2004,Sonoran,NA,Birds:Woodpeckers,4,2008,Aves,post,4,0.143396571,91,27788.51104,control,33
+2004,Sonoran,NA,Birds:Woodpeckers,5,2009,Aves,post,5,0.143741245,78,27788.51104,control,29
+2011,Sonoran,NA,Birds:Woodpeckers,-2,2009,Aves,pre,2,0.143741245,78,27788.51104,control,29
+2010,Sonoran,NA,Birds:Woodpeckers,-1,2009,Aves,pre,1,0.143741245,78,27788.51104,control,29
+2012,Sonoran,NA,Birds:Woodpeckers,-3,2009,Aves,pre,3,0.143741245,78,27788.51104,control,29
+2012,Sonoran,NA,Birds:Woodpeckers,-3,2009,Aves,pre,3,0.143741245,78,27788.51104,control,29
+2012,Sonoran,NA,Birds:Woodpeckers,-2,2010,Aves,pre,2,0.154587191,164,27788.51104,control,60
+2011,Sonoran,NA,Birds:Woodpeckers,-1,2010,Aves,pre,1,0.154587191,164,27788.51104,control,60
+2012,Sonoran,NA,Birds:Woodpeckers,-2,2010,Aves,pre,2,0.154587191,164,27788.51104,control,60
+2010,Sonoran,NA,Birds:Woodpeckers,1,2011,Aves,post,1,0.146383721,165,27788.51104,control,60
+2012,Sonoran,NA,Birds:Woodpeckers,-1,2011,Aves,pre,1,0.146383721,165,27788.51104,control,60
+2012,Sonoran,NA,Birds:Woodpeckers,-1,2011,Aves,pre,1,0.146383721,165,27788.51104,control,60
+2010,Sonoran,NA,Birds:Woodpeckers,2,2012,Aves,post,2,0.140788474,200,27788.51104,control,72
+2011,Sonoran,NA,Birds:Woodpeckers,1,2012,Aves,post,1,0.140788474,200,27788.51104,control,72
+2012,Sonoran,NA,Birds:Woodpeckers,1,2013,Aves,post,1,0.142394357,211,27788.51104,control,76
+2010,Sonoran,NA,Birds:Woodpeckers,3,2013,Aves,post,3,0.142394357,211,27788.51104,control,76
+2012,Sonoran,NA,Birds:Woodpeckers,1,2013,Aves,post,1,0.142394357,211,27788.51104,control,76
+2011,Sonoran,NA,Birds:Woodpeckers,2,2013,Aves,post,2,0.142394357,211,27788.51104,control,76
+2012,Sonoran,NA,Birds:Woodpeckers,2,2014,Aves,post,2,0.136790804,201,27788.51104,control,73
+2012,Sonoran,NA,Birds:Woodpeckers,2,2014,Aves,post,2,0.136790804,201,27788.51104,control,73
+2010,Sonoran,NA,Birds:Woodpeckers,4,2014,Aves,post,4,0.136790804,201,27788.51104,control,73
+2011,Sonoran,NA,Birds:Woodpeckers,3,2014,Aves,post,3,0.136790804,201,27788.51104,control,73
+2012,Sonoran,NA,Birds:Woodpeckers,3,2015,Aves,post,3,0.133058923,226,27788.51104,control,82
+2011,Sonoran,NA,Birds:Woodpeckers,4,2015,Aves,post,4,0.133058923,226,27788.51104,control,82
+2010,Sonoran,NA,Birds:Woodpeckers,5,2015,Aves,post,5,0.133058923,226,27788.51104,control,82
+2012,Sonoran,NA,Birds:Woodpeckers,3,2015,Aves,post,3,0.133058923,226,27788.51104,control,82
+2011,Sonoran,NA,Birds:Woodpeckers,5,2016,Aves,post,5,0.129626829,160,27788.51104,control,58
+2012,Sonoran,NA,Birds:Woodpeckers,4,2016,Aves,post,4,0.129626829,160,27788.51104,control,58
+2012,Sonoran,NA,Birds:Woodpeckers,4,2016,Aves,post,4,0.129626829,160,27788.51104,control,58
+2012,Sonoran,NA,Birds:Woodpeckers,5,2017,Aves,post,5,0.146697379,200,27788.51104,control,72
+2012,Sonoran,NA,Birds:Woodpeckers,5,2017,Aves,post,5,0.146697379,200,27788.51104,control,72
+2010,Sonoran,NA,Butterflies & Moths,2,2012,Other,post,2,0.140788474,1,27788.51104,control,1
+2011,Sonoran,NA,Butterflies & Moths,1,2012,Other,post,1,0.140788474,1,27788.51104,control,1
+2010,Sonoran,NA,Butterflies & Moths,3,2013,Other,post,3,0.142394357,1,27788.51104,control,1
+2012,Sonoran,NA,Butterflies & Moths,1,2013,Other,post,1,0.142394357,1,27788.51104,control,1
+2011,Sonoran,NA,Butterflies & Moths,2,2013,Other,post,2,0.142394357,1,27788.51104,control,1
+2012,Sonoran,NA,Butterflies & Moths,1,2013,Other,post,1,0.142394357,1,27788.51104,control,1
+2012,Sonoran,NA,Butterflies & Moths,3,2015,Other,post,3,0.133058923,1,27788.51104,control,1
+2010,Sonoran,NA,Butterflies & Moths,5,2015,Other,post,5,0.133058923,1,27788.51104,control,1
+2011,Sonoran,NA,Butterflies & Moths,4,2015,Other,post,4,0.133058923,1,27788.51104,control,1
+2012,Sonoran,NA,Butterflies & Moths,3,2015,Other,post,3,0.133058923,1,27788.51104,control,1
+2012,Sonoran,NA,Butterflies & Moths,4,2016,Other,post,4,0.129626829,4,27788.51104,control,2
+2011,Sonoran,NA,Butterflies & Moths,5,2016,Other,post,5,0.129626829,4,27788.51104,control,2
+2012,Sonoran,NA,Butterflies & Moths,4,2016,Other,post,4,0.129626829,4,27788.51104,control,2
+2012,Sonoran,NA,Butterflies & Moths,5,2017,Other,post,5,0.146697379,10,27788.51104,control,4
+2012,Sonoran,NA,Butterflies & Moths,5,2017,Other,post,5,0.146697379,10,27788.51104,control,4
+2004,Sonoran,NA,Large Mammals,3,2007,Other,post,3,0.136720739,2,27788.51104,control,1
+2012,Sonoran,NA,Large Mammals,-5,2007,Other,pre,5,0.136720739,2,27788.51104,control,1
+2012,Sonoran,NA,Large Mammals,-5,2007,Other,pre,5,0.136720739,2,27788.51104,control,1
+2011,Sonoran,NA,Large Mammals,-4,2007,Other,pre,4,0.136720739,2,27788.51104,control,1
+2010,Sonoran,NA,Large Mammals,-3,2007,Other,pre,3,0.136720739,2,27788.51104,control,1
+2002,Sonoran,NA,Large Mammals,5,2007,Other,post,5,0.136720739,2,27788.51104,control,1
+2012,Sonoran,NA,Large Mammals,-4,2008,Other,pre,4,0.143396571,1,27788.51104,control,1
+2010,Sonoran,NA,Large Mammals,-2,2008,Other,pre,2,0.143396571,1,27788.51104,control,1
+2012,Sonoran,NA,Large Mammals,-4,2008,Other,pre,4,0.143396571,1,27788.51104,control,1
+2011,Sonoran,NA,Large Mammals,-3,2008,Other,pre,3,0.143396571,1,27788.51104,control,1
+2004,Sonoran,NA,Large Mammals,4,2008,Other,post,4,0.143396571,1,27788.51104,control,1
+2012,Sonoran,NA,Large Mammals,-3,2009,Other,pre,3,0.143741245,3,27788.51104,control,2
+2004,Sonoran,NA,Large Mammals,5,2009,Other,post,5,0.143741245,3,27788.51104,control,2
+2011,Sonoran,NA,Large Mammals,-2,2009,Other,pre,2,0.143741245,3,27788.51104,control,2
+2010,Sonoran,NA,Large Mammals,-1,2009,Other,pre,1,0.143741245,3,27788.51104,control,2
+2012,Sonoran,NA,Large Mammals,-3,2009,Other,pre,3,0.143741245,3,27788.51104,control,2
+2012,Sonoran,NA,Large Mammals,-2,2010,Other,pre,2,0.154587191,2,27788.51104,control,1
+2011,Sonoran,NA,Large Mammals,-1,2010,Other,pre,1,0.154587191,2,27788.51104,control,1
+2012,Sonoran,NA,Large Mammals,-2,2010,Other,pre,2,0.154587191,2,27788.51104,control,1
+2012,Sonoran,NA,Large Mammals,-1,2011,Other,pre,1,0.146383721,1,27788.51104,control,1
+2010,Sonoran,NA,Large Mammals,1,2011,Other,post,1,0.146383721,1,27788.51104,control,1
+2012,Sonoran,NA,Large Mammals,-1,2011,Other,pre,1,0.146383721,1,27788.51104,control,1
+2011,Sonoran,NA,Large Mammals,1,2012,Other,post,1,0.140788474,5,27788.51104,control,2
+2010,Sonoran,NA,Large Mammals,2,2012,Other,post,2,0.140788474,5,27788.51104,control,2
+2012,Sonoran,NA,Large Mammals,1,2013,Other,post,1,0.142394357,10,27788.51104,control,4
+2012,Sonoran,NA,Large Mammals,1,2013,Other,post,1,0.142394357,10,27788.51104,control,4
+2011,Sonoran,NA,Large Mammals,2,2013,Other,post,2,0.142394357,10,27788.51104,control,4
+2010,Sonoran,NA,Large Mammals,3,2013,Other,post,3,0.142394357,10,27788.51104,control,4
+2012,Sonoran,NA,Large Mammals,2,2014,Other,post,2,0.136790804,9,27788.51104,control,4
+2012,Sonoran,NA,Large Mammals,2,2014,Other,post,2,0.136790804,9,27788.51104,control,4
+2011,Sonoran,NA,Large Mammals,3,2014,Other,post,3,0.136790804,9,27788.51104,control,4
+2010,Sonoran,NA,Large Mammals,4,2014,Other,post,4,0.136790804,9,27788.51104,control,4
+2012,Sonoran,NA,Large Mammals,3,2015,Other,post,3,0.133058923,12,27788.51104,control,5
+2012,Sonoran,NA,Large Mammals,3,2015,Other,post,3,0.133058923,12,27788.51104,control,5
+2010,Sonoran,NA,Large Mammals,5,2015,Other,post,5,0.133058923,12,27788.51104,control,5
+2011,Sonoran,NA,Large Mammals,4,2015,Other,post,4,0.133058923,12,27788.51104,control,5
+2012,Sonoran,NA,Large Mammals,4,2016,Other,post,4,0.129626829,46,27788.51104,control,17
+2012,Sonoran,NA,Large Mammals,4,2016,Other,post,4,0.129626829,46,27788.51104,control,17
+2011,Sonoran,NA,Large Mammals,5,2016,Other,post,5,0.129626829,46,27788.51104,control,17
+2012,Sonoran,NA,Large Mammals,5,2017,Other,post,5,0.146697379,64,27788.51104,control,24
+2012,Sonoran,NA,Large Mammals,5,2017,Other,post,5,0.146697379,64,27788.51104,control,24
+2004,Sonoran,NA,Tortoises,2,2006,Other,post,2,0.146596154,1,27788.51104,control,1
+2011,Sonoran,NA,Tortoises,-5,2006,Other,pre,5,0.146596154,1,27788.51104,control,1
+2002,Sonoran,NA,Tortoises,4,2006,Other,post,4,0.146596154,1,27788.51104,control,1
+2010,Sonoran,NA,Tortoises,-4,2006,Other,pre,4,0.146596154,1,27788.51104,control,1
+2012,Sonoran,NA,Tortoises,-1,2011,Other,pre,1,0.146383721,2,27788.51104,control,1
+2012,Sonoran,NA,Tortoises,-1,2011,Other,pre,1,0.146383721,2,27788.51104,control,1
+2010,Sonoran,NA,Tortoises,1,2011,Other,post,1,0.146383721,2,27788.51104,control,1
+2010,Sonoran,NA,Tortoises,2,2012,Other,post,2,0.140788474,2,27788.51104,control,1
+2011,Sonoran,NA,Tortoises,1,2012,Other,post,1,0.140788474,2,27788.51104,control,1
+2012,Sonoran,NA,Tortoises,1,2013,Other,post,1,0.142394357,2,27788.51104,control,1
+2011,Sonoran,NA,Tortoises,2,2013,Other,post,2,0.142394357,2,27788.51104,control,1
+2012,Sonoran,NA,Tortoises,1,2013,Other,post,1,0.142394357,2,27788.51104,control,1
+2010,Sonoran,NA,Tortoises,3,2013,Other,post,3,0.142394357,2,27788.51104,control,1
+2011,Sonoran,NA,Tortoises,3,2014,Other,post,3,0.136790804,4,27788.51104,control,2
+2012,Sonoran,NA,Tortoises,2,2014,Other,post,2,0.136790804,4,27788.51104,control,2
+2010,Sonoran,NA,Tortoises,4,2014,Other,post,4,0.136790804,4,27788.51104,control,2
+2012,Sonoran,NA,Tortoises,2,2014,Other,post,2,0.136790804,4,27788.51104,control,2
+2012,Sonoran,NA,Tortoises,3,2015,Other,post,3,0.133058923,9,27788.51104,control,4
+2012,Sonoran,NA,Tortoises,3,2015,Other,post,3,0.133058923,9,27788.51104,control,4
+2011,Sonoran,NA,Tortoises,4,2015,Other,post,4,0.133058923,9,27788.51104,control,4
+2010,Sonoran,NA,Tortoises,5,2015,Other,post,5,0.133058923,9,27788.51104,control,4
+2012,Sonoran,NA,Tortoises,4,2016,Other,post,4,0.129626829,6,27788.51104,control,3
+2012,Sonoran,NA,Tortoises,4,2016,Other,post,4,0.129626829,6,27788.51104,control,3
+2011,Sonoran,NA,Tortoises,5,2016,Other,post,5,0.129626829,6,27788.51104,control,3
+2012,Sonoran,NA,Tortoises,5,2017,Other,post,5,0.146697379,31,27788.51104,control,12
+2012,Sonoran,NA,Tortoises,5,2017,Other,post,5,0.146697379,31,27788.51104,control,12
