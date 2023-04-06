@@ -40,6 +40,22 @@ setwd("~/GitHub/desert-fires-impact-biodiversity")
 ##code for data below
 animals <- read_csv("~/GitHub/desert-fires-impact-biodiversity/data/csv-for-r/animals.csv")
 data_pp <- read_csv("~/GitHub/desert-fires-impact-biodiversity/data/csv-for-r/data_pre-post.csv")
+ndvi <- read_csv("data/ndvi.csv")
+areas <- read.csv('data/areas.csv')
+sites <- read_csv("data/sites.csv")
+
+data <- animals %>%
+  filter(obsYear > 1994) %>% 
+  group_by(obsYear, ez_taxa, simplified_taxa, treatmentGroup, desert) %>% 
+  summarize(totalObs = sum(individualCount), totalOcc = n())%>% 
+  #left_join(., ndvi, by = c("desert", "obsYear", "treatmentGroup")) %>% #add ndvi
+  left_join(., areas, by = c("desert", "treatmentGroup")) %>% #add area
+  mutate(stzd_totalObs = ceiling((totalObs * 1000)/area_km2), #standardize observations
+         stzd_Occ = ceiling((totalOcc * 1000)/area_km2),
+         desert = as.factor(desert),
+         treatmentGroup = as.factor(treatmentGroup),
+         #obsYear = as.factor(obsYear),
+         ez_taxa = as.factor(ez_taxa))
 ```
 
 ``` {r data, include=FALSE, eval=FALSE}
@@ -57,7 +73,7 @@ animals <- st_read("shapefiles/animals/animals_51022.shp") %>%
          fireYear = FIRE_YEARn, fireSize = GISAcres) %>% 
   dplyr::select(-c("verbatimSc", "issue", "coordinate", 'nearRd_FID', "nearUA_FID", 
             'basisOfRec', 'institutionalCode', 'collection', 'recordedBy', 'nearRdDist', 'nearUADist')) %>% 
-  filter(obsYear > 1994, obsYear < 2021, species != "Canis lupus", species != "Balaenoptera musculus", 
+  filter(obsYear > 1994, obsYear < 2021, species != "Canis lupus", species != "Balaenoptera musculus", species!= "Branchinecta lynchi",
          species != "Grus canadensis", treatmentGroup != "burned prior 2000") %>%  
   mutate(funcGroup =
                      ifelse(genus == "Puma" | genus == "Ovis", "Large Mammals",
@@ -114,137 +130,242 @@ data_2000 <- filter(data, obsYear > 1999) # filter out anything before 2000 sinc
 write_csv(animals, "~/GitHub/desert-fires-impact-biodiversity/data/csv-for-r/animals.csv")
 
 ```
-```{r prepare recovery data, include = FALSE, eval=FALSE}
+## EDA
+Table showing # of occurrences reported per **1,000km^2**; table 
+```{r table, echo=FALSE}
+#table showing summarized values (standardized to obs per 1,000km2)
+animals %>% 
+  rename(fireArea_km2 = area_km2) %>% 
+  left_join(ndvi, by = c("obsYear", "desert", "treatmentGroup")) %>% 
+  left_join(areas, by = c('desert', "treatmentGroup")) %>% 
+  group_by(treatmentGroup, desert, ez_taxa) %>%
+  summarize(area_km2 = round(mean(area_km2)),totalOccReported =n(), totalORPer1000km2 = ceiling(sum(totalOccReported/area_km2 * 1000)))
+
+ndvi %>% 
+  filter(obsYear <=2020) %>% 
+  group_by(treatmentGroup, desert) %>%
+  summarize(mean_ndvi = round(mean(ndvi), digits = 2), sd_ndvi = round(sd(ndvi), digits = 2))
+
+# animals %>% 
+#   rename(fireArea_km2 = area_km2) %>% 
+#   left_join(ndvi, by = c("obsYear", "desert", "treatmentGroup")) %>% 
+#   left_join(areas, by = c('desert', "treatmentGroup")) %>% 
+#   group_by(treatmentGroup, desert, ez_taxa, obsYear) %>%
+#   summarize(area_km2 = round(mean(area_km2)),totalOccReported =n(), totalORPer1000km2 = ceiling(sum(totalOccReported/area_km2 * 1000))) %>% 
+#   ggplot(aes(x = treatmentGroup, y =totalORPer1000km2, color = desert )) +
+#   geom_boxplot() +
+#   facet_grid(vars(ez_taxa))
 
 
-
-burned <- animals %>% 
-  filter(treatmentGroup == "burned") %>% 
-  merge(.,sites[,c("fireID", "fireMonth")], by = "fireID") %>% #NEED to add fire months
-  mutate(yearsSinceFire = obsYear - fireYear, 
-         pre_or_post = case_when(yearsSinceFire > 0 ~ "post",
-                                 yearsSinceFire < 0 ~ "pre",
-                                 yearsSinceFire == 0 ~ "SY"),
-         n_years = abs(yearsSinceFire))
-
-#find pre- post- for observations in the same year and replace SY in datafire with pre or post
-SY <- filter(burned, yearsSinceFire == 0) %>% 
-  mutate(postingmonth = obsMonth - fireMonth,
-         pre_or_post = case_when(postingmonth >0 ~ "post",
-                                 postingmonth < 0 ~ "pre",
-                                 yearsSinceFire == 0 ~ "SM")) %>% 
-  dplyr::select(-postingmonth)
-
-burned <- burned %>% filter(pre_or_post != "SY") %>% 
-  rbind(., SY)
-
-unique(burned$pre_or_post) #check if any SM (same month); would need to further categorize
-
-burned <- left_join(burned, ndvi, by = c("desert", "obsYear", "treatmentGroup"))
 ```
-```{r data for pre-/post- all, include=FALSE, eval=FALSE}
-###data for pre-/post- burned sites ALL
-data_pp_b1 <-  burned %>% 
-  filter(n_years <=5) %>% 
-  dplyr::select(c("ez_taxa", "funcGroup", "individualCount", 
-                  "obsYear", "desert", "fireID", 
-                  "fireName", "fireYear", "fireMonth", 
-                  "yearsSinceFire", "pre_or_post", "n_years", "ndvi")) %>% 
-  group_by(desert, obsYear, fireID, 
-           fireYear, yearsSinceFire, 
-           ez_taxa, funcGroup, 
-           pre_or_post, n_years, ndvi) %>% 
-  summarize(totalObs = n()) %>% 
-  left_join(., filter(areas, treatmentGroup == "burned"), by = "desert") %>% #add area
-  mutate(stzdObs = ceiling((totalObs/area_km2)*10000)) %>% 
-  ungroup() %>% group_by(desert) 
+Figures NDVI and occurrences
+```{r viz on NDVI & occurrences, echo=FALSE}
+#boxplot showing mean annual NDVI  
+p1 <- ggplot(ndvi, aes(x = desert, y = ndvi, color = fct_rev(factor(treatmentGroup)))) +
+  geom_boxplot(outlier.shape = 18)  +
+  ylab("Annual Mean NDVI") +
+  xlab("") +
+  scale_color_aaas(labels=c("Control", "Burned area")) + 
+  labs(color = "Burn Treatment") +
+  theme_bw() + 
+  theme(axis.text.y = element_text(size = 12), 
+        axis.text.x = element_text(size = 12),
+        axis.title.x = element_text(size = 12),
+        axis.title.y = element_text(size = 12),
+        axis.ticks.x = element_blank(),
+        panel.grid.major.y = element_blank()) +
+  coord_flip() 
 
-unique(data_pp_b1$funcGroup)
-
-### add zeros for years with no occurrences reported
-fireYear <- data_pp_b1 %>% 
-  filter(n_years <=5) %>% 
-  group_by(fireYear, desert, fireID) %>% 
-  summarize(total = n()) %>% 
-  dplyr::select(-total) %>% 
-  filter(fireYear <= 2015)
-
-#repeats each 8 functional groups * 11 years for -5 to +5
-data_pp_b2 <- data.frame(rep(fireYear$fireYear, each = (length(unique(data_pp_b1$funcGroup)) * 11)), 
-                         rep(fireYear$desert, each = (length(unique(data_pp_b1$funcGroup)) * 11)), 
-                         rep(fireYear$fireID, each = (length(unique(data_pp_b1$funcGroup)) * 11)), 
-                         rep ((unique(data_pp_b1$funcGroup)), 
-                              each = 11, times = nrow(fireYear)))
-
-names(data_pp_b2)[1] <- "fireYear"
-names(data_pp_b2)[2] <- "desert"
-names(data_pp_b2)[3] <- "fireID"
-names(data_pp_b2)[4] <- "funcGroup"
-
-#second column = list of +/- since fire / from -5 to +5
-data_pp_b2$yearsSinceFire<- rep(-5:5, nrow(fireYear))
-
-#make a column with obsYear
-data_pp_b2 <- data_pp_b2 %>% mutate(obsYear = fireYear + yearsSinceFire)
-
-#merge the occurrences for burn sites with the data frame created and replace with zeros when no occurrences were reported
-data_pp_b2<- left_join(data_pp_b2, data_pp_b1, 
-                       by = c("desert", "obsYear", "fireYear", "fireID", "yearsSinceFire", "funcGroup")) %>% 
-  filter(yearsSinceFire != 0 | yearsSinceFire == 0 & !is.na(pre_or_post)) %>% 
-  mutate(treatmentGroup = ifelse(is.na(treatmentGroup), "burned", treatmentGroup),
-         pre_or_post = ifelse(is.na(pre_or_post), case_when(yearsSinceFire > 0 ~ "post",
-                                                            yearsSinceFire < 0 ~ "pre",
-                                                            yearsSinceFire == 0 ~ "same year"), pre_or_post))
-
-###data for pre-/post- control sites###
-
-#first column = list of fireYear
-###old code
-# fireYear <- data_pp_b %>% filter(n_years <=5) %>% {unique(.$fireYear)} %>% sort() %>% rep(.,each=11)
+animals %>% 
+  rename(fireArea_km2 = area_km2) %>% 
+  left_join(ndvi, by = c("obsYear", "desert", "treatmentGroup")) %>% 
+  left_join(areas, by = c('desert', "treatmentGroup")) %>% 
+  group_by(treatmentGroup, desert, ez_taxa, obsYear) %>%
+  summarize(area_km2 = round(mean(area_km2)),totalOccReported =n(), totalORPer1000km2 = ceiling(sum(totalOccReported/area_km2 * 1000))) %>% 
+  group_by(treatmentGroup, desert, ez_taxa) %>%
+  summarize(yrlyAvgOccReported = ceiling(mean(totalOccReported)), 
+            yrlyAvgORPer1000km2 = ceiling(mean(totalORPer1000km2)),
+            sd_avgORper1000km2 = sd(totalORPer1000km2), SEM = 2*sd_avgORper1000km2/sqrt(n())) %>% 
+  ggplot(aes(x = desert, y = yrlyAvgORPer1000km2, shape = fct_rev(as.factor(treatmentGroup)))) +
+  geom_pointrange(aes(ymin = yrlyAvgORPer1000km2-SEM, ymax = yrlyAvgORPer1000km2+SEM, color = fct_rev(as.factor(treatmentGroup))), position = position_dodge(width = 0.3)) +
+  ylab(bquote('Average Yearly Occurrences Reported per 1,000km'^2)) +
+  theme_bw() + 
+  theme(axis.text.y = element_text(size = 12), 
+        axis.text.x = element_text(size = 12),
+        axis.title.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.title.y = element_text(size = 12),
+        panel.grid.major.y = element_blank()) +
+  scale_y_continuous(breaks = c(seq(from = 0, to = 33, by = 6)), limits = c(0, NA))+
+  facet_grid(vars(ez_taxa)) +
+  scale_color_aaas(labels=c("Control", "Burned area")) +
+  scale_shape_discrete(labels=c("Control", "Burned area")) +
+  labs(color = "Burn Treatment", shape = "Burn Treatment")
 
 
-data_c <- data.frame(rep(fireYear$fireYear, each = (length(unique(data_pp_b1$funcGroup)) * 11)), 
-                     rep(fireYear$desert, each = (length(unique(data_pp_b1$funcGroup)) * 11)), 
-                     rep((unique(data_pp_b1$funcGroup)), each = 11, times = nrow(fireYear)))
+p1
+animals %>% 
+  rename(fireArea_km2 = area_km2) %>% 
+  left_join(ndvi, by = c("obsYear", "desert", "treatmentGroup")) %>% 
+  left_join(areas, by = c('desert', "treatmentGroup")) %>% 
+  group_by(treatmentGroup, desert, ez_taxa) %>%
+  summarize(totalObs =n(), area_km2 = round(mean(area_km2)), totalObsPer1000km2 = ceiling(sum(totalObs/area_km2 * 1000)))
 
-names(data_c)[1] <- "fireYear"
-names(data_c)[2] <- "desert"
-names(data_c)[3] <- "funcGroup"
+#graph of occurrences reported over time
 
-#second column = list of +/- since fire / from -5 to +5
-data_c$yearsSinceFire<- rep(-5:5, nrow(fireYear))
+#### both aves and other on one graph
+# ggplot(data, aes(x = obsYear, y = stzd_Occ, color = treatmentGroup)) +
+#   geom_point(shape = 17, alpha = 0.65)+
+#   geom_smooth(method = "glm", aes(linetype = ez_taxa), se = FALSE) +
+#   ylim(0, NA) +
+#   scale_color_aaas(labels=c("Control", "Burned area")) +
+#   scale_linetype_discrete(labels=c("Aves", "Other")) +
+#   facet_grid(vars(desert), scales = "free")
 
-#make a column with obsYear
-data_c <- data_c %>% mutate(obsYear = fireYear + yearsSinceFire)
 
+plot1 <- ggplot(filter(data, ez_taxa == "Aves"), aes(x = obsYear, y = stzd_Occ, color = treatmentGroup)) +
+  geom_point(shape = 17, alpha = 0.65)+
+  geom_smooth(method = "glm", se = TRUE) +
+  ylim(0, NA) +
+  theme_bw() +
+  scale_color_aaas(labels=c("Control", "Burned area")) +
+  theme(legend.title=element_blank(),
+        legend.position="top") +
+  facet_grid(vars(desert), scales = "free") 
 
-totalObs <- animals %>% 
-  filter(treatmentGroup == "never burned") %>% 
-  group_by(obsYear, desert, ez_taxa, funcGroup) %>% 
-  summarize(totalObs = n())
+plot2 <- ggplot(filter(data, ez_taxa == "Other"), aes(x = obsYear, y = stzd_Occ, color = treatmentGroup)) +
+  geom_point(shape = 17, alpha = 0.65)+
+  geom_smooth(method = "glm", se = TRUE) +
+  ylim(0, NA) +
+  theme_bw() +
+  theme(legend.title=element_blank(),
+        legend.position="top") +
+  scale_color_aaas(labels=c("Control", "Burned area")) +
+  facet_grid(vars(desert), scales = "free")
 
-data_c <- merge(data_c, totalObs) %>% mutate(pre_or_post = case_when(yearsSinceFire > 0 ~ "post",
-                                                                     yearsSinceFire < 0 ~ "pre",
-                                                                     yearsSinceFire == 0 ~ "same year")) %>% 
-  left_join(., filter(ndvi, treatmentGroup == "never burned"), by = c("desert", "obsYear")) %>%#add ndvi
-  dplyr::select(-treatmentGroup) %>% 
-  left_join(., filter(areas, treatmentGroup == "never burned"), by = "desert") %>% #add area
-  mutate(stzdObs = ceiling((totalObs/area_km2)*10000), treatmentGroup = "control",
-         n_years = abs(yearsSinceFire),
-         fireID = NA) %>% 
-  filter(yearsSinceFire != 0)
+plot_grid(plot1, plot2, labels = c("A", "B"), label_size = 12)
 
-data_pp <- rbind(data_pp_b2, data_c) %>% 
-  mutate(pre_or_post = factor(pre_or_post, levels = c( "pre", "post")), 
-         treatmentGroup = factor(treatmentGroup, levels = c("control", "burned")),
-         desert = as.factor(desert),
-         totalObs = ifelse(is.na(totalObs), 0, totalObs),
-         stzdObs = ifelse(is.na(stzdObs), 0, stzdObs)) # Total Obs NA -> 0 )
-
-write_csv(data_pp, "~/GitHub/desert-fires-impact-biodiversity/data/csv-for-r/data_pre-post.csv")
 ```
+### Stats
+```{r stats occ reported annually, echo=FALSE}
+library(performance)
 
-## Occurrences before and after fire
+##glmm
+glmm1 <- glmmTMB(stzd_Occ ~ obsYear + treatmentGroup + (1|desert), 
+               data = data, family = "nbinom2")
+check_overdispersion(glmm1)
+
+glmm_aves <- glmmTMB(stzd_Occ ~ obsYear + treatmentGroup + (1|desert),
+               data = filter(data, ez_taxa == "Aves"),
+               family = "nbinom1")
+check_overdispersion(glmm_aves)
+
+glmm_other <- glmmTMB(stzd_Occ ~ obsYear + treatmentGroup + (1|desert),
+               data = filter(data, ez_taxa == "Other"),
+               family = "nbinom1")
+check_overdispersion(glmm_other)
+
+summary(glmm1)
+summary(glmm_aves)
+summary(glmm_other)
+
+##emmeans for glmm
+
+#all
+emm_pp <- emmeans(glmm1, pairwise ~ treatmentGroup)
+summary(emm_pp)
+
+#aves
+emm_pp <- emmeans(glmm_aves, pairwise ~ treatmentGroup)
+summary(emm_pp)
+
+#other
+emm_pp <- emmeans(glmm_other, pairwise ~ treatmentGroup)
+summary(emm_pp)
+
+
+##glmm
+glm1 <- glm.nb(stzd_Occ ~ obsYear + treatmentGroup + desert, 
+               data = data)
+check_overdispersion(glm1)
+
+glm_aves <-glm(stzd_Occ ~ obsYear + treatmentGroup + desert, 
+               data = filter(data, ez_taxa == "Aves"),
+               family = "poisson")
+check_overdispersion(glm_aves)
+
+glm_other <-glm(stzd_Occ ~ obsYear + treatmentGroup + desert, 
+               data = filter(data, ez_taxa == "Other"),
+               family = "poisson")
+check_overdispersion(glm_other)
+
+summary(glm1)
+summary(glm_aves)
+summary(glm_other)
+
+##emmeans for glmm
+
+#all
+emm_pp <- emmeans(glm1, pairwise ~ desert)
+summary(emm_pp)
+
+emm_pp <- emmeans(glm1, pairwise ~ treatmentGroup)
+summary(emm_pp)
+
+#aves
+emm_pp <- emmeans(glm_aves, pairwise ~ desert)
+summary(emm_pp)
+
+emm_pp <- emmeans(glm_aves, pairwise ~ treatmentGroup)
+summary(emm_pp)
+
+#other
+emm_pp <- emmeans(glm_other, pairwise ~ desert)
+summary(emm_pp)
+
+emm_pp <- emmeans(glm_other, pairwise ~ treatmentGroup)
+summary(emm_pp)
+
+```
+```{r stats occ ~ ndvi, echo = FALSE}
+library(performance)
+
+data1 <- data %>% filter(obsYear > 1999) %>% 
+  left_join(., ndvi, by = c("obsYear", "treatmentGroup", "desert"))
+
+glmm1 <- glmmTMB(stzd_Occ ~ ndvi * treatmentGroup + (1|desert), 
+               data = data1,
+               family = "nbinom2")
+check_overdispersion(glmm1)
+
+glmm_aves <-glmmTMB(stzd_Occ ~ ndvi * treatmentGroup + (1|desert),
+               data = filter(data1, ez_taxa == "Aves"),
+               family = "poisson")
+check_overdispersion(glmm_aves)
+
+glmm_other <-glmmTMB(stzd_Occ ~ ndvi * treatmentGroup + (1|desert),
+               data = filter(data1, ez_taxa == "Other"),
+               family = "poisson")
+check_overdispersion(glmm_other)
+
+summary(glmm1)
+summary(glmm_aves)
+summary(glmm_other)
+
+#all
+emm_pp <- emmeans(glmm1, pairwise ~ treatmentGroup)
+summary(emm_pp)
+
+#aves
+emm_pp <- emmeans(glmm_aves, pairwise ~ treatmentGroup)
+summary(emm_pp)
+
+#other
+emm_pp <- emmeans(glmm_other, pairwise ~ treatmentGroup)
+summary(emm_pp)
+```
+## Recovery
+Occurrences before and after fire
 ### GLMM model w/ emmeans - pre/post
 
 #### passerine and raptor only
@@ -345,9 +466,6 @@ summary(pp_nbNA)
 null <- glmmTMB(mean_occurrence ~ 1, family = nbinom1, data = data_pp_5yrNA)
 stepAIC(pp_nbNA, scope=list(lower=null, upper=pp_nbNA), data=data_pp_5yr_aves, direction='backward')
 
-pp_nbNA <- glmmTMB(mean_occurrence ~ pre_or_post*treatmentGroup +  (1|desert), family = nbinom2, data = data_pp_5yrNA)
-
-
 emm_pp <- emmeans(pp_nbNA, pairwise ~ pre_or_post + treatmentGroup)
 summary(emm_pp)
 
@@ -364,6 +482,21 @@ emm_pp <- emmeans(pp_nbNA, pairwise ~ pre_or_post|treatmentGroup)
 summary(emm_pp)
 
 emm_pp <- emmeans(pp_nbNA, pairwise ~ treatmentGroup|pre_or_post)
+summary(emm_pp)
+
+pp_nbNA1 <- glmmTMB(mean_occurrence ~ pre_or_post*treatmentGroup +  (1|desert), family = nbinom2, data = data_pp_5yrNA)
+
+
+emm_pp <- emmeans(pp_nbNA1, pairwise ~ pre_or_post + treatmentGroup)
+summary(emm_pp)
+
+emm_pp <- emmeans(pp_nbNA1, pairwise ~ treatmentGroup)
+summary(emm_pp)
+
+emm_pp <- emmeans(pp_nbNA1, pairwise ~ pre_or_post|treatmentGroup)
+summary(emm_pp)
+
+emm_pp <- emmeans(pp_nbNA1, pairwise ~ treatmentGroup|pre_or_post)
 summary(emm_pp)
 ```
 
@@ -400,6 +533,13 @@ summary(emm_pp)
 
 emm_pp <- emmeans(pp_nbAS, pairwise ~ treatmentGroup|pre_or_post)
 summary(emm_pp)
+
+emm_pp <- emmeans(pp_nbAS, pairwise ~ treatmentGroup|ez_taxa)
+summary(emm_pp)
+
+emm_pp <- emmeans(pp_nbAS, pairwise ~ ez_taxa|pre_or_post)
+summary(emm_pp)
+
 ```
 
 ### graphs
@@ -468,145 +608,7 @@ ggplot(data_pp_5yrAS, aes(x = treatmentGroup, y =  mean_occurrence, fill = facto
   facet_grid(vars(desert))
 ```
 
-## Recovery over-time - manual
-```{r data for over-time, include=FALSE}
-
-###data for over-time for burned sites
-burned <- animals %>% 
-  filter(treatmentGroup == "burned") %>% 
-  merge(.,sites[,c("fireID", "fireMonth")], by = "fireID") %>% #NEED to add fire months
-  mutate(yearsSinceFire = obsYear - fireYear, 
-         pre_or_post = case_when(yearsSinceFire > 0 ~ "post",
-                                 yearsSinceFire < 0 ~ "pre",
-                                 yearsSinceFire == 0 ~ "SY"),
-         n_years = abs(yearsSinceFire))
-
-#find pre- post- for observations in the same year and replace SY in datafire with pre or post
-SY <- filter(burned, yearsSinceFire == 0) %>% 
-  mutate(postingmonth = obsMonth - fireMonth,
-         pre_or_post = case_when(postingmonth >0 ~ "post",
-                                 postingmonth < 0 ~ "pre",
-                                 yearsSinceFire == 0 ~ "SM")) %>% 
-  dplyr::select(-postingmonth)
-
-burned <- burned %>% filter(pre_or_post != "SY") %>% 
-  rbind(., SY)
-
-unique(burned$pre_or_post) #check if any SM (same month); would need to further categorize
-
-burned <- burned %>% 
-  filter(pre_or_post == "post") %>% 
-  dplyr::select(c("desert", "obsYear", "fireYear", "species",
-                  "yearsSinceFire")) %>% 
-  mutate(count = 1) %>% 
-  mutate(yearsSinceFire = ifelse(yearsSinceFire == 0, 1, yearsSinceFire))
-
-### get fire years to make control
-fireYear <- burned %>% 
-  group_by(fireYear, desert) %>% 
-  summarize(total = n()) %>% 
-  dplyr::select(-total) 
-
-### make control
-control <- burned %>% group_by(desert, fireYear) %>% 
-  summarize(maxTime = max(yearsSinceFire)) %>% 
-  filter(maxTime != 0)
-
-### get species info for control
-control_species <- animals %>% 
-  filter(treatmentGroup == "never burned", obsYear > 1999) %>% 
-  group_by(desert, obsYear, species) %>%
-  summarize(count = n()) 
-
-### how many species each year in control?
-
-control_sp_total <- control_species %>% 
-  group_by(desert, obsYear) %>%
-  summarize(count = n())
-
-
-  
-## vectors for control df
-yearsSinceFire <- c()
-desert <- c()
-fireYear <- c()
-
-
-for (i in 1:nrow(control)) {
-  yearsSinceFire <-  c(yearsSinceFire, rep(1:control$maxTime[i], 1))
-}
-
-for (i in 1:nrow(control)) {
-  desert <-  c(desert, rep(control$desert[i], each = control$maxTime[i]))
-}
-
-for (i in 1:nrow(control)) {
-  fireYear <-  c(fireYear, rep(control$fireYear[i], each = control$maxTime[i]))
-}
-
-
-control <- data.frame(desert, fireYear, yearsSinceFire) %>% 
-  mutate(obsYear = fireYear + yearsSinceFire) %>% 
-  filter(obsYear < 2021) %>% 
-  left_join(., dplyr::select(control_species, -count), by = c("obsYear", "desert"))
-
-## make df with just desert, TSF, and species for both burned and control sites
-
-burned <- burned %>% group_by(desert, yearsSinceFire, species) %>% 
-  summarize(count = n()) %>% 
-  dplyr::select(-count)
-
-control <- control %>% group_by(desert, yearsSinceFire, species) %>% 
-  summarize(count = n()) %>% 
-  dplyr::select(-count)
-
-unique_b <- anti_join(burned, control) %>% 
-  group_by(desert, yearsSinceFire) %>% 
-  summarize(unique_b = n())
-
-unique_c <- anti_join(control, burned) %>% 
-  group_by(desert, yearsSinceFire) %>% 
-  summarize(unique_c = n())
-
-shared <- anti_join(burned, anti_join(burned, control)) %>% 
-  group_by(desert, yearsSinceFire) %>% 
-  summarize(shared = n())
-
-tsf_df <- full_join(shared, unique_b, by = c("desert", "yearsSinceFire")) %>% 
-  full_join(., unique_c, by = c("desert", "yearsSinceFire")) %>% 
-  mutate(unique_b = ifelse(is.na(unique_b), 0, unique_b),
-         shared = ifelse(is.na(shared), 0, shared),
-         unique_c = ifelse(is.na(unique_c), 0, unique_c),
-         si = (2*shared)/(shared +unique_b + unique_c))
-
-print(tsf_df)
-
-```
-```{r graph for over-time recovery}
-ggplot(data = tsf_df, aes(x = yearsSinceFire, y = si, color = desert)) +
-  geom_point() +
-  geom_smooth(method = "lm", se = FALSE) +
-  ylab("Sorensen's Similarity Index")
-```
- 
-```{r}
-
-hist(x = tsf_df$si)
-shapiro.test(tsf_df$si)
-
-tsf_mod <- lm(si ~ yearsSinceFire + desert, data = tsf_df)
-summary(tsf_mod)
-
-plot(tsf_mod)
-
-
-
-```
- 
- 
- 
- 
-## Recovery over-time - SpadeR
+Recovery over-time - SpadeR
 ```{r SpadeR data matrix, include = FALSE, eval = FALSE}
 ###data for over time for burned sites
 burned <- animals %>% 
