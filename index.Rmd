@@ -289,7 +289,8 @@ p5 <- data %>% group_by(obsYear, treatmentGroup, ez_taxa, desert) %>%
   facet_grid(vars(ez_taxa), scales = "free") 
 
 plot_grid(p3, p4, rel_widths = c(1,1.4), labels = c("Aves", "Other ES"), align = "h")
-plot_grid(p1, p2, p5, cols = 2, labels = "AUTO", scale = c(.9, .9, .9))
+plot_grid(p1, p2, cols = 2, labels = "AUTO", scale = c(.9, .9, .9))
+p5
 
 ```
 
