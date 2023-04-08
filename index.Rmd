@@ -209,7 +209,7 @@ p2 <- animals %>%
             sd_avgORper1000km2 = sd(totalORPer1000km2), SEM = 2*sd_avgORper1000km2/sqrt(n())) %>% 
   ggplot(aes(x = fct_rev(as.factor(treatmentGroup)), y = yrlyAvgORPer1000km2, shape = desert, color = desert)) +
   geom_pointrange(aes(ymin = yrlyAvgORPer1000km2-SEM, ymax = yrlyAvgORPer1000km2+SEM), position = position_dodge(width = 0.3)) +
-  ylab(bquote('Average Yearly Occurrences \nReported per 1,000'~km^2)) +
+  ylab(expression('Mean occurrences reported annually per 1,000 '~km^2)) +
   theme_bw() + 
   theme(axis.text.y = element_text(size = 12), 
         axis.text.x = element_text(size = 12),
@@ -245,7 +245,7 @@ p3 <- data %>% group_by(obsYear, treatmentGroup, ez_taxa, desert) %>%
   geom_smooth(method = "glm", se = TRUE, aes(fill = treatmentGroup)) +
   ylim(0, NA) +
   xlab("") +
-  ylab(bquote('Annual mean occurrences reported per 1,000' ~km^2)) +
+  ylab(bquote('Annual mean occurrences reported per 1,000 ' ~km^2)) +
   theme_bw() +
   scale_color_aaas(labels=c("Control", "Burned area")) +
   scale_fill_aaas() +
@@ -273,23 +273,23 @@ p4 <- data %>% group_by(obsYear, treatmentGroup, ez_taxa, desert) %>%
 p5 <- data %>% group_by(obsYear, treatmentGroup, ez_taxa, desert) %>% 
   summarize(stzd_Occ = sum(stzd_Occ), totalOcc = sum(totalOcc), totalObs = sum (totalObs)) %>%
   ggplot(aes(x = obsYear, y = stzd_Occ, color = treatmentGroup)) +
-  geom_point(aes(shape = desert), alpha = 0.65)+
+  geom_point(aes(shape = desert), alpha = 0.65, size = 2)+
   geom_smooth(method = "glm", se = TRUE, aes(fill = treatmentGroup)) +
   ylim(0, NA) +
   xlab("")  +
-  ylab(bquote('Annual mean occurrences reported per 1,000'~km^2))+
+  ylab(bquote('Annual mean occurrences reported per 1,000 '~km^2))+
   theme_bw() +
   scale_color_aaas(labels=c("Control", "Burned area")) +
-  scale_fill_aaas() +
+  scale_fill_aaas(labels=c("Control", "Burned area")) +
   theme(legend.title=element_blank(),
         legend.position="bottom",
         axis.text.y = element_text(size = 12), 
         axis.text.x = element_text(size = 12)) +
-  guides(fill = "none", shape = "none") +
-  facet_grid(vars(ez_taxa), scales = "free") 
+  guides(shape = "none") +
+  facet_grid(vars(ez_taxa), scales = "free")
 
-plot_grid(p3, p4, rel_widths = c(1,1.4), labels = c("Aves", "Other ES"), align = "h")
-plot_grid(p1, p2, cols = 2, labels = "AUTO", scale = c(.9, .9, .9))
+plot_grid(p3, p4, rel_widths = c(1,1.3), labels = c("A", "B"), align = "h")
+plot_grid(p2, p1, cols = 2, labels = "AUTO", align = "h", axis = "tb")
 p5
 
 ```
@@ -326,7 +326,7 @@ summary(emm_pp)
 
 glmm_other <- glmmTMB(stzd_Occ ~ obsYear + treatmentGroup + (1|desert),
                data = filter(data, ez_taxa == "Other"),
-               family = "nbinom1")
+               family = "nbinom2")
 summary(glmm_other)
 check_overdispersion(glmm_other)
 
@@ -410,6 +410,38 @@ glmm_other <-glmmTMB(stzd_Occ ~ ndvi * treatmentGroup + (1|desert),
                family = "poisson")
 summary(glmm_other)
 check_overdispersion(glmm_other)
+
+emm_pp <- emmeans(glmm_other, pairwise ~ treatmentGroup)
+summary(emm_pp)
+
+#### year and NDVI in one model ####
+#all
+glmm2 <- glmmTMB(stzd_Occ ~ obsYear + ndvi * treatmentGroup + (1|desert), 
+               data = data1,
+               family = "nbinom2")
+summary(glmm2)
+check_overdispersion(glmm2)
+
+
+emm_pp <- emmeans(glmm2, pairwise ~ treatmentGroup)
+summary(emm_pp)
+
+#aves
+glmm2_aves <-glmmTMB(stzd_Occ ~ obsYear + ndvi * treatmentGroup + (1|desert),
+               data = filter(data1, ez_taxa == "Aves"),
+               family = "nbinom1")
+summary(glmm2_aves)
+check_overdispersion(glmm2_aves)
+
+emm_pp <- emmeans(glmm2_aves, pairwise ~ treatmentGroup)
+summary(emm_pp)
+
+#other
+glmm2_other <-glmmTMB(stzd_Occ ~ obsYear + ndvi * treatmentGroup + (1|desert),
+               data = filter(data1, ez_taxa == "Other"),
+               family = "nbinom2")
+summary(glmm2_other)
+check_overdispersion(glmm2_other)
 
 emm_pp <- emmeans(glmm_other, pairwise ~ treatmentGroup)
 summary(emm_pp)
