@@ -48,10 +48,9 @@ animals <- st_read("shapefiles/animals/animals_51022.shp") %>%
          institutionalCode = institutio, 
          treatmentGroup = treatmentG, fireName = INCIDENT, 
          fireYear = FIRE_YEARn, fireSize = GISAcres) %>% 
-  dplyr::select(-c("verbatimSc", "issue", "coordinate", 'nearRd_FID', "nearUA_FID", 
-            'basisOfRec', 'institutionalCode', 'collection', 'recordedBy', 'nearRdDist', 'nearUADist')) %>% 
+  dplyr::select(-c("verbatimSc", "issue", "coordinate", 'nearRd_FID', "nearUA_FID")) %>% 
   filter(obsYear > 1994, obsYear < 2021, species != "Canis lupus", species != "Balaenoptera musculus", 
-         species != "Grus canadensis", treatmentGroup != "burned prior 2000") %>%  
+         species != "Grus canadensis", species != "Branchinecta lynchi", treatmentGroup != "burned prior 2000") %>%  
   mutate(funcGroup =
                      ifelse(genus == "Puma" | genus == "Ovis", "Large Mammals",
                             ifelse(genus == "Branchinecta" | genus == "Cyprinodon", "Aquatic",
