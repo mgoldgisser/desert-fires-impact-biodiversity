@@ -12,7 +12,7 @@ output:
 {code not included}
 ```{r packages, message=FALSE, include=FALSE}
 library(tidyverse)
-#library(mgcv)
+library(mgcv)
 library(sf)
 #library(lwgeom)
 library(lme4)
@@ -21,7 +21,7 @@ library(ggsci)
 library(stats)
 #library(broom)
 #library(gghighlight)
-library(gamm4)
+#library(gamm4)
 #library(MuMIn)
 library(cowplot)
 library(MASS) #for glm.nb
@@ -49,7 +49,7 @@ sites <- read_csv("data/sites.csv")
 
 data <- animals %>%
   filter(obsYear > 1994) %>% 
-  group_by(obsYear, ez_taxa, simplified_taxa, treatmentGroup, desert) %>% 
+  group_by(obsYear, ez_taxa, funcGroup, treatmentGroup, desert) %>% 
   summarize(totalObs = sum(individualCount), totalOcc = n())%>% 
   #left_join(., ndvi, by = c("desert", "obsYear", "treatmentGroup")) %>% #add ndvi
   left_join(., areas, by = c("desert", "treatmentGroup")) %>% #add area
@@ -181,6 +181,8 @@ summary(ndvi_aov2)
 TukeyHSD(ndvi_aov2, which = "desert")
 shapiro.test(ndvi$ndvi)
 
+TukeyHSD(ndvi_aov2, which = "treatmentGroup")
+
 ggplot(ndvi, aes(x = ndvi)) + geom_histogram(aes(fill = desert, color = treatmentGroup)) +
   scale_fill_manual(values = c("#1b9e77", "#d95f02", "#7570b3")) +
   scale_color_manual(values = c("black", "grey75"))
@@ -190,6 +192,13 @@ shapiro.test(test$ndvi)
 sjd_aov <- aov(ndvi~treatmentGroup, data = test)
 summary(sjd_aov)
 TukeyHSD(sjd_aov, which = "treatmentGroup")
+
+test <- filter(ndvi, desert != "San Joaquin") 
+shapiro.test(test$ndvi)
+mojson_aov <- aov(ndvi~treatmentGroup, data = test)
+summary(mojson_aov)
+TukeyHSD(mojson_aov, which = "treatmentGroup")
+
 
 test <- filter(ndvi, desert != "San Joaquin", treatmentGroup == "burned") 
 shapiro.test(test$ndvi)
@@ -202,6 +211,12 @@ shapiro.test(test$ndvi)
 mojsonneverburn_aov <- aov(ndvi~desert, data = test)
 summary(mojsonneverburn_aov)
 TukeyHSD(mojsonneverburn_aov, which = "desert")
+
+test <- filter(ndvi, desert != "San Joaquin") 
+shapiro.test(test$ndvi)
+mojson_aov <- aov(ndvi~treatmentGroup, data = test)
+summary(mojson_aov)
+TukeyHSD(mojson_aov, which = "treatmentGroup")
 
 
 ndvi.stats <- ndvi %>% group_by(treatmentGroup, desert) %>% 
@@ -225,8 +240,28 @@ p1a <- ggplot(ndvi.stats, aes(x = fct_rev(treatmentGroup), y = mean, color = des
         axis.title.y = element_text(size = 12),
         axis.ticks.x = element_blank(),
         panel.grid.major.y = element_blank(),
-        legend.position = "top",
-        legend.title=element_blank())
+        legend.position = "none",
+        legend.title=element_blank(),
+        plot.margin = margin(0,0.5,0, .5, "cm"))
+
+# ndvi$treatmentGroup <- relevel(ndvi$treatmentGroup, "never burned")
+# 
+# ndvi_glm <- glm(ndvi~desert + treatmentGroup, data = ndvi)
+# summary(ndvi_glm)
+# anova(ndvi_glm, test = "Chisq")
+# 
+# ndvi_emmeans <- emmeans(ndvi_glm, pairwise ~ treatmentGroup|desert)
+# summary(ndvi_emmeans)
+# test(ndvi_emmeans)
+# 
+# ndvi_emmeans <- emmeans(ndvi_glm, pairwise ~ desert|treatmentGroup)
+# summary(ndvi_emmeans)
+# test(ndvi_emmeans)
+# 
+# ndvi_emmeans <- emmeans(ndvi_glm, pairwise ~ treatmentGroup)
+# summary(ndvi_emmeans)
+# test(ndvi_emmeans)
+
 
 ```
 
@@ -257,32 +292,34 @@ p1b <- ggplot(ndvi, aes(x = fct_rev(factor(treatmentGroup)), y = ndvi, color = d
         legend.position = "top",
         legend.title=element_blank())
 
-p2 <- animals %>% 
-  rename(fireArea_km2 = area_km2) %>% 
-  left_join(ndvi, by = c("obsYear", "desert", "treatmentGroup")) %>% 
-  left_join(areas, by = c('desert', "treatmentGroup")) %>% 
-  group_by(treatmentGroup, desert, ez_taxa, obsYear) %>%
-  summarize(area_km2 = round(mean(area_km2)),totalOccReported =n(), totalORPer1000km2 = ceiling(sum(totalOccReported/area_km2 * 1000))) %>% 
-  group_by(treatmentGroup, desert, ez_taxa) %>%
-  summarize(yrlyAvgOccReported = ceiling(mean(totalOccReported)), 
-            yrlyAvgORPer1000km2 = ceiling(mean(totalORPer1000km2)),
-            sd_avgORper1000km2 = sd(totalORPer1000km2), SEM = 2*sd_avgORper1000km2/sqrt(n())) %>% 
-  ggplot(aes(x = fct_rev(as.factor(treatmentGroup)), y = yrlyAvgORPer1000km2, shape = desert, color = desert)) +
-  geom_pointrange(aes(ymin = yrlyAvgORPer1000km2-SEM, ymax = yrlyAvgORPer1000km2+SEM), position = position_dodge(width = 0.3)) +
-  ylab(expression('Mean occurrences reported annually per 1,000 '~km^2)) +
-  theme_bw() + 
-  theme(axis.text.y = element_text(size = 12), 
-        axis.text.x = element_text(size = 12),
-        axis.title.x = element_blank(),
-        axis.ticks.x = element_blank(),
-        axis.title.y = element_text(size = 12),
-        panel.grid.major.y = element_blank(),
-        legend.position = "top",
-        legend.title=element_blank()) +
-  scale_color_manual(values = c("#1b9e77", "#d95f02", "#7570b3")) + 
-  scale_y_continuous(breaks = c(seq(from = 0, to = 33, by = 6)), limits = c(0, NA))+ 
-  scale_x_discrete(labels = c("Control", "Burned"))+
-  facet_grid(vars(ez_taxa))
+###Old graph that shows means and CI of occ reported; mean and CI manually calculated. Figure updated later for emmeans calc mean and CI
+
+# p2 <- animals %>% 
+#   rename(fireArea_km2 = area_km2) %>% 
+#   left_join(ndvi, by = c("obsYear", "desert", "treatmentGroup")) %>% 
+#   left_join(areas, by = c('desert', "treatmentGroup")) %>% 
+#   group_by(treatmentGroup, desert, ez_taxa, obsYear) %>%
+#   summarize(area_km2 = round(mean(area_km2)),totalOccReported =n(), totalORPer1000km2 = ceiling(sum(totalOccReported/area_km2 * 1000))) %>% 
+#   group_by(treatmentGroup, desert, ez_taxa) %>%
+#   summarize(yrlyAvgOccReported = ceiling(mean(totalOccReported)), 
+#             yrlyAvgORPer1000km2 = ceiling(mean(totalORPer1000km2)),
+#             sd_avgORper1000km2 = sd(totalORPer1000km2), SEM = 2*sd_avgORper1000km2/sqrt(n())) %>% 
+#   ggplot(aes(x = fct_rev(as.factor(treatmentGroup)), y = yrlyAvgORPer1000km2, shape = desert, color = desert)) +
+#   geom_pointrange(aes(ymin = yrlyAvgORPer1000km2-SEM, ymax = yrlyAvgORPer1000km2+SEM), position = position_dodge(width = 0.3)) +
+#   ylab(expression('Mean occurrences reported annually per 1,000 '~km^2)) +
+#   theme_bw() + 
+#   theme(axis.text.y = element_text(size = 12), 
+#         axis.text.x = element_text(size = 12),
+#         axis.title.x = element_blank(),
+#         axis.ticks.x = element_blank(),
+#         axis.title.y = element_text(size = 12),
+#         panel.grid.major.y = element_blank(),
+#         legend.position = "top",
+#         legend.title=element_blank()) +
+#   scale_color_manual(values = c("#1b9e77", "#d95f02", "#7570b3")) + 
+#   scale_y_continuous(breaks = c(seq(from = 0, to = 33, by = 6)), limits = c(0, NA))+ 
+#   scale_x_discrete(labels = c("Control", "Burned"))+
+#   facet_grid(vars(ez_taxa))
 
 
 #graph of occurrences reported over time
@@ -343,22 +380,111 @@ p5 <- data %>% group_by(obsYear, treatmentGroup, ez_taxa, desert) %>%
   scale_fill_aaas(labels=c("Control", "Burned area")) +
   theme(legend.title=element_blank(),
         legend.position="bottom",
-        axis.text.y = element_text(size = 12), 
-        axis.text.x = element_text(size = 12)) +
-  guides(shape = "none") +
+        legend.box = "horizontal",
+        legend.text = element_text(size=15),
+        axis.text.y = element_text(size = 15), 
+        axis.text.x = element_text(size = 15),
+        axis.title.y = element_text(size = 15), 
+        axis.title.x =  element_text(size = 15),
+        strip.text.y = element_text(size = 15)) +
+  #guides(shape = "none") +
   facet_grid(vars(ez_taxa), scales = "free")
 
 plot_grid(p3, p4, rel_widths = c(1,1.3), labels = c("A", "B"), align = "h")
-plot_grid(p2, p1a, cols = 2, labels = "AUTO", align = "h", axis = "tb")
+
+###retired
+# plot_grid(p2, p1a, cols = 2, labels = "AUTO", align = "h", axis = "tb")
 p5
 
 ```
 
 ### Stats
+## glm average occurrences reported
+```{r glm average occurrence reported all, echo = FALSE}
 
+test2 <- animals %>% 
+  rename(fireArea_km2 = area_km2) %>% 
+  left_join(ndvi, by = c("obsYear", "desert", "treatmentGroup")) %>% 
+  left_join(areas, by = c('desert', "treatmentGroup")) %>% 
+  group_by(treatmentGroup, desert, ez_taxa, obsYear) %>%
+  summarize(area_km2 = round(mean(area_km2)),totalOccReported =n(), totalORPer1000km2 = ceiling(sum(totalOccReported/area_km2 * 1000))) 
+test2$treatmentGroup <- relevel(as.factor(test2$treatmentGroup), "never burned")
+
+
+occ_glm <- glm.nb(totalORPer1000km2~desert * treatmentGroup, data = test2)
+check_overdispersion(occ_glm)
+summary(occ_glm)
+anova(occ_glm, test = "Chisq")
+
+occ_emm <- emmeans(occ_glm, pairwise ~ treatmentGroup)
+test(occ_emm)
+
+occ_emm <- emmeans(occ_glm, pairwise ~ treatmentGroup|desert)
+test(occ_emm)
+```
+```{r glm average occurrence reported birds, echo = FALSE}
+occA_glm <- glm.nb(totalORPer1000km2~desert * treatmentGroup, data = filter(test2, ez_taxa == "Aves"))
+check_overdispersion(occA_glm)
+summary(occA_glm)
+anova(occA_glm, test = "Chisq")
+
+
+occA_emm <- emmeans(occA_glm, pairwise ~ treatmentGroup)
+test(occA_emm)
+
+occA_emm <- emmeans(occA_glm, pairwise ~ desert)
+test(occA_emm)
+
+occA_emm <- emmeans(occA_glm, pairwise ~ treatmentGroup|desert)
+test(occA_emm)
+confint(occA_emm, level = .95, type = "response")
+```
+```{r glm average occurrence reported other, echo = FALSE}
+occO_glm <- glm.nb(totalORPer1000km2~desert * treatmentGroup, data = filter(test2, ez_taxa == "Other"))
+check_overdispersion(occO_glm)
+anova(occO_glm, test = "Chisq")
+
+occO_emm <- emmeans(occO_glm, pairwise ~ treatmentGroup|desert)
+test(occO_emm)
+confint(occO_emm, level = .95, type = "response")
+
+# graph using emmeans confint
+desert <- rep(factor(c("Mojave", "San Joaquin", "Sonoran")), each = 2, times = 2)
+treatmentGroup <-rep(factor(c("burned", "control")), times = 6) 
+ez_taxa <- rep(factor(c("Aves", "Other")), each = 6)
+yrlyAvgORPer1000km2 <- c(8.75, 4.81, 18.81, 13.31, 9.62, 9.04, 3.38, 1.14, 4, 1.29, 19.92, 2.6)
+LCL <- c(6.33, 3.45, 12.89, 9.84, 5.51, 6.62, 1.965, .717, 1.711, .789, 14.159, 1.704)
+UCL <- c(12.10, 6.71, 27.46, 18, 16.8, 12.33,5.8, 1.82, 9.35, 2.12, 28.02, 3.97)
+
+test_table <- data.frame(desert, treatmentGroup, ez_taxa, yrlyAvgORPer1000km2, LCL, UCL)
+  
+p2 <- ggplot(test_table, aes(x = fct_rev(as.factor(treatmentGroup)), y = yrlyAvgORPer1000km2, shape = desert, color = desert)) +
+  geom_pointrange(aes(ymin = LCL, ymax = UCL), position = position_dodge(width = 0.3)) +
+  ylab(expression('          Mean occurrences\n reported annually per 1,000 '~km^2)) +
+  theme_bw() + 
+  theme(axis.text.y = element_text(size = 12), 
+        axis.text.x = element_text(size = 12),
+        axis.title.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.title.y = element_text(size = 12, vjust = 0.5),
+        panel.grid.major.y = element_blank(),
+        legend.position = "bottom",
+        legend.title=element_blank(),
+        plot.margin = margin(0.5,0.1,0, .5, "cm")) +
+  scale_color_manual(values = c("#1b9e77", "#d95f02", "#7570b3")) + 
+  scale_y_continuous(breaks = c(seq(from = 0, to = 33, by = 6)), limits = c(0, NA))+ 
+  scale_x_discrete(labels = c("Control", "Burned"))+
+  facet_grid(vars(ez_taxa))
+
+plot_grid(p2, p1a, cols = 2, labels = "auto", align = "h", axis = "tb", greedy = TRUE)
+```
+
+## occurrences annually time-series
 ```{r stats occ reported annually, echo=FALSE}
 ####glmm####
 #### ALL ####
+
+library(car) #to use Anova() walds test 
 
 data <- data %>% group_by(treatmentGroup, obsYear, desert, ez_taxa) %>% 
   summarize(stzd_Occ = sum(stzd_Occ), stzd_totalObs = sum(stzd_totalObs))
@@ -367,6 +493,9 @@ glmm1 <- glmmTMB(stzd_Occ ~ obsYear + treatmentGroup + (1|desert),
                data = data, family = "nbinom1")
 summary(glmm1)
 check_overdispersion(glmm1)
+
+Anova(glmm1, type = "III")
+
 
 ## emmeans
 emm_pp <- emmeans(glmm1, pairwise ~ treatmentGroup)
@@ -379,6 +508,8 @@ glmm_aves <- glmmTMB(stzd_Occ ~ obsYear + treatmentGroup + (1|desert),
 summary(glmm_aves)
 check_overdispersion(glmm_aves)
 
+Anova(glmm_aves, type = "III")
+
 #emmeans
 emm_pp <- emmeans(glmm_aves, pairwise ~ treatmentGroup)
 summary(emm_pp)
@@ -390,6 +521,8 @@ glmm_other <- glmmTMB(stzd_Occ ~ obsYear + treatmentGroup + (1|desert),
                family = "nbinom1")
 summary(glmm_other)
 check_overdispersion(glmm_other)
+
+Anova(glmm_other, type = "III")
 
 #emmeans
 emm_pp <- emmeans(glmm_other, pairwise ~ treatmentGroup)
@@ -546,12 +679,14 @@ Occurrences before and after fire
 
 #### all species
 ```{r stats on all recovery}
+library(car)
+
 data_pp_5yrAS <- data_pp %>% 
   group_by(desert, fireYear, pre_or_post, funcGroup, treatmentGroup, fireID) %>% 
   summarize(mean_occurrence = ceiling(mean(stzdObs))) %>% 
   mutate(ez_taxa = ifelse(grepl("Birds", funcGroup), "Aves", "Other"))
 
-pp_nbAS <- glmmTMB(mean_occurrence ~ pre_or_post*treatmentGroup + (1|ez_taxa) + (1|desert), family = nbinom2, data = data_pp_5yrAS)
+pp_nbAS <- glmmTMB(mean_occurrence ~ pre_or_post*treatmentGroup + (1|ez_taxa) + (1|desert), family = nbinom1, data = data_pp_5yrAS)
 
 check_overdispersion(pp_nbAS)
 
@@ -563,7 +698,7 @@ testDispersion(simulationOutput, plot = FALSE)
 # testZeroInflation -- A value < 1 means that the observed data has less zeros than expected, a value > 1 means that it has more zeros than expected (aka zero-inflation)
 testZeroInflation(simulationOutput, plot = FALSE)                  
 
-summary(pp_nbAS)
+Anova(pp_nbAS, type = "III")
 
 
 #stepwise regression to select best predictors; both summary above and stepAIC show that funcGroup not significant
@@ -571,10 +706,12 @@ null <- glmmTMB(mean_occurrence ~ 1, family = nbinom1, data = data_pp_5yrAS)
 stepAIC(pp_nbAS, scope=list(lower=null, upper=pp_nbAS), data=data_pp_5yrAS, direction='backward')
 
 emm_pp <- emmeans(pp_nbAS, pairwise ~ pre_or_post|treatmentGroup)
-summary(emm_pp)
+test(emm_pp)
+confint(emm_pp, level = .95, type = "response")
+
 
 emm_pp <- emmeans(pp_nbAS, pairwise ~ treatmentGroup|pre_or_post)
-summary(emm_pp)
+test(emm_pp)
 ```
 
 
@@ -595,7 +732,7 @@ simulationOutput <- simulateResiduals(fittedModel = pp_nbNA, plot = F)
 testDispersion(simulationOutput, plot = FALSE)
 # testZeroInflation -- A value < 1 means that the observed data has less zeros than expected, a value > 1 means that it has more zeros than expected (aka zero-inflation)
 testZeroInflation(simulationOutput, plot = FALSE)                  
-summary(pp_nbNA)
+Anova(pp_nbNA, type = "III")
 
 
 #stepwise regression to select best predictors; both summary above and stepAIC show that funcGroup not significant
@@ -603,7 +740,9 @@ null <- glmmTMB(mean_occurrence ~ 1, family = nbinom1, data = data_pp_5yrNA)
 stepAIC(pp_nbNA, scope=list(lower=null, upper=pp_nbNA), data=data_pp_5yr_aves, direction='backward')
 
 emm_pp <- emmeans(pp_nbNA, pairwise ~ pre_or_post|treatmentGroup)
-summary(emm_pp)
+test(emm_pp)
+confint(emm_pp, level = .95, type = "response")
+
 
 emm_pp <- emmeans(pp_nbNA, pairwise ~ treatmentGroup|pre_or_post)
 summary(emm_pp)
@@ -630,13 +769,14 @@ testZeroInflation(simulationOutput, plot = FALSE)
 null <- glmmTMB(mean_occurrence ~ 1, family = nbinom1, data = data_pp_5yrA)
 stepAIC(pp_nbA, scope=list(lower=null, upper=pp_nbA), data=data_pp_5yrA, direction='backward')
 
-summary(pp_nbA)
+Anova(pp_nbA, type = "III")
 
 emm_pp <- emmeans(pp_nbA, pairwise ~ pre_or_post|treatmentGroup)
-summary(emm_pp)
+test(emm_pp)
+confint(emm_pp, level = 0.95, type = "response")
 
 emm_pp <- emmeans(pp_nbA, pairwise ~ treatmentGroup|pre_or_post)
-summary(emm_pp)
+test(emm_pp)
 ```
 #### passerine and raptor only
 ```{r stats on pass/rapt recovery}
@@ -675,7 +815,7 @@ data_pp_5yrAS.stats <- data_pp_5yrAS %>% group_by(desert, pre_or_post, treatment
 data_pp_5yrAS.stats1 <- data_pp_5yrAS %>% group_by(pre_or_post, treatmentGroup, ez_taxa) %>% summarize(mean_observations = ceiling(mean(mean_occurrence)), sd = round(sd(mean_occurrence),2), SEM2 = round(sd/sqrt(n()), 2)) %>% mutate(pre_or_post = factor(pre_or_post, levels = c("pre", "post")))
 
 
-ggplot(data_pp_5yrAS.stats1, aes(x = pre_or_post, y =  mean_observations)) +
+p6 <- ggplot(data_pp_5yrAS.stats1, aes(x = pre_or_post, y =  mean_observations)) +
   geom_point(aes(color = desert, shape = desert), size = 3, data = data_pp_5yrAS.stats)+
   geom_line(aes(group = desert, color = desert), linetype= 1, data = data_pp_5yrAS.stats) +
   #geom_point(color = "black", size = 3, shape = 4)+
@@ -684,7 +824,7 @@ ggplot(data_pp_5yrAS.stats1, aes(x = pre_or_post, y =  mean_observations)) +
   scale_x_discrete(labels = c("Before fire", "After fire")) +
   theme(legend.title = element_blank()) +
   xlab("") +
-  ylab(bquote("Mean observations reported per 10,000 km"^2)) +
+  ylab(bquote("    Mean observations \nreported per 10,000 km"^2)) +
   scale_color_manual(values = c("#1b9e77", "#d95f02", "#7570b3")) +
   theme_bw() + 
   theme(axis.text.y = element_text(size = 12), 
@@ -693,9 +833,48 @@ ggplot(data_pp_5yrAS.stats1, aes(x = pre_or_post, y =  mean_observations)) +
         axis.title.y = element_text(size = 12),
         axis.ticks.x = element_blank(),
         panel.grid.major.y = element_blank(),
-        legend.position = "top",
-        legend.title=element_blank()) +
+        legend.position = "bottom",
+        legend.title=element_blank(),
+        plot.margin = margin(0, 0.1, 0, 0.5, "cm")) +
   facet_grid(vars(ez_taxa), cols = vars(treatmentGroup), scales = "free_y")
+
+# graph using emmeans confint
+pre_or_post <- rep(factor(c("pre", "post"), levels = c("pre", "post")), times = 4)
+treatmentGroup <-rep(factor(c("burned", "control"), levels = c("control", "burned")), each = 2, times = 2) 
+ez_taxa <- rep(factor(c("Aves", "Other")), each = 4)
+occ <- c(0.545, 1.560, 15.448, 27.108, 0.133, 0.486, 1.683, 2.998)
+LCL <- c(0.183, 0.621, 6.867, 12.304, 0.0474, 0.1927,0.5997, 1.1702)
+UCL <- c(1.62, 3.92, 34.75, 59.73, 0.372, 1.225, 4.722, 7.678)
+
+
+test_table <- data.frame(ez_taxa, treatmentGroup, pre_or_post, occ,  LCL, UCL)
+
+p7 <- ggplot(test_table, aes(x = pre_or_post, y =  occ, color = treatmentGroup)) +
+  geom_point(size = 3)+
+  geom_line(aes(group = treatmentGroup, color = treatmentGroup), linetype= 1) +
+  #geom_point(color = "black", size = 3, shape = 4)+
+  #geom_line(aes(group = ez_taxa),color = "black") +
+  #geom_errorbar(aes(ymin = LCL, ymax = UCL), width = 0.1) +
+  scale_x_discrete(labels = c("Before fire", "After fire")) +
+  theme(legend.title = element_blank()) +
+  xlab("") +
+  ylab(bquote("    Mean observations \nreported per 10,000 km"^2)) +
+  scale_color_manual(labels = c("Control", "Burned"), values = c("#00008b", "#8b0000")) +
+  theme_bw() + 
+  theme(axis.text.y = element_text(size = 12), 
+        axis.text.x = element_text(size = 12),
+        axis.title.x = element_text(size = 12),
+        axis.title.y = element_text(size = 12),
+        axis.ticks.x = element_blank(),
+        panel.grid.major.y = element_blank(),
+        legend.position = "bottom",
+        legend.title=element_blank(),
+        plot.margin = margin(0, 0.1, 0, 0.5, "cm")) +
+  facet_grid(rows = vars(ez_taxa), scales = "free_y")
+
+
+plot_grid(p7, p6, cols = 2, labels = "auto", align = "h", axis = "tb", greedy = TRUE, rel_widths = c(1, 2))
+
 ```
 
 ```{r pre-post- other 5yr avg, echo = FALSE}
@@ -710,7 +889,7 @@ ggplot(data_pp_5yrNA, aes(x = treatmentGroup, y =  mean_occurrence, fill = facto
   ylab(bquote("5-yr average of non-avian ES occurrences reported per 10,000 km"^2)) +
   facet_grid(vars(desert))
 ```
-```{r pre-post- all aves 5yr avg, echo = FALSE; eval = FALSE}
+```{r pre-post- all aves 5yr avg, echo = FALSE, eval = FALSE}
 #mean occurrences 5yrs before and after fire
 ggplot(data_pp_5yrA, aes(x = treatmentGroup, y =  mean_occurrence, fill = factor(pre_or_post, levels = c("pre", "post")))) +
   geom_boxplot()+
@@ -1108,7 +1287,7 @@ for (d in 1:3) {
 #capture.output(recoverytsf_list, file = "recovery_tsf_list.csv")
 ```
 ### Chao Two Community Similarity
-```{r SpadeR SimPair, include = FALSE, eval = FALSE}
+```{r SpadeR SimPair, include = FALSE}
 #Chao Similarity Pair
 
 desert1 <- c()
@@ -1166,6 +1345,10 @@ df_tsf <- data.frame(desert1, yearsSinceFire, SpRich_burned, SpRich_control, SI,
 shapiro.test(df_tsf$SI)
 sim_mod <- lm(SI ~ yearsSinceFire + desert, data = df_tsf)
 summary(sim_mod)
+anova(sim_mod)
+
+sim_emm <- emmeans(sim_mod, pairwise ~ desert)
+test(sim_emm)
 
 ggplot(df_tsf, aes(x=yearsSinceFire, y=SI * 100, color = desert)) +
   geom_point(aes(shape = desert), size = 3) +
@@ -1299,7 +1482,7 @@ df_shared <- data.frame(desert1, yearsSinceFire,  spRep_burned, spRep_control, C
 
 ```
 
-```{r SpadeR ChaoShared ChaoSpecies graph}
+```{r SpadeR ChaoShared ChaoSpecies graph, eval = FALSE}
 ggplot(df_shared, aes(x=yearsSinceFire, y=CShared, color = desert)) +
   geom_point() +
   #geom_errorbar(aes(ymin=CShared_CIlower, ymax=CShared_CIupper), color = "black", width=.2) +
@@ -1310,6 +1493,41 @@ ggplot(df_species, aes(x=yearsSinceFire, y=Chao2, color = desert, shape = treatm
   geom_errorbar(aes(ymin=Chao2_CIlower, ymax=Chao2_CIupper), color = "black", width=.2) +
   geom_smooth(method = "lm", se = FALSE) +
   facet_wrap(vars(treatmentGroup))
+
+```
+
+## species-specific
+
+```{r species-specific, echo = FALSE}
+
+table <- animals %>% group_by(species, treatmentGroup, ez_taxa, funcGroup) %>% 
+  summarize(totalReports = n()) %>% spread(treatmentGroup, totalReports) %>% 
+  rename(control = 'never burned') %>% 
+  mutate(burned = ifelse(is.na(burned), 0, burned), 
+         control = ifelse(is.na(control), 0, control))
+
+table
+
+ggplot(data_pp, aes(x = factor(pre_or_post, levels = c("pre", "post")), y = stzdObs, fill = treatmentGroup)) +
+  geom_col(position = position_dodge()) +
+  scale_x_discrete(labels = c("Before fire", "After fire")) +
+  theme(legend.title = element_blank()) +
+  xlab("") +
+  ylab(bquote("Occurrences reported per 10,000 km"^2)) +
+  scale_fill_manual(labels = c("Burned", "Control"), values = c('#ff6464', "#6464ff")) +
+  theme_bw() +
+  theme(axis.text.y = element_text(size = 12),
+        axis.text.x = element_text(size = 12),
+        axis.title.x = element_text(size = 12),
+        axis.title.y = element_text(size = 12),
+        axis.ticks.x = element_blank(),
+        panel.grid.major.y = element_blank(),
+        legend.position = "bottom",
+        legend.title=element_blank(),
+        plot.margin = margin(0.5, 0.5, 0, 0.5, "cm")) +
+  facet_wrap(vars(funcGroup), scales = "free_y")
+
+
 
 ```
 
